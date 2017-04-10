@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <title>资讯管理(</title>
+  <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+  <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+  <link href="css/Mystyle.css?v=1.0.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 animated fadeInRight">
+        <div class="mail-box-header">
+          <!-- 搜索栏 -->
+          <form method="get" action="index.html" class="pull-right mail-search">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" name="search" placeholder="搜索邮件标题，正文等">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-sm btn-primary">
+                    搜索
+                </button>
+              </div>
+            </div>
+          </form>
+          
+          <button id="push-news" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 发布新闻</button>
+          <button id="push-notice" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-upload"></i> 发布公告</button>
+          <div class="mail-tools tooltip-demo m-t-md">
+            <button id="news-allBtn" class="btn btn-white btn-sm label-primary" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-ok"></i> 全选</button>
+            <button id="news-delBtn" class="btn btn-white btn-sm label-danger" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-remove"></i> 删除</button>
+
+            <!-- 分页按钮 -->
+            <div class="btn-group pull-right self-btn-mg">
+              <button id="previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+              </button>
+              <button id="next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+              </button>
+              <input id="write-nub" class="form-control input-sm" type="text" placeholder="页数">
+            </div>
+            
+          </div>
+        </div>
+        <div class="mail-box">
+
+          <table class="table table-hover table-mail">
+            <tbody>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">1</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">昨天 10:20</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks" checked>
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">2</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午10:57</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
+
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">3</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午9:21</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">4</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">中午12:24</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">5</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">上午6:48</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">6</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">昨天 10:20</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">7</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午10:57</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">8</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午9:21</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">9</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">中午12:24</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">10</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">上午6:48</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">11</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">昨天 10:20</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">12</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午10:57</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">13</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">上午9:21</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">14</a>
+                </td>
+                <td class=""></td>
+                <td class="text-right mail-date">中午12:24</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">15</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">上午6:48</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
+                </td>
+                <td class="mail-subject"><a href="mail_detail.html">16</a>
+                </td>
+                <td class=""><i class="fa fa-paperclip"></i>
+                </td>
+                <td class="text-right mail-date">上午6:48</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="write-box">
+          <div class="col-sm-8 col-sm-offset-2 notice-bg">
+            <div class="notice-bg-pd">
+              <form class="form-horizontal" method="get">
+                <div id="title" class="form-group">
+                  <div class="tag-box"><b>标题:</b></div>
+                  <div class="col-sm-10"><input class="form-control" type="text" placeholder="请写下文章标题"></div>
+                </div>
+              </form>
+
+              <!-- 加载编辑器的容器 -->
+              <div id="write-box" class="col-sm-12">
+                <script id="container" name="content" type="text/plain">
+                  这里写你的初始化内容
+                </script>
+              </div>
+
+              <div class="write-btn">
+                <button id="content-submit"  class="btn btn-white btn-sm label-primary" data-toggle="tooltip" data-placement="left"><i class="fa fa-reply"></i> 发布</button>
+                <button id="tag-del" class="btn btn-white btn-sm label-danger" data-toggle="tooltip" data-placement="left"><i class="  glyphicon glyphicon-remove"></i> 取消</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+  <script src="js/Myjs.js?v=1.0.0"></script>
+
+
+  <!-- iCheck -->
+  <script src="js/plugins/iCheck/icheck.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+      });
+    });
+  </script>
+
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  <!--统计代码，可删除-->
+
+  
+  <!-- Ueditor -->
+  <!-- 配置文件 -->
+  <script type="text/javascript" src="js/plugins/ueditor/ueditor.config.js?v=1.4.3.3"></script>
+  <!-- 编辑器源码文件 -->
+  <script type="text/javascript" src="js/plugins/ueditor/ueditor.all.js?v=1.4.3.3"></script>
+  <!-- 实例化编辑器 -->
+  <script type="text/javascript">
+      var ue = UE.getEditor('container',{
+        initialFrameHeight: 300,
+        toolbars: [
+          [
+            'undo', //撤销
+            'redo','|', //重做
+            'bold', //加粗
+            'italic', //斜体
+            'underline', //下划线
+            'fontborder', //字符边框
+            'strikethrough','|', //删除线
+            'forecolor', //字体颜色
+            'backcolor', //背景色
+            'insertorderedlist', //有序列表
+            'insertunorderedlist','|', //无序列表
+            'paragraph', //段落格式
+            'fontfamily', //字体
+            'fontsize','|', //字号
+            'justifyleft', //居左对齐
+            'justifyright', //居右对齐
+            'justifycenter', //居中对齐
+            'justifyjustify','|', //两端对齐
+            'simpleupload', //单图上传
+          ]
+        ],
+
+      });
+  </script>
+
+</body>
+
+</html>
