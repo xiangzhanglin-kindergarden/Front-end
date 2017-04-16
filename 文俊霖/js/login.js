@@ -12,23 +12,29 @@ $(document).ready(function(){
 			var userName = $("#username").val();     //存储用户名
 			var userPwd = $("#userpassword").val();  //存储密码
 			var userClass = $("input[name='user-class']:checked").attr("class"); //获取老师or管理员登录
-			
+
 			var myjson;      //传递参数的内容
 			var url = "";    //物理地址
 			var IP = "";     //IP地址
 
+
 			IP = "119.29.53.178:8080/";
 
 			if (userClass=="user-manager") {
-				// console.log("管理人");
-				myjson = JSON.stringify({Mid:userName,Mpassword:userPwd});
-				url = "/kindergarden/LoginServlet?Mid="+userName+"&Mpassword="+userPwd;
+				userClass = 1;
+				console.log("管理人");
+				// myjson = JSON.stringify(Mid=userName,Mpassword=userPwd);
+				myjson = {Mid:userName,Mpassword:userPwd};
+				// url = "kindergarden/LoginServlet?Mid="+userName+"&Mpassword="+userPwd;
+				url = "kindergarden/LoginServlet";
 			}else if (userClass=="user-teacher") {
-				// console.log("老师");
-				myjson = JSON.stringify({Tphone:userName,TWorkId:userPwd});
-				url = "kindergarden/LoginServlrtTeacher?Tphone="+userName+"&TWorkId="+userPwd;
+				userClass = 0;
+				console.log("老师");
+				// myjson = JSON.stringify({Tphone:userName,TWorkId:userPwd});
+				myjson = {Tphone:userName,TWorkId:userPwd};
+				// url = "kindergarden/LoginServlrtTeacher?Tphone="+userName+"&TWorkId="+userPwd;
+				url = "kindergarden/LoginServlrtTeacher";
 			};
-
 			console.log(userName);
 			console.log(userPwd);
 			console.log(myjson);
@@ -36,12 +42,12 @@ $(document).ready(function(){
 
 			if (CHECK_EMPTY==true) {
 				$.ajax({
-					type:"get",
-					// type:"post",
+					// type:"get",
+					type:"post",
 					url:"http://"+IP+url,
-					// url:"http://119.29.53.178:8080/kindergarden/LoginServlrtTeacher",
-					// data:myjson,
+					data:myjson,
 					dataType:"JSON",
+					// contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 					contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 					beforeSend:function(xhr){
 						xhr.withCredentials = true;
@@ -50,8 +56,9 @@ $(document).ready(function(){
 					success:function(data){
 						console.log(data);
 						if (data.msg == "登录成功") {
+							set_sessionStorage(userName,userClass)
 							alert(data.msg);
-							location.href = "首页.html";
+							window.location.href = "首页.html";
 						}else if (data.msg == "密码错误") {
 							alert(data.msg);
 						}else if (data.msg == "用户为空") {
@@ -67,7 +74,7 @@ $(document).ready(function(){
 			};
 
 			/*判断输入值是否为空*/
-			function CheckEmpty(){				
+			function CheckEmpty(){			
 				var Uer_num=document.getElementById("username");
 				var Uer_pwd=document.getElementById("userpassword");
 				var radios_check=false;
@@ -83,5 +90,12 @@ $(document).ready(function(){
 				}
 			}
 
+			// sessionStorage
+			function set_sessionStorage(ID,kind){
+				sessionStorage.setItem("user",ID);
+				sessionStorage.setItem("nub",kind);
+				console.log(sessionStorage.getItem("user"));
+				console.log(sessionStorage.getItem("nub"));
+			}
 		})
 })

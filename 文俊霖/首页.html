@@ -20,6 +20,7 @@
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="css/Mystyle.css?v=4.1.0" rel="stylesheet">
   </head>
 
   <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -32,15 +33,15 @@
           <ul class="nav" id="side-menu">
             <li class="nav-header">
               <div class="dropdown profile-element">
-                <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span>
+                <span class="img-box"><img alt="image" class="img-circle" src="img/avatar.jpeg" /></span>
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                   <span class="clear">
-                  <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
-                  <span class="text-muted text-xs block">超级管理员</span>
+                  <span class="block m-t-xs"><strong id="username" class="font-bold"></strong></span>
+                  <span id="usertype" class="text-muted text-xs block">超级管理员</span>
                   </span>
                 </a>
               </div>
-              <div class="logo-element">H+
+              <div class="logo-element">
               </div>
             </li>
             <li>
@@ -56,7 +57,7 @@
               </a>
             </li>
             <li>
-              <a class="J_menuItem" href="mailbox.html">
+              <a class="J_menuItem" href="班级课表管理.html">
                 <i class="fa fa-edit"></i> 
                 <span class="nav-label">班级课表管理</span>
               </a>
@@ -106,16 +107,10 @@
       <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
           <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <!-- <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-              <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                <div class="form-group">
-                  <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
-                </div>
-              </form>
-            </div> -->
+            <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            </div>
           </nav>
         </div>
-
         <!-- 页面顶部的导航 -->
         <div class="row content-tabs">
           <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
@@ -168,6 +163,7 @@
     <!-- 自定义js -->
     <script src="js/hplus.js?v=4.1.0"></script>
     <script type="text/javascript" src="js/contabs.js"></script>
+    <script src="js/Myjs.js"></script>
 
     <!-- 第三方插件 -->
     <script src="js/plugins/pace/pace.min.js"></script>

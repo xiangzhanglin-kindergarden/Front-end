@@ -1,3 +1,8 @@
+.dropdown img:first-child{
+	width: 70px;
+	height: 70px;
+}
+
 /*
  *
  *   登录界面 样式
@@ -56,15 +61,18 @@
 
 
 
+
+
+
 /*
  *
  *   资讯管理 样式
  *   
  *
 */
-tr{
+/*tr{
 	display: none
-}
+}*/
 
 .self-btn-mg{
     margin-bottom: 20px;
@@ -173,6 +181,89 @@ color: #000;
 #write-nub:-ms-input-placeholder { /* Internet Explorer 10+ */ 
 color: #000; 
 } 
+
+
+
+/*
+ *
+ *   班级课表管理 样式
+ *   
+ *
+*/
+.class-mg{
+	/*margin-top: 30px;*/
+}
+.class-table{
+	table-layout:fixed;
+	cursor: default;
+}
+
+.class-table td:not(.class-time):hover{
+	background: rgb(245,245,245);
+}
+.class-table th,td{
+	text-align: center;
+	width: 16.67%;
+}
+.class-table th{
+	height: 50px;
+	font-size: 20px;
+}
+.class-table td{
+	height: 150px;
+	font-size: 25px;
+}
+.class-end{
+	background: rgb(245,245,245);
+}
+.class-change-input{
+	width: 100%;
+	/*border: 0px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -16,7 +16,7 @@
   <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css?v=4.1.0" rel="stylesheet">
-  <link href="css/Mystyle.css?v=1.0.0" rel="stylesheet">
+  <link href="css/news.css?v=1.0.0" rel="stylesheet">
 
 </head>
 
@@ -25,6 +25,7 @@
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 animated fadeInRight">
         <div class="mail-box-header">
+
           <!-- 搜索栏 -->
           <form method="get" action="index.html" class="pull-right mail-search">
             <div class="input-group">
@@ -36,217 +37,225 @@
               </div>
             </div>
           </form>
+          <!-- 搜索栏 END -->
           
+
+          <!-- 发布新闻、公告按钮 -->
           <button id="push-news" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 发布新闻</button>
           <button id="push-notice" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-upload"></i> 发布公告</button>
-          <div class="mail-tools tooltip-demo m-t-md">
-            <button id="news-allBtn" class="btn btn-white btn-sm label-primary" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-ok"></i> 全选</button>
-            <button id="news-delBtn" class="btn btn-white btn-sm label-danger" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-remove"></i> 删除</button>
+          <!-- 发布新闻、公告按钮 END -->
 
-            <!-- 分页按钮 -->
-            <div class="btn-group pull-right self-btn-mg">
-              <button id="previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+
+          <!-- 分类查找选项卡  -->
+            <!-- 教师可看的分类查找选项卡 -->
+          <div class="c-function-box c-f-b-teacher">
+            <div class="btn-group">
+              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle"> <span class="caret"></span>
               </button>
-              <button id="next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
-              </button>
-              <input id="write-nub" class="form-control input-sm" type="text" placeholder="页数">
+              <ul class="dropdown-menu">
+                <li><a href="##" class="font-bold">所有内容</a>
+                </li>
+                <li class="divider m-divider"></li>
+                <li><a href="##"><i class="fa fa-circle text-info"></i>我的公告</a>
+                <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
+                <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
+                <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
+                <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
+                </li>
+              </ul>
             </div>
-            
           </div>
-        </div>
-        <div class="mail-box">
+            <!-- 教师可看的分类查找选项卡 END -->
 
-          <table class="table table-hover table-mail">
+            <!-- 校长可看的分类查找选项卡 -->
+          <div class="c-function-box c-f-b-schoolmaster">
+            <div class="btn-group">
+              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle"> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="##" class="font-bold">所有内容</a>
+                  <ul>
+                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="divider m-divider"></li>
+                <li>
+                  <a href="##">公告</a>
+                  <ul>
+                    <li><a href="##"><i class="fa fa-circle text-info"></i>我的公告</a>
+                    <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
+                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="##">新闻</a>
+                  <ul>
+                    <li><a href="##"><i class="fa fa-circle text-info"></i>我的新闻</a>
+                    <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
+                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
+                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+            <!-- 校长可看的分类查找选项卡 END -->
+          <!-- 分类查找选项卡 END -->
+
+        </div>
+
+        <div class="mail-box c-content-box">
+          <table class="table table-hover table-mail m-table">
+            <thead>
+              <tr>
+                <th class="check-mail text-center"></th>
+                <th class="c-normal-w c-t-p-lg">发布者</th>
+                <th class="c-title-w c-p">文章标题</th>
+                <th class="c-photo-w text-center"></th>
+                <th class="c-normal-w text-center">类型</th>
+                <th class="c-normal-w text-center">级别</th>
+                <th class="c-normal-w text-center">文章状态</th>
+                <th class="text-right mail-date">发布时间</th>
+              </tr>
+            </thead>
             <tbody>
               <tr class="read">
                 <td class="check-mail">
                   <input type="checkbox" class="i-checks">
                 </td>
-                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
+                <td class="c-nub"><span>1</span></td>
+                <td class="c-name-w c-c-p-lg">
+                  <a class="c-t-name" href="##">老师A</a>
                 </td>
-                <td class="mail-subject"><a href="mail_detail.html">1</a>
+                <td class="c-title-w">
+                  <a href="mail_detail.html">文章A</a></td>
+                <td class="c-photo-w">
+                  <i class="fa fa-paperclip"></i>
                 </td>
-                <td class=""><i class="fa fa-paperclip"></i>
+                <td class="c-normal-w text-center">
+                  <a class="c-news-a" href="##">新闻</a>
                 </td>
-                <td class="text-right mail-date">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks" checked>
+                <td class="c-normal-w text-center">
+                  <a class="c-school-a" href="##">校级</a>
                 </td>
-                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
+                <td class="c-normal-w text-center">
+                  <span class="label label-warning c-unpass">未通过</span>
                 </td>
-                <td class="mail-subject"><a href="mail_detail.html">2</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午10:57</td>
+                <td class="text-right mail-date c-time">昨天 10:20</td>
               </tr>
               <tr class="read">
                 <td class="check-mail">
                   <input type="checkbox" class="i-checks">
                 </td>
-                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
+                <td class="c-nub"><span>2</span></td>
+                <td class="c-name-w c-c-p-lg">
+                  <a class="c-t-name" href="##">老师A</a>
+                </td>
+                <td class="c-title-w">
+                  <a href="mail_detail.html">文章B</a></td>
+                <td class="c-photo-w">
+                  <i class="fa fa-paperclip"></i>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-news-a" href="##">新闻</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-school-a" href="##">校级</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <span class="label label-success c-wait">待审核</span>
+                </td>
+                <td class="text-right mail-date c-time">昨天 10:20</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="c-nub"><span>3</span></td>
+                <td class="c-name-w c-c-p-lg">
+                  <a class="c-t-name" href="##">老师A</a>
+                </td>
+                <td class="c-title-w">
+                  <a href="mail_detail.html">文章D</a></td>
+                <td class="c-photo-w">
+                  <i class="fa fa-paperclip"></i>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-notice-a" href="##">公告</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-class-a" href="##">班级</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <span class="label label-white c-draft">草稿</span>
+                </td>
+                <td class="text-right mail-date c-time">昨天 10:20</td>
+              </tr>
+              <tr class="read">
+                <td class="check-mail">
+                  <input type="checkbox" class="i-checks">
+                </td>
+                <td class="c-nub"><span>4</span></td>
+                <td class="c-name-w c-c-p-lg">
+                  <a class="c-t-name" href="##">老师A</a>
+                </td>
+                <td class="c-title-w">
+                  <a href="mail_detail.html">文章C</a></td>
+                <td class="c-photo-w">
+                  <i class="fa fa-paperclip"></i>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-news-a" href="##">公告</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <a class="c-school-a" href="##">校级</a>
+                </td>
+                <td class="c-normal-w text-center">
+                  <span class="label label-primary c-pass">已通过</span>
+                </td>
+                <td class="text-right mail-date c-time">昨天 10:20</td>
+              </tr>
+              
 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">3</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午9:21</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">4</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">中午12:24</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">5</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">上午6:48</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">6</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">7</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午10:57</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">8</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午9:21</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">9</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">中午12:24</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">10</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">上午6:48</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">支付宝</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">11</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">Amaze UI</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">12</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午10:57</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">WordPress</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">13</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">上午9:21</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a>
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">14</a>
-                </td>
-                <td class=""></td>
-                <td class="text-right mail-date">中午12:24</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">15</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">上午6:48</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="mail-ontact"><a href="mail_detail.html">淘宝网</a> 
-                </td>
-                <td class="mail-subject"><a href="mail_detail.html">16</a>
-                </td>
-                <td class=""><i class="fa fa-paperclip"></i>
-                </td>
-                <td class="text-right mail-date">上午6:48</td>
-              </tr>
             </tbody>
           </table>
-
-
         </div>
+
+          <!-- 底部功能按钮 -->
+        <div class="mail-tools tooltip-demo news-f-b-box">
+          <button id="news-allBtn" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-ok"></i> 全选</button>
+          <button id="news-delBtn" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-remove"></i> 删除</button>
+          <div class="review-box">
+            <div id="news-passBtn">
+              <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="left"><i class="fa fa-star"></i> 通过审核</button>
+            </div>
+            <div id="news-unpassBtn">
+              <button id="news-unpassBtn" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="left"><i class="fa fa-star-o"></i> 未通过审核</button>
+            </div>
+          </div>
+
+          <!-- 分页按钮 -->
+          <div class="btn-group pull-right page-btn-box">
+            <button id="previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+            </button>
+            <button id="next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+            </button>
+            <input id="write-nub" class="form-control input-sm" type="text" placeholder="页数">
+          </div>
+        </div>
+          <!-- 底部功能按钮 END -->
+          
+
         <div class="write-box">
           <div class="col-sm-8 col-sm-offset-2 notice-bg">
             <div class="notice-bg-pd">
@@ -272,9 +281,41 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
+
+  <!-- 再次确认 -->
+  <div class="news-second-ensure-box">
+    <div class="show-chose">
+      <div class="show-title">你选择的内容是：</div>
+      <div class="show-box">
+        <table class="table table-mail m-table">
+          <thead>
+            <tr>
+              <th class="c-normal-w">编号</th>
+              <th class="c-normal-w3">发布者</th>
+              <th class="">文章标题</th>
+              <th class="c-normal-w">类型</th>
+              <th class="c-normal-w">级别</th>
+              <th class="c-normal-w2">文章状态</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="show-notice"></div>
+    <div class="ensure-btn">
+      <span id="s-no" class="glyphicon glyphicon-remove-sign"></span>
+      <span id="s-ok" class="glyphicon glyphicon-ok-sign"></span>
+    </div>
+  </div>
+  <div class="cover"></div>
+  <!-- 再次确认 END -->
+
 
 
   <!-- 全局js -->
@@ -285,7 +326,7 @@
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
-  <script src="js/Myjs.js?v=1.0.0"></script>
+  <script src="js/news.js?v=1.0.0"></script>
 
 
   <!-- iCheck -->
@@ -298,9 +339,6 @@
       });
     });
   </script>
-
-  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-  <!--统计代码，可删除-->
 
   
   <!-- Ueditor -->
