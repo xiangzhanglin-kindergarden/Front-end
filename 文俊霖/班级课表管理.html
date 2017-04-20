@@ -29,14 +29,25 @@
           <button id="change-class" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 修改课表</button>
           <button id="change-class-yes" class="btn btn-primary btn-sm myHidden" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 确定</button>
           <button id="change-class-no" class="btn btn-warning btn-sm myHidden" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-upload"></i> 取消</button>
-          
+          <div class="differ-class-box">
+            <span>班级：</span><select name="class">
+              <option value="大一班">大一班</option>
+              <option value="大二班">大二班</option>
+              <option value="中一班">中一班</option>
+              <option value="小一班">小一班</option>
+            </select>
+
+            学年：<select name="year"></select>
+
+            第<select name="week" height="50px"></select>周
+          </div>
           
         </div>
         <div class="mail-box">
 
           <table class="table table-bordered class-table">
             <thead>
-              <tr class="">
+              <tr>
                 <th>时间</th>
                 <th>周一</th>
                 <th>周二</th>
@@ -48,7 +59,7 @@
             <tbody>
               <tr>
                 <td class="class-time">上午9:00~9:45</td>
-                <td class="class-end">算数1</td>
+                <td>算数1</td>
                 <td>儿歌</td>
                 <td>识字</td>
                 <td>音乐</td>
@@ -80,12 +91,85 @@
               </tr>
             </tbody>
           </table>
-
-
         </div>
       </div>
     </div>
   </div>
+
+
+  <!-- 新建课表 START -->
+
+  <div class="cover"></div>
+  <div class="new-class">
+    <div class="function-box">
+      <span>班级：</span><select name="class">
+        <option value="大一班">大一班</option>
+        <option value="大二班">大二班</option>
+        <option value="中一班">中一班</option>
+        <option value="小一班">小一班</option>
+      </select>
+
+      学年：<select name="year"></select>
+
+      第<select name="week" height="50px"></select>周
+      <div class="close-btn" onclick="close_new_class()">
+        <span class="glyphicon glyphicon-remove-sign"></span>
+      </div>
+    </div>
+    <div class="new-box">
+      <table class="table table-bordered new-table">
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+            <th>周五</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="class-time">上午9:00~9:45</td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+          <tr>
+            <td class="class-time">上午10:00~10:45</td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+          <tr>
+            <td class="class-time">下午2:00~2:45</td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+          <tr>
+            <td class="class-time">下午3:00~3:45</td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ok-btn">
+      <button id="new-ok-btn" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 确定</button>
+    </div>
+  </div>
+
+  <!-- 新建课表 END -->
 
 
   <!-- 全局js -->
@@ -96,7 +180,7 @@
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
-  <script src="js/Myjs.js?v=1.0.0"></script>
+  <script src="js/class.js?v=1.0.0"></script>
   <script src="js/classAJAX.js?v=1.0.0"></script>
 
 
