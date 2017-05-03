@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>学生信息管理</title>
+
+    <link rel="shortcut icon" href="img/title.png"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <style>
+        /* Additional style to fix warning dialog position */
+
+        #alertmod_table_list_2 {
+            top: 200px !important;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>学生信息管理</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="jqGrid_wrapper">
+                            <table id="table_list_2"></table>
+                            <div id="pager_list_2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="js/content.js?v=1.0.0"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function () {
+
+            $.jgrid.defaults.styleUI = 'Bootstrap';
+
+            // Configuration for jqGrid Example 2
+            $("#table_list_2").jqGrid({
+                url: "js/customJs/data.json",//地址
+                datatype: "json",
+                mtype: "POST",
+                loadonce: true,
+                gridview: true, //加速显示
+                sortname: 'id',  //排序字段名
+                sortorder: "asc",//排序方式：正序
+                height: 525,
+                autowidth: true,
+                shrinkToFit: true,
+                rowNum: 15,
+                rowList: [10, 15, 20, 25],
+                colNames: [],
+                colModel: [
+
+                ],
+                pager: "#pager_list_2",
+                viewrecords: true,
+                caption: "重邮幼儿园学生信息",
+                add: true,
+                edit: true,
+                addtext: 'Add',
+                edittext: 'Edit',
+                hidegrid: false
+            });
+
+            // Add selection
+            $("#table_list_2").setSelection(1, true);
+
+
+            // Setup buttons
+            $("#table_list_2").jqGrid('navGrid', '#pager_list_2', {
+                edit: true,
+                add: true,
+                del: true,
+                search: true
+            }, {
+                height: 200,
+                reloadAfterSubmit: true
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
