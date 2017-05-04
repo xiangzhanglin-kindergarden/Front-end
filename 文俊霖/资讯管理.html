@@ -138,7 +138,7 @@
                   <a class="c-t-name" href="##">老师A</a>
                 </td>
                 <td class="c-title-w">
-                  <a href="mail_detail.html">文章A</a></td>
+                  <a href="资讯详情.html">文章A</a></td>
                 <td class="c-photo-w">
                   <i class="fa fa-paperclip"></i>
                 </td>
@@ -162,7 +162,7 @@
                   <a class="c-t-name" href="##">老师A</a>
                 </td>
                 <td class="c-title-w">
-                  <a href="mail_detail.html">文章B</a></td>
+                  <a href="资讯详情.html">文章B</a></td>
                 <td class="c-photo-w">
                   <i class="fa fa-paperclip"></i>
                 </td>
@@ -186,7 +186,7 @@
                   <a class="c-t-name" href="##">老师A</a>
                 </td>
                 <td class="c-title-w">
-                  <a href="mail_detail.html">文章D</a></td>
+                  <a href="资讯详情.html">文章D</a></td>
                 <td class="c-photo-w">
                   <i class="fa fa-paperclip"></i>
                 </td>
@@ -210,7 +210,7 @@
                   <a class="c-t-name" href="##">老师A</a>
                 </td>
                 <td class="c-title-w">
-                  <a href="mail_detail.html">文章C</a></td>
+                  <a href="资讯详情.html">文章C</a></td>
                 <td class="c-photo-w">
                   <i class="fa fa-paperclip"></i>
                 </td>
@@ -256,21 +256,25 @@
           <!-- 底部功能按钮 END -->
           
 
+          <!-- 富文本框 -->
         <div class="write-box">
           <div class="col-sm-8 col-sm-offset-2 notice-bg">
             <div class="notice-bg-pd">
-              <form class="form-horizontal" method="get">
+              <!-- <form class="form-horizontal" method="get"> -->
                 <div id="title" class="form-group">
                   <div class="tag-box"><b>标题:</b></div>
-                  <div class="col-sm-10"><input class="form-control" type="text" placeholder="请写下文章标题"></div>
+                  <div class="col-sm-10"><input class="form-control" type="text/plain" placeholder="请写下文章标题"></div>
                 </div>
-              </form>
+              <!-- </form> -->
 
               <!-- 加载编辑器的容器 -->
               <div id="write-box" class="col-sm-12">
-                <script id="container" name="content" type="text/plain">
-                  这里写你的初始化内容
-                </script>
+                <form action="" method="post">
+                  <script id="container" name="content" type="text/plain">
+                    
+                  </script>
+                </form>
+                
               </div>
 
               <div class="write-btn">
@@ -327,6 +331,7 @@
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
   <script src="js/news.js?v=1.0.0"></script>
+  <script src="js/newsAJAX.js?v=1.0.0"></script>
 
 
   <!-- iCheck -->
@@ -344,6 +349,8 @@
   <!-- Ueditor -->
   <!-- 配置文件 -->
   <script type="text/javascript" src="js/plugins/ueditor/ueditor.config.js?v=1.4.3.3"></script>
+
+
   <!-- 编辑器源码文件 -->
   <script type="text/javascript" src="js/plugins/ueditor/ueditor.all.js?v=1.4.3.3"></script>
   <!-- 实例化编辑器 -->
@@ -371,10 +378,12 @@
             'justifycenter', //居中对齐
             'justifyjustify','|', //两端对齐
             'simpleupload', //单图上传
+            'insertvideo' //视频上传
           ]
         ],
 
       });
+
   </script>
 
 </body>

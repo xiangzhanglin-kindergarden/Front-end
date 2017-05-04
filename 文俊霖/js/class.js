@@ -161,26 +161,6 @@ $(function(){
 	getClassDate(week);
 })
 
-//增加学年并获取学年
-$(function(){
-	var date = new Date();
-	var year = date.getFullYear();
-	var month = date.getUTCMonth();
-	++month;
-	if (month<=8) {
-		var newyear = year-1;
-		var noselect = $("<option>"+newyear+"-"+year+"上</option>")
-		var select = $("<option selected>"+newyear+"-"+year+"下</option>")
-		$("[name='year']").append(noselect);
-		$("[name='year']").append(select);
-	}else{
-		var newyear = year+1;
-		var select = $("<option selected>"+year+"-"+newyear+"上</option>")
-		var noselect = $("<option>"+year+"-"+newyear+"下</option>")
-		$("[name='year']").append(select);
-		$("[name='year']").append(noselect);
-	}
-})
 
 // 取得某一周的时间并写到table里面
 function getClassDate(week){

@@ -21,57 +21,38 @@ $(document).ready(function(){
 	var cClass = $(".differ-class-box [name='class'] option:selected").val();
 	var year = $(".differ-class-box [name='year'] option:selected").val();
 	var week = $(".differ-class-box [name='week'] option:selected").val();
-
+	week=17;
 	console.log(cClass);
 	console.log(year);
 	console.log(week);
-
-	var mydata = new Array();
-	// mydata[0] = '{"l_id":null}';
-	// mydata[1] = '{"l_term":year}';
-	// mydata[2] = '{"l_week":week}';
-	// mydata[3] = '{"l_mon":null}';
-	// mydata[4] = '{"l_tur":null}';
-	// mydata[5] = '{"l_thur":null}';
-	// mydata[6] = '{"l_fri":null}';
-	// mydata[7] = '{"c_id":cClass}';
-
-	mydata[0] = null;
-	mydata[1] = year;
-	mydata[2] = week;
-	mydata[3] = null;
-	mydata[4] = null;
-	mydata[5] = null;
-	mydata[6] = null;
-	mydata[7] = cClass;
-
-	// console.log(mydata)
-	// myjson = mydata;
-	// mydata = mydata.toString();
 	
-	// console.log(mydata);
-
-
 	IP = "119.29.53.178:8080/";
 	url = "kindergarden/LessonShow";
 
-	//myjson  对象
-	// myjson = {"l_id":null,"l_term":year,"l_week":week,"l_mon":null,"l_tur":null,"l_wed":null,"l_thur":null,"l_fri":null,"c_id":cClass};
 
 	//myjson  字符串
-	// myjson = JSON.stringify(myjson);
-	
-	//myjson 数组
-	myjson = mydata;
-	
-	console.log(myjson);
-	console.log(typeof myjson);
+	myjson = {
+		lId:null,
+		cName:cClass,
+		lTerm:year,
+		lWeek:week,
+		lMon:null,
+		lTue:null,
+		lWed:null,
+		lThu:null,
+		lfri:null,
+		
+	};
+	myjson = JSON.stringify(myjson);
+
+	// console.log(myjson);
+	// console.log(typeof myjson);
 
 	$.ajax({
 		// type:"get",
 		type:"post",
 		url:"http://"+IP+url,
-		data:myjson,
+		data:"lessonJson="+myjson,
 		dataType:"JSON",
 		contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 		// contentType:"application/x-www-form-urlencoded;charset=UTF-8",
@@ -81,6 +62,33 @@ $(document).ready(function(){
 		},
 		success:function(data){
 			console.log(data);
+			if (data!=null) {
+				$(".class-table tr:eq(1) td:eq(1)").html(data.lMon[0]+data.lMon[1])
+				$(".class-table tr:eq(2) td:eq(1)").html(data.lMon[3]+data.lMon[4])
+				$(".class-table tr:eq(3) td:eq(1)").html(data.lMon[6]+data.lMon[7])
+				$(".class-table tr:eq(4) td:eq(1)").html(data.lMon[9]+data.lMon[10])
+
+				$(".class-table tr:eq(1) td:eq(2)").html(data.lTue[0]+data.lTue[1])
+				$(".class-table tr:eq(2) td:eq(2)").html(data.lTue[3]+data.lTue[4])
+				$(".class-table tr:eq(3) td:eq(2)").html(data.lTue[6]+data.lTue[7])
+				$(".class-table tr:eq(4) td:eq(2)").html(data.lTue[9]+data.lTue[10])
+
+				$(".class-table tr:eq(1) td:eq(3)").html(data.lWed[0]+data.lWed[1])
+				$(".class-table tr:eq(2) td:eq(3)").html(data.lWed[3]+data.lWed[4])
+				$(".class-table tr:eq(3) td:eq(3)").html(data.lWed[6]+data.lWed[7])
+				$(".class-table tr:eq(4) td:eq(3)").html(data.lWed[9]+data.lWed[10])
+
+				$(".class-table tr:eq(1) td:eq(4)").html(data.lThu[0]+data.lThu[1])
+				$(".class-table tr:eq(2) td:eq(4)").html(data.lThu[3]+data.lThu[4])
+				$(".class-table tr:eq(3) td:eq(4)").html(data.lThu[6]+data.lThu[7])
+				$(".class-table tr:eq(4) td:eq(4)").html(data.lThu[9]+data.lThu[10])
+
+				$(".class-table tr:eq(1) td:eq(5)").html(data.lfri[0]+data.lfri[1])
+				$(".class-table tr:eq(2) td:eq(5)").html(data.lfri[3]+data.lfri[4])
+				$(".class-table tr:eq(3) td:eq(5)").html(data.lfri[6]+data.lfri[7])
+				$(".class-table tr:eq(4) td:eq(5)").html(data.lfri[9]+data.lfri[10])
+			};
+			
 		},
 		error:function(jqHXR){
 			console.log("错误:"+jqHXR.status);

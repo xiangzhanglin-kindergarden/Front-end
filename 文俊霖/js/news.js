@@ -297,7 +297,7 @@ $(function(){
 			$(".write-box").animate({"opacity":0},function(){
 				$(".tag-chosed").removeClass("tag-chosed");
 				$(".write-box").addClass("myHidden");
-				$("#div1").html("<p>请输入内容...</p>");
+				window.location.reload();
 			});
 		});
 })
@@ -316,28 +316,6 @@ $(function(){
 })
 
 
-// 发布按钮的功能
-
-$(function(){
-	$("#content-submit").bind(
-		"click",
-		function(){
-			var $title = $("#title input").val();
-			if ($title == "") {
-				alert("标题不能为空");
-			}
-			else{
-				var $type = $(".tag-chosed").prop("id");
-				alert($type);
-				// alert(nowData());
-				// $(".tag-chosed").removeClass("tag-chosed");
-				// $(".write-box").addClass("myHidden");
-				// $("#div1").html("<p>请输入内容...</p>");
-				window.location.reload()
-			}
-			
-	})
-})
 
 /*    发布新公告或者新闻  END   */
 /*****************************************/
