@@ -205,6 +205,8 @@ function addSubmit() {
     var classNameT = className.substring(0,1),
         classNameC = className.substring(1);
     var cName = classNameT+","+classNameC;
+    console.log(theBoxInput);
+    console.log(theBoxSelect);
 
     values = {
         cId: cName,
@@ -213,13 +215,12 @@ function addSubmit() {
         tPhone: theBoxInput[1].value,
         tSex: theBoxSelect[1].value,
         tgrade: theBoxSelect[0].value,
-        tWorkId: "123456"
+        tWorkId: theBoxInput[2].value
     };
 
     $.ajax({
         type:"post",
         url:"http://119.29.53.178:8080/kindergarden/Teacheradd",
-        // dataType:"JSON",
         data:"TeacherJson="+JSON.stringify(values),
         contentType:"application/x-www-form-urlencoded;charset=utf-8",
         beforeSend: function (xhr) {
@@ -234,6 +235,7 @@ function addSubmit() {
             window.location.reload();
         },
         error: function (err) {
+            alert("出现错误："+err.status)
             console.log(err.status);
         }
     });

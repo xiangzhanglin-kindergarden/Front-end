@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
 
-    var getrow=document.cookie;
+    var getrow=window.sessionStorage? sessionStorage.getItem("row"): document.cookie.read("row");
     function clearCookie(){//清除cookie
         var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
         if (keys) {
@@ -13,7 +13,14 @@ $(document).ready(function () {
     }
     console.log(getrow);
 
-    var rows = getrow.split("=")[1].split(",");
+    var rows;
+    if (getrow.split("=") != "-1"){
+        rows = getrow.split(",");
+        console.log(getrow);
+    }else {
+        rows = getrow.split("=")[1].split(",");
+        console.log(getrow);
+    }
 
     var rowId = rows[0];
     var spans = $(".content").find(".everyContent").find("span");

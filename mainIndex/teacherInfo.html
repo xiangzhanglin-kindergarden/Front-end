@@ -94,7 +94,7 @@
                     row[i].tSex = data[i].tSex;
                     row[i].tClass = data[i].cId;
                     row[i].tTell = data[i].tPhone;
-                    row[i].tPassword = "123456";
+                    row[i].tPassword = data[i].tWorkId;
                 }
 
                 $.jgrid.defaults.styleUI = 'Bootstrap';
@@ -111,7 +111,7 @@
                     autowidth: true,
                     shrinkToFit: true,
                     rowNum: 12,
-                    colNames: ["序号","教师ID","教师姓名",'职位',"性别","任课班级","联系方式","登陆密码"],
+                    colNames: ["序号","教师ID","教师姓名",'职位',"性别","任课班级","联系方式/用户名","工号/登陆密码"],
                     colModel: [
                         {name: 'id', index: 'id', width:30, sortable: true, sortorder: "asc"},
                         {name: 'tId', index: 'tId', hidden:true, width: 40},
@@ -192,6 +192,7 @@
                 });
             },
             error: function (err) {
+                alert("出现错误："+err.status);
                 console.log(err.status);
             }
         });

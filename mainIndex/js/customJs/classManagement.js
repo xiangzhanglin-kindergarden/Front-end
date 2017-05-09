@@ -47,7 +47,12 @@ function classManagenment(data) {
                 var rows = classData[index];
                 console.log(rows);
                 var theRow = rows.cId + "," + rows.cName + "," + rows.tTeacher;
-                document.cookie = "row="+theRow;
+                if (window.sessionStorage) {
+                    sessionStorage.setItem("row", theRow);
+                } else {
+                    document.Cookie.write("row", theRow);
+                }
+                // document.cookie = "row="+theRow;
                 window.location.href = "classDetails.html";
             }
         }
@@ -63,6 +68,7 @@ function classManagenment(data) {
     }
     function upgradeTheClass() {
         console.log("upgrade");
+        
     }
     function delTheClass() {
         var delId = data[index-1].cId;
