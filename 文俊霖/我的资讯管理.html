@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 
-  <title>资讯管理(</title>
+  <title>资讯管理</title>
   <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
   <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
@@ -16,7 +16,8 @@
   <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css?v=4.1.0" rel="stylesheet">
-  <link href="css/news.css?v=1.0.0" rel="stylesheet">
+
+  <link href="css/customCss/news.css?v=1.0.0" rel="stylesheet">
 
 </head>
 
@@ -26,95 +27,69 @@
       <div class="col-sm-10 col-sm-offset-1 animated fadeInRight">
         <div class="mail-box-header">
 
+          <!-- 全校所有新闻公告、我的新闻公告 -->
+            <div class="news-sort-btn">
+              <a href="全校资讯管理.html"><div class="n-s-all-btn">全校所有新闻公告</div></a>
+              <div class="n-s-my-btn n-s-c">我的新闻公告</div>
+            </div>
+          <!-- 全校所有新闻公告、我的新闻公告 END -->
+
+
           <!-- 搜索栏 -->
-          <form method="get" action="index.html" class="pull-right mail-search">
-            <div class="input-group">
-              <input type="text" class="form-control input-sm" name="search" placeholder="搜索邮件标题，正文等">
-              <div class="input-group-btn">
-                <button type="submit" class="btn btn-sm btn-primary">
-                    搜索
+            <div class="news-index">
+              <div class="n-i-searchword-box">
+                <div class="n-i-box n-i-keyword">
+                  关键字：<input type="text">
+                </div>
+                <div class="n-i-box n-i-time">
+                  发布时间：<input type="text">
+                </div>
+              </div>
+              
+              <div class="news-search">
+                <button class="btn btn-success">
+                  <i class="fa fa-search"></i>  
+                  <span class="bold">搜索</span>
                 </button>
               </div>
-            </div>
-          </form>
+            </div>          
           <!-- 搜索栏 END -->
-          
-
-          <!-- 发布新闻、公告按钮 -->
-          <button id="push-news" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 发布新闻</button>
-          <button id="push-notice" class="btn btn-white btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-upload"></i> 发布公告</button>
-          <!-- 发布新闻、公告按钮 END -->
 
 
-          <!-- 分类查找选项卡  -->
-            <!-- 教师可看的分类查找选项卡 -->
-          <div class="c-function-box c-f-b-teacher">
-            <div class="btn-group">
-              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle"> <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="##" class="font-bold">所有内容</a>
-                </li>
-                <li class="divider m-divider"></li>
-                <li><a href="##"><i class="fa fa-circle text-info"></i>我的公告</a>
-                <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
-                <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
-                <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
-                <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-            <!-- 教师可看的分类查找选项卡 END -->
+          <!-- 审核状态栏 -->
+            <div class="news-status">
+              <span class="n-s-title">审核状态：</span>
+              <span id="n-s-all" class="n-s-chosed">全部</span>
+              <span>待审核</span>
+              <span>通过</span>
+              <span>未通过</span>
+            </div>          
+          <!-- 审核状态栏 END -->
 
-            <!-- 校长可看的分类查找选项卡 -->
-          <div class="c-function-box c-f-b-schoolmaster">
-            <div class="btn-group">
-              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle"> <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="##" class="font-bold">所有内容</a>
-                  <ul>
-                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="divider m-divider"></li>
-                <li>
-                  <a href="##">公告</a>
-                  <ul>
-                    <li><a href="##"><i class="fa fa-circle text-info"></i>我的公告</a>
-                    <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
-                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="##">新闻</a>
-                  <ul>
-                    <li><a href="##"><i class="fa fa-circle text-info"></i>我的新闻</a>
-                    <li><a href="##"><i class="fa fa-circle text-gray"></i>我的草稿</a>
-                    <li><a href="##"><i class="fa fa-circle text-navy"></i>已通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-warning"></i>未通过</a>
-                    <li><a href="##"><i class="fa fa-circle text-success"></i>待审核</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              
-            </div>
-          </div>
-            <!-- 校长可看的分类查找选项卡 END -->
-          <!-- 分类查找选项卡 END -->
 
         </div>
 
         <div class="mail-box c-content-box">
+          <div class="news-nchange-btn-box">
+            <div class="news-nchange-btn">
+              <button class="btn btn-info">全部</button>
+              <button class="btn btn-white">新闻</button>
+              <button class="btn btn-white">公告</button>
+              <button class="btn btn-white">我的草稿</button>
+            </div>
+            
+            <div class="btn-group news-newpage-btn">
+              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle">新增 <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="新建新闻.html">新增新闻</a>
+                </li>
+                <li><a href="新建公告.html">新增公告</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <table class="table table-hover table-mail m-table">
             <thead>
               <tr>
@@ -254,37 +229,6 @@
           </div>
         </div>
           <!-- 底部功能按钮 END -->
-          
-
-          <!-- 富文本框 -->
-        <div class="write-box">
-          <div class="col-sm-8 col-sm-offset-2 notice-bg">
-            <div class="notice-bg-pd">
-              <!-- <form class="form-horizontal" method="get"> -->
-                <div id="title" class="form-group">
-                  <div class="tag-box"><b>标题:</b></div>
-                  <div class="col-sm-10"><input class="form-control" type="text/plain" placeholder="请写下文章标题"></div>
-                </div>
-              <!-- </form> -->
-
-              <!-- 加载编辑器的容器 -->
-              <div id="write-box" class="col-sm-12">
-                <form action="" method="post">
-                  <script id="container" name="content" type="text/plain">
-                    
-                  </script>
-                </form>
-                
-              </div>
-
-              <div class="write-btn">
-                <button id="content-submit"  class="btn btn-white btn-sm label-primary" data-toggle="tooltip" data-placement="left"><i class="fa fa-reply"></i> 发布</button>
-                <button id="tag-del" class="btn btn-white btn-sm label-danger" data-toggle="tooltip" data-placement="left"><i class="  glyphicon glyphicon-remove"></i> 取消</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -330,8 +274,8 @@
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
-  <script src="js/news.js?v=1.0.0"></script>
-  <script src="js/newsAJAX.js?v=1.0.0"></script>
+  <script src="js/coustomJs/news.js?v=1.0.0"></script>
+  <script src="js/coustomJs/newsAJAX.js?v=1.0.0"></script>
 
 
   <!-- iCheck -->
@@ -346,46 +290,6 @@
   </script>
 
   
-  <!-- Ueditor -->
-  <!-- 配置文件 -->
-  <script type="text/javascript" src="js/plugins/ueditor/ueditor.config.js?v=1.4.3.3"></script>
-
-
-  <!-- 编辑器源码文件 -->
-  <script type="text/javascript" src="js/plugins/ueditor/ueditor.all.js?v=1.4.3.3"></script>
-  <!-- 实例化编辑器 -->
-  <script type="text/javascript">
-      var ue = UE.getEditor('container',{
-        initialFrameHeight: 300,
-        toolbars: [
-          [
-            'undo', //撤销
-            'redo','|', //重做
-            'bold', //加粗
-            'italic', //斜体
-            'underline', //下划线
-            'fontborder', //字符边框
-            'strikethrough','|', //删除线
-            'forecolor', //字体颜色
-            'backcolor', //背景色
-            'insertorderedlist', //有序列表
-            'insertunorderedlist','|', //无序列表
-            'paragraph', //段落格式
-            'fontfamily', //字体
-            'fontsize','|', //字号
-            'justifyleft', //居左对齐
-            'justifyright', //居右对齐
-            'justifycenter', //居中对齐
-            'justifyjustify','|', //两端对齐
-            'simpleupload', //单图上传
-            'insertvideo' //视频上传
-          ]
-        ],
-
-      });
-
-  </script>
-
 </body>
 
 </html>

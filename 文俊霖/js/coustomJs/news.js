@@ -5,20 +5,97 @@
  *
 */
 
-// 获取用户名和用户类型
-$(function(){
-	var c_usertype = sessionStorage.getItem("nub");
-	console.log(c_usertype);
-	if (c_usertype==0) {
-		$(".c-f-b-schoolmaster").remove();
-		$("#push-news").remove();
-		$(".review-box").remove();
-	}else if (c_usertype==1) {
-		$(".c-f-b-teacher").remove();
-	}else if(c_usertype==null){
-		console.log("没有账号");
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   选择审核状态  START*/
+
+	$(function(){
+		$(".news-status span").bind("click",function(){
+			var tID = $(this).attr("id");
+			var tClass = $(this).attr("class");
+			console.log(tID);
+			if (tID == "n-s-all") {
+				$(".news-status span").removeClass("n-s-chosed");
+				$(this).addClass("n-s-chosed");
+			}else if(tID == null || tID=="" || tID=="undefined") {
+				if (tClass == "n-s-chosed") {
+					$(this).removeClass("n-s-chosed");
+					var nub = 0;
+					$(".news-status span").each(function(){
+						var tclass2 = $(this).attr("class");
+						console.log(tclass2);
+						if (tclass2 == "n-s-chosed") {
+							nub +=1;
+						};
+					})
+					if (nub == 0) {
+						$("#n-s-all").addClass("n-s-chosed");
+					};
+				}else{
+					$("#n-s-all").removeClass("n-s-chosed");
+					$(this).addClass("n-s-chosed");	
+				}
+			};
+
+			newsStatusAjax();
+		})
+	})
+
+	/*  审核状态AJAX   */
+	function newsStatusAjax(){
+
 	}
+
+
+
+/*    选择审核状态  END*/
+/*****************************************/
+
+
+
+
+
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   分类按钮  START*/
+
+	$(function(){
+		$(".news-nchange-btn button").bind("click",function(){
+			if ($(this).hasClass("btn-info")) {
+
+			}else{
+				$(".news-nchange-btn button").addClass("btn-white");
+				$(".news-nchange-btn button").removeClass("btn-info");
+				$(this).removeClass("btn-white");
+				$(this).addClass("btn-info");
+			}
+
+			newsKindAjax();
+		})
+	})
+
+	/*  审核状态AJAX   */
+	function newsKindAjax(){
+
+	}
+
+
+
+/*    分类按钮  END*/
+/*****************************************/
+
+$(function(){
+	$(".news-newpage-btn button").click(function(){
+		$(this).css({"color":"#fff"});
+	})
 })
+
+
+
 
 
 
@@ -254,71 +331,6 @@ $(function(){
 
 
 
-
-
-
-
-/*+++++++++++++++++++++++++++++++++++++++*/
-
-/*    发布新公告或者新闻  START  */
-
-//发布公告/新闻按钮动画
-
-$(function(){
-	$("#push-notice").bind(
-		"click",
-		function(){
-			$(".write-box").removeClass("myHidden");
-			$(".write-box").animate({"opacity":1});
-			$("#push-news").removeClass("tag-chosed");
-			$("#push-notice").addClass("tag-chosed");
-			$("#push-notice").blur();
-		});
-	$("#push-news").bind(
-		"click",
-		function(){
-			$(".write-box").removeClass("myHidden");
-			$(".write-box").animate({"opacity":1});
-			$("#push-notice").removeClass("tag-chosed");
-			$("#push-news").addClass("tag-chosed");
-			$("#push-news").blur();
-		});
-})
-
-//取消按钮的动画/功能
-
-$(function(){
-
-	//取消发布公告
-
-	$("#tag-del").bind(
-		"click",
-		function(){
-			$(".write-box").animate({"opacity":0},function(){
-				$(".tag-chosed").removeClass("tag-chosed");
-				$(".write-box").addClass("myHidden");
-				window.location.reload();
-			});
-		});
-})
-
-// 载入完成后隐藏公告发布内容
-
-$(function(){
-	$(".write-box").animate(
-		{"opacity":"0"},
-		1,
-		function(){
-			$(".write-box")
-			.addClass("myHidden")
-			.css({"left":"0"});
-		});
-})
-
-
-
-/*    发布新公告或者新闻  END   */
-/*****************************************/
 
 
 // 分页按钮

@@ -9,7 +9,11 @@
 
 
 .if-d-page-status{
-	padding: 1.8% 1.6% 1.8% 3%;
+	padding-top: 3%;
+	padding-right: 1.6%;
+	padding-left: 3%;
+	height: 80px;
+	/*padding: 1.8% 1.6% 1.8% 3%;*/
 	border:1px dashed rgb(217,217,217);
 	margin-bottom: 50px;
 	font-size: 18px;
@@ -18,7 +22,11 @@
 }
 @media screen and (min-width: 1700px){
 	.if-d-page-status{
-		padding: 1.4% 1.2% 1.4% 2.6%;
+		padding-top: 1.4%;
+		padding-right: 1.2%;
+		padding-left: 2.6%;
+		height: 80px;
+		/*padding: 1.4% 1.2% 1.4% 2.6%;*/
 		font-size: 20px;
 	}
 }
@@ -141,7 +149,7 @@
 	/*right: 11.2%;*/
 	right: 0;
 	width: 130px;
-	margin-top: 60px;
+	margin-top: 70px;
 }
 .if-d-p-s-e-btn :first-child{
 	margin-right: 11%;
@@ -184,7 +192,6 @@
 
 /*    封面上传    */
 .if-d-cover-box{
-	display: none;
 	position: relative;
 	right: 0;
 }
@@ -218,10 +225,7 @@
 }
 #uploader{
 	display: inline-block;
-	/*float: left;*/
 	width: 59%;
-	/*margin-top: 45px;*/
-	/*margin-bottom: 0;*/
 }
 #uploader .placeholder{
 	min-height: 0;
@@ -244,6 +248,15 @@
 #uploader .filelist li p.error{
 	font-size: 12px;
 }
+
+
+
+/*  附件上传  */
+.ibox{
+	display: none;
+}
+
+
 
 
 
@@ -460,25 +473,25 @@
 			/*   √ × 的向上运动    */
 				@keyframes moveUp
 					{
-					from {margin-top: 60px;}
+					from {margin-top: 70px;}
 					to {margin-top: -10px;}
 					}
 
 					@-moz-keyframes moveUp /* Firefox */
 					{
-					from {margin-top: 60px;}
+					from {margin-top: 70px;}
 					to {margin-top: -10px;}
 					}
 
 					@-webkit-keyframes moveUp /* Safari 和 Chrome */
 					{
-					from {margin-top: 60px;}
+					from {margin-top: 70px;}
 					to {margin-top: -10px;}
 					}
 
 					@-o-keyframes moveUp /* Opera */
 					{
-					from {margin-top: 60px;}
+					from {margin-top: 70px;}
 					to {margin-top: -10px;}
 					}
 	.dtu{
@@ -492,25 +505,25 @@
 				@keyframes moveDown
 					{
 					from {margin-top: -10px;}
-					to {margin-top: 60px;}
+					to {margin-top: 70px;}
 					}
 
 					@-moz-keyframes moveDown /* Firefox */
 					{
 					from {margin-top: -10px;}
-					to {margin-top: 60px;}
+					to {margin-top: 70px;}
 					}
 
 					@-webkit-keyframes moveDown /* Safari 和 Chrome */
 					{
 					from {margin-top: -10px;}
-					to {margin-top: 60px;}
+					to {margin-top: 70px;}
 					}
 
 					@-o-keyframes moveDown /* Opera */
 					{
 					from {margin-top: -10px;}
-					to {margin-top: 60px;}
+					to {margin-top: 70px;}
 					}
 	.utd{
 		animation:moveDown 1s;
@@ -523,25 +536,25 @@
 				@keyframes moveUpB
 					{
 					from {margin-top: 0;}
-					to {margin-top: -60px;}
+					to {margin-top: -70px;}
 					}
 
 					@-moz-keyframes moveUpB /* Firefox */
 					{
 					from {margin-top: 0;}
-					to {margin-top: -60px;}
+					to {margin-top: -70px;}
 					}
 
 					@-webkit-keyframes moveUpB /* Safari 和 Chrome */
 					{
 					from {margin-top: 0;}
-					to {margin-top: -60px;}
+					to {margin-top: -70px;}
 					}
 
 					@-o-keyframes moveUpB /* Opera */
 					{
 					from {margin-top: 0;}
-					to {margin-top: -60px;}
+					to {margin-top: -70px;}
 					}
 	.dtu2{
 		animation:moveUpB 1s;
@@ -553,25 +566,25 @@
 					/*   保存、取消 的向上运动    */
 				@keyframes moveDownB
 					{
-					from {margin-top: -60px;}
+					from {margin-top: -70px;}
 					to {margin-top: 0;}
 					}
 
 					@-moz-keyframes moveDownB /* Firefox */
 					{
-					from {margin-top: -60px;}
+					from {margin-top: -70px;}
 					to {margin-top: 0;}
 					}
 
 					@-webkit-keyframes moveDownB /* Safari 和 Chrome */
 					{
-					from {margin-top: -60px;}
+					from {margin-top: -70px;}
 					to {margin-top: 0;}
 					}
 
 					@-o-keyframes moveDownB /* Opera */
 					{
-					from {margin-top: -60px;}
+					from {margin-top: -70px;}
 					to {margin-top: 0;}
 					}
 	.utd2{

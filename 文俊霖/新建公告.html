@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>新闻A-草稿</title>
+  <title>x新增公告</title>
   <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
   <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
@@ -24,15 +24,11 @@
   <!-- dropzone -->
   <link href="plugins/dropzone/basic.css" rel="stylesheet">
   <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
-  <!-- webuploader -->
-  <link href="plugins/webuploader/webuploader.css" rel="stylesheet">
-  <link href="plugins/webuploader/webuploader-demo.css" rel="stylesheet">
 
 
 
-
-  <link href="css/if-d.css?v=4.1.0" rel="stylesheet">
-  <link href="css/if-c.css?v=4.1.0" rel="stylesheet">
+  <link href="css/customCss/if-d.css?v=4.1.0" rel="stylesheet">
+  <link href="css/customCss/if-w.css?v=4.1.0" rel="stylesheet">
 
 </head>
 
@@ -45,50 +41,33 @@
         <div class="mail-box">
 
           <!-- 标题信息  START -->
-          <div class="if-c-title">
-            <div class="if-c-t-content">
+          <div class="if-w-title">
+            <div class="if-w-t-content">
               
-              <div class="if-c-change-title">
+              <div class="if-w-change-title">
                 标题：<input type="text">
               </div>
 
-              <div class="if-d-cover-box if-c-cover-box">
-                <div class="if-d-cover">
-                  <div class="if-d-c-border">
-                    <img src="img/logo.png">
-                    <span>原封面</span>
-                  </div>
-                </div>
-                <div id="uploader" class="wu-example">
-                    <div class="queueList">
-                        <div id="dndArea" class="placeholder">
-                            <div id="filePicker"></div>
-                        </div>
-                    </div>
-                    <div class="statusBar" style="display:none;">
-                        <div class="progress">
-                            <span class="text">0%</span>
-                            <span class="percentage"></span>
-                        </div>
-                        <div class="info"></div>
-                        <div class="btns">
-                            <div id="filePicker2"></div>
-                            <div class="uploadBtn">开始上传</div>
-                        </div>
-                    </div>
-                </div>
-              </div>
             </div>
           </div>
           <!-- 标题信息  END -->
 
 
           <!-- 富文本编辑器  -->
-          <div class="if-c-write-box">
+          <div class="if-w-write-box">
             <div id="div1"></div>
           </div>
 
           <div class="mail-attachment">
+            <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <form id="my-awesome-dropzone" class="dropzone">
+                  <div class="dropzone-previews"></div>
+                  <button type="submit" class="btn btn-primary pull-right">提交</button>
+                </form>
+              </div>
+            </div>
+
             <p>
               <span><i class="fa fa-paperclip"></i> 2 个附件 - </span>
               <a href="mail_detail.html#">下载全部</a>  
@@ -123,30 +102,7 @@
                   </a>
                 </div>
               </div>
-              <div class="file-box">
-                <div class="file">
-                  <a href="mail_detail.html#">
-                    <span class="corner"></span>
-
-                    <div class="image">
-                      <img alt="image" class="img-responsive" src="img/p2.jpg">
-                    </div>
-                    <div class="file-name">
-                      My feel.png
-                    </div>
-                  </a>
-                </div>
-              </div>
               <div class="clearfix"></div>
-            </div>
-
-            <div class="ibox float-e-margins">
-              <div class="ibox-content">
-                <form id="my-awesome-dropzone" class="dropzone">
-                  <div class="dropzone-previews"></div>
-                  <button type="submit" class="btn btn-primary pull-right">提交</button>
-                </form>
-              </div>
             </div>
           </div>
           <!-- <div class="clearfix"></div> -->
@@ -160,10 +116,22 @@
 
 
     <!-- 返回按钮 -->
-    <div class="if-d-backbtn">
-      <a href="资讯管理.html">
-        <i class="fa fa-mail-reply"></i>
-        返回
+    <div class="if-w-backbtn">
+      <a href="全校资讯管理.html">
+        <i class="fa fa-close"></i>
+        取消
+      </a>
+    </div>
+    <div class="if-w-backbtn if-w-save-btn">
+      <a href="##">
+        <i class="fa fa-check-square-o"></i>
+        保存草稿
+      </a>
+    </div>
+    <div class="if-w-backbtn if-w-sub-btn">
+      <a href="##">
+        <i class="fa fa-check"></i>
+        提交
       </a>
     </div>
   </div>
@@ -183,18 +151,10 @@
   <!-- DROPZONE -->
   <script src="plugins/dropzone/dropzone.js"></script>
 
-  <!-- webuploader -->
-  <script type="text/javascript">
-      // 添加全局站点信息
-      var BASE_URL = 'js/plugins/webuploader';
-  </script>
-  <script src="js/plugins/webuploader/webuploader.min.js"></script>
-
-  <script src="js/demo/webuploader-demo.js"></script>
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
-  <script src="js/P-details.js?v=1.0.0"></script>
+  <script src="js/coustomJs/P-write-news.js?v=1.0.0"></script>
 
 </body>
 

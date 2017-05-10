@@ -1,3 +1,35 @@
+var usertype
+var username
+
+$(function(){
+	setTimeout("$('.if-d-cover-box').css({'display':'none'})",1)
+
+	username = sessionStorage.getItem("user");
+	usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+	console.log(username);
+	console.log(usertype);
+	// usertype = 0;
+	if (usertype == 0) {
+		$(".if-d-page-status input[name='change']").remove();
+		$(".if-d-page-status input[name='save']").remove();
+		$(".if-d-page-status input[name='cancel']").remove();
+		$(".if-d-page-status input[name='edit']").css({
+			"display":"block",
+			"opacity":1,
+			"right":0
+		});
+		$(".if-d-page-status input[name='edit']").attr("disabled",false);
+		
+		var status = $(".mail-box-header select option:selected").text();
+		if (status == '通过') {
+			$(".if-d-page-status input[name='edit']").remove();
+		};
+
+
+	}
+
+})
+
 
 //   点击修改、取消的动画
 
@@ -105,66 +137,92 @@ $(function(){
 
 	$(".if-d-page-status input[name='edit']").bind("click",function(){
 		$(".if-d-p-s-e-btn").addClass("dtu");
-		$(".if-d-page-status input[name='save']").addClass("dtu2");
-		$(".if-d-page-status input[name='cancel']").addClass("dtu2");
 		$(".if-d-page-status input[name='edit']").addClass("dtu2");
-		$(".if-d-page-status select").attr("disabled","true");
-		$(".if-d-page-status select").addClass("wtg");
-		setTimeout("$('.if-d-page-status select').css({'background-color':'#D0D0D0'});$('.if-d-page-status select').removeClass('wtg');",1000);
-
 		setTimeout(function(){
-			$(".if-d-page-status input[name='save']").css({
-				'margin-top':"-60px"
-			})
-			$(".if-d-page-status input[name='cancel']").css({
-				'margin-top':"-60px"
-			})
 			$(".if-d-page-status input[name='edit']").css({
-				'margin-top':"-60px"
+				'margin-top':"-70px"
 			})
 			$(".if-d-p-s-e-btn").css({
 				'margin-top':"-8px"
 			})
 		},1000)
-
 		setTimeout(function(){
 			$(".if-d-p-s-e-btn").removeClass("dtu");
-			$(".if-d-page-status input[name='save']").removeClass("dtu2");
-			$(".if-d-page-status input[name='cancel']").removeClass("dtu2");
 			$(".if-d-page-status input[name='edit']").removeClass("dtu2");
 		},1001)
+			
+		if (usertype==0) {
+			
+		}else{
+			$(".if-d-page-status input[name='save']").addClass("dtu2");
+			$(".if-d-page-status input[name='cancel']").addClass("dtu2");
+			$(".if-d-page-status select").attr("disabled","true");
+			$(".if-d-page-status select").addClass("wtg");
+			setTimeout("$('.if-d-page-status select').css({'background-color':'#D0D0D0'});$('.if-d-page-status select').removeClass('wtg');",1000);
+
+			setTimeout(function(){
+				$(".if-d-page-status input[name='save']").css({
+					'margin-top':"-70px",
+				})
+				$(".if-d-page-status input[name='cancel']").css({
+					'margin-top':"-70px"
+				})
+			},1000)
+
+			setTimeout(function(){
+				$(".if-d-page-status input[name='save']").removeClass("dtu2");
+				$(".if-d-page-status input[name='cancel']").removeClass("dtu2");
+			},1001)
+		}
 	})
 
 	$(".if-d-no").bind("click",function(){
 		$(".if-d-p-s-e-btn").addClass("utd");
-		$(".if-d-page-status input[name='save']").addClass("utd2");
-		$(".if-d-page-status input[name='cancel']").addClass("utd2");
 		$(".if-d-page-status input[name='edit']").addClass("utd2");
-		$(".if-d-page-status select").attr("disabled",false);
-		$(".if-d-page-status select").addClass("gtw");
-		setTimeout("$('.if-d-page-status select').css({'background-color':'#fff'})",1000);
-		
 		setTimeout(function(){
-			$(".if-d-page-status input[name='save']").css({
-				'margin-top':"0px"
-			})
-			$(".if-d-page-status input[name='cancel']").css({
-				'margin-top':"0px"
-			})
 			$(".if-d-page-status input[name='edit']").css({
 				'margin-top':"0px"
 			})
 			$(".if-d-p-s-e-btn").css({
-				'margin-top':"60px"
+				'margin-top':"70px"
 			})
 		},1000)
 
 		setTimeout(function(){
 			$(".if-d-p-s-e-btn").removeClass("utd");
-			$(".if-d-page-status input[name='save']").removeClass("utd2");
-			$(".if-d-page-status input[name='cancel']").removeClass("utd2");
 			$(".if-d-page-status input[name='edit']").removeClass("utd2");
 		},1001)
+		if (usertype ==0) {
+			
+		}else{
+			$(".if-d-page-status input[name='save']").addClass("utd2");
+			$(".if-d-page-status input[name='cancel']").addClass("utd2");
+			$(".if-d-page-status select").attr("disabled",false);
+			$(".if-d-page-status select").addClass("gtw");
+			setTimeout("$('.if-d-page-status select').css({'background-color':'#fff'})",1000);
+			
+			setTimeout(function(){
+				$(".if-d-page-status input[name='save']").css({
+					'margin-top':"0px"
+				})
+				$(".if-d-page-status input[name='cancel']").css({
+					'margin-top':"0px"
+				})
+				$(".if-d-page-status input[name='edit']").css({
+					'margin-top':"0px"
+				})
+				$(".if-d-p-s-e-btn").css({
+					'margin-top':"70px"
+				})
+			},1000)
+
+			setTimeout(function(){
+				$(".if-d-p-s-e-btn").removeClass("utd");
+				$(".if-d-page-status input[name='save']").removeClass("utd2");
+				$(".if-d-page-status input[name='cancel']").removeClass("utd2");
+				$(".if-d-page-status input[name='edit']").removeClass("utd2");
+			},1001)
+		}
 	})
 })
 
@@ -172,11 +230,21 @@ $(function(){
 //   点击编辑 修改文章内容
 $(function(){
 	$(".if-d-page-status input[name='edit']").bind("click",function(){
+		//创建富文本
 		createWrite();
+
+		//创建标题的修改
+		inputTitle();
+
+		//创建封面修改
+		changeCover();
+
+		//创建附件修改
+		changefile();
 	})
 })
 
-//  编辑取消 按钮
+//  取消修改 按钮
 $(function(){
 	$(".if-d-no").bind("click",function(){
 		$(".if-d-content").css("display","block");
@@ -186,6 +254,7 @@ $(function(){
 		$(".if-d-t-c-box").css({"display":"block"});
 		$(".if-d-change-title").css({"display":"none"});
 		$(".if-d-cover-box").css({"display":"none"});
+		$(".ibox").css({"display":"none"});
 	})
 })
 
@@ -201,19 +270,54 @@ $(function(){
 			editor = new wangEditor('div1');
 
 			// 图片上传路径
-			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
-			// 隐藏掉插入网络图片功能。该配置，只有在你正确配置了图片上传功能之后才可用。
+			//editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
+			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
+
+			// 隐藏掉插入网络图片功能
 	    editor.config.hideLinkImg = true;
 
+
+		//editor.config.withcredentials = true;
+
+			editor.config.uploadImgFns.onload = function (resultText, xhr) {
+
+				console.log(resultText);
+
+				// 上传图片时，已经将图片的名字存在
+				var originalName = editor.uploadImgOriginalName || '';
+
+				// editor.command(null, 'insertHtml', '<img src="' +resultText + '" alt="' + originalName + '/>');
+				editor.command(null, 'InsertImage', resultText);
+			};
+
+    	editor.config.uploadImgFns.ontimeout = function (xhr) {
+	        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
+	        alert('上传超时');
+	    };
+
+	    // 自定义error事件
+	    editor.config.uploadImgFns.onerror = function (xhr) {
+	        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
+	        alert('上传错误');
+	    };
+			//editor.config.uploadHeaders = 'x-requested-with'
+
+			/*editor.config.uploadheaders = {
+				'Accept':'text/x-json',
+				'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'
+			}*/
+			editor.config.withCredentials = true;
+
 			editor.create();
+
+			
+
 
 			//获取原页面的内容 
 			var content = getPageCont();
 			editor.$txt.html(content);
 
-			//创建封面、标题的修改
-			inputTitle();
-			changeCover();
+			
 
 			$(".if-d-content").css("display","none");
 		}
@@ -238,17 +342,21 @@ $(function(){
 			$(".if-d-cover-box").css({"display":"block"});
 		}
 
+	/* 创建附件修改 */
+		function changefile(){
+			$(".ibox").css({"display":"block"});
+		}
 	/* 获取富文本内容 */
-	$(function(){
-		$(".if-d-yes").bind("click",function(){
-	  	var html = editor.$txt.html();
-	  	var text = editor.$txt.text();
-	  	var formatText = editor.$txt.formatText();
-	  	console.log("编辑器区域完整html代码:"+html);
-	  	console.log("编辑器纯文本内容:"+text);
-	  	console.log("格式化后的纯文本:"+formatText);
-	  })
-	})
+		$(function(){
+			$(".if-d-yes").bind("click",function(){
+		  	var html = editor.$txt.html();
+		  	var text = editor.$txt.text();
+		  	var formatText = editor.$txt.formatText();
+		  	console.log("编辑器区域完整html代码:"+html);
+		  	console.log("编辑器纯文本内容:"+text);
+		  	console.log("格式化后的纯文本:"+formatText);
+		  })
+		})
 
 
 /* 上传文件、视频 */
@@ -260,9 +368,15 @@ $(function(){
     autoProcessQueue: false,
     uploadMultiple: true,
     parallelUploads: 100,
-    maxFiles: 100,
+    maxFiles: 20,
+    addRemoveLinks:true,
+    dictMaxFilesExceeded: "您最多只能上传20个文件！",
+    dictResponseError: '文件上传失败!',
     method:"post",
-    url:"http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action",
+    // url:"http://119.29.53.178:8080/kindergarden/imageUpload",
+    url:"#",
+    paramName:"file",
+    //setParameterEncoding:AFJSONParameterEncoding
 
 
     // Dropzone settings
@@ -276,8 +390,8 @@ $(function(){
       });
       this.on("sendingmultiple", function () {});
       this.on("successmultiple", function (files, response) {
-      	// console.log(files);
-      	// console.log(response);
+      	console.log(files);
+      	console.log(response);
 
       	// 上传完成后刷新
       	// window.location.reload();
@@ -292,13 +406,42 @@ $(function(){
 /* 上传封面 */
 $(function(){
 	var uploader = WebUploader.create({
-		 // server: 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action',
+    // 文件接收服务端
 	});
 })
 
 
+/* 上传审核状态AJAX */
+$(function(){
+	$(".if-d-page-status input[name='save']").click(function(){
+		var status = $(".mail-box-header select option:selected").text();
+		console.log(status);
+/*
+		$.ajax({
+			type:"post",
+			url:"http://"+IP+url,
+			dataType:"JSON",
+			contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+
+			beforeSend:function(xhr){
+				xhr.withCredentials = true;
+				xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+			},
+			success:function(data){
+				window.location.reload;
+			},
+			error:function(jqHXR){
+				console.log("错误:"+jqHXR.status);
+			}
+		})
+
+*/
 
 
+
+
+	})
+})
 
 
 

@@ -32,8 +32,8 @@ jQuery(function() {
         ratio = window.devicePixelRatio || 1,
 
         // 缩略图大小
-        thumbnailWidth = 150 * ratio,
-        thumbnailHeight = 150 * ratio,
+        thumbnailWidth = 110 * ratio,
+        thumbnailHeight = 110 * ratio,
 
         // 可能有pedding, ready, uploading, confirm, done.
         state = 'pedding',
@@ -64,15 +64,15 @@ jQuery(function() {
     uploader = WebUploader.create({
         pick: {
             id: '#filePicker',
-            label: '点击选择封面'
+            label: '点击选择图片'
         },
         dnd: '#uploader .queueList',
         paste: document.body,
 
         accept: {
             title: 'Images',
-            extensions: 'gif,jpg,jpeg,bmp,png',
-            mimeTypes: 'image/*'
+            extensions: 'jpg,jpeg,png',
+            mimeTypes: 'image/jpg,image/jpeg,image/png'
         },
 
         // swf文件路径
@@ -82,11 +82,12 @@ jQuery(function() {
 
         chunked: true,
         // server: 'http://webuploader.duapp.com/server/fileupload.php',
-        // server: 'http://2betop.net/fileupload.php',
-        server: 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action',
+        server: 'http://119.29.53.178:8080/kindergarden/imageUpload',
         fileNumLimit: 1,
         fileSizeLimit: 5 * 1024 * 1024,    // 200 M
-        fileSingleSizeLimit: 1 * 1024 * 1024    // 50 M
+        fileSingleSizeLimit: 1 * 1024 * 1024,    // 50 M
+
+        duplicate :true,
     });
 
     // 添加“添加文件”的按钮，
@@ -271,7 +272,7 @@ jQuery(function() {
         } else if ( state === 'confirm' ) {
             stats = uploader.getStats();
             if ( stats.uploadFailNum ) {
-                text = stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+                text = '照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
             }
 
         } else {
