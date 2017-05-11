@@ -1,3 +1,4 @@
+
 var usertype
 var username
 
@@ -271,6 +272,7 @@ $(function(){
 
 			// 图片上传路径
 			//editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
+			// editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
 			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
 
 			// 隐藏掉插入网络图片功能
@@ -282,12 +284,18 @@ $(function(){
 			editor.config.uploadImgFns.onload = function (resultText, xhr) {
 
 				console.log(resultText);
+				
+				var obj = JSON.parse(resultText);
+
+				// var pa = /.*\{(.*)\}/;
+				// alert(resultText.match(pa)[1]);
+
 
 				// 上传图片时，已经将图片的名字存在
 				var originalName = editor.uploadImgOriginalName || '';
 
-				// editor.command(null, 'insertHtml', '<img src="' +resultText + '" alt="' + originalName + '/>');
-				editor.command(null, 'InsertImage', resultText);
+				// editor.command(null, 'insertHtml', '<img src="' +obj[0] + '" alt="' + originalName + '/>');
+				editor.command(null, 'InsertImage', obj.url);
 			};
 
     	editor.config.uploadImgFns.ontimeout = function (xhr) {
@@ -346,6 +354,7 @@ $(function(){
 		function changefile(){
 			$(".ibox").css({"display":"block"});
 		}
+
 	/* 获取富文本内容 */
 		$(function(){
 			$(".if-d-yes").bind("click",function(){
@@ -373,8 +382,8 @@ $(function(){
     dictMaxFilesExceeded: "您最多只能上传20个文件！",
     dictResponseError: '文件上传失败!',
     method:"post",
-    // url:"http://119.29.53.178:8080/kindergarden/imageUpload",
-    url:"#",
+    url:"http://119.29.53.178:8080/kindergarden/imageUpload",
+    // url:"#",
     paramName:"file",
     //setParameterEncoding:AFJSONParameterEncoding
 
@@ -405,9 +414,7 @@ $(function(){
 
 /* 上传封面 */
 $(function(){
-	var uploader = WebUploader.create({
-    // 文件接收服务端
-	});
+
 })
 
 

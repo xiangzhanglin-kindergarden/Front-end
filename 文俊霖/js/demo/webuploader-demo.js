@@ -82,7 +82,9 @@ jQuery(function() {
 
         chunked: true,
         // server: 'http://webuploader.duapp.com/server/fileupload.php',
-        server: 'http://119.29.53.178:8080/kindergarden/imageUpload',
+        // server: 'http://119.29.53.178:8080/kindergarden/imageUpload',
+        server: 'http://119.29.53.178:8080/kindergarden/Upload',
+        // server: '#',
         fileNumLimit: 1,
         fileSizeLimit: 5 * 1024 * 1024,    // 200 M
         fileSingleSizeLimit: 1 * 1024 * 1024,    // 50 M
@@ -95,6 +97,16 @@ jQuery(function() {
     //     id: '#filePicker2',
     //     label: '继续添加'
     // });
+
+    uploader.on("uploadAccept",function(object,ret){
+        console.log(ret);
+        console.log(object);
+    })
+    uploader.on("uploadSuccess",function(file,response){
+        console.log(response);
+        console.log(file);
+    })
+    uploader.reset();
 
     // 当有文件添加进来时执行，负责view的创建
     function addFile( file ) {
@@ -154,7 +166,7 @@ jQuery(function() {
                 $prgress.hide().width(0);
             } else if ( prev === 'queued' ) {
                 $li.off( 'mouseenter mouseleave' );
-                $btns.remove();
+                // $btns.remove();
             }
 
             // 成功
@@ -331,7 +343,7 @@ jQuery(function() {
 
             case 'confirm':
                 $progress.hide();
-                $upload.text( '开始上传' ).addClass( 'disabled' );
+                // $upload.text( '开始上传' ).addClass( 'disabled' );
 
                 stats = uploader.getStats();
                 if ( stats.successNum && !stats.uploadFailNum ) {
@@ -343,6 +355,9 @@ jQuery(function() {
                 stats = uploader.getStats();
                 if ( stats.successNum ) {
                     alert( '上传成功' );
+                    $(".cancel").trigger("click");
+
+                    
                 } else {
                     // 没有成功的图片，重设
                     state = 'done';
