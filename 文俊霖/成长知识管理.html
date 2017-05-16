@@ -17,6 +17,9 @@
 
   <!-- Sweet Alert -->
   <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+  <!-- bootstrapfileinput -->
+  <link rel="stylesheet" href="plugins/bootstrap-fileinput/css/fileinput.css" />
   
   <!-- 模板CSS -->
   <link href="css/animate.css" rel="stylesheet">
@@ -55,8 +58,6 @@
               </div>
             </div>          
           <!-- 搜索栏 END -->
-
-
 
         </div>
 
@@ -109,13 +110,47 @@
           </div>
           <!-- 分页按钮  END -->
         </div>
+        
 
+      </div>
+    </div>
+  </div>
 
-          
-
+  <div class="cover animated myHidden"></div>
+  <div class="know-new-box animated myHidden">
+    <div class="know-new-title">
+      <span>文章标题：</span>
+      <input type="text">
+    </div>
+    <div class="know-new-cover">
+      <div class="if-d-cover-box if-w-cover-box">
+        <div class="if-d-cover">
+          <div class="if-d-c-border">
+            <img src="img/logo.png">
+            <span>原封面</span>
+          </div>
+          <div class="if-d-recover">
+            <input  class="btn btn-primary" type="btn" value="还原封面">
+          </div>
         </div>
-          <!-- 底部功能按钮 END -->
 
+        <!-- 封面上传 START -->
+        <div class="if-d-cover-c-b">
+          <input id="file-0"  type="file" multiple data-min-file-count="1">
+        </div>
+        <!-- 封面上传 END -->
+      </div>
+    </div>
+    <div class="know-new-a">
+      <span>文章链接：</span>
+      <input type="text">
+    </div>
+    <div class="know-new-check">
+      <div class="know-new-yes">
+        <i class="fa fa-check-circle-o"></i>
+      </div>
+      <div class="know-new-no">
+        <i class="fa fa-times-circle-o"></i>
       </div>
     </div>
   </div>
@@ -133,6 +168,10 @@
 
   <!-- Sweet alert -->
   <script src="plugins/sweetalert/sweetalert.min.js"></script>
+
+  <!-- bootstrapfileinput -->
+  <script src="plugins/bootstrap-fileinput/js/fileinput.js"></script>
+  <script src="plugins/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
