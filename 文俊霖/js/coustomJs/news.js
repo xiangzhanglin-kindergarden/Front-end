@@ -5,6 +5,65 @@
  *
 */
 
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   选择日期  START*/
+
+	laydate({
+    elem: '#J-xl',
+    format: 'YYYY/MM/DD', // 分隔符可以任意定义，该例子表示只显示年月
+	});
+
+
+/*    选择日期  END*/
+/*****************************************/
+
+
+
+
+
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   删除弹窗动画  START*/
+
+	$('.n-l-f-btn-del').click(function () {
+    swal({
+      title: "您确定要删除这条资讯吗",
+      text: "删除后将无法恢复，请谨慎操作！",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "是的，我要删除！",
+      cancelButtonText: "让我再考虑一下…",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+    function (isConfirm) {
+      if (isConfirm) {
+        swal("删除成功！", "您已经永久删除了这条信息。", "success");
+      } else {
+        swal("已取消", "您取消了删除操作！", "error");
+      }
+    });
+	});
+
+
+/*    删除弹窗动画  END*/
+/*****************************************/
+
+
+
+
+
+
+
+
+
+
+
 
 /*+++++++++++++++++++++++++++++++++++++++*/
 
@@ -19,6 +78,24 @@
 				$(".news-status span").removeClass("n-s-chosed");
 				$(this).addClass("n-s-chosed");
 			}else if(tID == null || tID=="" || tID=="undefined") {
+				
+				var nub2 = 0;
+				$(".news-status span").each(function(){
+					var tclass2 = $(this).attr("class");
+					console.log(tclass2);
+					if (tclass2 == "n-s-chosed") {
+						nub2++;
+					};
+				})
+				console.log("nub2  : "+nub2);
+				if(nub2==2){
+					$(".news-status span").removeClass("n-s-chosed");
+					// $("#n-s-all").addClass("n-s-chosed");
+				}
+
+
+
+
 				if (tClass == "n-s-chosed") {
 					$(this).removeClass("n-s-chosed");
 					var nub = 0;
@@ -104,225 +181,6 @@ $(function(){
 /*   执行删除、通过、不通过 操作  START*/
 
 
-var data = new Array();    //存放具体内容
-
-//全选择功能
-$(function(){
-	var flag = 0;  //判断全选/全不选, 0 全选，1 反选
-	$("#news-allBtn").bind(
-		'click',
-		function(){
-			if (flag == 0) {
-				$(":checkbox").iCheck('check');
-				$("#news-allBtn").html("<i class='glyphicon glyphicon-remove'></i>全不选");
-				flag = 1;
-			}else{
-				$(":checkbox").iCheck('uncheck');
-				$("#news-allBtn").html("<i class='glyphicon glyphicon-ok'></i>全选");
-				flag = 0;
-			}
-		}
-	)
-})
-
-//删除功能
-$(function(){
-	$("#news-delBtn").bind(
-		"click",
-		function(){
-			var i = -1;
-			var flag = 0;
-			$(".i-checks").each(function(){		//查找哪些被选择了
-				if ($(this).prop("checked")) {
-
-					//获取内容
-					++i;
-					data[i] = new Array();
-					for(var j=0; j<=6; j++){
-						if (j==3) {
-							continue;
-						}else{
-							data[i][j] = $(this).parents(".read").children().eq(j+1).children().html();
-						}
-					}
-
-					remove_notice();
-					
-					flag = 1;
-				}else if (flag == 0) {
-					remove_notice();
-					notice($("#news-delBtn"));
-				}
-			})
-			if (flag==1) {
-				var nub = 0;
-				secon_ensure(data,nub);
-			};
-		}
-	)
-})
-
-//审核通过 
-$(function(){
-	$("#news-passBtn").bind(
-		"click",
-		function(){
-			var i = -1;
-			var flag = 0;
-			$(".i-checks").each(function(){		//查找哪些被选择了
-				if ($(this).prop("checked")) {
-					//获取内容
-					++i;
-					data[i] = new Array();
-					for(var j=0; j<=6; j++){
-						if (j==3) {
-							continue;
-						}else{
-							data[i][j] = $(this).parents(".read").children().eq(j+1).children().html();
-						}
-					}
-
-					remove_notice();
-					
-					flag = 1;
-
-				}else if (flag == 0) {
-					remove_notice();
-					notice($("#news-passBtn"));
-				}
-			})
-			if (flag==1) {
-				var nub = 1;
-				secon_ensure(data,nub);
-			};
-		}
-	)
-})
-
-//审核未通过 
-$(function(){
-	$("#news-unpassBtn").bind(
-		"click",
-		function(){
-			var i = -1;
-			var flag = 0;
-			$(".i-checks").each(function(){		//查找哪些被选择了
-				if ($(this).prop("checked")) {
-					//获取内容
-					++i;
-					data[i] = new Array();
-					for(var j=0; j<=6; j++){
-						if (j==3) {
-							continue;
-						}else{
-							data[i][j] = $(this).parents(".read").children().eq(j+1).children().html();
-						}
-					}
-
-					remove_notice();
-					
-					flag = 1;
-
-				}else if (flag == 0) {
-					remove_notice();
-					notice($("#news-unpassBtn"));
-				}
-			})
-			if (flag==1) {
-				var nub = 2;
-				secon_ensure(data,nub);
-			};
-		}
-	)
-})
-
-
-
-//未选择时弹出提示
-function notice(obj){
-	var notice = $("<div class='nochose-box'><span class='triangle-up2'></span><span class='triangle-up'></span><div class='nochose-notice badge'>请选择内容</div></div>");
-	obj.before(notice);
-	$(".nochose-box").animate({"opacity":1});
-}
-//移除提示框
-function remove_notice(){
-	$(".nochose-box").animate({"opacity":0});
-	$(".nochose-box").remove();
-}
-
-
-
-
-//二次确认        type = 0 删除， 1 通过，  2未通过  
-function secon_ensure(obj,type){
-	for(var i=0; i<obj.length; i++){
-		for(var j=0; j<obj[i].length;j++){
-			if (j==3) {
-				continue;
-			}else{
-				console.log(obj[i][j]);
-			}
-		}
-	}
-	switch(type){
-		case 0:
-			console.log("删除");
-			break;
-		case 1:
-			console.log("通过");
-			break;
-		case 2:
-			console.log("未通过");
-			break;
-	}
-	console.log(" ");
-	show_second(obj,type);
-	function show_second(obj,type){
-		$(".cover").css({"z-index":1001});
-		$(".news-second-ensure-box").css({"z-index":1002});
-		$(".cover").animate({"opacity":1});
-		$(".news-second-ensure-box").animate({"opacity":1});
-		for(var i=0; i<obj.length; i++){
-			var atr = $("<tr></tr>");
-			for(var j=0; j<obj[i].length;j++){
-				if (j==3) {
-					continue
-				}else{
-					var atd = $("<td>"+obj[i][j]+"</td>");
-					atr.append(atd);
-				}
-			}
-			$(".show-box tbody").append(atr);
-		}
-		switch(type){
-			case 0:
-				$(".show-notice").html("确定要删除这些内容吗？");
-				break;
-			case 1:
-				$(".show-notice").html("确定让这些内容通过审核吗？");
-				break;
-			case 2:
-				$(".show-notice").html("确定让这些内容不通过审核吗？");
-				break;
-		}		
-	}
-}
-
-// 二次确认中的  YES与NO  
-$(function(){
-	$("#s-no").bind("click",function(){
-		$(".cover").animate({"opacity":0});
-		$(".news-second-ensure-box").animate({"opacity":0},function(){
-			$(".cover").css({"z-index":'-1'});
-			$(".news-second-ensure-box").css({"z-index":'-1'});
-			$(".show-box tbody tr").remove();
-		});
-		
-	})
-})
-
-
-
 
 /*   执行删除、通过、不通过 操作  END*/
 /*****************************************/
@@ -340,7 +198,7 @@ $(function(){
 	var flag = 1;   // 当前页数
 	var previousNub = 0; //前一页
 	var nextNub = 2; //下一页
-	var max = Math.ceil($("tr").length/Apage);	//最大页数
+	var max = Math.ceil($(".news-lists").length/Apage);	//最大页数
 
 	if (max/10 <10 && max/10 >=1) {
 		$("#write-nub").css({"width":"71px"});
@@ -350,9 +208,9 @@ $(function(){
 
 	toshow();
 	function toshow(){
-		$("tr").css("display","none");
+		$(".news-lists").css("display","none");
 		for (var i = (flag-1)*Apage; i <= (flag-1)*Apage+Apage-1; i++) {
-			$("tr:eq("+i+")").css("display","table-row");
+			$(".news-lists:eq("+i+")").css("display","table-row");
 		};
 		$("#write-nub").attr("placeholder",flag+"/"+max+"页");
 		$("#write-nub").val("");
@@ -419,3 +277,7 @@ $(function(){
 		};
 	})
 })
+
+
+
+

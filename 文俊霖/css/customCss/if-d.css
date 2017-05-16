@@ -9,7 +9,7 @@
 
 
 .if-d-page-status{
-	padding-top: 3%;
+	padding-top: 1.5%;
 	padding-right: 1.6%;
 	padding-left: 3%;
 	height: 80px;
@@ -193,6 +193,7 @@
 /*    封面上传    */
 .if-d-cover-box{
 	position: relative;
+	height: 300px;
 	right: 0;
 }
 .if-d-cover{
@@ -223,31 +224,24 @@
 	background-color: rgba(233,233,233,.5);
 	cursor: default;
 }
-#uploader{
-	display: inline-block;
-	width: 59%;
+.if-d-cover-c-b{
+	float: right;
+	margin-right: 5%;
+	width: 50%;
 }
-#uploader .placeholder{
-	min-height: 0;
-	padding: 40px 50px 20px 50px;
+.if-d-cover-c-b .file-drop-zone{
+	border:0;
+	padding: 0;
+	margin: 0;
 }
-#uploader .queueList{
-	margin-top: 65px;
+.if-d-cover-c-b .file-actions{
+	display: none;
 }
-#uploader .queueList.filled{
-	padding-bottom: 0;
-}
-#uploader .filelist li{
-	width: 150px;
-	height: 150px;
-}
-#uploader .filelist li p.imgWrap{
-	width: 150px;
-	height: 150px;
-}
-#uploader .filelist li p.error{
-	font-size: 12px;
-}
+.if-d-recover{
+	display:none;
+	text-align: center;
+	opacity:0;
+}	
 
 
 

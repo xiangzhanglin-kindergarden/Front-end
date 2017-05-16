@@ -10,13 +10,22 @@
   <title>资讯管理</title>
   <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
   <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
-
+  
+  <!-- 全局CSS -->
   <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
   <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  
+  <!-- iCheck -->
   <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+
+  <!-- Sweet Alert -->
+  <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet">
+  
+  <!-- 模板CSS -->
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css?v=4.1.0" rel="stylesheet">
 
+  <!-- 自定CSS -->
   <link href="css/customCss/news.css?v=1.0.0" rel="stylesheet">
 
 </head>
@@ -42,7 +51,7 @@
                   关键字：<input type="text">
                 </div>
                 <div class="n-i-box n-i-time">
-                  发布时间：<input type="text">
+                  发布时间：<input id="J-xl" type="text" readonly>
                 </div>
                 <div class="n-i-box n-i-person">
                   发布人：<input type="text">
@@ -73,10 +82,11 @@
         </div>
 
         <div class="mail-box c-content-box">
+
+          <!-- 新闻公告分类与新增文字 -->
           <div class="news-nchange-btn-box">
             <div class="news-nchange-btn">
-              <button class="btn btn-info">全部</button>
-              <button class="btn btn-white">新闻</button>
+              <button class="btn btn-info">新闻</button>
               <button class="btn btn-white">公告</button>
             </div>
             
@@ -91,135 +101,93 @@
               </ul>
             </div>
           </div>
+          <!-- 新闻公告分类与新增文字 END -->
 
-          <table class="table table-hover table-mail m-table">
-            <thead>
-              <tr>
-                <th class="check-mail text-center"></th>
-                <th class="c-normal-w c-t-p-lg">发布者</th>
-                <th class="c-title-w c-p">文章标题</th>
-                <th class="c-photo-w text-center"></th>
-                <th class="c-normal-w text-center">类型</th>
-                <th class="c-normal-w text-center">级别</th>
-                <th class="c-normal-w text-center">文章状态</th>
-                <th class="text-right mail-date">发布时间</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="c-nub"><span>1</span></td>
-                <td class="c-name-w c-c-p-lg">
-                  <a class="c-t-name" href="##">老师A</a>
-                </td>
-                <td class="c-title-w">
-                  <a href="资讯详情.html">文章A</a></td>
-                <td class="c-photo-w">
-                  <i class="fa fa-paperclip"></i>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-news-a" href="##">新闻</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-school-a" href="##">校级</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <span class="label label-warning c-unpass">未通过</span>
-                </td>
-                <td class="text-right mail-date c-time">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="c-nub"><span>2</span></td>
-                <td class="c-name-w c-c-p-lg">
-                  <a class="c-t-name" href="##">老师A</a>
-                </td>
-                <td class="c-title-w">
-                  <a href="资讯详情.html">文章B</a></td>
-                <td class="c-photo-w">
-                  <i class="fa fa-paperclip"></i>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-news-a" href="##">新闻</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-school-a" href="##">校级</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <span class="label label-success c-wait">待审核</span>
-                </td>
-                <td class="text-right mail-date c-time">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="c-nub"><span>3</span></td>
-                <td class="c-name-w c-c-p-lg">
-                  <a class="c-t-name" href="##">老师A</a>
-                </td>
-                <td class="c-title-w">
-                  <a href="资讯详情.html">文章D</a></td>
-                <td class="c-photo-w">
-                  <i class="fa fa-paperclip"></i>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-notice-a" href="##">公告</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-class-a" href="##">班级</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <span class="label label-white c-draft">草稿</span>
-                </td>
-                <td class="text-right mail-date c-time">昨天 10:20</td>
-              </tr>
-              <tr class="read">
-                <td class="check-mail">
-                  <input type="checkbox" class="i-checks">
-                </td>
-                <td class="c-nub"><span>4</span></td>
-                <td class="c-name-w c-c-p-lg">
-                  <a class="c-t-name" href="##">老师A</a>
-                </td>
-                <td class="c-title-w">
-                  <a href="资讯详情.html">文章C</a></td>
-                <td class="c-photo-w">
-                  <i class="fa fa-paperclip"></i>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-news-a" href="##">公告</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <a class="c-school-a" href="##">校级</a>
-                </td>
-                <td class="c-normal-w text-center">
-                  <span class="label label-primary c-pass">已通过</span>
-                </td>
-                <td class="text-right mail-date c-time">昨天 10:20</td>
-              </tr>
-              
-
-            </tbody>
-          </table>
-        </div>
-
-          <!-- 底部功能按钮 -->
-        <div class="mail-tools tooltip-demo news-f-b-box">
-          <button id="news-allBtn" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-ok"></i> 全选</button>
-          <button id="news-delBtn" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-remove"></i> 删除</button>
-          <div class="review-box">
-            <div id="news-passBtn">
-              <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="left"><i class="fa fa-star"></i> 通过审核</button>
+          <!-- 资讯列表 -->
+          <div class="news-lists-box">
+            <div class="news-lists">
+              <div class="news-list-title">
+                <span class="news-list-kind">新闻</span>
+                <span>发布人：</span>
+                <span class="news-list-name">王娟</span>
+                <span class="news-list-time">2017年4月11日</span>
+                <span class="news-list-status"><i class="fa fa-check-circle"></i>已通过</span>
+              </div>
+              <div class="news-list-content-box">
+                <div class="news-list-content">
+                  <a href="资讯详情.html">
+                    <div class="n-l-c-photo">
+                      <img src="img/logo.png">
+                   </div>
+                  </a>
+                  
+                  
+                  <div class="n-l-c-w">
+                      按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。
+                  </div>
+                </div>
+                <div class="news-list-func">
+                  <a href="资讯详情.html">
+                    <input class="n-l-f-btn-c btn btn-success btn-lg" type="button" value="详情">
+                  </a>
+                  <input class="n-l-f-btn-del btn btn-danger btn-lg" type="button" value="删除">
+                </div>
+              </div>
             </div>
-            <div id="news-unpassBtn">
-              <button id="news-unpassBtn" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="left"><i class="fa fa-star-o"></i> 未通过审核</button>
+            <div class="news-lists">
+              <div class="news-list-title">
+                <span class="news-list-kind">新闻</span>
+                <span>发布人：</span>
+                <span class="news-list-name">王娟</span>
+                <span class="news-list-time">2017年4月11日</span>
+                <span class="news-list-status"><i class="fa fa-times-circle"></i>未通过</span>
+              </div>
+              <div class="news-list-content-box">
+                <div class="news-list-content">
+                  <a href="资讯详情.html">
+                    <div class="n-l-c-photo">
+                      <img src="img/logo.png">
+                   </div>
+                  </a>  
+                  <div class="n-l-c-w">
+                      按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。
+                  </div>
+                </div>
+                <div class="news-list-func">
+                  <a href="资讯详情.html">
+                    <input class="n-l-f-btn-c btn btn-success btn-lg" type="button" value="详情">
+                  </a>
+                  <input class="n-l-f-btn-del btn btn-danger btn-lg" type="button" value="删除">
+                </div>
+              </div>
+            </div>
+            <div class="news-lists">
+              <div class="news-list-title">
+                <span class="news-list-kind">公告</span>
+                <span>发布人：</span>
+                <span class="news-list-name">王娟</span>
+                <span class="news-list-time">2017年4月11日</span>
+                <span class="news-list-status"><i class="fa fa-clock-o"></i>待审核</span>
+              </div>
+              <div class="news-list-content-box">
+                <div class="news-list-content">
+                  <!-- <div class="n-l-c-photo">
+                    <img src="img/logo.png">
+                  </div> -->
+                  <div class="n-l-c-w n-l-c-w-notice">
+                      按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。按照中央全面深化改革领导小组重点工作安排和《政府工作报告》，国家发改委会公布每年的深化经济体制改革重点工作，这是当年经济领域改革重点工作的清单，透露重大改革动向进展，因此备受关注。
+                  </div>
+                </div>
+                <div class="news-list-func">
+                  <a href="资讯详情.html">
+                    <input class="n-l-f-btn-c btn btn-success btn-lg" type="button" value="详情">
+                  </a>
+                  <input class="n-l-f-btn-del btn btn-danger btn-lg" type="button" value="删除">
+                </div>
+              </div>
             </div>
           </div>
+          <!-- 资讯列表  END -->
 
           <!-- 分页按钮 -->
           <div class="btn-group pull-right page-btn-box">
@@ -229,6 +197,12 @@
             </button>
             <input id="write-nub" class="form-control input-sm" type="text" placeholder="页数">
           </div>
+          <!-- 分页按钮  END -->
+        </div>
+
+
+          
+
         </div>
           <!-- 底部功能按钮 END -->
 
@@ -236,35 +210,6 @@
     </div>
   </div>
 
-  <!-- 再次确认 -->
-  <div class="news-second-ensure-box">
-    <div class="show-chose">
-      <div class="show-title">你选择的内容是：</div>
-      <div class="show-box">
-        <table class="table table-mail m-table">
-          <thead>
-            <tr>
-              <th class="c-normal-w">编号</th>
-              <th class="c-normal-w3">发布者</th>
-              <th class="">文章标题</th>
-              <th class="c-normal-w">类型</th>
-              <th class="c-normal-w">级别</th>
-              <th class="c-normal-w2">文章状态</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="show-notice"></div>
-    <div class="ensure-btn">
-      <span id="s-no" class="glyphicon glyphicon-remove-sign"></span>
-      <span id="s-ok" class="glyphicon glyphicon-ok-sign"></span>
-    </div>
-  </div>
-  <div class="cover"></div>
-  <!-- 再次确认 END -->
 
 
 
@@ -274,10 +219,7 @@
 
 
 
-  <!-- 自定义js -->
-  <script src="js/content.js?v=1.0.0"></script>
-  <script src="js/coustomJs/news.js?v=1.0.0"></script>
-  <script src="js/coustomJs/newsAJAX.js?v=1.0.0"></script>
+  
 
 
   <!-- iCheck -->
@@ -290,6 +232,17 @@
       });
     });
   </script>
+
+  <!-- laydate -->
+  <script src="plugins/laydate/laydate.dev.js"></script>
+
+  <!-- Sweet alert -->
+  <script src="plugins/sweetalert/sweetalert.min.js"></script>
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+  <script src="js/coustomJs/news.js?v=1.0.0"></script>
+  <script src="js/coustomJs/newsAJAX.js?v=1.0.0"></script>
 
   
 </body>

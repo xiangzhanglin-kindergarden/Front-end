@@ -46,32 +46,22 @@
 
 
 tr{
-	display: none
+	/*display: none*/
 }
 
 .page-btn-box{
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-#news-delBtn{
-	float: left;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 20px 20px 20px 0;
 }
 
-#news-allBtn{
-	float: left;
-	margin-left: 20px;
-}
 
-#blank-add{
+/*#blank-add{
 	float: left;
 	padding-top: 3px;
   margin-left: 10px;
   font-size: 18px;
   cursor: default;
   color: red;
-}
+}*/
 
 .myHidden{
 	display: none;
@@ -95,17 +85,7 @@ color: #000;
 color: #000; 
 }
 
-.review-box{
-	float: left;
-}
-#news-passBtn{
-	float: left;
-	margin-left: 5px;
-}
-#news-unpassBtn{
-	float: left;
-	margin-left: 2px;
-}
+
 .nochose-box{
 	float: left;
 	position: relative;
@@ -154,94 +134,6 @@ color: #000;
   z-index: 1;
 }
 
-.cover{
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-	z-index: -1;
-	/*z-index: 1001;*/
-	opacity: 0;
-}
-.news-second-ensure-box{
-	position: fixed;
-	top: 18%;
-	left: 25%;
-	width: 50%;
-	height: 65%;
-	border: 1px solid rgba(0,0,0,.8);
-	border-radius: 10px;
-	background-color: #fff;
-	z-index: -1;
-	/*z-index: 1002;*/
-	opacity: 0
-}
-.show-chose{
-	position: relative;
-	top: 2%;
-	left: 1%;
-	width: 98%;
-	height: 60%;
-}
-.show-title{
-	margin-left: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	font-size: 20px;
-	color: #000;
-	cursor: default;
-}
-.show-box{
-	height: 93%;
-	overflow-x: hidden; 
-	overflow-y: auto; 
-}
-.show-box table{
-	margin: 0;
-}
-.show-box table tr{
-	display: table-row!important;
-	width: 100%;
-}
-.show-box table td{
-	font-size: 18px;
-	padding: 0 3px 10px 5px!important;
-}
-.show-notice{
-	text-align: center;
-	font-size: 20px;
-	margin-top: 40px;
-}
-.ensure-btn{
-	position: relative;
-	display: inline-block;
-	left: 20%;
-	width: 60%;
-	margin-top: 3%;
-	font-size: 150px;
-}
-@media screen and (max-height: 1000px) { 
-.ensure-btn {font-size:100px} 
-} 
-@media screen and (max-height: 800px) { 
-.ensure-btn {font-size:70px} 
-} 
-@media screen and (max-width: 1000px) { 
-.ensure-btn {font-size:50px} 
-} 
-.ensure-btn .glyphicon-remove-sign{
-	float: left;
-	cursor: pointer;
-}
-.ensure-btn .glyphicon-ok-sign{
-	float: right;
-	cursor: pointer;
-	color: rgb(3,202,100);
-}
-
-
-
 .text-gray{
 	color: rgb(194,194,194);
 }
@@ -260,16 +152,15 @@ color: #000;
 }
 
 .c-content-box{
-	padding-bottom: 1px;
-	border-bottom: 0px;
-	margin-bottom: 0px;
-}
-.news-f-b-box{
 	float: left;
 	width: 100%;
 	border: 1px solid #e7eaec;
+	border-bottom: 0;
 	border-top: 0;
+	padding: 30px 20px 20px 20px;
+	margin-bottom: 0;
 	background-color: #ffffff;
+	
 }
 
 .c-content-box td span{
@@ -333,7 +224,7 @@ color: #000;
 .mail-box-header{
 	float: left;
 	width: 100%;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 }
 /*      全校素有新闻公告/我的新闻公告 部分      */
 	.news-sort-btn{
@@ -478,11 +369,11 @@ color: #000;
 	.news-nchange-btn{
 		float: left;
 	}
-	.news-nchange-btn :last-child{
-		width: 90px;
-	}
 	.news-nchange-btn-box button{
 		width: 70px;
+	}
+	.news-nchange-btn-box .n-btn-o{
+		width: 90px;
 	}
 	.news-nchange-btn .btn-white{
 		background-color: #F2F1F1
@@ -502,17 +393,110 @@ color: #000;
 		background-color: #FFA97E
 	}
 
-
-
-
-
-
 /*      全部、新闻、公告 分类按钮 部分  END    */
 
 
 
+/*     资讯列表      */
+	.news-lists{
+		float: left;
+		width: 100%;
+		border: 1px solid #D8D8D8;
+		margin-bottom: 10px;
+	}
+	.news-list-title{
+		height: 40px;
+		border-bottom: 1px solid #D8D8D8;
+		line-height: 40px;
+		font-size: 17px;
+	}
+	.news-list-kind{
+		margin-left: 1%;
+		margin-right: 20%;
+	}
+	.news-list-status{
+		float: right;
+		margin-right: 3%;
+	}
+	.news-list-status .fa-check-circle{
+		float: left;
+		margin-top: 7px;
+		margin-right: 10px;
+		font-size: 23px;
+		color: rgb(165,211,156);
+	}
+	.news-list-status .fa-clock-o{
+		float: left;
+		margin-top: 7px;
+		margin-right: 10px;
+		font-size: 23px;
+		color: rgb(239,179,67);
+	}
+	.news-list-status .fa-times-circle{
+		float: left;
+		margin-top: 7px;
+		margin-right: 10px;
+		font-size: 23px;
+		color: rgb(223,70,50);
+	}
+	.news-list-name{
+		margin-right: 20%;
+	}
+	.news-list-content-box{
+		width: 100%;
+		height: 100px;
+		padding-top: 1%;
+	}
+	.news-list-content{
+		float: left;
+		width: 80%;
+		height: 90%;
+		margin-left: 1%;
+	}
+	.news-list-content .n-l-c-photo{
+		float: left;
+		width: 130px;
+		height: 70px;
+		border: 1px solid rgba(218,218,218,0.7);
+		margin-right: 30px;
+		text-align: center;
+		line-height: 70px;
+	}
+	.n-l-c-photo img{
+		max-width: 130px;
+		max-height: 70px;
+	}
+	.n-l-c-w{
+		font-size: 17px;
+		height: 90%;
+		padding-bottom: 10px;
+		margin-left: 10px;
+
+		overflow : hidden;
+	  text-overflow: ellipsis;
+	  display: -webkit-box;
+	  -webkit-line-clamp: 3;
+	  -webkit-box-orient: vertical;
+	}
+	.news-list-func{
+		float: left;
+		width: 19%;
+		height: 90%;
+		line-height: 77px;
+		text-align: center;
+	}
+	.news-list-func :first-child{
+		margin-right: 10px;
+	}
+  .n-l-c-w-notice{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		line-height: 70px;
+  }
 
 
+/*     资讯列表   END     */
 
 
 
