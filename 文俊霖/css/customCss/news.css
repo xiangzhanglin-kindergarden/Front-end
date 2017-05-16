@@ -53,19 +53,6 @@ tr{
 	margin: 20px 20px 20px 0;
 }
 
-
-/*#blank-add{
-	float: left;
-	padding-top: 3px;
-  margin-left: 10px;
-  font-size: 18px;
-  cursor: default;
-  color: red;
-}*/
-
-.myHidden{
-	display: none;
-}
 #write-nub{
 	float: right;
 	width: 63px;
@@ -85,72 +72,6 @@ color: #000;
 color: #000; 
 }
 
-
-.nochose-box{
-	float: left;
-	position: relative;
-	opacity: 0;
-}
-
-
-.nochose-notice{
-	position: absolute;
-	width: 95px;
-	height: 30px;
-	border: 1px solid rgb(166,162,159);
-	border-radius: 5px;
-	margin-top: 50px;
-	margin-left: 15px;
-	text-align: center;
-	font-size: 15px;
-	font-family: "Microsoft Yahei";
-	line-height: 23px;
-	background-color: #fff;
-	box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, .1);
-	color: red;
-	cursor: default;
-	z-index: 1;
-}
-.triangle-up{
-	position: absolute;
-	width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 16px solid #fff;
-  margin-top: 36px;
-  margin-left: 27.2px;
-  z-index: 2;
-}
-.triangle-up2{
-	position: absolute;
-	width: 0;
-  height: 0;
-  border-left: 11px solid transparent;
-  border-right: 11px solid transparent;
-  border-bottom: 18px solid rgb(166,162,159);
-  margin-top: 34px;
-  margin-left: 25px;
-  z-index: 1;
-}
-
-.text-gray{
-	color: rgb(194,194,194);
-}
-.btn-unseccess {
-  background-color: rgb(78,37,97);
-  border-color: #23c6c8;
-  color: #FFFFFF;
-}
-.btn-unseccess:hover,
-.btn-unseccess:focus,
-.btn-unseccess:active,
-.btn-unseccess.active{
-	background-color: rgba(78,37,97,0.8);
-	border-color: #21b9bb;
-	color: #FFFFFF;
-}
-
 .c-content-box{
 	float: left;
 	width: 100%;
@@ -167,64 +88,10 @@ color: #000;
 	cursor: default;
 }
 
-.label-white{
-	background-color: #c2c2c2;
-	color: rgb(105,105,105);
-}
-.c-p{
-	padding-left: 12px!important;
-}
-.c-t-p-lg{
-	padding-left: 25px!important;
-}
-.c-c-p-lg{
-	padding-left: 24px!important;
-}
-.m-table{
-	table-layout:fixed;
-}
-.m-table thead{
-	cursor: default;
-}
-.c-normal-w {
-	width: 10%;
-}
-.c-normal-w2 {
-	width: 15%;
-}
-.c-normal-w3 {
-	width: 12%;
-}
-.c-photo-w {
-	width: 5%;
-}
-.c-title-w {
-	width: 45%;
-}
-.c-title-w2{
-	width: 50%;
-}
-.c-f-b-title{
-	border-radius: 3px;
-  padding: 3px 20px;
-	margin: 4px;
-	line-height: 25px;
-	text-align: left;
-  clear: both;
-  cursor: default;
-}
-
-.c-nub{
-	display: none;
-}
-
-
-
 
 .mail-box-header{
 	float: left;
 	width: 100%;
-	/*margin-bottom: 20px;*/
 }
 /*      全校素有新闻公告/我的新闻公告 部分      */
 	.news-sort-btn{
