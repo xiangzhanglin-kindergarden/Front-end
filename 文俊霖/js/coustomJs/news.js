@@ -78,31 +78,30 @@
 				$(".news-status span").removeClass("n-s-chosed");
 				$(this).addClass("n-s-chosed");
 			}else if(tID == null || tID=="" || tID=="undefined") {
+				setTimeout(function(){
+					var nub2 = 0;
+					$(".n-s-kind").each(function(){
+						var tclass2 = $(this).attr("class");
+						console.log(tclass2);
+						if (tclass2 == "n-s-kind n-s-chosed") {
+							nub2++;
+						};
+					})
+					console.log("nub2  : "+nub2);
+					if(nub2==3){
+						$(".news-status span").removeClass("n-s-chosed");
+						$("#n-s-all").addClass("n-s-chosed");
+					}
+				}, 1);
 				
-				var nub2 = 0;
-				$(".news-status span").each(function(){
-					var tclass2 = $(this).attr("class");
-					console.log(tclass2);
-					if (tclass2 == "n-s-chosed") {
-						nub2++;
-					};
-				})
-				console.log("nub2  : "+nub2);
-				if(nub2==2){
-					$(".news-status span").removeClass("n-s-chosed");
-					// $("#n-s-all").addClass("n-s-chosed");
-				}
 
-
-
-
-				if (tClass == "n-s-chosed") {
+				if (tClass == "n-s-kind n-s-chosed") {
 					$(this).removeClass("n-s-chosed");
 					var nub = 0;
 					$(".news-status span").each(function(){
 						var tclass2 = $(this).attr("class");
-						console.log(tclass2);
-						if (tclass2 == "n-s-chosed") {
+						// console.log(tclass2);
+						if (tclass2 == "n-s-kind n-s-chosed") {
 							nub +=1;
 						};
 					})
