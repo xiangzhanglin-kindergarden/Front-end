@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>创建班级</title>
+
+    <link rel="shortcut icon" href="img/title.png">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/customCss/addClassStyle.css">
+</head>
+
+<body class="gray-bg">
+<div class="body">
+    <!--<div class="goHome">-->
+        <!--<a id="backClass"><img src="img/back.jpg" alt="返回"></a>-->
+    <!--</div>-->
+    <div class="if-d-backbtn">
+        <a id="backClass">
+            <i class="fa fa-mail-reply"></i>
+            返回
+        </a>
+    </div>
+
+    <div class="main">
+        <h2> 创建班级</h2>
+        <div class="theRow">
+            <div class="theRowInput">
+                <span>班级名称</span>
+                <input type="text" placeholder="班级名称">
+            </div>
+            <div class="theRowInput">
+                <span>班主任</span>
+                <input readonly type="text" placeholder="请选择班主任" data-work = "1">
+                <i class="teacherI"></i>
+            </div>
+            <div class="theRowInput">
+                <span>普通教师</span>
+                <input readonly type="text" placeholder="请选择普通教师" data-work = "2">
+                <i class="teacherI"></i>
+            </div>
+            <div class="theRowInput">
+                <span>保育员</span>
+                <input readonly type="text" placeholder="请选择保育员" data-work = "3">
+                <i class="teacherI"></i>
+            </div>
+        </div>
+        <div class="button">
+            <input class="buttonAdd" type="button" value="确定">
+            <input class="buttonCancel" type="button" value="取消">
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+<script type="text/javascript" src="js/customJs/addClass.js"></script>
+
+<!-- 自定义js -->
+<script src="js/content.js?v=1.0.0"></script>
+
+
+</body>
+
+</html>

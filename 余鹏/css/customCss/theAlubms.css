@@ -1,0 +1,167 @@
+.ibox{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/*返回*/
+.if-d-backbtn{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 150px;
+    /*min-width: 80px;*/
+    height: 40px;
+    border: 1px solid #EBE9E9;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 1px 1px #D3D3D3;
+    margin-left: -2.5%;
+    font-size: 18px;
+    text-align: right;
+    line-height: 40px;
+    color: #000;
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+
+    transition:margin-left,background-color 1s,1s;
+    -moz-transition:margin-left,background-color 1s,1s; /* Firefox 4 */
+    -webkit-transition:margin-left,background-color 1s,1s; /* Safari and Chrome */
+    -o-transition:margin-left,background-color 1s,1s; /* Opera */
+
+}
+.if-d-backbtn:hover{
+    margin-left: -0.1%;
+    background-color: rgb(51,112,183);
+}
+.if-d-backbtn a{
+    float: right;
+    width: 100%;
+    height: 100%;
+    padding-right: 14%;
+    transition: color 0.3s;
+    -moz-transition: color 0.3s; /* Firefox 4 */
+    -webkit-transition: color 0.3s; /* Safari and Chrome */
+    -o-transition: color 0.3s; /* Opera */
+}
+.if-d-backbtn:hover a{
+    color: #fff;
+}
+
+
+
+.addPhoto{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+.addPhoto input{
+    width: 80px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.photoAdd{
+    background-color: #1ab394;
+}
+.photoManage{
+    background-color: #f8ac59;
+}
+.photoDel{
+    background-color: #ed5565;
+}
+.photoCancle{
+    background-color: #f7a54a;
+}
+
+
+.titlePhoto p{
+    width: 80%;
+    text-indent: 28px;
+}
+.mainPhoto{
+    width: 100%;
+    height: auto;
+}
+.mainPhoto img{
+    width: auto;
+    height: 200px;
+    /*float: left;*/
+}
+.mainPhoto .everyImg{
+    position: relative;
+    width: auto;
+    height: 200px;
+    display: inline-block;
+    margin: 20px 30px;
+}
+
+
+
+/*上传照片*/
+.uploadPhoto{
+    width: 80%;
+    height: 800px;
+    background-color: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    left: 185px;
+    z-index: 100;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+i.close{
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    right: 10px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
+
+.gray{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #f3f3f4;
+    opacity: 0.7;
+}
+
+iframe{
+    border: none;
+}
+
+/*管理相册按钮*/
+i.manageImg{
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #eee;
+    /*border-radius: 4px;*/
+    background-color: white;
+    cursor: pointer;
+    z-index: 100;
+    /*background: url(../../img/checked.png);*/
+}
