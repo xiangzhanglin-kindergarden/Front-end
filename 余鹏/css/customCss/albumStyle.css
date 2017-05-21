@@ -37,6 +37,8 @@ html body{
 
 p.theDescribe{
     font-size: 15px;
+    text-align: left;
+    text-indent: 30px;
 }
 p.theTime{
     font-size: 18px;

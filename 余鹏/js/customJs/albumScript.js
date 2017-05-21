@@ -24,19 +24,29 @@ $(window).ready(function () {
         },
         success: function (data) {
             $(".adding")[0].remove();
-            console.log(data);
 
             var imgData = JSON.parse(data);
             console.log(imgData);
             for(var i=0;i<imgData.length;i++){
+                var theImgFace = imgData[i].picface;
+                var imgFace;
+                if (theImgFace == undefined){
+                    imgFace = "img/albumFace.png";
+                }else {
+                    imgFace = JSON.parse(theImgFace).url;
+                }
+                console.log(imgFace);
+
                 var box = document.createElement("div");
                 box.className = "box";
                 var pic = document.createElement("div");
                 pic.className = "pic";
                 var theImg = document.createElement("img");
-                theImg.src = "img/albumFace.png";//默认封面
+                // theImg.src = "img/albumFace.png";//默认封面
                 theImg.setAttribute("data-id",imgData[i].picid);//设置ID
+                theImg.src = imgFace;
                 theImg.setAttribute("data-page",pageNum);
+                theImg.setAttribute("data-index",i);
                 var name = document.createElement("p");
                 name.innerHTML = imgData[i].picname;
                 var time = document.createElement("p");
@@ -83,7 +93,7 @@ $(window).ready(function () {
 
             var imgs = $("img");
             imgs.load(function () {
-                afterSeccess();
+                afterSeccess(imgData);
             });
 
         },
@@ -95,7 +105,7 @@ $(window).ready(function () {
 });
 
 
-function afterSeccess() {
+function afterSeccess(data) {
     $(".adding").remove();
     var main = $("#main");
     main.show();
@@ -114,51 +124,64 @@ function afterSeccess() {
     photos.each(function () {
         var nowPhoto = this;
         nowPhoto.onclick = function () {
-            var theIndex = this.getAttribute("data-id");//获取的D
-            console.log(this,"theIndex:"+theIndex);
+            // var theIndex = this.getAttribute("data-id");//获取的D
+            var index = this.getAttribute("data-index");
 
-            $.ajax({
-                type: "post",
-                // url: "js/customJs/imgData.json",
-                url: "http://119.29.53.178:8080/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+1,
-                // dataType: "json",
-                data:theIndex,
-                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-                beforeSend: function (xhr) {
-                    xhr.withCredentials = true;
-                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            if (window.sessionStorage) {
+                var imgData = data[index];
+                imgData.pageNum = 1;
 
-                    var oDiv = document.createElement("div");
-                    oDiv.className = "skip";
-                    var oP = document.createElement("p");
-                    oP.innerHTML = "正在打开相册，请稍等。。。";
-                    $("#main")[0].appendChild(oDiv);
-                    oDiv.appendChild(oP);
-                    $(".gray").show();
-                },
-                success: function (data) {
-                    console.log(theIndex);
+                console.log(imgData);
+                var theImgData = JSON.stringify(imgData);
+                sessionStorage.setItem("theImgData", theImgData);
 
-                    if (window.sessionStorage) {
-                        var imgData = {
-                            picId: theIndex,
-                            imgData: data
-                        };
-                        console.log(imgData);
-                        var theImgData = JSON.stringify(imgData);
-                        sessionStorage.setItem("theImgData", theImgData);
-                    
-                        window.location.href = "theAlbums.html";
-                    
-                    }else {
-                        alert("你的浏览器不支持sessionStorage")
-                    }
+                window.location.href = "theAlbums.html";
 
-                },
-                error: function (err) {
-                    console.log(err.status);
-                }
-            });
+            }else {
+                alert("你的浏览器不支持sessionStorage")
+            }
+            // $.ajax({
+            //     type: "post",
+            //     // url: "js/customJs/imgData.json",
+            //     url: "http://119.29.53.178:8080/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+1,
+            //     // dataType: "json",
+            //     data:theIndex,
+            //     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            //     beforeSend: function (xhr) {
+            //         xhr.withCredentials = true;
+            //         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            //
+            //         var oDiv = document.createElement("div");
+            //         oDiv.className = "skip";
+            //         var oP = document.createElement("p");
+            //         oP.innerHTML = "正在打开相册，请稍等。。。";
+            //         $("#main")[0].appendChild(oDiv);
+            //         oDiv.appendChild(oP);
+            //         $(".gray").show();
+            //     },
+            //     success: function (data) {
+            //         console.log(theIndex);
+            //
+            //         if (window.sessionStorage) {
+            //             var imgData = {
+            //                 picId: theIndex,
+            //                 imgData: data
+            //             };
+            //             console.log(imgData);
+            //             var theImgData = JSON.stringify(imgData);
+            //             sessionStorage.setItem("theImgData", theImgData);
+            //        
+            //             window.location.href = "theAlbums.html";
+            //        
+            //         }else {
+            //             alert("你的浏览器不支持sessionStorage")
+            //         }
+            //
+            //     },
+            //     error: function (err) {
+            //         console.log(err.status);
+            //     }
+            // });
 
 
         }

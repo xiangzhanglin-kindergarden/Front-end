@@ -92,6 +92,7 @@
     width: auto;
     height: 200px;
     /*float: left;*/
+    cursor: pointer;
 }
 .mainPhoto .everyImg{
     position: relative;
@@ -106,7 +107,7 @@
 /*上传照片*/
 .uploadPhoto{
     width: 80%;
-    height: 800px;
+    height: 600px;
     background-color: white;
     margin: 0 auto;
     position: absolute;
@@ -164,4 +165,82 @@ i.manageImg{
     cursor: pointer;
     z-index: 100;
     /*background: url(../../img/checked.png);*/
+}
+
+
+
+
+
+
+/*相册详情*/
+.showPhoto{
+    display: none;
+    width: 60%;
+    background-color: black;
+    height: 96%;
+    min-height: 800px;
+    position: fixed;
+    top:2%;
+    left: 20%;
+    z-index: 120;
+}
+.showPhoto .content{
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    height: 90%;
+}
+.showPhoto .content .changePhoto{
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+.showPhoto .content img{
+    width: 70%;
+    height: auto;
+    max-height: 90%;
+    margin-top: 5%;
+}
+.showPhoto .comment{
+    width: 28%;
+    height: 85%;
+    margin-top: 4%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 10px;
+}
+.showPhoto .close{
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: 4px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.5;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.showPhoto .close:hover{
+    opacity: 0.9;
+}
+.close:before{
+    content: "\e088";
+}
+
+
+
+
+
+
+
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
 }

@@ -60,8 +60,8 @@
 
         Dropzone.options.myAwesomeDropzone = {
 
-//            url: "http://119.29.53.178:8080/kindergarden/PictureAdd",//提交地址
-            url: "http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action",
+            url: "http://119.29.53.178:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
+//            url: "http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action",
             autoProcessQueue: false,
             uploadMultiple: true,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,
@@ -88,8 +88,9 @@
                 this.on("sendingmultiple", function () {
 //                    $.ajax({
 //                        type: "post",
-//                        url: "http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action",
-//                        data: "wangEditorH5File="+picId,
+////                        url: "http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action",
+//                        url: "http://119.29.53.178:8080/kindergarden/PictureAdd",
+//                        data: "picturecontenid="+picId,
 //                        beforeSend: function (xhr) {
 //                            xhr.withCredentials = true;
 //                            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
