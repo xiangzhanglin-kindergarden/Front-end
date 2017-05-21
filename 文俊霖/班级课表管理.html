@@ -100,22 +100,22 @@
   <div class="cover"></div>
   <div class="new-class">
     <div class="function-box">
-      <span>班级：</span><select name="class">
+      <span>班级：</span>
+      <select name="class" class="class">
         <option value="大一班">大一班</option>
         <option value="大二班">大二班</option>
         <option value="中一班">中一班</option>
         <option value="小一班">小一班</option>
       </select>
 
-      学年：<select name="year"></select>
 
-      第<select name="week" height="50px"></select>周
+      第<select name="week" height="50px" class="week"></select>周
       <div class="close-btn" onclick="close_new_class()">
         <span class="glyphicon glyphicon-remove-sign"></span>
       </div>
     </div>
     <div class="new-box">
-      <table class="table table-bordered new-table">
+      <table class="table table-bordered new-table" id="new-table">
         <thead>
           <tr>
             <th>时间</th>

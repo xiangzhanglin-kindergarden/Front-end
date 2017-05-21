@@ -1,0 +1,144 @@
+/*
+ *
+ *   草稿 界面
+ *   
+ *
+*/
+.if-w-title{
+	margin-bottom: 30px;
+	color: #000;
+}
+.if-w-t-content{
+	width: 80%;
+	border-bottom: 1px solid #D0D0D0;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.if-w-change-title{
+	padding-left: 10%;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "黑体";
+}
+.if-w-change-title input{
+	width: 75%;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: normal;
+}
+.if-w-cover-box{
+	display: block;
+}
+.if-w-write-box{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+.if-w-write-box #div1{
+	min-height: 800px;
+}
+.if-w-write-box img{
+	max-width:100%; 
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+
+.if-w-backbtn{
+	position: fixed;
+	top: 30px;
+	left: 0px;
+	width: 11%;
+	min-width: 110px;
+	height: 50px;
+	border: 1px solid #EBE9E9;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 0 1px 1px #D3D3D3;
+	margin-left: -2.5%;
+	font-size: 20px;
+	text-align: right;
+	line-height: 50px;
+	color: #000;
+	background-color: #fff;
+	z-index: 100;
+	cursor: pointer;	
+
+	transition:margin-left,background-color 1s,1s;
+	-moz-transition:margin-left,background-color 1s,1s; /* Firefox 4 */
+	-webkit-transition:margin-left,background-color 1s,1s; /* Safari and Chrome */
+	-o-transition:margin-left,background-color 1s,1s; /* Opera */
+
+
+}
+
+.if-w-backbtn:hover{
+	margin-left: -0.1%;
+	background-color: rgb(51,112,183);
+}
+.if-w-backbtn a{
+	float: right;
+	width: 100%;
+	height: 100%;
+	padding-right: 14%;
+	transition: color 0.3s;
+	-moz-transition: color 0.3s; /* Firefox 4 */
+	-webkit-transition: color 0.3s; /* Safari and Chrome */
+	-o-transition: color 0.3s; /* Opera */
+}
+
+.if-w-backbtn:hover a{
+	color: #fff;
+}
+
+.if-w-save-btn{
+	top: 110px;
+}
+.if-w-save-btn a{
+	color: #B733A8
+}
+.if-w-save-btn:hover{
+	background-color: #B733A8;
+}
+.if-w-sub-btn{
+	top: 190px;
+}
+.if-w-sub-btn a{
+	color: #50B733;
+}
+.if-w-sub-btn:hover{
+	background-color: #50B733;
+}
+
+
+.ibox{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>班级管理</title>
+    <link rel="shortcut icon" href="img/title.png">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="css/customCss/classManagementStyle.css" rel="stylesheet">
+    <script type="text/javascript" src="js/customJs/classManagement.js"></script>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>班级管理</h5>
+                </div>
+                <div class="addClass">
+                    <button id="button" class="buttonAdd"><a href="addClass.html">创建班级</a></button>
+                    <input type="button" value="升级班级">
+                    <input class="buttonDel" type="button" value="删除班级">
+                    <input class="buttonRefresh" type="button" value="刷新数据">
+                </div>
+                <div class="ibox-content">
+                    <div class="jqGrid_wrapper">
+                        <table id="table_list_2"></table>
+                        <div id="pager_list_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- Peity -->
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- jqGrid -->
+<script src="js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+<script src="js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+<!-- 自定义js -->
+<script src="js/content.js?v=1.0.0"></script>
+
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function () {
+
+        var row;
+        $.ajax({
+            type: "get",
+            url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+            dataType: "JSON",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+                var adding = document.createElement("p");
+                adding.className = "adding";
+                adding.innerHTML = "数据加载中。。。";
+                $(".ibox-content")[0].appendChild(adding);
+            },
+            success: function (data) {
+                $(".adding")[0].remove();
+                row = data;
+                var evergTeacher = [];
+                for(var i=0;i<data.length;i++){
+                    if (data[i].tTeacher != undefined){
+                        if (data[i].tTeacher.indexOf(",") != "-1"){
+                            evergTeacher[i] = data[i].tTeacher.split(",");
+                            for (var t = 0;t<evergTeacher.length;t++){
+                                row[i].tNameOne = evergTeacher[i][0];
+                                row[i].tNameTwo = evergTeacher[i][1];
+                                row[i].tNameThree = evergTeacher[i][2];
+                            }
+                        }else {
+                            row[i].tNameOne = "无";
+                            row[i].tNameTwo = "无";
+                            row[i].tNameThree = "无";
+                        }
+                    }else {
+                        row[i].tNameOne = "无";
+                        row[i].tNameTwo = "无";
+                        row[i].tNameThree = "无";
+                    }
+
+                    row[i].id = i + 1;
+                    row[i].cId = data[i].cId;
+                    row[i].cName = data[i].cName;
+                    row[i].sNum = data[i].sNumber;
+                }
+                $.jgrid.defaults.styleUI = 'Bootstrap';
+
+                var table_list_2 = $("#table_list_2");
+
+                // Configuration for jqGrid Example 2
+                table_list_2.jqGrid({
+                    datatype: "local",
+                    loadonce: true,
+                    gridview: true, //加速显示
+//            sortname: 'id',  //排序字段名
+//            sortorder: "asc",//排序方式：正序
+                    height: 493,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    rowNum: 12,
+                    colNames: ['序号','班级ID','班级名称','班长','老师','保育员','学生人数','班级详情'],
+                    colModel: [
+                        {name: 'id', index: 'id', width: 30, sortable: true, sortorder: "asc"},
+                        {name: 'cId', index: 'cId', width: 40 ,hidden: true},
+                        {name: 'cName', index: 'cName', width: 60},
+                        {name: 'tNameOne', index: 'tName', width: 30},
+                        {name: 'tNameTwo', index: 'tName', width: 30},
+                        {name: 'tNameThree', index: 'tName', width: 30},
+                        {name: 'sNum', index: 'sNum', width: 50},
+                        {name: 'edit', index: 'edit', width: 50, sortable: false, formatter:function () {
+                            return '<input class = "theDetails" type = "button" value="查看详情">'
+                        }}
+                    ],
+                    pager: "#pager_list_2",
+                    viewrecords: true,
+                    caption: "重邮幼儿园班级管理",
+                    hidegrid: false
+                });
+
+                //添加数据
+                for(var d=0;d<row.length;d++){
+                    table_list_2.jqGrid('addRowData', d + 1, row[d]);
+                }
+
+                // Add selection
+                table_list_2.setSelection(1, true);
+
+
+                // Setup buttons
+                table_list_2.jqGrid('navGrid', '#pager_list_2', {
+                    edit: false,
+                    add: false,
+                    del: false,
+                    search: true,
+                    refresh: true,
+                    afterRefresh: reloadData
+                });
+
+                //分页
+                table_list_2.setGridParam({rowNum: 12}).trigger("reloadGrid");
+
+
+                classManagenment(data);
+                function reloadData() {
+                    window.location.reload();
+                }
+
+            },
+            error: function (err) {
+                alert("数据加载错误："+err.status);
+            }
+        });
+
+
+
+    });
+</script>
+
+</body>
+</html>

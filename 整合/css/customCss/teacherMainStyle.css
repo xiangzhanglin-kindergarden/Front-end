@@ -1,0 +1,144 @@
+#table_list_2 tbody tr td{
+    height: 41px;
+}
+
+.box{
+    width: 400px;
+    height: auto;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 110;
+    display: none;
+}
+.box .boxInput{
+    width: 100%;
+    height: 60px;
+    margin: 10px 0 0 30px;
+}
+.box .boxInput span{
+    display: block;
+    float: left;
+    font-size: 15px;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    font-weight: 600;
+}
+.box .boxInput input , .box .boxInput select{
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 0 10px;
+    padding-left: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+}
+
+
+.top{
+    padding: 8px 0 0 8px;
+    height: 40px;
+    border-bottom: 1px solid #eee;
+}
+.top .title{
+    font-size: 18px;
+    font-weight: 800;
+}
+.top .close{
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
+/*css动画*/
+@keyframes showBox {
+    from{opacity: 0;  left: 0; top: 0;}
+    to{opacity: 1; left: 150px; top: 50px}
+}
+@-moz-keyframes showBox /* Firefox */
+{
+    from{opacity: 0;  left: 0; top: 0;}
+    to{opacity: 1; left: 150px; top: 50px}
+}
+
+@-webkit-keyframes showBox /* Safari 和 Chrome */
+{
+    from{opacity: 0;  left: 0; top: 0;}
+    to{opacity: 1; left: 150px; top: 50px}
+}
+
+@-o-keyframes showBox /* Opera */
+{
+    from{opacity: 0;  left: 0; top: 0;}
+    to{opacity: 1; left: 150px; top: 50px}
+}
+
+.boxHover{
+    animation: showBox 1s;
+    -moz-animation: showBox 1s;	/* Firefox */
+    -webkit-animation: showBox 1s;	/* Safari 和 Chrome */
+    -o-animation: showBox 1s;
+    left: 150px;
+    top: 50px;
+}
+
+
+.box .theButton{
+    width: 200px;
+    height: 60px;
+    margin: 20px 10px 20px 0;
+    float: right;
+}
+.box .theButton input{
+    width: 80px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    margin-right: 10px;
+    background-color: #00B2E2;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.addTeacher{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+.addTeacher input{
+    width: 80px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+#alertmod_table_list_2 {
+    top: 200px !important; /*编辑时未悬着的提示框*/
+}
+
+.buttonEdit{
+    background-color: #f8ac59;
+}
+.buttonAdd{
+    background-color: #1ab394;
+}
+.buttonDel{
+    background-color: #ed5565;
+}
