@@ -50,7 +50,6 @@ function showPhoto() {
 
             //显示评论
             function theComment() {
-                console.log("theComment");
                 // console.log(nowImg);
                 var nowImgId = nowImg.getAttribute("data-pid");
                 $.ajax({
@@ -76,7 +75,7 @@ function showPhoto() {
 
                         // console.log(comment);
                         theComment.find("h3").html("评论"+"("+comment.length+")");
-                        for(var i=comment.length-1;i>=0;i--){
+                        for(var i=0;i<comment.length;i++){
                             var mainCommentContent = document.createElement("div");
                             mainCommentContent.className = "mainCommentContent";
                             if (comment[i].ptwoId == "null" || comment[i].ptwoId == undefined){
@@ -142,7 +141,6 @@ function showPhoto() {
 
 
             function releaseComment() {
-                console.log("releaseComment");
 
                 //发表评论
                 var nowImgId = nowImg.getAttribute("data-pid");
@@ -154,9 +152,18 @@ function showPhoto() {
                 //回复某人
                 var reply = $(".mainCommentContent").find("span.people");
                 reply.each(function () {
-                    this.addEventListener("click",function () {
-                        replySomeBody(this);
+
+                    this.setAttribute("data-click",1);
+                    $(this).click(function () {
+                        var isClick = this.getAttribute("data-click");
+                        console.log(isClick);
+                        if (isClick == 1){
+                            replySomeBody(this);
+                        }
                     });
+                    // this.addEventListener("click",function () {
+                    //
+                    // });
                 });
                 function replySomeBody(e) {
                     console.log(e);
@@ -172,29 +179,38 @@ function showPhoto() {
                     var replyButton = document.createElement("input");
                     replyButton.className = "replyButton";
                     replyButton.type = "button";
-                    replyButton.value = "发表";
+                    replyButton.value = "回复";
 
                     $(e).parent()[0].appendChild(mainCommentInput);
                     mainCommentInput.appendChild(replyComment);
                     mainCommentInput.appendChild(replyButton);
                     console.log("remove");
-                    e.removeEventListener("click",replySomeBody);
+                    e.setAttribute("data-click",0);
+
+                    replyButton.addEventListener("click",function () {
+                        var replyValue = $(".replyComment").val();
+                        commentAjax(replyValue,"园长",thisPerson);
+                    });
                 }
 
 
                 //对图片评论
                 buttonRelease.click(function () {
                     var editCommentValue = editComment.val();
+                    commentAjax(editCommentValue,"园长",null);
+                });
+
+                function commentAjax(editValue,poneId,ptwoId) {
                     var theValue = {
                         comId: null,
-                        poneId: "园长",//demo 暂时未园长，实际为登陆系统的管理员
-                        ptwoId: null,
+                        poneId: poneId,//demo 暂时未园长，实际为登陆系统的管理员
+                        ptwoId: ptwoId,
                         comTime: null,
-                        comContent: editCommentValue,
+                        comContent: editValue,
                         xId: nowImgId
                     };
 
-                    // console.log(theValue);
+                    console.log(theValue);
                     $.ajax({
                         type: "post",
                         url: "http://119.29.53.178:8080/kindergarden/CommunicateAdd",
@@ -205,9 +221,13 @@ function showPhoto() {
                             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
                         },
                         success: function () {
-                            // console.log("success");
+                            if (ptwoId == null){
+                                alert("评论成功！");
+                            }else {
+                                alert("回复成功！");
+                            }
                             $(".mainComment").find(".mainCommentContent").remove();
-                            alert("评论成功！");
+
                             $(".mainCommentInput").remove();
                             theComment();
 
@@ -216,7 +236,7 @@ function showPhoto() {
                             console.log(err.status);
                         }
                     });
-                });
+                }
             }
 
 
