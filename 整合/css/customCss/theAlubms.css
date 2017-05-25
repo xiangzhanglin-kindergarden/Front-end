@@ -196,6 +196,15 @@ i.manageImg{
     display: inline-block;
     cursor: pointer;
 }
+.showPhoto .content .changePhoto img{
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    opacity: 0.3;
+}
+.showPhoto .content .changePhoto img:hover{
+    opacity: 0.8;
+}
 .showPhoto .content img{
     width: 70%;
     height: auto;
@@ -213,7 +222,7 @@ i.manageImg{
 .showPhoto .close{
     cursor: pointer;
     position: absolute;
-    top: 1px;
+    top: 4px;
     right: 4px;
     display: inline-block;
     font-family: 'Glyphicons Halflings',serif;
@@ -231,6 +240,94 @@ i.manageImg{
 .close:before{
     content: "\e088";
 }
+/*评论*/
+.showPhoto .comment h3{
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+.showPhoto .comment .thepLoading{
+    padding-left: 10px;
+}
+.showPhoto .comment .mainComment{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+.showPhoto .comment .mainComment .mainCommentContent{
+    width: auto;
+    height: auto;
+}
+.showPhoto .comment .mainComment .mainCommentContent span{
+    display: inline-block;
+    height: 30px;
+}
+.showPhoto .comment .mainComment .mainCommentContent span.people{
+    font-weight: 700;
+    cursor: pointer;
+}
+.showPhoto .comment .mainComment .mainCommentContent .sendMainCommentContent{
+    width: auto;
+    height: auto;
+    padding-left: 15px;
+}
+.showPhoto .comment .mainCommentInput{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+ }
+.showPhoto .comment input.editComment{
+    width: 90%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput .buttonSure{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+.showPhoto .comment .mainCommentInput .buttonSure input{
+    float: right;
+    width: 60px;
+    height: 30px;
+    margin-right: 10%;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput{
+    margin-bottom: 10px;
+}
+.showPhoto .comment .mainCommentInput input.replyComment{
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput input.replyButton{
+    margin-left: 5%;
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+
+
+
+
+
+
 
 
 
