@@ -152,23 +152,49 @@ function showPhoto() {
                 //回复某人
                 var reply = $(".mainCommentContent").find("span.people");
                 reply.each(function () {
-
                     this.setAttribute("data-click",1);
+                    this.setAttribute("data-otherClick",0);
+                });
+
+                reply.each(function () {
                     $(this).click(function () {
+                        // now.setAttribute("data-otherClick",1);
                         var isClick = this.getAttribute("data-click");
-                        console.log(isClick);
-                        if (isClick == 1){
+                        var isOtherClick = this.getAttribute("data-otherClick");
+
+                        if (isClick == 1 && isOtherClick == 0){
+                            console.log("1 0");//首次点击
+                            console.log("replySomePeople");
                             replySomeBody(this);
+                        }else if(isClick == 0 && isOtherClick == 0){
+                            console.log("0 0");//再次点击
+                            var message = confirm("是否放弃回复？");
+                            if(message){
+                                $(".mainCommentInput").remove();
+                                reply.each(function () {
+                                    var every = this;
+                                    every.setAttribute("data-click",1);
+                                    every.setAttribute("data-otherClick",0);
+                                });
+                            }
+                        }else if(isClick == 0 && isOtherClick == 1){
+                            console.log("0 1");
+                        }else {
+                            console.log("1 1");
+                            var message1 = confirm("是否放弃回复？");
+                            if(message1){
+                                $(".mainCommentInput").remove();
+                                this.setAttribute("data-click",1);
+                                this.setAttribute("data-otherClick",0);
+                                replySomeBody(this);
+                            }
                         }
                     });
-                    // this.addEventListener("click",function () {
-                    //
-                    // });
                 });
+
+
                 function replySomeBody(e) {
-                    console.log(e);
                     var thisPerson = $(e).html();
-                    console.log(thisPerson);
 
                     var mainCommentInput = document.createElement("div");
                     mainCommentInput.className = "mainCommentInput";
@@ -184,8 +210,13 @@ function showPhoto() {
                     $(e).parent()[0].appendChild(mainCommentInput);
                     mainCommentInput.appendChild(replyComment);
                     mainCommentInput.appendChild(replyButton);
-                    console.log("remove");
+
+                    reply.each(function () {
+                        this.setAttribute("data-click",1);
+                        this.setAttribute("data-otherClick",1);
+                    });
                     e.setAttribute("data-click",0);
+                    e.setAttribute("data-otherClick",0);
 
                     replyButton.addEventListener("click",function () {
                         var replyValue = $(".replyComment").val();
