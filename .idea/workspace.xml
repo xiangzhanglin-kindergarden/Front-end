@@ -2,313 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/500.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/addClass.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/addNews.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/addNotice.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/albumUpload.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/albums.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/allInformationManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/classDetails.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/classManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/animate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/bootstrap-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/Myanimate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/Mystyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/addClassStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/albumStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/albumUpload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/classDetailsStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/classManagementStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/if-d.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/if-w.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/indexStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/knowledge.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/mobiscroll/mobiscroll.custom-2.6.2.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/mobiscroll/wp_icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/mobiscroll/wp_icons_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/news.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/studentsMainStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/teacherMainStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/customCss/theAlubms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/dropzone/basic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/dropzone/dropzone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/iCheck/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/iCheck/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/iCheck/green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/sort_asc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/sort_desc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/sprite-skin-flat yuan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/spritemap 1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/spritemap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/images/spritemap@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/plugins/jqgrid/ui.jqgrid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/curriculum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/dataDemo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/demo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/a9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/albumFace.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/avatar.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/back.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/browser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/browser.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/checked.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/class-over.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/del.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/iconfont-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/a9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/images/p7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/index_4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/loading-upload.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/locked.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/login-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/look.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p_big1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p_big2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/p_big3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/pay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/profile.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/profile_big.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/profile_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/progress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/qr_code.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/sign-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/sign-img.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/sprite-skin-flat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/success.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/true.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/webuploader.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/img/wenku_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/informationManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/contabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/content.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/Myjs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/P-details.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/P-write-news.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/classAJAX.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/knowledge.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/knowledgeAJAX.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/news.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/coustomJs/newsAJAX.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/addClass.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/albumScript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/albumsRelease.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/classDetails.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/classManagement.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/data.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/demo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/imgData.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/mobiscroll.custom-2.6.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/studentInfo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/teacherInfo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/theAlbums.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/customJs/theAlbumsShowPhoto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/getUser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/hplus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/jquery-ui-1.10.4.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/jquery-ui.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/jquery.min.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/dropzone/dropzone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/iCheck/icheck.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/jqgrid/i18n/grid.locale-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/jqgrid/jquery.jqGrid.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/extend/layer.ext.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/laydate/laydate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/laydate/need/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/laydate/skins/default/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/laydate/skins/default/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/data/chatlog.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/data/friend.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/data/group.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/data/groups.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/layim.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/layim.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/layim/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/icon-ext.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/icon_ext.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/loading-0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/loading-1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/loading-2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/textbg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_ico0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_loading0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_loading1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_loading2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_loading3.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/default/xubox_title0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/layer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/layer.ext.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/moon/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/layer/skin/moon/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/metisMenu/jquery.metisMenu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/pace/pace.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/peity/jquery.peity.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/plugins/slimscroll/jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/js/welcome.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/knowledgeManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/lessonManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/logIn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/myInformationManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/newsDetail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/bootstrap-3.3.4-dist/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/css/fileinput.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/css/fileinput.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/img/loading-sm.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/img/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_LANG.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/fileinput_locale_zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/bootstrap-fileinput/js/jquery-2.0.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/dropzone/basic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/dropzone/dropzone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/dropzone/dropzone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/c#/Upload.aspx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/c#/Upload.aspx.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/c#/bin/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/vb/Upload.aspx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/vb/Upload.aspx.vb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp.net/vb/bin/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp/Upload.asp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/asp/Upload.asp.cls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/crossdomain.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/expressInstall.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/fullAvatarEditor.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/jsp/WEB-INF/lib/commons-fileupload-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/jsp/WEB-INF/lib/fastjson-1.1.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/jsp/upload.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/php/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/fullAvatarEditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/jQuery.Cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/jQuery.Drag.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/jQuery.Resize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/jQuery.dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/swfobject.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/scripts/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/fullavatareditor/simpleDemo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/images/sort_asc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/images/sort_desc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/images/sprite-skin-flat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/images/spritemap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/images/spritemap@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/jquery插件库.url" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/laydate.dev.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/laydate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/need/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/dahong/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/dahong/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/danlan/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/danlan/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/default/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/default/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/molv/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/molv/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/qianhuang/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/qianhuang/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/yahui/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/yahui/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/yalan/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/skins/yalan/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/test/demo1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/test/demo2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/test/demo2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/laydate/www.jq22.com.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/sweetalert/sweetalert.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/sweetalert/sweetalert.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/css/wangEditor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/css/wangEditor.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/css/wangEditor.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/fonts/icomoon.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/fonts/icomoon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/fonts/icomoon.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/fonts/icomoon.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/js/lib/jquery-1.10.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/js/lib/jquery-2.2.1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/js/wangEditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/plugins/wangEditor/js/wangEditor.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/studentInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/table_jqgrid.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/teacherInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/theAlbums.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/整合/theIndex.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Front-end.iws" />
@@ -343,7 +36,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kindergarten/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -423,31 +116,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Front-end(main)" />
+              <option name="myItemId" value="Front-end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Front-end(main)" />
+              <option name="myItemId" value="Front-end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Front-end(main)" />
+              <option name="myItemId" value="Front-end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Front-end(main)" />
+              <option name="myItemId" value="Front-end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Front-end(main)" />
+              <option name="myItemId" value="Front-end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -457,14 +151,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/KindergartenManagementSystem/整合/整合" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
@@ -562,6 +255,7 @@
       <workItem from="1495703736909" duration="1607000" />
       <workItem from="1495705993700" duration="4675000" />
       <workItem from="1495864932806" duration="3630000" />
+      <workItem from="1495870090948" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -605,33 +299,40 @@
       <option name="project" value="LOCAL" />
       <updated>1495865217924</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="5/27 整合 V1.4">
+      <created>1495870107554</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1495870107554</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59516000" />
+    <option name="totallyTimeSpent" value="59556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -669,7 +370,8 @@
     <MESSAGE value="5/23  更新了相册评论功能" />
     <MESSAGE value="5/25  更新了相册回复功能" />
     <MESSAGE value="5/27 整合" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/27 整合" />
+    <MESSAGE value="5/27 整合 V1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/27 整合 V1.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -682,335 +384,51 @@
     <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/studentInfo.html" />
     <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/theAlbums.html" />
     <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/js/customJs/theAlbumsShowPhoto.js" />
-    <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/js/customJs/mobiscroll.custom-2.6.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/js/customJs/mobiscroll.custom-2.6.2.min.js" />
     <entry file="file://$PROJECT_DIR$/整合/js/customJs/customJs/demo.js" />
     <entry file="file://$PROJECT_DIR$/整合/js/customJs/customJs/classAJAX.js" />
     <entry file="file://$PROJECT_DIR$/整合/js/customJs/customJs/class.js" />
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/classDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/studentInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/css/customCss/addClassStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/classDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/albums.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/allInformationManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/css/customCss/knowledge.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/css/customCss/news.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/css/customCss/indexStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/幼儿园管理系统/css/customCss/Mystyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/albumUpload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/addClass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/studentInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="367" column="42" selection-start-line="367" selection-start-column="42" selection-end-line="367" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/addClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/classManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/classManagement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/css/customCss/classDetailsStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/addNews.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/addNotices.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-507">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/allNewsManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/courseManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="180" column="26" selection-start-line="180" selection-start-column="26" selection-end-line="180" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/knowledgeManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/logo.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/logoin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1701">
-          <caret line="63" column="6" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/myNewsManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/newsDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3996">
-          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="24" column="111" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/classAJAX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3029">
-          <caret line="168" column="52" selection-start-line="168" selection-start-column="48" selection-end-line="168" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/knowledge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="113" column="38" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="60" column="62" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/knowledgeAJAX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/newsAJAX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="412" column="41" selection-start-line="412" selection-start-column="37" selection-end-line="412" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/P-write-news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="313" column="56" selection-start-line="313" selection-start-column="56" selection-end-line="313" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/P-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="527" column="0" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/theAlbums.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/Myjs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/js/customJs/theAlbumsShowPhoto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="233" column="63" selection-start-line="233" selection-start-column="63" selection-end-line="233" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/整合/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/demo.js" />
+    <entry file="file://$PROJECT_DIR$/整合/classDetails.html" />
+    <entry file="file://$PROJECT_DIR$/整合/studentInfo.html" />
+    <entry file="file://$PROJECT_DIR$/整合/css/customCss/addClassStyle.css" />
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/classDetails.js" />
+    <entry file="file://$PROJECT_DIR$/KindergartenManagementSystem/albums.html" />
+    <entry file="file://$PROJECT_DIR$/整合/allInformationManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/404.html" />
+    <entry file="file://$PROJECT_DIR$/整合/css/customCss/knowledge.css" />
+    <entry file="file://$PROJECT_DIR$/整合/css/customCss/news.css" />
+    <entry file="file://$PROJECT_DIR$/整合/css/customCss/indexStyle.css" />
+    <entry file="file://$PROJECT_DIR$/幼儿园管理系统/css/customCss/Mystyle.css" />
+    <entry file="file://$PROJECT_DIR$/整合/albumUpload.html" />
+    <entry file="file://$PROJECT_DIR$/整合/addClass.html" />
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/studentInfo.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/addClass.js" />
+    <entry file="file://$PROJECT_DIR$/整合/classManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/classManagement.js" />
+    <entry file="file://$PROJECT_DIR$/整合/css/customCss/classDetailsStyle.css" />
+    <entry file="file://$PROJECT_DIR$/整合/addNews.html" />
+    <entry file="file://$PROJECT_DIR$/整合/addNotices.html" />
+    <entry file="file://$PROJECT_DIR$/整合/allNewsManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/courseManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/knowledgeManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/logo.ico" />
+    <entry file="file://$PROJECT_DIR$/整合/logoin.html" />
+    <entry file="file://$PROJECT_DIR$/整合/myNewsManagement.html" />
+    <entry file="file://$PROJECT_DIR$/整合/newsDetail.html" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/class.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/classAJAX.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/knowledge.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/login.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/knowledgeAJAX.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/newsAJAX.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/P-write-news.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/P-details.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/news.js" />
+    <entry file="file://$PROJECT_DIR$/整合/theAlbums.html" />
+    <entry file="file://$PROJECT_DIR$/整合/js/coustomJs/Myjs.js" />
+    <entry file="file://$PROJECT_DIR$/整合/js/customJs/theAlbumsShowPhoto.js" />
+    <entry file="file://$PROJECT_DIR$/整合/index.html" />
     <entry file="file://$PROJECT_DIR$/kindergarten/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1021,7 +439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
