@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="">
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="5/27 整合 V1.4">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Front-end.iws" />
@@ -47,6 +47,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -255,7 +258,7 @@
       <workItem from="1495703736909" duration="1607000" />
       <workItem from="1495705993700" duration="4675000" />
       <workItem from="1495864932806" duration="3630000" />
-      <workItem from="1495870090948" duration="40000" />
+      <workItem from="1495870090948" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -306,14 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1495870107554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="5/27 整合 V1.4">
+      <created>1495870134663</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1495870134663</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59556000" />
+    <option name="totallyTimeSpent" value="59601000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
