@@ -361,7 +361,6 @@ function addTheBox(theCaption,theIndex,data) {
 
 //校验
 function checkInput() {
-    console.log("check");
     var inputs = $(".theBox").find("input");
     var selects = $(".address");
 

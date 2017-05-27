@@ -56,7 +56,9 @@
     $(document).ready(function () {
 
         var theImgData = sessionStorage.getItem("theImgData");
-        var picId = JSON.parse(theImgData).picId;
+        var picId = JSON.parse(theImgData).picid;
+        console.log(theImgData);
+        console.log(picId);
 
         Dropzone.options.myAwesomeDropzone = {
 

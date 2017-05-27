@@ -32,15 +32,15 @@ $(document).ready(function () {
     var backClass = $("#backClass")[0];
     var goHome = $(".goHome");
 
-    backClass.onmouseover = function () {
-        var backSpan = document.createElement("span");
-        backSpan.className = "goHomeSpan";
-        backSpan.innerHTML = "返回班级管理";
-        goHome[0].appendChild(backSpan);
-    };
-    backClass.onmouseout = function () {
-        $(".goHomeSpan")[0].remove();
-    };
+    // backClass.onmouseover = function () {
+    //     var backSpan = document.createElement("span");
+    //     backSpan.className = "goHomeSpan";
+    //     backSpan.innerHTML = "返回班级管理";
+    //     goHome[0].appendChild(backSpan);
+    // };
+    // backClass.onmouseout = function () {
+    //     $(".goHomeSpan")[0].remove();
+    // };
     backClass.onclick = function () {
         window.history.back(-1);
         clearCookie();
