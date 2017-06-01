@@ -10,8 +10,7 @@ $(document).ready(function () {
 
     if (usertype == 1){//园长
         console.log(manager);
-        teacherData = sessionStorage.getItem("teacherData");
-        console.log(typeof (teacherData));
+        
         $("#username").html("园长");
 
     }else {
@@ -23,6 +22,7 @@ $(document).ready(function () {
          *
          *
          */
+        teacherData = sessionStorage.getItem("teacherData");
         var data = JSON.parse(teacherData);
         console.log(data);
         var username = data.tName;
