@@ -67,11 +67,11 @@ $(document).ready(function(){
 						}else if (data.msg == "教师用户不存在") {
 							alert("用户不存在");
 						}else {
-                            set_sessionStorage(userName,userClass);
-                            var theData = JSON.stringify(data);
-                            sessionStorage.setItem("teacherData",theData);
-                            alert("登录成功");
-                            window.location.href = "index.html";
+              set_sessionStorage(userName,userClass);
+              var theData = JSON.stringify(data);
+              sessionStorage.setItem("teacherData",theData);
+              alert("登录成功");
+              window.location.href = "index.html";
 						}
 					},
 					error:function(jqHXR){
