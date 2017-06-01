@@ -2,14 +2,16 @@
  * Created by Sunshine on 2017/6/1.
  */
 $(document).ready(function () {
-    var teacherData = sessionStorage.getItem("teacherData");
+    var teacherData;
     var manager = sessionStorage.getItem("user");
     var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
 
-    console.log(typeof (teacherData));
+    
 
     if (usertype == 1){//园长
         console.log(manager);
+        teacherData = sessionStorage.getItem("teacherData");
+        console.log(typeof (teacherData));
         $("#username").html("园长");
 
     }else {

@@ -285,7 +285,11 @@ function getClassWeek(){
 }
 
 
-
+$(function(){
+	var newWeek = $(".differ-class-box [name='week']").val();
+	console.log(newWeek);
+	getXDate(newWeek);
+})
 
 
 

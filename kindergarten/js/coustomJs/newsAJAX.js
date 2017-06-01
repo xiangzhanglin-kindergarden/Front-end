@@ -21,9 +21,6 @@ $(function(){
       $(".news-list-func .n-l-f-btn-c").css({"width":"40%"});
     };
   }
-
-	
-
 })
 
 
@@ -439,12 +436,15 @@ $(function(){
         },
         success:function(data){
           console.log(data);
+          $(".news-nchange-btn button").addClass("btn-white");
+          $(".news-nchange-btn button").removeClass("btn-info");
           if (data.length==0||data.false=="false") {
             $(".news-lists").remove();
             page(1);
           }else{
             $(".news-lists").remove();
             addList(data);
+
           }
         },
         error:function(jqHXR, textStatus, errorThrown){

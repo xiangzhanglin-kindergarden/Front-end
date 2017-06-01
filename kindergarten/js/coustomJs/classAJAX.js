@@ -1,4 +1,6 @@
-
+var usertype;
+var userClass;
+var teacherData;
 
 
 
@@ -6,15 +8,12 @@
 $(document).ready(function(){
 	$(function(){
 		// var username = sessionStorage.getItem("user");
-		var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+		usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
 		// console.log(username);
 		// console.log(usertype);
-
-		var teacherData = sessionStorage.getItem("teacherData");
+		teacherData = sessionStorage.getItem("teacherData");
 		var data = JSON.parse(teacherData);
-		console.log(usertype);
-		console.log(data);
-
+		// usertype = 0;
 		userClass = data.cId;
 		if (usertype == 0) {
 			tClass();
@@ -29,33 +28,31 @@ $(document).ready(function(){
 		}
 	})
 
-	function tClass(){
-		console.log(userClass);
-		getTClass();
-	}
+		function tClass(){
+			console.log(userClass);
+			getTClass();
+		}
 
-	function getTClass(){
-		var lesson = JSON.stringify({
-			"lId":null,
-			"cName":null,
-			"lWeek":$(".differ-class-box [name='week']").val(),
-			"lMon":null,
-			"lTue":null,
-			"lWed":null,
-			"lThu":null,
-			"lfri":null,
-			"cid":userClass,
-		});
-		ajax(
-			"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
-			"lessonJson="+lesson,
-			showLesson
-		);
-	}
+		function getTClass(){
+			var lesson = JSON.stringify({
+				"lId":null,
+				"cName":userClass,
+				"lWeek":$(".differ-class-box [name='week']").val(),
+				"lMon":null,
+				"lTue":null,
+				"lWed":null,
+				"lThu":null,
+				"lfri":null,
+				// "cid":userClass,
+			});
+			ajax(
+				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+				"lessonJson="+lesson,
+				showLesson
+			);
+		}
 
 
-
-	
 
 	//点击新建课表
 	$("#new-ok-btn").on("click",function(){
@@ -93,14 +90,14 @@ $(document).ready(function(){
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
 				"lId":null,
-				"cName":null,
+				"cName":userClass,
 				"lWeek":$(".week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
-				"cid":userClass
+				// "cid":userClass
 			});
 			console.log(courseMsg);
 			ajax(
@@ -139,14 +136,14 @@ $(document).ready(function(){
 		if (usertype == 0) {
 			var lesson = JSON.stringify({
 				"lId":null,
-				"cName":null,
+				"cName":userClass,
 				"lWeek":$(this).val(),
 				"lMon":null,
 				"lTue":null,
 				"lWed":null,
 				"lThu":null,
 				"lfri":null,
-				"cid":userClass,
+				// "cid":userClass,
 			});
 			ajax(
 				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
@@ -236,14 +233,14 @@ $(document).ready(function(){
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
 				"lId":localStorage.getItem("ll"),
-				"cName":null,
+				"cName":userClass,
 				"lWeek":$(".week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
-				"cid":userClass
+				// "cid":userClass
 			});
 			console.log(courseMsg);
 			ajax(
