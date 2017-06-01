@@ -1,7 +1,7 @@
 var usertype;
 var userClass;
 var teacherData;
-
+var teacherClass;
 
 
 
@@ -50,6 +50,7 @@ $(document).ready(function(){
 				"lessonJson="+lesson,
 				showLesson
 			);
+
 		}
 
 
@@ -269,9 +270,11 @@ $(document).ready(function(){
 			data : data,
 			contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 			success : function(res){
+				// teacherClass = res.cName;
 				if(res != null){
 					callback(res);
 				}
+				// console.log(teacherClass);
 			},
 			error : function(jqHXR){
 				console.log("错误:"+jqHXR.status);
