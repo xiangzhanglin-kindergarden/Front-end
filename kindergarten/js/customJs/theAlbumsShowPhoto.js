@@ -152,8 +152,8 @@ function showPhoto() {
                 //回复某人
                 var reply = $(".mainCommentContent").find("span.people");
                 reply.each(function () {
-                    this.setAttribute("data-click",1);
-                    this.setAttribute("data-otherClick",0);
+                    this.setAttribute("data-click","1");
+                    this.setAttribute("data-otherClick","0");
                 });
 
                 reply.each(function () {
@@ -173,8 +173,8 @@ function showPhoto() {
                                 $(".mainCommentInput").remove();
                                 reply.each(function () {
                                     var every = this;
-                                    every.setAttribute("data-click",1);
-                                    every.setAttribute("data-otherClick",0);
+                                    every.setAttribute("data-click","1");
+                                    every.setAttribute("data-otherClick","0");
                                 });
                             }
                         }else if(isClick == 0 && isOtherClick == 1){
@@ -184,8 +184,8 @@ function showPhoto() {
                             var message1 = confirm("是否放弃回复？");
                             if(message1){
                                 $(".mainCommentInput").remove();
-                                this.setAttribute("data-click",1);
-                                this.setAttribute("data-otherClick",0);
+                                this.setAttribute("data-click","1");
+                                this.setAttribute("data-otherClick","0");
                                 replySomeBody(this);
                             }
                         }
@@ -212,16 +212,25 @@ function showPhoto() {
                     mainCommentInput.appendChild(replyButton);
 
                     reply.each(function () {
-                        this.setAttribute("data-click",1);
-                        this.setAttribute("data-otherClick",1);
+                        this.setAttribute("data-click","1");
+                        this.setAttribute("data-otherClick","1");
                     });
-                    e.setAttribute("data-click",0);
-                    e.setAttribute("data-otherClick",0);
+                    e.setAttribute("data-click","0");
+                    e.setAttribute("data-otherClick","0");
 
                     replyButton.addEventListener("click",function () {
                         var replyValue = $(".replyComment").val();
 
-                        var theUser = sessionStorage.getItem("user");
+                        var teacherData = sessionStorage.getItem("teacherData");
+                        var usertype = sessionStorage.getItem("nub");
+                        var theUser = "";
+                        if (usertype == 1){
+                            theUser = "园长";
+                        }else {
+                            var data = JSON.parse(teacherData);
+                            console.log(data);
+                            theUser = data.tName;
+                        }
                         commentAjax(replyValue,theUser,thisPerson);
                     });
                 }
@@ -230,14 +239,23 @@ function showPhoto() {
                 //对图片评论
                 buttonRelease.click(function () {
                     var editCommentValue = editComment.val();
-                    var theUser = sessionStorage.getItem("user");
+                    var teacherData = sessionStorage.getItem("teacherData");
+                    var usertype = sessionStorage.getItem("nub");
+                    var theUser = "";
+                    if (usertype == 1){
+                        theUser = "园长";
+                    }else {
+                        var data = JSON.parse(teacherData);
+                        console.log(data);
+                        theUser = data.tName;
+                    }
                     commentAjax(editCommentValue,theUser,null);
                 });
 
                 function commentAjax(editValue,poneId,ptwoId) {
                     var theValue = {
                         comId: null,
-                        poneId: poneId,//demo 暂时未园长，实际为登陆系统的管理员
+                        poneId: poneId,
                         ptwoId: ptwoId,
                         comTime: null,
                         comContent: editValue,

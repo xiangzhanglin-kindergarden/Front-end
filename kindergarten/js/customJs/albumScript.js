@@ -7,10 +7,25 @@ $(window).ready(function () {
     //页码
     var pageNum = 1;
 
+    //权限
+    var url = "";
+    var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+    var teacherData = sessionStorage.getItem("teacherData");
+
+    //园长
+    if (usertype == 1){
+        url = "http://119.29.53.178:8080/kindergarden/PicturecontentShowWe?pageNum=" + pageNum;
+    }else {
+        var teacher = JSON.parse(teacherData);
+        console.log(teacher);
+        url = "http://119.29.53.178:8080/kindergarden/PictureContentShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
+    }
+
+
     //获取相册
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/PicturecontentShowWe?pageNum="+pageNum,
+        url: url,
         // url: "js/customJs/imgData.json",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend: function (xhr) {

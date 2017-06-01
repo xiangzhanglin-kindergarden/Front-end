@@ -110,15 +110,35 @@ function addPhotoAjax() {
     var inputs = $(".inputs");
     var input = inputs.find("input");
     var textarea = inputs.find("textarea");
+
+
+    //权限
+    var cid = "";
+    var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+    var teacherData = sessionStorage.getItem("teacherData");
+
+    //园长
+    if (usertype == 1){
+        cid = 1;
+    }else {
+        var teacher = JSON.parse(teacherData);
+        console.log(teacher);
+        cid = teacher.cId;
+    }
+
     console.log(textarea[0]);
     var value = {
         picid: null,
         picname: input.val(),
         picmdescribe: textarea.val(),
-        picface: null
+        picface: null,
+        cid: cid
     };
 
     console.log(value);
+
+
+
 
     $.ajax({
         type: "post",

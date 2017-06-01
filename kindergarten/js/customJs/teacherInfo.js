@@ -152,6 +152,7 @@ function addTeacher(theCaption,data,theIndex) {
                 var theBoxSelect = boxEdit.find("select");
                 theBoxInput[0].value = rowData.tName;
                 theBoxInput[1].value = rowData.tPhone;
+                theBoxInput[2].value = rowData.tPassword;
 
                 theBoxSelect[0].id = "tWork";//班级信息
                 for(var t=0;t<optionWork.length;t++){

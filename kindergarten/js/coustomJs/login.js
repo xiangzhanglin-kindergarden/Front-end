@@ -78,7 +78,7 @@ $(document).ready(function(){
 						console.log("错误:"+jqHXR.status);
 					}
 				})
-			};
+			}
 
 			/*判断输入值是否为空*/
 			function CheckEmpty(){			

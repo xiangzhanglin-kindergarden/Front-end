@@ -32,15 +32,6 @@ $(document).ready(function () {
     var backClass = $("#backClass")[0];
     var goHome = $(".goHome");
 
-    // backClass.onmouseover = function () {
-    //     var backSpan = document.createElement("span");
-    //     backSpan.className = "goHomeSpan";
-    //     backSpan.innerHTML = "返回班级管理";
-    //     goHome[0].appendChild(backSpan);
-    // };
-    // backClass.onmouseout = function () {
-    //     $(".goHomeSpan")[0].remove();
-    // };
     backClass.onclick = function () {
         window.history.back(-1);
         clearCookie();
@@ -125,8 +116,8 @@ $(document).ready(function () {
                 $.ajax({
                     type: "get",
                     url: "http://119.29.53.178:8080/kindergarden/TeacherShowAll",
-                    dataType: "JSON",
-                    contentType: "application/json;charset=utf-8",
+                    // dataType: "JSON",
+                    contentType:"application/x-www-form-urlencoded;charset=utf-8",
                     beforeSend: function (xhr) {
                         xhr.withCredentials = true;
                         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -136,7 +127,8 @@ $(document).ready(function () {
                         adding.innerHTML = "数据加载中。。。";
                         teacherDiv.appendChild(adding);
                     },
-                    success: function (data) {
+                    success: function (theData) {
+                        var data = JSON.parse(theData);
                         var nowTeacher;
                         $(".adding")[0].remove();
                         for (var d=0;d<data.length;d++){
