@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>相册管理</title>
+    <title>视频管理</title>
 
     <link rel="shortcut icon" href="img/title.png">
     <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
@@ -24,7 +24,7 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>照片上传</h5>
+                    <h5>视频上传</h5>
                 </div>
                 <div class="ibox-content">
                     <form id="my-awesome-dropzone" class="dropzone" name = "ima" method="post"><!--提交地址-->
@@ -56,8 +56,9 @@
     $(document).ready(function () {
 
         Dropzone.options.myAwesomeDropzone = {
-            url: "#",
+
 //            url: "http://119.29.53.178:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
+            url: "http://localhost:8080/kindergarten/MovieAdd",
             autoProcessQueue: false,
             uploadMultiple: true,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,
@@ -68,8 +69,7 @@
             dictRemoveFile: "删除",
             dictMaxFilesExceeded: "超过最大上传的文件数量！",
 
-
-            acceptedFiles: "*'",//指明允许  上传的文件类型,
+//            acceptedFiles: "*'",//指明允许  上传的文件类型,
 
             // Dropzone settings
             init: function () {
@@ -80,16 +80,14 @@
                     e.stopPropagation();
                     myDropzone.processQueue();
                 });
-                this.on("sendingmultiple", function () {});
+                this.on("sendingmultiple", function () {
+                });
                 this.on("successmultiple", function (files) {
                     console.log(files);
                 });
                 this.on("errormultiple", function (files, response) {
                 });
-//                this.on("addedfile", function(file) {//添加默认事件函数
-//                    // actions...
-//                    alert("another aciton")
-//                });
+
             }
 
         }

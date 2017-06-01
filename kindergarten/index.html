@@ -34,8 +34,8 @@
                             <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                               <span class="block m-t-xs"><strong id="username" class="font-bold">Beaut-zihan</strong></span>
-                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                <span class="block m-t-xs"><strong id="username" class="font-bold">TheManager</strong></span>
+                                <!--<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>-->
                                 </span>
                             </a>
                         </div>
@@ -43,13 +43,13 @@
                         </div>
                     </li>
 
-                    <li>
+                    <li class="classManagement">
                         <a class="J_menuItem" href="classManagement.html">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">班级信息管理</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="courseManagement">
                         <a class="J_menuItem" href="courseManagement.html">
                             <i class="fa fa-edit"></i>
                             <span class="nav-label">班级课表管理</span>
@@ -57,7 +57,7 @@
                     </li>
 
                     <!--教师信息管理-->
-                    <li>
+                    <li class="teacherInfo">
                         <a class="J_menuItem" href="teacherInfo.html">
                             <i class="glyphicon glyphicon-ok-sign"></i>
                             <span class="nav-label">教师信息管理</span>
@@ -65,22 +65,22 @@
                     </li>
 
                     <!--//学生信息管理-->
-                    <li>
+                    <li class="studentInfo">
                         <a class="J_menuItem" href="studentInfo.html">
                             <i class="glyphicon glyphicon-book"></i>
                             <span class="nav-label">家长学生信息管理</span>
                             </a>
                     </li>
-                    <li>
+                    <li class="knowledgeManagement">
                         <a class="J_menuItem" href="knowledgeManagement.html">
                             <i class="fa fa-magic"></i>
                             <span class="nav-label">成长知识</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="albums">
                         <a href="#">
                             <i class="fa fa-toggle-right"></i>
-                            <span class="nav-label">校园图鉴</span>
+                            <span class="nav-label theAlbumsChange">校园图鉴</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
@@ -91,14 +91,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="albumUpload.html" class="">
+                                <a href="video.html" class="" target="_blank">
                                     <i class="fa fa-video-camera"></i>
                                     <span class="nav-label">视频管理</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="allNewsManagement">
                         <a class="J_menuItem" href="allNewsManagement.html">
                             <i class="fa fa-envelope"></i>
                             <span class="nav-label">资讯管理</span>
@@ -119,7 +119,7 @@
         <div id="page-wrapper" class="gray-bg dashbard-1">
             <div class="row border-bottom">
                 <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a></div>
+                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a></div>
                 </nav>
             </div>
             <div class="row content-tabs">
@@ -146,7 +146,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="logoin.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>退出</a>
+                <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>退出</a>
             </div>
             <div class="row J_mainContent" id="content-main">
                 <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="theIndex.html" frameborder="0" data-id="theIndex.html" seamless></iframe>
@@ -174,10 +174,11 @@
     <script src="js/hplus.js?v=4.1.0"></script>
     <script type="text/javascript" src="js/contabs.js"></script>
 
-    <script src="js/coustomJs/Myjs.js"></script>
+    <!--<script src="js/coustomJs/Myjs.js"></script>-->
 
     <!-- 第三方插件 -->
     <script src="js/plugins/pace/pace.min.js"></script>
+    <script type="text/javascript" src="js/customJs/index.js"></script>
 
 </body>
 

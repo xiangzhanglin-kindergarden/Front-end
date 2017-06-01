@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>视频详情</title>
+
+    <link rel="shortcut icon" href="img/title.png">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="css/customCss/theVideo.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="gray" style="display: none"></div><!--点击出现灰色阴影-->
+                    <h5>视频详情</h5>
+                    <div class="ibox-tools">
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="addVideo">
+                    <div class="if-d-backbtn">
+                        <a href="video.html"><i class="fa fa-mail-reply"></i>返回</a>
+                    </div>
+                    <input class="videoAdd" type="button" value="上传视频">
+                    <input class="videoManage" type="button" value="批量管理">
+                    <input class="videoDel" style="display: none;width:60px;" type="button" value="删除">
+                    <input class="videoCancle" style="display: none;width: 60px;" type="button" value="取消">
+                </div>
+                <div class="ibox-content">
+                    <div class="titleVideo">
+                        <h3 class="vicname">视频名称</h3>
+                        <p class="vicmdescribe">这是视频描述</p>
+                    </div>
+                    <div class="mainVideo">
+                        <div class="everyImg">
+                        <i class="manageImg"></i>
+                        <img src="img/images/a1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uploadVideo" style="display: none">
+                    <div class="iClose">
+                        <i class="close"></i>
+                    </div>
+                    <!--<iframe width="100%" height="100%" src="albumUpload.html" frameborder="0"></iframe>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+
+
+<!-- 自定义js -->
+<script src="js/content.js?v=1.0.0"></script>
+
+<script type="text/javascript" src="js/customJs/theVideo.js"></script>
+
+
+</body>
+
+</html>

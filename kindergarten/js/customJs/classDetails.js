@@ -216,7 +216,7 @@ $(document).ready(function () {
     $.ajax({
         type: "get",
         url: "http://119.29.53.178:8080/kindergarden/ClassDetails?classid="+rowId,
-        contentType: "application/json;charset=utf-8",
+        contentType:"application/x-www-form-urlencoded;charset=utf-8",
         beforeSend: function (xhr) {
             xhr.withCredentials = true;
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");

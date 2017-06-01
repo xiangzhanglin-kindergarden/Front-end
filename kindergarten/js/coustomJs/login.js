@@ -56,7 +56,8 @@ $(document).ready(function(){
 					success:function(data){
 						console.log(data);
 						if (data.msg == "登录成功") {
-							set_sessionStorage(userName,userClass)
+							set_sessionStorage(userName,userClass);
+							sessionStorage.setItem("teacherData",data);
 							alert(data.msg);
 							window.location.href = "index.html";
 						}else if (data.msg == "密码错误") {
@@ -65,6 +66,12 @@ $(document).ready(function(){
 							alert("用户不存在");
 						}else if (data.msg == "教师用户不存在") {
 							alert("用户不存在");
+						}else {
+                            set_sessionStorage(userName,userClass);
+                            var theData = JSON.stringify(data);
+                            sessionStorage.setItem("teacherData",theData);
+                            alert("登录成功");
+                            window.location.href = "index.html";
 						}
 					},
 					error:function(jqHXR){

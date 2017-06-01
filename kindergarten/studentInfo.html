@@ -72,9 +72,20 @@
 <script>
     $(document).ready(function () {
         var row;
+        var url = "";
+        var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+        var teacherData = sessionStorage.getItem("teacherData");
+
+        if (usertype == 1){
+            url = "http://119.29.53.178:8080/kindergarden/StudentShowAll";
+        }else {
+            var teacher = JSON.parse(teacherData);
+            url = "http://119.29.53.178:8080/kindergarden/ClassDetails?classid=" + teacher.cId;
+        }
+
         $.ajax({
             type:"get",
-            url:"http://119.29.53.178:8080/kindergarden/StudentShowAll",
+            url: url,
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {

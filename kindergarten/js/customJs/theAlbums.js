@@ -116,7 +116,7 @@ $(document).ready(function () {
                 });
                 console.log(iManagement);
                 iManagement.each(function () {
-                    this.setAttribute("checked",false);
+                    this.setAttribute("checked","false");
                     this.addEventListener("click",function () {
                         if (this.getAttribute("checked") == "false"){
                             changeBackgroundImg(this);
@@ -166,11 +166,11 @@ $(document).ready(function () {
 
                 function changeBackgroundImg(e) {
                     e.style.background = "url(img/checked.png)";
-                    e.setAttribute("checked",true);
+                    e.setAttribute("checked","true");
                 }
                 function removeBackgroundImg(e) {
                     e.style.background = "white";
-                    e.setAttribute("checked",false);
+                    e.setAttribute("checked","false");
                 }
             });
 

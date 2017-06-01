@@ -24,7 +24,7 @@ function addTeacher(theCaption,data,theIndex) {
     var title = box.find(".title")[0];
     title.innerHTML = theCaption;
 
-    var caption = ['教师姓名','职位','性别','授课班级','联系方式','登陆密码'];
+    var caption = ['教师姓名','职位','性别','授课班级','联系方式','登陆密码/工号'];
     var optionClass = [];
     var optionWork = ['班主任','老师','保育员'];
 
@@ -261,7 +261,7 @@ function editSubmit(theId) {
         tPhone: theBoxInput[1].value,
         tSex: theBoxSelect[1].value,
         tgrade: theBoxSelect[0].value,
-        tWorkId: "123456"
+        tWorkId: theBoxInput[2].value
     };
     console.log(values);
 
