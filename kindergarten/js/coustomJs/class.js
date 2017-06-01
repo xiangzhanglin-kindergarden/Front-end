@@ -6,70 +6,13 @@
  *
 */
 
-/*++++++++++++++++++++++++++++++++++++++++++*/
-/* 让课表确定时间   START*/
-
-
-// 判断日期和时间 并保存已经修改的值
-$(function(){
-	var date = new Date();
-	var week = date.getUTCDay();
-	var hour = date.getHours();
-	console.log(week+"周，时间："+hour)
-	if (week==0||week==6) {
-		$(".class-table td").addClass("class-end");
-		$(".class-time").removeClass("class-end");
-	}else{
-		for(var i=1; i<=4; i++){
-			for(var j=1; j<week; j++){
-				// console.log("第"+i+"列，第"+j+"行:"+$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").html());
-				$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").addClass("class-end");
-			}
-		}
-		if (hour>=9 && hour <10) {
-			$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
-		}else if (hour>=10 && hour<14) {
-			$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
-		}else if (hour>=14 && hour<15) {
-			$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
-		}else if (hour>=15) {
-			$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
-			$(".class-table tbody tr:nth-child(4) td:eq("+week+")").addClass("class-end");
-		};
-	}
-})
-
-
-/* 让课表确定时间  end */
-/********************************************/
-
-
-
-
+var nowWeek;
 
 
 
 /*++++++++++++++++++++++++++++++++++++++++++*/
 /* 课表按钮  START */
 
-/*
-//修改课表按钮
-	
-	$(function(){
-		$("#change-class").bind("click",function(){
-			$("td").each(function(){
-				if ($(this).attr("class") != "class-time" && $(this).attr("class") != "class-end" ){
-					$(this).html("<input class='class-change-input' value='"+$(this).html()+"'>")
-				}
-			})
-		})
-	})
-*/
 
 //新增课表按钮
 $(function(){
@@ -140,12 +83,73 @@ function close_new_class(){
 
 
 
+/*++++++++++++++++++++++++++++++++++++++++++*/
+/* 上过的课加背景   START*/
+
+
+// 判断周数和时间，隐藏上过的课；
+$(function(){
+	nowWeekBG();
+})
+
+	function nowWeekBG(){
+		$(".class-table tbody td").removeClass("class-end");
+		var date = new Date();
+		var week = date.getUTCDay();
+		var hour = date.getHours();
+		console.log("周"+week+"时间："+hour);
+		if (week==0||week==6) {
+			$(".class-table td").addClass("class-end");
+			$(".class-time").removeClass("class-end");
+		}else{
+			for(var i=1; i<=4; i++){
+				for(var j=1; j<week; j++){
+					// console.log("第"+i+"列，第"+j+"行:"+$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").html());
+					$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").addClass("class-end");
+				}
+			}
+			if (hour>=9 && hour <10) {
+				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=10 && hour<14) {
+				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=14 && hour<15) {
+				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=15) {
+				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(4) td:eq("+week+")").addClass("class-end");
+			};
+		}
+	}
+
+	//以前的周变黑背景，未来的变白背景
+	function courseBG(newWeek){
+		if (newWeek>nowWeek) {
+			$(".class-table tbody td").removeClass("class-end");
+		}else if (newWeek<nowWeek) {
+			$(".class-table tbody td:not(.class-time)").addClass("class-end");
+		}else if (newWeek==nowWeek) {
+			nowWeekBG();
+		};
+	}
+
+/* 上过的课加背景  end */
+/********************************************/
+
+
+
+
+
 
 
 
 
 /*++++++++++++++++++++++++++++++++++++++++++*/
-/* 下拉选项卡  START */
+/* 与时间有关的函数  START */
 
 
 //增加周数并获取周数
@@ -153,45 +157,143 @@ $(function(){
 	var date = new Date();
 	var week = getClassWeek();
 
-	for(var i=1;i<=24;i++){
+	for(var i=1;i<=26;i++){
 		var newWeek = $("<option>"+i+"</option>");
 		if (i==week) {
 			var newWeek = $("<option selected>"+i+"</option>");
 		};
 		$("[name='week']").append(newWeek);
 	}
-
-	getClassDate(week);
 })
 
 
-// 取得某一周的时间并写到table里面
-function getClassDate(week){
+//下拉框发生改变时候的触发函数
+	$(function(){
+		//切换周数的时候的功能函数
+		$(".differ-class-box [name='week']").on("change",function(){
+			var newWeek = $(this).val();
+			getXDate(newWeek);
+			courseBG(newWeek);
+		})
+		//切换班级的时候的功能函数
+		$(".differ-class-box [name='class']").on("change",function(){
+			var newWeek = $(".differ-class-box [name='week']").val();
+			getXDate(newWeek);
+		})
+	})
 
-}
+// 这个方法将取得某年(year)第几周(weeks)的星期几(weekDay)的日期 
+	function getXDate(theWeek){ 
+		// 用指定的年构造一个日期对象，并将日期设置成这个年的1月1日 
+		var nowyear = new Date();
+		year = nowyear.getFullYear();
+		weeks = theWeek;
+		weekday = 1;
+		var date = new Date(year,"0","1"); 
+		 
+		// 取得这个日期对象 date 的长整形时间 time 
+		var time = date.getTime(); 
+		 
+		// 将这个长整形时间加上第N周的时间偏移 
+		// 因为第一周就是当前周,所以有:weeks-1,以此类推 
+		time+=(weeks-1)*7*24*3600000; 
+		 
+		// 为日期对象 date 重新设置成时间 time 
+		date.setTime(time); 
 
-// 获取今天是今年的第几周
+		getSelectWeek(date);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//获取某一周的具体日期       START
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	function getMonDate(theDate){
+		day=theDate.getDay(),
+		date=theDate.getDate();
+		if(day==1)
+		return theDate;
+		if(day==0)
+		theDate.setDate(date-6);
+		else
+		theDate.setDate(date-day+1);
+		return theDate;
+	}
+	// 0-6转换成中文名称
+	function getDayName(day){
+		var day=parseInt(day);
+		if(isNaN(day) || day<0 || day>6)
+		return false;
+		var weekday=["周天","周一","周二","周三","周四","周五","周六"];
+		return weekday[day];
+	}
+	// d是当前星期一的日期对象
+	function getSelectWeek(theDate){
+		var d=getMonDate(theDate);
+		var arr=[];
+		console.log(d.getMonth()+1);
+
+		for(var i=0; i<7; i++){
+			if (i<6) {
+				$(".class-table thead th:eq("+(i+1)+") span").html((d.getDate())+"日");
+			};
+			arr.push((d.getMonth()+1)+'月'+d.getDate()+'日 （'+getDayName(d.getDay())+'）');
+			d.setDate(d.getDate()+1);
+			console.log(arr[i]);
+		}
+		$(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+
+	}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//获取当前日期在当前年第几周
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 function getClassWeek(){
 	var d1 = new Date();
 	var d2 = new Date();
 	d2.setMonth(0);
 	d2.setDate(1);
+
+	// d1.setMonth(0);
+	// d1.setDate(9);
+
+	var yearFirstDay = d2.getDay();
+	console.log("本年第一天是周："+yearFirstDay);
+	if (yearFirstDay==0) {
+		yearFirstDay=7;
+	};
+
+	// var weekday = yearFirstDay == 0?1:(7-yearFirstDay+1);
+
+
 	var rq = d1-d2;
 	var s1 = Math.ceil(rq/(24*60*60*1000));
-	++s1;
-	var s2 = Math.ceil(s1/7);
-	++s2;
-	console.log("今天是本年第"+s1+"天，第"+s2+"周");//周日做为下周的开始计算
+	++s1;   
+
+	var s2;
+	var s3 = s1-1;
+	s2 = Math.ceil((s3+yearFirstDay)/7);
+	
+	nowWeek = s2;
+	console.log("今天"+d1+"是本年第"+s1+"天，第"+s2+"周");//周日做为下周的开始计算
 	return s2;
 }
 
-$(function(){
-	var week
-})
 
 
-/* 下拉选项卡  END */
+
+
+
+/* 与时间有关的函数  END */
 /********************************************/
+
+
+
 
 
 

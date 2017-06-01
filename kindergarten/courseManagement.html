@@ -12,9 +12,10 @@
 
   <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
   <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
-  <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
   <link href="css/customCss/Mystyle.css?v=1.0.0" rel="stylesheet">
 
 </head>
@@ -29,7 +30,7 @@
           <button id="change-class-yes" class="btn btn-primary btn-sm myHidden" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 确定</button>
           <button id="change-class-no" class="btn btn-warning btn-sm myHidden" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-upload"></i> 取消</button>
           <div class="differ-class-box">
-            <span>班级：</span><select name="class">
+            <span class="removeTclass">班级：</span><select name="class" class="removeTclassse">
               <option class="class-wait"></option>
               <option value="大一班">大一班</option>
               <option value="大二班">大二班</option>
@@ -46,12 +47,12 @@
           <table class="table table-bordered class-table">
             <thead>
               <tr>
-                <th>时间</th>
-                <th>周一</th>
-                <th>周二</th>
-                <th>周三</th>
-                <th>周四</th>
-                <th>周五</th>
+                <th>时间<span></span></th>
+                <th>周一<span></span></th>
+                <th>周二<span></span></th>
+                <th>周三<span></span></th>
+                <th>周四<span></span></th>
+                <th>周五<span></span></th>
               </tr>
             </thead>
             <tbody>
@@ -100,7 +101,7 @@
   <div class="cover"></div>
   <div class="new-class">
     <div class="function-box">
-      <span>班级：</span>
+      <span class="removeTclass">班级：</span>
       <select name="class" class="class">
         <option value="大一班">大一班</option>
         <option value="大二班">大二班</option>
@@ -181,17 +182,6 @@
   <script src="js/coustomJs/class.js?v=1.0.0"></script>
   <script src="js/coustomJs/classAJAX.js?v=1.0.0"></script>
 
-
-  <!-- iCheck -->
-  <script src="js/plugins/iCheck/icheck.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.i-checks').iCheck({
-        checkboxClass: 'icheckbox_square-green',
-        radioClass: 'iradio_square-green',
-      });
-    });
-  </script>
 
 </body>
 

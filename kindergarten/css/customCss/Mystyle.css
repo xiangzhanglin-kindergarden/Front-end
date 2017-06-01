@@ -306,11 +306,15 @@ color: #000;
 	font-size: 20px;
 }
 .new-table td{
-	height: 150px;
+	height: 100px;
 	font-size: 25px;
 	word-wrap:break-word;
 }
-
+@media screen and (max-width: 1050px){
+	.new-table td{
+		font-size: 20px;
+	}
+}
 @media screen and (max-height: 900px) { 
 	.new-table th{
 		height: 30px;
@@ -324,85 +328,59 @@ color: #000;
 		font-size: 20px;
 	}
 } 
-/*@media screen and (max-height: 800px) { 
-.ensure-btn {font-size:70px} 
-} 
-@media screen and (max-width: 1000px) { 
-.ensure-btn {font-size:50px} 
-} 
-.ensure-btn .glyphicon-remove-sign{
-	float: left;
-	cursor: pointer;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- *
- *   教师信息管理 样式
- *   
- *
-*/
-.teacher-info {
-	padding-left: 9px!important;
+@media screen and (max-height: 850px){
+	.new-table td{
+		height: 80px;
+		font-size: 17px;
+	}
 }
-.teacher-info-call{
-	padding-left: 1.8em!important;
+
+
+.class-table thead th{
+	position: relative;
 }
-.teacher-info-class{
-	padding-left: 1.5em!important;
+.class-table thead span{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	font-size: 16px;
+	font-weight: 500;
+	/*color: #6C6C6C;*/
 }
-.teacher-info-sex{
-	padding-left: 1em!important;
-}
-.teacher-text-right{
-	margin-right: 50px;
-}
-#teacher-dechose,
-#teacher-change,
-#teacher-del{
-	float: left;
-}
-.lastAsk{
-	float: left;
-	font-size: 20px;
-	margin-left: 7px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

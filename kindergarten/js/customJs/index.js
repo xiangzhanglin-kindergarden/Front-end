@@ -9,9 +9,12 @@ $(document).ready(function () {
     console.log(typeof (teacherData));
 
     if (usertype == 1){//园长
-        console.log(manager);$("#username").html("园长");
+        console.log(manager);
+        $("#username").html("园长");
 
     }else {
+        $("#usertype").html("老师");
+        
         /*
          *
          *   教师信息管理 功能
