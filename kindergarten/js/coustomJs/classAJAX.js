@@ -57,6 +57,12 @@ $(document).ready(function(){
 
 	//点击新建课表
 	$("#new-ok-btn").on("click",function(){
+		$("#new-table tr td input").each(function(){
+			if ($(this).val()==null||$(this).val()=="") {
+				$(this).val(0);
+				$(this).css({"color":"rgba(0,0,0,0)"});
+			};
+		})
 		var lMon = String([
 			$(".new-table tr:eq(1) td:eq(1) input").val(),
 			$(".new-table tr:eq(2) td:eq(1) input").val(),
@@ -102,7 +108,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+				"http://119.29.53.178:8080/kindergarden/LessonAddteacher",
 				"lessonInJson="+courseMsg,
 				function(res){
 					alert("添加成功!");
