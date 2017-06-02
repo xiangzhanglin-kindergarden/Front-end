@@ -251,7 +251,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+				"http://119.29.53.178:8080/kindergarden/LessonUpdate",
 				"lessonJson="+courseMsg,
 				function(res){
 					alert("修改成功!");
