@@ -109,6 +109,13 @@ $(function(){
       this.on("sendingmultiple", function () {});
       this.on("successmultiple", function (files, response) {
       	console.log(files);
+        console.log(files.length);
+
+        var FJnub = $(".fjnub").html();
+        console.log(FJnub);
+        FJnub = FJnub+files.length;
+        $(".fjnub").html(FJnub);
+
       	console.log(response);
 
       	var Odiv = $("<div class='file-box'></div>");
@@ -127,7 +134,7 @@ $(function(){
       	Ia.append(I2div);
       	O2div.append(Ia);
       	Odiv.append(O2div);
-      	$(".attachment").append(Odiv);
+      	$(".attachment").prepend(Odiv);
 
 
 
