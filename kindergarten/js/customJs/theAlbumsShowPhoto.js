@@ -73,7 +73,7 @@ function showPhoto() {
                         mainComment.find(".mainCommentContent").remove();
                         var comment = JSON.parse(data);
 
-                        // console.log(comment);
+                        console.log(comment);
                         theComment.find("h3").html("评论"+"("+comment.length+")");
                         for(var i=0;i<comment.length;i++){
                             var mainCommentContent = document.createElement("div");
@@ -83,11 +83,16 @@ function showPhoto() {
                                 spanOne.className = "people single";
                                 spanOne.innerHTML = comment[i].poneId;
                                 var theCommentValue = document.createElement("span");
+                                var delComment = document.createElement("i");
+                                delComment.className = "delComment";
+                                
                                 theCommentValue.className = "theCommentValue";
                                 theCommentValue.innerHTML = "：" + comment[i].comContent;
+                                theCommentValue.setAttribute("data-commentId",comment[i].comId);
                                 mainComment[0].appendChild(mainCommentContent);
                                 mainCommentContent.appendChild(spanOne);
                                 mainCommentContent.appendChild(theCommentValue);
+                                mainCommentContent.appendChild(delComment);
                             }else {
                                 var span1 = document.createElement("span");
                                 span1.className = "people";
@@ -100,11 +105,15 @@ function showPhoto() {
                                 var theCommentValues = document.createElement("span");
                                 theCommentValues.className = "theCommentValue";
                                 theCommentValues.innerHTML = "：" + comment[i].comContent;
+                                var delComment2 = document.createElement("i");
+                                delComment2.className = "delComment";
+                                theCommentValues.setAttribute("data-commentId",comment[i].comId);
                                 mainComment[0].appendChild(mainCommentContent);
                                 mainCommentContent.appendChild(span1);
                                 mainCommentContent.appendChild(spanHui);
                                 mainCommentContent.appendChild(span2);
                                 mainCommentContent.appendChild(theCommentValues);
+                                mainCommentContent.appendChild(delComment2);
                             }
                         }
                         var mainCommentInput = document.createElement("div");
@@ -126,6 +135,21 @@ function showPhoto() {
                         mainCommentInput.appendChild(editComment);
                         mainCommentInput.appendChild(buttonSure);
                         buttonSure.appendChild(button);
+
+
+                        //删除评论
+                        var delTheComment = $("i.delComment");
+                        delTheComment.each(function () {
+                            $(this).click(function () {
+                                var commId = $(this).parent().find("span.theCommentValue")[0].getAttribute("data-commentId");
+                                console.log(commId);
+                                var message = confirm("是否删除该评论？");
+                                if(message){
+                                    delCommentAjax(commId);
+                                }
+                            });
+                        });
+
 
                         releaseComment();
 
@@ -291,6 +315,31 @@ function showPhoto() {
                         }
                     });
                 }
+            }
+
+            function delCommentAjax(commid) {
+                $.ajax({
+                    type: "post",
+                    url: "http://119.29.53.178:8080/kindergarden/CommunicateDelete",
+                    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                    data: "ComId="+commid,
+                    beforeSend: function (xhr) {
+                        xhr.withCredentials = true;
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    },
+                    success: function () {
+                        $(".mainComment").find(".mainCommentContent").remove();
+
+                        $(".mainCommentInput").remove();
+                        theComment();
+
+                        console.log("success delete");
+                    },
+                    error: function (err) {
+                        console.log(err.status);
+                    }
+                });
+
             }
 
 

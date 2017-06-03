@@ -322,7 +322,21 @@ i.manageImg{
     color: white;
     border-radius: 5px;
 }
+.showPhoto .comment .mainCommentContent:hover i.delComment{
+    opacity: 1;
+}
 
+i.delComment{
+    width: 14px;
+    height: 16px;
+    display: block;
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    float: right;
+    background: url(../../img/delIco.png);
+}
 
 
 
