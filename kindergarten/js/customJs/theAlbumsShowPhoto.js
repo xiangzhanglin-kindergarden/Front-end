@@ -170,7 +170,7 @@ function showPhoto() {
                             console.log("0 0");//再次点击
                             var message = confirm("是否放弃回复？");
                             if(message){
-                                $(".mainCommentInput").remove();
+                                $($(".mainCommentInput")[0]).remove();
                                 reply.each(function () {
                                     var every = this;
                                     every.setAttribute("data-click","1");
@@ -183,7 +183,7 @@ function showPhoto() {
                             console.log("1 1");
                             var message1 = confirm("是否放弃回复？");
                             if(message1){
-                                $(".mainCommentInput").remove();
+                                $($(".mainCommentInput")[0]).remove();
                                 this.setAttribute("data-click","1");
                                 this.setAttribute("data-otherClick","0");
                                 replySomeBody(this);
@@ -201,11 +201,13 @@ function showPhoto() {
                     var replyComment = document.createElement("input");
                     replyComment.className = "replyComment";
                     replyComment.type = "text";
-                    replyComment.placeholder = "回复他（她）";
+                    replyComment.placeholder = "回复 "+thisPerson;
                     var replyButton = document.createElement("input");
                     replyButton.className = "replyButton";
                     replyButton.type = "button";
                     replyButton.value = "回复";
+
+                    console.log($(e).parent()[0]);
 
                     $(e).parent()[0].appendChild(mainCommentInput);
                     mainCommentInput.appendChild(replyComment);

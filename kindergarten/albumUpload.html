@@ -55,9 +55,13 @@
 <script>
     $(document).ready(function () {
 
+        var theImgData = sessionStorage.getItem("theImgData");
+        var picId = JSON.parse(theImgData).picid;
+
+
         Dropzone.options.myAwesomeDropzone = {
-            url: "#",
-//            url: "http://119.29.53.178:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
+//            url: "#",
+            url: "http://119.29.53.178:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
             autoProcessQueue: false,
             uploadMultiple: true,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,
@@ -69,7 +73,7 @@
             dictMaxFilesExceeded: "超过最大上传的文件数量！",
 
 
-            acceptedFiles: "*'",//指明允许  上传的文件类型,
+            acceptedFiles: "image/jpg,image/jpeg,image/png'",//指明允许  上传的文件类型,
 
             // Dropzone settings
             init: function () {
