@@ -56,7 +56,7 @@ $(function(){
 			editor = new wangEditor('div1');
 
 			// 图片上传路径
-			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
+			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/imageUpload';
 			// 隐藏掉插入网络图片功能。该配置，只有在你正确配置了图片上传功能之后才可用。
 	    editor.config.hideLinkImg = true;
 
@@ -91,7 +91,7 @@ $(function(){
     dictMaxFilesExceeded: "您最多只能上传20个文件！",
     dictResponseError: '文件上传失败!',
     method:"post",
-    url:"http://119.29.53.178:8080/kindergarden/imageUpload",
+    url:"http://119.29.53.178:8080/kindergarden/Upload",
     // url:"#",
     paramName:"file",
     //setParameterEncoding:AFJSONParameterEncoding

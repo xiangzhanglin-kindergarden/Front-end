@@ -584,7 +584,9 @@ $(function(){
       //修改附件
       if (data.url2=="0") {
         $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"没有附件");
-      };
+      }else{
+        
+      }
     },
     error:function(jqHXR){
       console.log("错误:"+jqHXR.status);
