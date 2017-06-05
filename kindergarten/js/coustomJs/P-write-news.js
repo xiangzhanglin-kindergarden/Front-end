@@ -136,53 +136,37 @@ $(function(){
       });
       this.on("sendingmultiple", function () {});
       this.on("successmultiple", function (files, response) {
-      	console.log(files);
-        console.log(files.length);
 
         var FJnub = parseInt($(".fjnub").html());
         console.log(FJnub);
         FJnub = FJnub+files.length;
         $(".fjnub").html(FJnub);
 
-      	console.log(response);
+        console.log(response);
+        response = JSON.parse(response);
 
-      	var Odiv = $("<div class='file-box'></div>");
-      	var O2div = $("<div class='file'></div>");
-      	var Ia = $("<a href='"+response+" target='_blank'></a>");
+        for(var i=0; i<response.length; i++){
+          var Odiv = $("<div class='file-box'></div>");
+          var O2div = $("<div class='file'></div>");
+          var Ia = $("<a href='"+response[i].url+" target='_blank'></a>");
 
-      	var Ispan = $("<span class='corner'></span>");
-      	var Idiv = $("<div class='image'>")
-      	var Iimg = $("<img alt='image' class='img-responsive' src='"+response+"'>");
-      	var I2div = $("<div class='file-name'>");
+          var Ispan = $("<span class='corner'></span>");
+          var Idiv = $("<div class='image'>")
 
-      	Idiv.append(Iimg);
-      	// I2div.append(files.name);
-      	Ia.append(Ispan);
-      	Ia.append(Idiv);
-      	Ia.append(I2div);
-      	O2div.append(Ia);
-      	Odiv.append(O2div);
-      	$(".attachment").prepend(Odiv);
+          var photo = suffixPD(response[i].url);
 
+          var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
+          
+          var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      	// 上传完成后刷新
-      	// window.location.reload();
+          Idiv.append(Iimg);
+          Ia.append(Ispan);
+          Ia.append(Idiv);
+          Ia.append(I2div);
+          O2div.append(Ia);
+          Odiv.append(O2div);
+          $(".attachment").prepend(Odiv);
+        }
       });
       this.on("errormultiple", function (files, response) {});
 
@@ -191,8 +175,41 @@ $(function(){
 	}
 })
 
+/*
+*  判断获取到的文件的格式
+*/
+function suffixPD(obj){
+  var regImg = /\.(jpg|jpeg|bmp|gif|png)$/g;
+  var regVideo = /\.(mp4|avi|flv|wmv|swf)$/g;
+  var regdoc = /\.(pdf|txt|doc|docx)$/g;
+  var regzip = /\.(zip|rar|7-zip)$/g;
 
-
+  var imgPD = regImg.test(obj);
+  if (imgPD==true) {
+    return obj;
+  }else{
+    var videPD = regVideo.test(obj);
+    if (videPD==true) {
+      var IDcover = "img/coverVideo.png";
+      return IDcover;
+    }else{
+      var docPD = regdoc.test(obj);
+      if (docPD==true) {
+        var IDcover = "img/coverFile.png";
+        return IDcover;
+      }else{
+        var zipPD = regzip.test(obj);
+        if (zipPD==true) {
+          var IDcover = "img/coverZip.png";
+          return IDcover;
+        }else{
+          var IDcover = "img/coverOther.png";
+          return IDcover;
+        }
+      }
+    }
+  }
+}
 
 
 
