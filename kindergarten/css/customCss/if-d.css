@@ -249,7 +249,18 @@
 .ibox{
 	display: none;
 }
-
+.file-box .file .imagebox{
+	display: table-cell;
+	height: 200px;
+	vertical-align: middle;
+}
+.file-box .file .imagebox img{
+	margin: 0 auto;
+}
+.file-box .file .file-name{
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 
 
 

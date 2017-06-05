@@ -410,37 +410,8 @@ $(function(){
       });
       this.on("successmultiple", function (files, response) {
 
-          var FJnub = parseInt($(".fjnub").html());
-          console.log(FJnub);
-          FJnub = FJnub+files.length;
-          $(".fjnub").html(FJnub);
+        creatFJ(files, response);
 
-          console.log(response);
-          response = JSON.parse(response);
-
-          for(var i=0; i<response.length; i++){
-            var Odiv = $("<div class='file-box'></div>");
-            var O2div = $("<div class='file'></div>");
-            var Ia = $("<a href='"+response[i].url+" target='_blank'></a>");
-
-            var Ispan = $("<span class='corner'></span>");
-            var Idiv = $("<div class='image'>")
-
-            var photo = suffixPD(response[i].url);
-
-            var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
-            
-            var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
-
-            Idiv.append(Iimg);
-            Ia.append(Ispan);
-            Ia.append(Idiv);
-            Ia.append(I2div);
-            O2div.append(Ia);
-            Odiv.append(O2div);
-            $(".attachment").prepend(Odiv);
-          }
-        });
       });
       this.on("errormultiple", function (files, response) {});
 
@@ -448,6 +419,43 @@ $(function(){
 
 	}
 })
+
+/*
+*  生成附件浏览函数
+*/
+function creatFJ(files, response){
+  var FJnub = parseInt($(".fjnub").html());
+  console.log(FJnub);
+  FJnub = FJnub+files.length;
+  $(".fjnub").html(FJnub);
+
+  console.log(response);
+  response = JSON.parse(response);
+
+  for(var i=0; i<response.length; i++){
+    var Odiv = $("<div class='file-box'></div>");
+    var O2div = $("<div class='file'></div>");
+    var Ia = $("<a href='"+response[i].url+" target='_blank'></a>");
+
+    var Ispan = $("<span class='corner'></span>");
+    var Idiv = $("<div class='image imagebox'>")
+
+    var photo = suffixPD(response[i].url);
+
+    var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
+    
+    var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
+
+    Idiv.append(Iimg);
+    Ia.append(Ispan);
+    Ia.append(Idiv);
+    Ia.append(I2div);
+    O2div.append(Ia);
+    Odiv.append(O2div);
+    $(".attachment").prepend(Odiv);
+  }
+}
+
 
 /*
 *  判断获取到的文件的格式
@@ -614,6 +622,8 @@ $(function(){
         $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"没有附件");
       }else{
         console.log(data.url2);
+         $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"<span class='"+data.url2.length+"'>个附件 - </span>");
+        showFJ(data);
       }
     },
     error:function(jqHXR){
@@ -621,6 +631,38 @@ $(function(){
     }
   })
 })
+
+function showFJ(data){
+
+  console.log(data);
+  console.log(data.url2);
+  console.log(data.url2.length);
+  console.log(data.url2[0]);
+
+  for(var i=0; i<data.url2.length; i++){
+    var Odiv = $("<div class='file-box'></div>");
+    var O2div = $("<div class='file'></div>");
+    var Ia = $("<a href='"+data.url2[i]+" target='_blank'></a>");
+
+    var Ispan = $("<span class='corner'></span>");
+    var Idiv = $("<div class='image imagebox'>")
+
+    var photo = suffixPD(data.url2[i]);
+
+    var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
+    
+    var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
+
+    Idiv.append(Iimg);
+    Ia.append(Ispan);
+    Ia.append(Idiv);
+    Ia.append(I2div);
+    O2div.append(Ia);
+    Odiv.append(O2div);
+    $(".attachment").prepend(Odiv);
+  }
+}
+
 
 
 /* 上传审核状态AJAX */
