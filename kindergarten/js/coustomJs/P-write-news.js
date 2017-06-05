@@ -60,6 +60,34 @@ $(function(){
 			// 隐藏掉插入网络图片功能。该配置，只有在你正确配置了图片上传功能之后才可用。
 	    editor.config.hideLinkImg = true;
 
+      editor.config.uploadImgFns.onload = function (resultText, xhr) {
+
+        console.log(resultText);
+        
+        var obj = JSON.parse(resultText);
+
+        // var pa = /.*\{(.*)\}/;
+        // alert(resultText.match(pa)[1]);
+
+
+        // 上传图片时，已经将图片的名字存在
+        var originalName = editor.uploadImgOriginalName || '';
+
+        // editor.command(null, 'insertHtml', '<img src="' +obj[0] + '" alt="' + originalName + '/>');
+        editor.command(null, 'InsertImage', obj.url);
+      };
+
+      editor.config.uploadImgFns.ontimeout = function (xhr) {
+        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
+        alert('上传超时');
+      };
+
+      // 自定义error事件
+      editor.config.uploadImgFns.onerror = function (xhr) {
+        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
+        alert('上传错误');
+      };
+
 			editor.create();
 
 		}
@@ -111,7 +139,7 @@ $(function(){
       	console.log(files);
         console.log(files.length);
 
-        var FJnub = $(".fjnub").html();
+        var FJnub = parseInt($(".fjnub").html());
         console.log(FJnub);
         FJnub = FJnub+files.length;
         $(".fjnub").html(FJnub);
@@ -120,7 +148,7 @@ $(function(){
 
       	var Odiv = $("<div class='file-box'></div>");
       	var O2div = $("<div class='file'></div>");
-      	var Ia = $("<a href='"+response+"'></a>");
+      	var Ia = $("<a href='"+response+" target='_blank'></a>");
 
       	var Ispan = $("<span class='corner'></span>");
       	var Idiv = $("<div class='image'>")

@@ -292,7 +292,7 @@ $(function(){
 			// 图片上传路径
 			//editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
 			// editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
-			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
+			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/imageUpload';
 
 			// 隐藏掉插入网络图片功能
 	    editor.config.hideLinkImg = true;
@@ -413,30 +413,38 @@ $(function(){
         console.log(files);
         console.log(files.length);
 
-        var FJnub = $(".fjnub").html();
-        console.log(FJnub);
+        var FJnub = parseInt($(".fjnub").html());
+        console.log(FJ(nub);
         FJnub = FJnub+files.length;
         $(".fjnub").html(FJnub);
         
       	console.log(response);
+        console.log(typeof(response));
 
-      	var Odiv = $("<div class='file-box'></div>");
-      	var O2div = $("<div class='file'></div>");
-      	var Ia = $("<a href='"+response+"'></a>");
+        var reg = /[^(http:\/\/)]+/g;
+        var reg = /^(http)+/g;
 
-      	var Ispan = $("<span class='corner'></span>");
-      	var Idiv = $("<div class='image'>")
-      	var Iimg = $("<img alt='image' class='img-responsive' src='"+response+"'>");
-      	var I2div = $("<div class='file-name'>");
 
-      	Idiv.append(Iimg);
-      	// I2div.append(files.name);
-      	Ia.append(Ispan);
-      	Ia.append(Idiv);
-      	Ia.append(I2div);
-      	O2div.append(Ia);
-      	Odiv.append(O2div);
-      	$(".attachment").prepend(Odiv);
+        for(var i=0;i<files.length;i++){
+          var Odiv = $("<div class='file-box'></div>");
+          var O2div = $("<div class='file'></div>");
+          var Ia = $("<a href='"+response+" target='_blank''></a>");
+
+          var Ispan = $("<span class='corner'></span>");
+          var Idiv = $("<div class='image'>")
+          var Iimg = $("<img alt='image' class='img-responsive' src='"+response+"'>");
+          var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
+
+          Idiv.append(Iimg);
+          // I2div.append(files.name);
+          Ia.append(Ispan);
+          Ia.append(Idiv);
+          Ia.append(I2div);
+          O2div.append(Ia);
+          Odiv.append(O2div);
+          $(".attachment").prepend(Odiv);
+        }
+      	
 
       	
 
