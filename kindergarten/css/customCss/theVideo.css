@@ -88,13 +88,13 @@
     width: 100%;
     height: auto;
 }
-.mainVideo img{
-    width: auto;
-    height: 200px;
+.mainVideo video{
+    width: auto !important;
+    height: 200px !important;
     /*float: left;*/
     cursor: pointer;
 }
-.mainVideo .everyImg{
+.mainVideo .everyVideo{
     position: relative;
     width: auto;
     height: 200px;
@@ -151,7 +151,7 @@ iframe{
 }
 
 /*管理相册按钮*/
-i.manageImg{
+i.manageVideo{
     display: block;
     position: absolute;
     left: 2px;

@@ -1,6 +1,11 @@
 /**
  * Created by Sunshine on 2017/5/8.
  */
+
+window.onresize=function(){
+    location.reload();
+};
+
 $(window).ready(function () {
     var main = $("#main");
 
@@ -14,11 +19,11 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://119.29.53.178:8080/kindergarden/PicturecontentShowWe?pageNum=" + pageNum;
+        url = "http://119.29.53.178:8080/kindergarden/PicturecontentShowWe?pageNum=" + pageNum + "&cid="+1;
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        url = "http://119.29.53.178:8080/kindergarden/PictureContentShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
+        url = "http://119.29.53.178:8080/kindergarden/PictureContentShowteacher?pageNum="+pageNum + "&cid=" + teacher.cid;
     }
 
 
@@ -78,33 +83,7 @@ $(window).ready(function () {
                 pic.appendChild(time);
                 pic.appendChild(event);
             }
-
-            //测试
-            // for(var i=0;i<data.length;i++){
-            //     var everyUrl;
-            //     if (data[i].url.split(",") != -1){
-            //         everyUrl = data[i].url.split(",");
-            //     }else {
-            //         everyUrl = data[i].url;
-            //     }
-            //     var box = document.createElement("div");
-            //     box.className = "box";
-            //     var pic = document.createElement("div");
-            //     pic.className = "pic";
-            //     var theImg = document.createElement("img");
-            //     theImg.src = everyUrl[0];
-            //     theImg.setAttribute("data-id",data[i].id);//设置ID
-            //     var time = document.createElement("p");
-            //     time.innerHTML = data[i].time;
-            //     var event = document.createElement("p");
-            //     event.innerHTML = data[i].event;
-            //     main[0].appendChild(box);
-            //     box.appendChild(pic);
-            //     pic.appendChild(theImg);
-            //     pic.appendChild(time);
-            //     pic.appendChild(event);
-            // }
-            //测试end
+            
 
             var imgs = $("img");
             imgs.load(function () {
@@ -155,48 +134,6 @@ function afterSeccess(data) {
             }else {
                 alert("你的浏览器不支持sessionStorage")
             }
-            // $.ajax({
-            //     type: "post",
-            //     // url: "js/customJs/imgData.json",
-            //     url: "http://119.29.53.178:8080/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+1,
-            //     // dataType: "json",
-            //     data:theIndex,
-            //     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-            //     beforeSend: function (xhr) {
-            //         xhr.withCredentials = true;
-            //         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            //
-            //         var oDiv = document.createElement("div");
-            //         oDiv.className = "skip";
-            //         var oP = document.createElement("p");
-            //         oP.innerHTML = "正在打开相册，请稍等。。。";
-            //         $("#main")[0].appendChild(oDiv);
-            //         oDiv.appendChild(oP);
-            //         $(".gray").show();
-            //     },
-            //     success: function (data) {
-            //         console.log(theIndex);
-            //
-            //         if (window.sessionStorage) {
-            //             var imgData = {
-            //                 picId: theIndex,
-            //                 imgData: data
-            //             };
-            //             console.log(imgData);
-            //             var theImgData = JSON.stringify(imgData);
-            //             sessionStorage.setItem("theImgData", theImgData);
-            //        
-            //             window.location.href = "theAlbums.html";
-            //        
-            //         }else {
-            //             alert("你的浏览器不支持sessionStorage")
-            //         }
-            //
-            //     },
-            //     error: function (err) {
-            //         console.log(err.status);
-            //     }
-            // });
 
 
         }

@@ -35,51 +35,41 @@
                     <input class="buttonDel" type="button" value="删除活动">
                     <input class="buttonSure" style="display: none;width:70px;" type="button" value="确认删除">
                     <input class="buttonCancle" style="display: none;width:60px;" type="button" value="取消">
+                    <div class="chooseClass f_right">
+                        <span>点击查询对应班级的活动</span>
+                        <label>
+                            <select class="chooseClassSelect" name="chooseClass" id="">
+                                <option value="null">请选择班级</option>
+                            </select>
+                            <input type="button" class="chooseClassButton" value="查询">
+                            <input type="button" style="display: none" class="chooseSchool" value="返回校园图鉴">
+                        </label>
+                    </div>
                 </div>
                 <div class="ibox-content">
                     <div id="main">
-                        <div class="every">
-                            <div class="inputCheck f_left">
-                                <!--<span></span>-->
-                            </div>
-                            <div class="theVideo f_left">
-                                <a href="theVideo.html">点击进入</a>
-                            </div>
-                            <div class="information f_left">
-                                <div class="addPeople">
-                                    <span>上传人：</span>
-                                    <span>XXX</span>
-                                </div>
-                                <div class="addTime">
-                                    <span>上传时间：</span>
-                                    <span>2017-5-25</span>
-                                </div>
-                            </div>
-                            <div class="videoDes f_left">
-                                <p>这是视频买描述算法接口是打发家开发那好烦拉克金凤凰卡算法是款到发货as家开发恒温护肤南师大防护网而烦恼就是大开发是 防守打法拉加快速度卡时间的发的健身卡得分后卫啊副能收到即可回复文档</p>
-                            </div>
-                        </div>
-                        <div class="every">
-                            <div class="inputCheck f_left">
-                                <!--<span></span>-->
-                            </div>
-                            <div class="theVideo f_left">
-                                <a href="theVideo.html">点击进入</a>
-                            </div>
-                            <div class="information f_left">
-                                <div class="addPeople">
-                                    <span>上传人：</span>
-                                    <span>XXX</span>
-                                </div>
-                                <div class="addTime">
-                                    <span>上传时间：</span>
-                                    <span>2017-5-25</span>
-                                </div>
-                            </div>
-                            <div class="videoDes f_left">
-                                <p>这是视频买描述算法接口是打发家开发那好烦拉克金凤凰卡算法是款到发货as家开发恒温护肤南师大防护网而烦恼就是大开发是 防守打法拉加快速度卡时间的发的健身卡得分后卫啊副能收到即可回复文档</p>
-                            </div>
-                        </div>
+                        <h3 class="mainTitle">校园活动</h3>
+                        <!--<div class="every">-->
+                            <!--<div class="inputCheck f_left">-->
+                                <!--&lt;!&ndash;<span></span>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="theVideo f_left">-->
+                                <!--<a href="theVideo.html">点击进入</a>-->
+                            <!--</div>-->
+                            <!--<div class="information f_left">-->
+                                <!--<div class="addPeople">-->
+                                    <!--<span>上传人：</span>-->
+                                    <!--<span>XXX</span>-->
+                                <!--</div>-->
+                                <!--<div class="addTime">-->
+                                    <!--<span>上传时间：</span>-->
+                                    <!--<span>2017-5-25</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="videoDes f_left">-->
+                                <!--<p>这是视频买描述算法接口是打发家开发那好烦拉克金凤凰卡算法是款到发货as家开发恒温护肤南师大防护网而烦恼就是大开发是 防守打法拉加快速度卡时间的发的健身卡得分后卫啊副能收到即可回复文档</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                     <div class="addVideoBox" style="display: none">
                         <div class="title">
@@ -88,8 +78,8 @@
                         </div>
                         <div class="inputs">
                             <div class="everyInput">
-                                <span>活动名称</span>
-                                <input type="text" placeholder="活动名称">
+                                <span>发布人</span>
+                                <span class="thePeople">园长</span>
                             </div>
                             <div class="everyInput">
                                 <span>活动描述</span>

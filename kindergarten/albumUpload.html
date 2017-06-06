@@ -87,6 +87,8 @@
                 this.on("sendingmultiple", function () {});
                 this.on("successmultiple", function (files) {
                     console.log(files);
+                    alert("提交成功!");
+                    window.location.reload();
                 });
                 this.on("errormultiple", function (files, response) {
                 });

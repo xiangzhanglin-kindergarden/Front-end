@@ -11,7 +11,7 @@ function classManagenment(data) {
     var addNewClass = creatNewClass[0],
         upgradeClass = classInput[0],
         delClass = classInput[1],
-        refreshData = classInput[2];
+        refreshData = classInput[1];
 
 
 

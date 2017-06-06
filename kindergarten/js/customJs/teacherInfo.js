@@ -195,6 +195,11 @@ function addTeacher(theCaption,data,theIndex) {
     
 }
 
+
+
+
+
+
 //提交
 function addSubmit() {
     var values;

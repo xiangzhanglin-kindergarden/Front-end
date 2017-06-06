@@ -131,6 +131,7 @@ function addTheBox(theCaption,theIndex,data) {
                     inputParents[0].placeholder = "姓名";
                     inputParents[1].placeholder = "联系电话";
                     inputParents[2].placeholder = "默认登陆密码：123456";
+                    inputParents[2].readOnly = true;
                 }else if (caption[i] == "家庭住址"){
                     var province = ['省',"直辖市","河北省","山西省","内蒙古自治区","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西壮族自治区","海南省","四川省","贵州省","云南省","西藏自治区","陕西省","甘肃省","青海省","宁夏回族自治区","新疆维吾尔自治区","香港","澳门","台湾"];
 
@@ -231,6 +232,7 @@ function addTheBox(theCaption,theIndex,data) {
                 newParentInput[0].placeholder = "姓名";
                 newParentInput[1].placeholder = "联系电话";
                 newParentInput[2].placeholder = "默认登陆密码：123456";
+                newParentInput[2].readOnly = true;
             };
 
 
@@ -381,32 +383,81 @@ function checkInput() {
                         parent[0].appendChild(p);
                     }else {
                         changeBorder(this,1);
+
                     }
                     break;
                 case 1:
                     var theLength = inputs[1].value;
-                    if (inputs[1].value == ""){
+                    if (theLength.length != "18"){
                         changeBorder(this,0);
-                        this.placeholder = "请输入身份证号码";
-                    }else if (inputs[1].value != ""){
-                        if (theLength.length == "18"){
-                            changeBorder(this,1);
-                        }else {
-                            this.placeholder = "请输入正确的18位身份证";
-                            changeBorder(this,0);
-                        }
+                        var pI = document.createElement("p");
+                        pI.className = "theAttention";
+                        pI.innerHTML = "请输入正确18号身份证";
+                        var parentI = $(this).parent();
+                        parentI[0].appendChild(pI);
+                    }else {
+                        changeBorder(this,1);
+                    }
+                    break;
+                case 2:
+                    var time = inputs[2].value;
+                    if (time == ""){
+                        changeBorder(this,0);
+                        var pTime = document.createElement("p");
+                        pTime.className = "theAttention";
+                        pTime.innerHTML = "请选择时间";
+                        var parentTime = $(this).parent();
+                        parentTime[0].appendChild(pTime);
+                    }else {
+                        changeBorder(this,1);
+                    }
+                    break;
+                case 3:
+                    var pName = inputs[3].value;
+                    if (pName == ""){
+                        changeBorder(this,0);
+                    }else {
+                        this.style.borderColor = "#52b205";
+                        this.style.borderWidth = "2px";
+                    }
+                    break;
+                case 4:
+                    var pTell = inputs[4].value;
+                    if (pTell.length != "11"){
+                        changeBorder(this,0);
+                    }else {
+                        this.style.borderColor = "#52b205";
+                        this.style.borderWidth = "2px";
+                    }
+                    break;
+                case 6:
+                    var address = inputs[6].value;
+                    if (address == ""){
+                        changeBorder(this,0);
+                    }else{
+                        this.style.borderColor = "#52b205";
+                        this.style.borderWidth = "2px";
                     }
                     break;
                 default:
             }
 
             function changeBorder(border,index) {
+
+                $("p.theAttention").remove();
                 if (index == 1){
 
-                    $("p.theAttention").remove();
+                    $("p.theAttentionSure").remove();
                     border.style.borderColor = "#52b205";
                     border.style.borderWidth = "2px";
+                    var sure1 = document.createElement("p");
+                    sure1.className = "theAttentionSure";
+                    sure1.innerHTML = "√";
+                    sure1.style.color = "#52b205";
+                    var parentSure1 = $(border).parent();
+                    parentSure1[0].appendChild(sure1);
                 }else if(index == 0){
+
                     border.style.borderColor = "red";
                     border.style.borderWidth = "2px";
                 }
