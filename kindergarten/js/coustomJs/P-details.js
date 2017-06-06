@@ -389,7 +389,7 @@ $(function(){
     dictMaxFilesExceeded: "您最多只能上传20个文件！",
     dictResponseError: '文件上传失败!',
     method:"post",
-    url:"http://119.29.53.178:8080/kindergarden/imageUpload",
+    url:"http://119.29.53.178:8080/kindergarden/Upload",
     // url:"#",
     paramName:"file",
     //setParameterEncoding:AFJSONParameterEncoding
@@ -433,38 +433,9 @@ function creatFJ(files, response){
   response = JSON.parse(response);
 
   for(var i=0; i<response.length; i++){
-    var str = response[i].url;
-    var reg = /.+(:\^:)/g;
-    var reg2 = /(:\^:).+/g;
-
-    var theUrl = str.match(reg);
-    console.log(theUrl); 
-    theUrl = JSON.stringify(theUrl);  
-    
-    theUrl = theUrl.replace(":^:","");
-    theUrl = theUrl.replace("[","");
-    theUrl = theUrl.replace("]","");
-    theUrl = theUrl.replace("\"","");
-    theUrl = theUrl.replace("\"","");
-
-    console.log(theUrl); 
-
-    var theName = str.match(reg2);
-    console.log(theName); 
-    theName = JSON.stringify(theName);  
-    
-    theName = theName.replace(":^:","");
-    theName = theName.replace("[","");
-    theName = theName.replace("]","");
-    theName = theName.replace("\"","");
-    theName = theName.replace("\"","");
-
-    console.log(theName); 
-
-
     var Odiv = $("<div class='file-box'></div>");
     var O2div = $("<div class='file'></div>");
-    var Ia = $("<a href='"+theUrl+" target='_blank'></a>");
+    var Ia = $("<a href='"+response[i].url+"' target='_blank'></a>");
 
     var Ispan = $("<span class='corner'></span>");
     var Idiv = $("<div class='image imagebox'>")
@@ -473,7 +444,7 @@ function creatFJ(files, response){
 
     var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
     
-    var I2div = $("<div class='file-name'>"+theName+"</div>");
+    var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
 
     Idiv.append(Iimg);
     Ia.append(Ispan);
@@ -658,7 +629,6 @@ $(function(){
         $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"没有附件");
       }else{
         console.log(data.url2);
-         $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"<span class='"+data.url2.length+"'>个附件 - </span>");
         showFJ(data);
       }
     },
@@ -675,22 +645,51 @@ function showFJ(data){
   data.url2 = data.url2.split(",");
   console.log(data.url2.length);
   console.log(data.url2[0]);
+  $(".mail-attachment p span").append('&nbsp;'+'&nbsp;'+'&nbsp;'+"<span class='fjnub'>"+data.url2.length+"</span>个附件 - ");
+
 
   for(var i=0; i<data.url2.length; i++){
+    var str =data.url2[i];
+    var reg = /.+(:\^:)/g;
+    var reg2 = /(:\^:).+/g;
+
+    var theUrl = str.match(reg);
+    console.log(theUrl); 
+    theUrl = JSON.stringify(theUrl);  
+    
+    theUrl = theUrl.replace(":^:","");
+    theUrl = theUrl.replace("[","");
+    theUrl = theUrl.replace("]","");
+    theUrl = theUrl.replace("\"","");
+    theUrl = theUrl.replace("\"","");
+
+    console.log(theUrl); 
+
+    var theName = str.match(reg2);
+    console.log(theName); 
+    theName = JSON.stringify(theName);  
+    
+    theName = theName.replace(":^:","");
+    theName = theName.replace("[","");
+    theName = theName.replace("]","");
+    theName = theName.replace("\"","");
+    theName = theName.replace("\"","");
+
+    console.log(theName); 
+
+
     var Odiv = $("<div class='file-box'></div>");
     var O2div = $("<div class='file'></div>");
-    var Ia = $("<a href='"+data.url2[i]+" target='_blank'></a>");
+    var Ia = $("<a href='"+theUrl+"' target='_blank'></a>");
 
     var Ispan = $("<span class='corner'></span>");
     var Idiv = $("<div class='image imagebox'>")
 
-    var photo = suffixPD(data.url2[i]);
-    var photo = suffixPD(data.url2[i]);
-
+    var photo = suffixPD(theUrl);
 
     var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
     
-    var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
+    var I2div = $("<div class='file-name'>"+theName+"</div>");
 
     Idiv.append(Iimg);
     Ia.append(Ispan);
@@ -700,6 +699,7 @@ function showFJ(data){
     Odiv.append(O2div);
     $(".attachment").prepend(Odiv);
   }
+
 }
 
 

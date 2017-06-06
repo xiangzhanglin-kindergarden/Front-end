@@ -353,6 +353,7 @@ $(function(){
       };
       reurl2 = reurl2.join(",");
     }
+    console.log(reurl2);
 
     inNewsAdd = {
       issuer:username,
