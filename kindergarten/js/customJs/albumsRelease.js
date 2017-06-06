@@ -142,7 +142,7 @@ function addPhotoAjax() {
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/PicturecontentAdd",
+        url: "http://119.29.53.178:8080/kindergarden/PcAdd",
         data: "PictureContentJson="+JSON.stringify(value),
         beforeSend: function (xhr) {
             xhr.withCredentials = true;

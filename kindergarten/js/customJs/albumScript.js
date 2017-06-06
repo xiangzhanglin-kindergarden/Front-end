@@ -8,6 +8,7 @@ window.onresize=function(){
 
 $(window).ready(function () {
     var main = $("#main");
+    var imgData;
 
     //页码
     var pageNum = 1;
@@ -19,11 +20,11 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://119.29.53.178:8080/kindergarden/PicturecontentShowWe?pageNum=" + pageNum + "&cid="+1;
+        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        url = "http://119.29.53.178:8080/kindergarden/PictureContentShowteacher?pageNum="+pageNum + "&cid=" + teacher.cid;
+        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cid;
     }
 
 
@@ -45,45 +46,10 @@ $(window).ready(function () {
         success: function (data) {
             $(".adding")[0].remove();
 
-            var imgData = JSON.parse(data);
+            imgData = JSON.parse(data);
             console.log(imgData);
-            for(var i=0;i<imgData.length;i++){
-                var theImgFace = imgData[i].picface;
-                var imgFace;
-                if (theImgFace == undefined){
-                    imgFace = "img/albumFace.png";
-                }else {
-                    imgFace = JSON.parse(theImgFace).url;
-                }
-                console.log(imgFace);
 
-                var box = document.createElement("div");
-                box.className = "box";
-                var pic = document.createElement("div");
-                pic.className = "pic";
-                var theImg = document.createElement("img");
-                // theImg.src = "img/albumFace.png";//默认封面
-                theImg.setAttribute("data-id",imgData[i].picid);//设置ID
-                theImg.src = imgFace;
-                theImg.setAttribute("data-page",pageNum);
-                theImg.setAttribute("data-index",i);
-                var name = document.createElement("p");
-                name.innerHTML = imgData[i].picname;
-                var time = document.createElement("p");
-                time.innerHTML = imgData[i].picdate;
-                time.className = "theTime";
-                var event = document.createElement("p");
-                event.className = "theDescribe";
-                event.innerHTML = imgData[i].picmdescribe;
-
-                main[0].appendChild(box);
-                box.appendChild(pic);
-                pic.appendChild(theImg);
-                pic.appendChild(name);
-                pic.appendChild(time);
-                pic.appendChild(event);
-            }
-            
+            showData(imgData);
 
             var imgs = $("img");
             imgs.load(function () {
@@ -94,7 +60,84 @@ $(window).ready(function () {
         error: function (err) {
             console.log("出现错误："+err.status);
         }
-    })
+    });
+
+
+
+    var optionClass = [];
+
+    //加载班级
+    $.ajax({
+        type: "post",
+        url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend: function (xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+            var adding = document.createElement("p");
+            adding.className = "adding";
+            adding.innerHTML = "数据加载中。。。";
+            $(".chooseClass")[0].appendChild(adding);
+        },
+        success: function (classdata) {
+            var classData = JSON.parse(classdata);
+            $(".adding").remove();
+            for (var clas = 0; clas < classData.length; clas++) {
+                optionClass[clas] = classData[clas].cName;
+            }
+
+            var selectClass = $("select.chooseClassSelect");
+
+            for (var c=0;c<optionClass.length;c++){
+                var classOption = document.createElement("option");
+                selectClass[0].appendChild(classOption);
+                classOption.setAttribute("classId",classData[c].cId);
+                classOption.innerHTML = optionClass[c];
+            }
+
+
+            var choooseClass = $("input.chooseClassButton");
+            var chooseSchool = $("input.chooseSchool");
+            console.log(chooseSchool);
+            choooseClass.click(function () {
+                var theClassName = $("select.chooseClassSelect").val();
+                if (theClassName == "null"){
+                    alert("请选择你要查看的班级！");
+                }else {
+                    searchClass();
+                    chooseSchool.show(400);
+
+                    chooseSchool.click(function () {
+                        $("#main").remove();
+                        var main = document.createElement("div");
+                        main.id = "main";
+                        $(".ibox-content")[0].appendChild(main);
+                        var classTitle = document.createElement("h3");
+                        classTitle.className = "mainTitle";
+                        classTitle.innerHTML = "校园图鉴";
+                        main.appendChild(classTitle);
+                        showData(imgData);
+                        chooseSchool.hide(400);
+
+                        var addAlbums = $(".addAlbums>input");
+                        $(addAlbums[0]).show(400);
+                        $(addAlbums[1]).show(400);
+                    });
+                }
+            });
+
+
+
+        },
+        error: function (err) {
+            console.log(err.status);
+        }
+    });
+
+
+
+
 
 });
 
@@ -140,6 +183,101 @@ function afterSeccess(data) {
     })
 
 }
+
+
+
+function searchClass() {
+    var addAlbums = $(".addAlbums>input");
+    addAlbums.hide(400);
+
+
+    var theClass = $("select.chooseClassSelect");
+    var theClassName = theClass.val();
+
+    $.ajax({
+        type: "post",
+        url: "http://119.29.53.178:8080/kindergarden/PCShowApp",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        data: "cid="+theClassName+"&pageNum="+1,
+        beforeSend: function (xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            var adding = document.createElement("p");
+            adding.className = "adding";
+            adding.innerHTML = "数据加载中。。。";
+            $(".ibox-content")[0].appendChild(adding);
+        },
+        success: function (classdata) {
+            $(".adding").remove();
+            var classData = JSON.parse(classdata);
+            console.log(classData);
+            $("#main").remove();
+            var main = document.createElement("div");
+            main.id = "main";
+            $(".ibox-content")[0].appendChild(main);
+            var classTitle = document.createElement("h3");
+            classTitle.className = "mainTitle";
+            classTitle.innerHTML = theClassName+"的相册";
+            main.appendChild(classTitle);
+            showData(classData);
+        },
+        error: function (err) {
+            console.log(err.status);
+        }
+    });
+
+
+
+}
+
+
+
+function showData(imgData) {
+    console.log(imgData);
+    var main = $("#main");
+    for(var i=0;i<imgData.length;i++){
+        var theImgFace = imgData[i].picface;
+        var imgFace;
+        if (theImgFace == undefined){
+            imgFace = "img/albumFace.png";
+        }else {
+            imgFace = JSON.parse(theImgFace).url;
+        }
+        console.log(imgFace);
+
+        var box = document.createElement("div");
+        box.className = "box";
+        var pic = document.createElement("div");
+        pic.className = "pic";
+        var theImg = document.createElement("img");
+        // theImg.src = "img/albumFace.png";//默认封面
+        theImg.setAttribute("data-id",imgData[i].picid);//设置ID
+        theImg.src = imgFace;
+        // theImg.setAttribute("data-page",pageNum);
+        theImg.setAttribute("data-index",i);
+        var name = document.createElement("p");
+        name.innerHTML = imgData[i].picname;
+        var time = document.createElement("p");
+        time.innerHTML = imgData[i].picdate;
+        time.className = "theTime";
+        var event = document.createElement("p");
+        event.className = "theDescribe";
+        event.innerHTML = imgData[i].picmdescribe;
+
+        main[0].appendChild(box);
+        box.appendChild(pic);
+        pic.appendChild(theImg);
+        pic.appendChild(name);
+        pic.appendChild(time);
+        pic.appendChild(event);
+    }
+
+    var imgs = $("img");
+    imgs.load(function () {
+        afterSeccess(imgData);
+    });
+}
+
 
 function waterFall() {
     var main = $("#main");

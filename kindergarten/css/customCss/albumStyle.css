@@ -44,7 +44,7 @@ p.theTime{
 
 .addAlbums{
     width: 100%;
-    height: auto;
+    height: 50px;
     background-color: white;
     padding: 10px 20px;
 }
@@ -207,3 +207,47 @@ i.manageImg{
     text-align: center;
 }
 
+
+
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+
+
+/*选择班级*/
+.chooseClass{
+    width: auto;
+    height: 40px;
+    margin-right: 100px;
+    background-color: white;
+}
+.chooseClass span{
+    font-size: 16px;
+    line-height: 40px;
+}
+.chooseClass label select{
+    margin-left: 20px;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #23c6c8;
+}
+.chooseClass input.chooseClassButton{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #23c6c8;
+}
+.chooseClass input.chooseSchool{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(255, 153, 102);
+}
+.adding{
+    float: left;
+}
