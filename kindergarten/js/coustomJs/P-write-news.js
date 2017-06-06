@@ -162,7 +162,7 @@ function creatFJ(files, response){
   for(var i=0; i<response.length; i++){
     var Odiv = $("<div class='file-box'></div>");
     var O2div = $("<div class='file'></div>");
-    var Ia = $("<a href='"+response[i].url+" target='_blank'></a>");
+    var Ia = $("<a href='"+response[i].url+"' target='_blank'></a>");
 
     var Ispan = $("<span class='corner'></span>");
     var Idiv = $("<div class='image imagebox'>")
@@ -348,8 +348,10 @@ $(function(){
     }else{
       for (var i = 0; i < url2leng; i++) {
         reurl2[i] = $(".attachment .file-box:eq("+i+") a").attr("href");
-        reurl2 = reurl2.join(",");
+        var fileName = $(".attachment .file-box:eq("+i+") .file-name").html();
+        reurl2[i] = reurl2[i]+":^:"+fileName;
       };
+      reurl2 = reurl2.join(",");
     }
 
     inNewsAdd = {

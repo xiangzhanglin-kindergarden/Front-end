@@ -433,9 +433,38 @@ function creatFJ(files, response){
   response = JSON.parse(response);
 
   for(var i=0; i<response.length; i++){
+    var str = response[i].url;
+    var reg = /.+(:\^:)/g;
+    var reg2 = /(:\^:).+/g;
+
+    var theUrl = str.match(reg);
+    console.log(theUrl); 
+    theUrl = JSON.stringify(theUrl);  
+    
+    theUrl = theUrl.replace(":^:","");
+    theUrl = theUrl.replace("[","");
+    theUrl = theUrl.replace("]","");
+    theUrl = theUrl.replace("\"","");
+    theUrl = theUrl.replace("\"","");
+
+    console.log(theUrl); 
+
+    var theName = str.match(reg2);
+    console.log(theName); 
+    theName = JSON.stringify(theName);  
+    
+    theName = theName.replace(":^:","");
+    theName = theName.replace("[","");
+    theName = theName.replace("]","");
+    theName = theName.replace("\"","");
+    theName = theName.replace("\"","");
+
+    console.log(theName); 
+
+
     var Odiv = $("<div class='file-box'></div>");
     var O2div = $("<div class='file'></div>");
-    var Ia = $("<a href='"+response[i].url+" target='_blank'></a>");
+    var Ia = $("<a href='"+theUrl+" target='_blank'></a>");
 
     var Ispan = $("<span class='corner'></span>");
     var Idiv = $("<div class='image imagebox'>")
@@ -444,7 +473,7 @@ function creatFJ(files, response){
 
     var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
     
-    var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
+    var I2div = $("<div class='file-name'>"+theName+"</div>");
 
     Idiv.append(Iimg);
     Ia.append(Ispan);
@@ -656,6 +685,8 @@ function showFJ(data){
     var Idiv = $("<div class='image imagebox'>")
 
     var photo = suffixPD(data.url2[i]);
+    var photo = suffixPD(data.url2[i]);
+
 
     var Iimg = $("<img alt='image' class='img-responsive' src='"+photo+"'>");
     
@@ -748,8 +779,10 @@ function showFJ(data){
     }else{
       for (var i = 0; i < url2leng; i++) {
         reurl2[i] = $(".attachment .file-box:eq("+i+") a").attr("href");
-        reurl2 = reurl2.join(",");
+        var fileName = $(".attachment .file-box:eq("+i+") .file-name").html();
+        reurl2[i] = reurl2[i]+":^:"+fileName;        
       };
+      reurl2 = reurl2.join(",");
     }
 
     console.log(pageid);
