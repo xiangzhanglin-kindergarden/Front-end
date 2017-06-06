@@ -11,11 +11,13 @@ $(document).ready(function(){
 		usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
 		// console.log(username);
 		// console.log(usertype);
-		teacherData = sessionStorage.getItem("teacherData");
-		var data = JSON.parse(teacherData);
-		// usertype = 0;
-		userClass = data.cId;
+
+		allClass();
 		if (usertype == 0) {
+			teacherData = sessionStorage.getItem("teacherData");
+			var data = JSON.parse(teacherData);
+			// usertype = 0;
+			userClass = data.cId;
 			tClass();
 			$(".new-class .removeTclass").remove();
 			$(".new-class .class").remove();
@@ -28,30 +30,56 @@ $(document).ready(function(){
 		}
 	})
 
-		function tClass(){
-			console.log(userClass);
-			getTClass();
-		}
+	function allClass(){
+    //加载班级
+    $.ajax({
+      type: "post",
+      url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+      contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+      beforeSend: function (xhr) {
+        xhr.withCredentials = true;
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      },
+      success: function (classdata) {
+        var classData = JSON.parse(classdata);
+        var classlang = classData.length-2;
+        for(var i=0;i<classlang;i++){
+	        $(".removeTclassse").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
+        }
+      },
+      error: function (err) {
+        console.log(err.status);
+      }
+  });
+	}
 
-		function getTClass(){
-			var lesson = JSON.stringify({
-				"lId":null,
-				"cName":userClass,
-				"lWeek":$(".differ-class-box [name='week']").val(),
-				"lMon":null,
-				"lTue":null,
-				"lWed":null,
-				"lThu":null,
-				"lfri":null,
-				// "cid":userClass,
-			});
-			ajax(
-				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
-				"lessonJson="+lesson,
-				showLesson
-			);
 
-		}
+	    
+
+	function tClass(){
+		console.log(userClass);
+		getTClass();
+	}
+
+	function getTClass(){
+		var lesson = JSON.stringify({
+			"lId":null,
+			"cName":userClass,
+			"lWeek":$(".differ-class-box [name='week']").val(),
+			"lMon":null,
+			"lTue":null,
+			"lWed":null,
+			"lThu":null,
+			"lfri":null,
+			// "cid":userClass,
+		});
+		ajax(
+			"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+			"lessonJson="+lesson,
+			showLesson
+		);
+
+	}
 
 
 
@@ -254,15 +282,34 @@ $(document).ready(function(){
 				"http://119.29.53.178:8080/kindergarden/LessonUpdate",
 				"lessonJson="+courseMsg,
 				function(res){
-					alert("修改成功!");
-					window.location.reload();
 			})
 		}else{
 			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
 			console.log(courseMsg);
 			ajax("http://119.29.53.178:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
-				alert("修改成功!");
-				window.location.reload();
+				$(".mail-box td").each(function(){
+					if ($(this).attr("class") != "class-time"){
+						var value = $(this).children().val()
+						console.log(value);
+						if (value!="0") {
+							$(this).append(value);
+							$("#change-class-yes").animate({"opacity":0});
+							$("#change-class-no").animate({"opacity":0});
+
+							$("#change-class-yes").addClass("myHidden");
+							$("#change-class-no").addClass("myHidden");
+							setTimeout(function(){
+								$("#change-class").removeClass("myHidden");
+								$("#change-class").animate({"opacity":1});
+							},1);
+							$(".differ-class-box [name='class']").attr("disabled",false);
+							$(".differ-class-box [name='week']").attr("disabled",false);
+							close_new_class();
+						};
+						
+					}
+				})
+				$(".mail-box td input").remove();
 			})
 		}
 		
@@ -292,6 +339,7 @@ $(document).ready(function(){
 	function showLesson(data){
 		console.log(data);
 		if(data.result == false){
+			$("#change-class").attr("disabled",true);
 			alert("当前周和班级的课程还未添加")
 			$(".class-table tr:eq(1) td:eq(1)").html("")
 			$(".class-table tr:eq(2) td:eq(1)").html("")

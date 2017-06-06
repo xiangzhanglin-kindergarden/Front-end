@@ -58,7 +58,7 @@ $(document).ready(function(){
 						if (data.msg == "登录成功") {
 							set_sessionStorage(userName,userClass);
 							sessionStorage.setItem("teacherData",data);
-							alert(data.msg);
+							// alert(data.msg);
 							window.location.href = "index.html";
 						}else if (data.msg == "密码错误") {
 							alert(data.msg);
@@ -70,7 +70,6 @@ $(document).ready(function(){
               set_sessionStorage(userName,userClass);
               var theData = JSON.stringify(data);
               sessionStorage.setItem("teacherData",theData);
-              alert("登录成功");
               window.location.href = "index.html";
 						}
 					},

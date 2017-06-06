@@ -50,7 +50,7 @@
 			if (tID == "n-s-all") {
 				$(".news-status span").removeClass("n-s-chosed");
 				$(this).addClass("n-s-chosed");
-			}else if(tID == null || tID=="" || tID=="undefined") {
+			}else if(tID != "n-s-all") {
 				setTimeout(function(){
 					var nub2 = 0;
 					$(".n-s-kind").each(function(){
@@ -86,16 +86,8 @@
 					$(this).addClass("n-s-chosed");	
 				}
 			};
-
-			newsStatusAjax();
 		})
 	})
-
-	/*  审核状态AJAX   */
-	function newsStatusAjax(){
-
-	}
-
 
 
 /*    选择审核状态  END*/
@@ -140,15 +132,8 @@
 					$("#n-s-all").animate({"opacity":1});
 				}
 			}
-
-			newsKindAjax();
 		})
 	})
-
-	/*  审核状态AJAX   */
-	function newsKindAjax(){
-
-	}
 
 
 
