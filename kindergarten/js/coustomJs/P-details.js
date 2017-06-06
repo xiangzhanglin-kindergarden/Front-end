@@ -785,17 +785,21 @@ function showFJ(data){
       reurl2 = reurl2.join(",");
     }
 
-    console.log(pageid);
-    console.log(retitle);
-    console.log(remessage);
-    console.log(reurl1);
-    console.log(reurl2);
 
-
+    var myjson;
+    inNewsAdd = {
+      idnews:pageid,
+      title:retitle,
+      message:remessage,
+      url1:reurl1,
+      url2:reurl2,
+    }
+    console.log(inNewsAdd);
 
     $.ajax({
       type:"post",
-      url:"http://119.29.53.178:8080/kindergarden/UpdateNews?idnews="+pageid+"&title="+retitle+"&message="+remessage+"&url1="+reurl1+"&url2="+reurl2,
+      url:"http://119.29.53.178:8080/kindergarden/UpdateNews",
+      data:inNewsAdd,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
