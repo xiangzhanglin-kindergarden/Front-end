@@ -252,9 +252,11 @@
 .file-box .file .imagebox{
 	display: table-cell;
 	height: 200px;
+	width: 197.5px;
 	vertical-align: middle;
 }
 .file-box .file .imagebox img{
+	max-height: 100%;
 	margin: 0 auto;
 }
 .file-box .file .file-name{

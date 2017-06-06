@@ -193,6 +193,7 @@ function suffixPD(obj){
   var regVideo = /\.(mp4|avi|flv|wmv|swf)$/g;
   var regdoc = /\.(pdf|txt|doc|docx)$/g;
   var regzip = /\.(zip|rar|7-zip)$/g;
+  var regMusic = /\.(mp3|wma|wav|occ|flac)$/g;
 
   var imgPD = regImg.test(obj);
   if (imgPD==true) {
@@ -213,8 +214,14 @@ function suffixPD(obj){
           var IDcover = "img/coverZip.png";
           return IDcover;
         }else{
-          var IDcover = "img/coverOther.png";
-          return IDcover;
+          var musicPD = regMusic.test(obj);
+          if (musicPD==true) {
+            var IDcover = "img/coverMusic.png";
+            return IDcover;
+          }else{
+            var IDcover = "img/coverOther.png";
+            return IDcover;
+          }
         }
       }
     }
@@ -341,6 +348,7 @@ $(function(){
     }else{
       for (var i = 0; i < url2leng; i++) {
         reurl2[i] = $(".attachment .file-box:eq("+i+") a").attr("href");
+        reurl2 = reurl2.join(",");
       };
     }
 
