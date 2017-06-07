@@ -5,7 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/kindergarten/js/customJs/video.js" line="155" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="修复了一些bug">
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Front-end.iws" />
@@ -40,8 +40,8 @@
       <file leaf-file-name="videoUpload.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kindergarten/videoUpload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="610">
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -473,7 +473,7 @@
       <workItem from="1496642922336" duration="8821000" />
       <workItem from="1496660647959" duration="11102000" />
       <workItem from="1496738117003" duration="15518000" />
-      <workItem from="1496805999464" duration="4918000" />
+      <workItem from="1496805999464" duration="4924000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -601,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496822164085</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="修复了一些bug">
+      <created>1496822405348</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1496822405348</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152696000" />
+    <option name="totallyTimeSpent" value="152702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -1000,8 +1007,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/videoUpload.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="610">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
           <folding />
         </state>
       </provider>
