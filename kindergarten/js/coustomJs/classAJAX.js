@@ -45,6 +45,7 @@ $(document).ready(function(){
         var classlang = classData.length-2;
         for(var i=0;i<classlang;i++){
 	        $(".removeTclassse").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
+	        $(".addNewClass").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
         }
       },
       error: function (err) {
@@ -139,14 +140,37 @@ $(document).ready(function(){
 				"http://119.29.53.178:8080/kindergarden/LessonAddteacher",
 				"lessonInJson="+courseMsg,
 				function(res){
-					alert("添加成功!");
-					window.location.reload();
+
+					close_new_class();
+
+					var lesson = JSON.stringify({
+						"lId":null,
+						"cName":userClass,
+						"lWeek":$(".week").val(),
+						"lMon":null,
+						"lTue":null,
+						"lWed":null,
+						"lThu":null,
+						"lfri":null,
+						// "cid":userClass,
+					});
+					ajax(
+						"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+						"lessonJson="+lesson,
+						showLesson
+					);
+					$(".c-week").val($(".week").val());
+					// $(".c-week option").each(function(){
+					// 	if ($(".week").val()==$(this).html()) {
+					// 		$(this).attr("selected",true);
+					// 	};
+					// }) 
 				}
 			)
 		}else{
 			var courseMsg = JSON.stringify({
 				"lId":null,
-				"cName":$(".differ-class-box [name='class']").val(),
+				"cName":$(".addNewClass").val(),
 				"lWeek":$(".week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
@@ -159,8 +183,39 @@ $(document).ready(function(){
 				"http://119.29.53.178:8080/kindergarden/LessonAdd",
 				"lessonInJson="+courseMsg,
 				function(res){
-					alert("添加成功!");
-					window.location.reload();
+
+					close_new_class();
+
+					var lesson = JSON.stringify({
+						"lId":null,
+						"cName":$(".addNewClass").val(),
+						"lWeek":$(".week").val(),
+						"lMon":null,
+						"lTue":null,
+						"lWed":null,
+						"lThu":null,
+						"lfri":null,
+						// "cid":userClass,
+					});
+					ajax(
+						"http://119.29.53.178:8080/kindergarden/LessonShow",
+						"lessonJson="+lesson,
+						showLesson
+					);
+					$(".c-week").val($(".week").val());
+					// $(".c-week option").each(function(){
+					// 	if ($(".week").val()==$(this).html()) {
+					// 		$(this).attr("selected",true);
+					// 	};
+					// });
+					$(".removeTclassse").val($(".addNewClass").val());
+					// $(".removeTclassse option").each(function(){
+					// 	if ($(".addNewClass").val()==$(this).html()) {
+					// 		$(this).attr("selected",true);
+					// 	};
+					// });
+
+				
 				}
 			)
 		}
