@@ -9,7 +9,7 @@ $(function(){
 		$("#usertype").html("老师");
 	}
   if (usertype == null||usertype == "") {
-    window.location.href="../../login.html";
+    window.location.href="login.html";
   };
 })
 
