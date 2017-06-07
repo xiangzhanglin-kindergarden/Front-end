@@ -13,6 +13,9 @@ $(window).ready(function () {
     //页码
     var pageNum = 1;
 
+    //班级
+    var optionClass = [];
+
     //权限
     var url = "";
     var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
@@ -21,10 +24,23 @@ $(window).ready(function () {
     //园长
     if (usertype == 1){
         url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
+        loadClass();
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cid;
+        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
+
+        var classAlbumsChoose = $(".classAlbumsChoose");
+        $(".chooseClass").remove();
+        classAlbumsChoose.show();
+
+        var theTitle = $("h3.theTitle");
+        theTitle.html("班级图鉴");
+
+        var schoolChoose = classAlbumsChoose.find("input.schoolChoose");
+        schoolChoose.click(function () {
+            classAlbumsChooseFun(this.value);
+        });
     }
 
 
@@ -44,17 +60,14 @@ $(window).ready(function () {
             $(".ibox-content")[0].appendChild(adding);
         },
         success: function (data) {
-            $(".adding")[0].remove();
+            $(".adding").remove();
 
             imgData = JSON.parse(data);
             console.log(imgData);
 
             showData(imgData);
 
-            var imgs = $("img");
-            imgs.load(function () {
-                afterSeccess(imgData);
-            });
+
 
         },
         error: function (err) {
@@ -64,77 +77,142 @@ $(window).ready(function () {
 
 
 
-    var optionClass = [];
-
     //加载班级
-    $.ajax({
-        type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/ClassShow",
-        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-        beforeSend: function (xhr) {
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    function loadClass() {
 
-            var adding = document.createElement("p");
-            adding.className = "adding";
-            adding.innerHTML = "数据加载中。。。";
-            $(".chooseClass")[0].appendChild(adding);
-        },
-        success: function (classdata) {
-            var classData = JSON.parse(classdata);
-            $(".adding").remove();
-            for (var clas = 0; clas < classData.length; clas++) {
-                optionClass[clas] = classData[clas].cName;
+        $.ajax({
+            type: "post",
+            url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+                var adding = document.createElement("p");
+                adding.className = "adding";
+                adding.innerHTML = "数据加载中。。。";
+                $(".chooseClass")[0].appendChild(adding);
+            },
+            success: function (classdata) {
+                var classData = JSON.parse(classdata);
+                $(".adding").remove();
+                for (var clas = 0; clas < classData.length; clas++) {
+                    optionClass[clas] = classData[clas].cName;
+                }
+
+                var selectClass = $("select.chooseClassSelect");
+
+                for (var c=0;c<optionClass.length;c++){
+                    var classOption = document.createElement("option");
+                    selectClass[0].appendChild(classOption);
+                    classOption.setAttribute("classId",classData[c].cId);
+                    classOption.innerHTML = optionClass[c];
+                }
+
+
+                var choooseClass = $("input.chooseClassButton");
+                var chooseSchool = $("input.chooseSchool");
+                console.log(chooseSchool);
+                choooseClass.click(function () {
+                    var theClassName = $("select.chooseClassSelect").val();
+                    if (theClassName == "null"){
+                        alert("请选择你要查看的班级！");
+                    }else {
+                        searchClass();
+                        chooseSchool.show(400);
+
+                        chooseSchool.click(function () {
+                            $("#main").remove();
+                            var main = document.createElement("div");
+                            main.id = "main";
+                            $(".ibox-content")[0].appendChild(main);
+                            var classTitle = document.createElement("h3");
+                            classTitle.className = "mainTitle";
+                            classTitle.innerHTML = "校园图鉴";
+                            main.appendChild(classTitle);
+                            showData(imgData);
+                            chooseSchool.hide(400);
+
+                            var addAlbums = $(".addAlbums>input");
+                            $(addAlbums[0]).show(400);
+                            $(addAlbums[1]).show(400);
+                        });
+                    }
+                });
+
+
+
+            },
+            error: function (err) {
+                console.log(err.status);
             }
-
-            var selectClass = $("select.chooseClassSelect");
-
-            for (var c=0;c<optionClass.length;c++){
-                var classOption = document.createElement("option");
-                selectClass[0].appendChild(classOption);
-                classOption.setAttribute("classId",classData[c].cId);
-                classOption.innerHTML = optionClass[c];
-            }
+        });
+    }
 
 
-            var choooseClass = $("input.chooseClassButton");
-            var chooseSchool = $("input.chooseSchool");
-            console.log(chooseSchool);
-            choooseClass.click(function () {
-                var theClassName = $("select.chooseClassSelect").val();
-                if (theClassName == "null"){
-                    alert("请选择你要查看的班级！");
-                }else {
-                    searchClass();
-                    chooseSchool.show(400);
 
-                    chooseSchool.click(function () {
-                        $("#main").remove();
-                        var main = document.createElement("div");
-                        main.id = "main";
-                        $(".ibox-content")[0].appendChild(main);
-                        var classTitle = document.createElement("h3");
-                        classTitle.className = "mainTitle";
-                        classTitle.innerHTML = "校园图鉴";
-                        main.appendChild(classTitle);
-                        showData(imgData);
-                        chooseSchool.hide(400);
+    function classAlbumsChooseFun(name) {
+        var backClassAlbums = $(".classAlbumsChoose").find("input.schoolChoose");
 
-                        var addAlbums = $(".addAlbums>input");
-                        $(addAlbums[0]).show(400);
-                        $(addAlbums[1]).show(400);
-                    });
+        var addAlbumsInput = $(".addAlbums").find("input");
+        if (name == "校园图鉴"){
+            $.ajax({
+                type: "post",
+                url: "http://119.29.53.178:8080/kindergarden/PCtShowteacher?cid="+1+"&pageNum="+1,
+                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                beforeSend: function (xhr) {
+                    xhr.withCredentials = true;
+                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+                    var adding = document.createElement("p");
+                    adding.className = "adding";
+                    adding.innerHTML = "数据加载中。。。";
+                    $(".ibox-content")[0].appendChild(adding);
+                },
+                success: function (data) {
+                    $(".adding").remove();
+                    $("#main").remove();
+
+                    var backClassAlbums = $(".classAlbumsChoose").find("input.schoolChoose");
+                    backClassAlbums[0].value = "返回本班相册";
+                    var imgData = JSON.parse(data);
+
+                    var main = document.createElement("div");
+                    main.id = "main";
+                    $(".ibox-content")[0].appendChild(main);
+                    var theTitle = document.createElement("h3");
+                    theTitle.innerHTML = "校园图鉴";
+                    main.appendChild(theTitle);
+
+                    $(addAlbumsInput[0]).hide(400);
+                    $(addAlbumsInput[1]).hide(400);
+
+                    showData(imgData);
+
+
+
+                },
+                error: function (err) {
+                    console.log("出现错误："+err.status);
                 }
             });
+        }else {
+            $("#main").remove();
+            var main = document.createElement("div");
+            main.id = "main";
+            $(".ibox-content")[0].appendChild(main);
+            var theTitle = document.createElement("h3");
+            theTitle.innerHTML = "班级图鉴";
+            main.appendChild(theTitle);
+            backClassAlbums[0].value = "校园图鉴";
 
-
-
-        },
-        error: function (err) {
-            console.log(err.status);
+            $(addAlbumsInput[0]).show(400);
+            $(addAlbumsInput[1]).show(400);
+            showData(imgData);
         }
-    });
 
+
+    }
 
 
 

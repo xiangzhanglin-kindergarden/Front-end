@@ -7,7 +7,7 @@ html body{
     position: relative
 }
 .box{
-    padding: 25px 0 0 15px;
+    padding: 25px 0 15px 15px;
     float: left;
 }
 .pic{
@@ -218,7 +218,7 @@ i.manageImg{
 
 
 /*选择班级*/
-.chooseClass{
+.chooseClass, .classAlbumsChoose{
     width: auto;
     height: 40px;
     margin-right: 100px;
@@ -250,4 +250,11 @@ i.manageImg{
 }
 .adding{
     float: left;
+}
+
+
+
+.classAlbumsChoose .schoolChoose{
+    width: auto !important;
+    background-color: #00B2E2;
 }

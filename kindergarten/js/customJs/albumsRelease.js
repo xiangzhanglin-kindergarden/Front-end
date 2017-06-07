@@ -126,7 +126,6 @@ function addPhotoAjax() {
         cid = teacher.cId;
     }
 
-    console.log(textarea[0]);
     var value = {
         picid: null,
         picname: input.val(),
