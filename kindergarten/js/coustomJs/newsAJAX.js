@@ -15,9 +15,9 @@ $(function(){
     if (usertype==0) {
       $(".news-list-func .n-l-f-btn-del").remove();
       $("#n-s-all").remove();
-      $(".n-s-wait").remove();
-      $(".n-s-unpass").remove();
-      $(".n-s-pass").addClass("n-s-chosed");
+      $("#n-s-wait").remove();
+      $("#n-s-unpass").remove();
+      $("#n-s-pass").addClass("n-s-chosed");
       $(".news-list-func .n-l-f-btn-c").css({"width":"40%"});
     };
   }

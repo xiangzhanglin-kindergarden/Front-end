@@ -8,6 +8,9 @@ $(function(){
 	if (usertype == 0) {
 		$("#usertype").html("老师");
 	}
+  if (usertype == null||usertype == "") {
+    window.location.href="../../login.html";
+  };
 })
 
 
