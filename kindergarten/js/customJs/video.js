@@ -44,20 +44,7 @@ $(document).ready(function () {
 
             showData(videoData);
 
-
-            var enterTheVideo = $("a.enterTheVideo");
-            enterTheVideo.click(function () {
-                var mcid = $(this).parent().parent()[0].getAttribute("data-mcid");
-                console.log(mcid);
-                
-                var theVideoMcid = mcid;
-                
-                sessionStorage.setItem("theVideoMcid", theVideoMcid);
-
-                window.location.href = "theVideo.html";
-                
-
-            });
+            
 
 
 
@@ -201,6 +188,20 @@ $(document).ready(function () {
             videoDes.appendChild(videoDesP);
 
         }
+
+
+
+        var enterTheVideo = $("a.enterTheVideo");
+        enterTheVideo.click(function () {
+            var mcid = $(this).parent().parent()[0].getAttribute("data-mcid");
+            console.log(mcid);
+
+            sessionStorage.setItem("theVideoMcid", mcid);
+
+            window.location.href = "theVideo.html";
+
+
+        });
     }
 
 

@@ -14,7 +14,7 @@
     <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
     <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <link href="css/style.css?v=4.1.0" rel="stylesheet">
-    <link href="css/customCss/albumUpload.css" rel="stylesheet">
+    <link href="css/customCss/videoUpload.css" rel="stylesheet">
 
 </head>
 
@@ -55,10 +55,12 @@
 <script>
     $(document).ready(function () {
 
+        var theVideomcid = sessionStorage.getItem("theVideoMcid");
+        console.log(theVideomcid);
+
         Dropzone.options.myAwesomeDropzone = {
 
-//            url: "http://119.29.53.178:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
-            url: "http://localhost:8080/kindergarten/MovieAdd",
+            url: "http://119.29.53.178:8080/kindergarden/MovieAdd?McidJson="+theVideomcid,
             autoProcessQueue: false,
             uploadMultiple: true,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,
@@ -84,6 +86,7 @@
                 });
                 this.on("successmultiple", function (files) {
                     console.log(files);
+                    alert("提交成功!请刷新页面");
                 });
                 this.on("errormultiple", function (files, response) {
                 });
