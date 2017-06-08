@@ -263,7 +263,7 @@ body.overy{
 
 
 /*选择班级*/
-.chooseClass{
+.chooseClass, .classVideoChoose{
     width: auto;
     height: 40px;
     margin-right: 100px;
@@ -295,4 +295,12 @@ body.overy{
 }
 .adding{
     float: left;
+}
+
+
+
+
+.classVideoChoose .schoolChoose{
+    width: auto !important;
+    background-color: #00B2E2;
 }

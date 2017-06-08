@@ -173,7 +173,6 @@ $(window).ready(function () {
                     $(".adding").remove();
                     $("#main").remove();
 
-                    var backClassAlbums = $(".classAlbumsChoose").find("input.schoolChoose");
                     backClassAlbums[0].value = "返回本班相册";
                     var imgData = JSON.parse(data);
 
