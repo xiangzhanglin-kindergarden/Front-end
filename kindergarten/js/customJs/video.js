@@ -1,7 +1,7 @@
 /**
  * Created by Sunshine on 2017/5/27.
  */
-$(document).ready(function () {
+$(window).ready(function () {
     var body = $("body");
     var addVideoBox = $(".addVideoBox");
     var gray = $(".gray");
@@ -13,11 +13,7 @@ $(document).ready(function () {
 
     var optionClass = [];
 
-    addVideos.click(function () {
-        gray.show();
-        addVideoBox.show(400);
-        releaseVide();
-    });
+
     close.click(function () {
         closeAddAlbumsBox();
     });
@@ -46,14 +42,16 @@ $(document).ready(function () {
         url = "http://119.29.53.178:8080/kindergarden/MCShowAdmini";
         theData = "pageNum="+pageNum;
         loadClass();
+
+        addVideos.click(function () {
+            gray.show();
+            addVideoBox.show(400);
+            releaseVideo();
+        });
     }else {
         var teacher = JSON.parse(teacherData);
 
-        var Datas = {
-            "mcJson":teacher.cId,
-            "pageNum":pageNum
-        };
-        theData = JSON.stringify(Datas);
+        theData = "mcJson="+teacher.cId+"&pageNum="+pageNum;
         url = "http://119.29.53.178:8080/kindergarden/MCShowClass";
 
         var classVideoChoose = $(".classVideoChoose");
@@ -66,6 +64,14 @@ $(document).ready(function () {
         var schoolChoose = classVideoChoose.find("input.schoolChoose");
         schoolChoose.click(function () {
             classVideoChooseFun(this.value);
+        });
+
+        addVideos.click(function () {
+            gray.show();
+            var thePeople = $("span.thePeople");
+            thePeople.html(teacher.tName);
+            addVideoBox.show(400);
+            releaseVideoAjax();
         });
 
     }
@@ -147,9 +153,9 @@ $(document).ready(function () {
             main.id = "main";
             $(".ibox-content")[0].appendChild(main);
             var theTitle = document.createElement("h3");
-            theTitle.innerHTML = "班级图鉴";
+            theTitle.innerHTML = "班级活动";
             main.appendChild(theTitle);
-            backClassVideo[0].value = "校园图鉴";
+            backClassVideo[0].value = "校园活动";
 
             $(addVideoInput[0]).show(400);
             $(addVideoInput[1]).show(400);
@@ -317,8 +323,7 @@ $(document).ready(function () {
         addVideoBox.hide(400);
     }
 
-    function releaseVide() {
-        console.log("releaseVide");
+    function releaseVideo() {
         var addVideoBox = $(".addVideoBox");
 
         addVideoBox.click(function () {
@@ -330,17 +335,29 @@ $(document).ready(function () {
 
 
     function releaseVideoAjax() {
-        console.log("releaseVideoAjax");
 
         var addVideos = $(".addVideoBox");
         var textArea = addVideos.find(".everyInput").find("textarea.describ");
         var buttonsSure = addVideos.find(".buttonsSure").find("input.sure");
 
 
-        buttonsSure.click(function () {
-            var mcPeople = "园长";
-            var mcclassid = "1";
+        //发布权限
+        var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
+        var teacherData = sessionStorage.getItem("teacherData");
+        var teacher = JSON.parse(teacherData);
 
+        var mcPeople = "";
+        var mcclassid = "";
+        if (usertype == 1){
+            mcPeople = "园长";
+            mcclassid = "1";
+        }else {
+            mcPeople = teacher.tName;
+            mcclassid = teacher.cId;
+        }
+
+        buttonsSure.click(function () {
+            console.log("buttonSure");
 
 
             var values = {
