@@ -1,21 +1,22 @@
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
+var pushname    //发布人的名字
 
 
 // 获取用户名和用户类型
 $(function(){
 	username = sessionStorage.getItem("user");
 	usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
-	console.log(username);
-	console.log(usertype);
+	pushname = sessionStorage.getItem("pushname");
+  console.log(username);
+  console.log(usertype);
+	console.log(pushname);
 	// usertype = 0;
 
    
 
 })
 
-
-  username=123;
 
 
   var IPnub;   //存储ip地址
@@ -271,7 +272,7 @@ $(function(){
       }
 
       //用户名
-      var guser = username;
+      var guser = pushname;
 
       //获取地址
       var gurl2 = $(".know-new-a input").val();
@@ -280,7 +281,7 @@ $(function(){
         alert("请输入要分享的地址!");
       }else{
         inNewsAdd = {
-          issuer:username,
+          issuer:pushname,
           title:gtitle,
           kind:"成长知识",
           url1:gurl1,

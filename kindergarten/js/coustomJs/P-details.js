@@ -1,6 +1,8 @@
 
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
+var pushname    //发布人的名字
+
 var pageid      //文章ID
 
 
@@ -31,8 +33,11 @@ $(function(){
 	username = sessionStorage.getItem("user");
   usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
 	pageid = sessionStorage.getItem("pageID");  //0为老师，1为校长
-	console.log(username);
+	pushname = sessionStorage.getItem("pushname");  
+  
+  console.log(username);
   console.log(usertype);
+  console.log(pushname);
 	console.log(pageid);
 	// usertype = 0;
 	if (usertype == 0) {
@@ -605,7 +610,7 @@ $(function(){
 
       //修改发布人
       $(".if-d-t-name").html(data.issuer);
-      if (data.issuer!=username) {
+      if (data.issuer!=pushname) {
         $(".if-d-page-status input[name='edit']").remove();
       };
 

@@ -1,7 +1,7 @@
 
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
-var pushname    //老师的名字
+var pushname    //发布人的名字
 
 
 
