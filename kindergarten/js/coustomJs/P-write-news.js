@@ -1,7 +1,7 @@
 
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
-
+var pushname    //老师的名字
 
 
 
@@ -11,9 +11,11 @@ var username    //用户名
 
 $(function(){
 	username = sessionStorage.getItem("user");
-	usertype = sessionStorage.getItem("nub");  
+  usertype = sessionStorage.getItem("nub");  
+	pushname = sessionStorage.getItem("pushname");  
 	console.log(username);
-	console.log(usertype);
+  console.log(usertype);
+	console.log(pushname);
 	// usertype = 0;
 	if (usertype == 0) {
 
@@ -356,7 +358,7 @@ $(function(){
     console.log(reurl2);
 
     inNewsAdd = {
-      issuer:username,
+      issuer:pushname,
       time:null,
       state:restate,
       title:retitle,

@@ -10,6 +10,7 @@ $(document).ready(function () {
     };
     
 
+
     if (usertype == 1){//园长
         console.log(manager);
         
@@ -38,4 +39,8 @@ $(document).ready(function () {
 
     }
 
+    pushname = $("#username").html();
+    // console.log(pushname);
+    sessionStorage.setItem("pushname",pushname);
+    console.log(sessionStorage.getItem("pushname"));
 });

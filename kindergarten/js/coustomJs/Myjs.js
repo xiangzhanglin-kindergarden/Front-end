@@ -11,6 +11,11 @@ $(function(){
   if (usertype == null||usertype == "") {
     window.location.href="login.html";
   };
+ 
+
+
+  // sessionStorage.setItem("pushname",ID);
+  // console.log(sessionStorage.getItem("pushname"));
 })
 
 
