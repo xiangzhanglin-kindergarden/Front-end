@@ -1,13 +1,17 @@
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
+var pushname    //发布人的名字
+
 
 
 // 获取用户名和用户类型
 $(function(){
 	username = sessionStorage.getItem("user");
 	usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
-	console.log(username);
-	console.log(usertype);
+	pushname = sessionStorage.getItem("pushname");
+  console.log(username);
+  console.log(usertype);
+	console.log(pushname);
 	// usertype = 0;
 
   lookkind = $("body").attr("name");
@@ -175,14 +179,14 @@ $(function(){
     }else if(btnkind=="我的草稿") {
       address = "kindergarden/SreachCg";
       // username = "123";
-      trans = "?issuer="+username+"&pageNum="+"1";
+      trans = "?issuer="+pushname+"&pageNum="+"1";
     }
 
     if (kindNub=="2") {
       address = address+kindNub;
       if (btnkind!="我的草稿") {
         // username = "123";
-        trans = trans+"&issuer="+username;
+        trans = trans+"&issuer="+pushname;
       };
     }
 
@@ -423,7 +427,43 @@ $(function(){
     var keytime = $(".n-i-time input").val();
     var keyname = $(".n-i-person input").val();
     if (keyword==""&&keytime==""&&keyname=="") {
-      alert("请输入要查询的内容！");
+      $.ajax({
+        type:"get",
+        url:"http://119.29.53.178:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          if (data.length==0||data.false=="false") {
+            $(".news-lists").remove();
+          }else{
+            $(".news-lists").remove();
+
+            $(".news-nchange-btn button").removeClass("btn-info");
+            $(".news-nchange-btn button").removeClass("btn-white");
+            $(".news-nchange-btn button").addClass("btn-white");
+            $(".news-nchange-btn button:first-child").addClass("btn-info");
+            $(".news-nchange-btn button:first-child").removeClass("btn-white");
+            
+            $(".n-s-kind").removeClass("n-s-chosed");
+            $("#n-s-all").addClass("n-s-chosed");
+
+
+
+            addList(data);
+
+          }
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+
     }else{
       $.ajax({
         type:"get",

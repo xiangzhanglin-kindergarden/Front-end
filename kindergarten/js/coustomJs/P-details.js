@@ -636,6 +636,11 @@ $(function(){
         console.log(data.url2);
         showFJ(data);
       }
+
+      if (data.state=="草稿") {
+        CG(data);
+      };
+
     },
     error:function(jqHXR){
       console.log("错误:"+jqHXR.status);
@@ -707,6 +712,24 @@ function showFJ(data){
 
 }
 
+function CG(data){
+  $("#if-d-status").remove();
+  $(".if-d-page-status input[name='change']").remove();
+  $(".if-d-page-status input[name='save']").remove();
+  $(".if-d-page-status input[name='cancel']").remove();
+  $(".if-d-yes").remove();
+  $(".if-d-page-status input[name='edit']").css({
+    "display":"block",
+    "opacity":1,
+    "right":0
+  });
+  $(".if-d-page-status input[name='edit']").attr("disabled",false);
+  $(".if-d-sub").css({"display":"inline-block"});
+  $(".if-d-resub").css({"display":"inline-block"});
+  $(".if-d-p-s-e-btn").css({"width":"250px"});
+  $(".if-d-p-s-e-btn :first-child").css({"margin-right":"5%"});
+
+}
 
 
 /* 上传审核状态AJAX */
@@ -740,6 +763,10 @@ function showFJ(data){
 
 /*   上传AJAX   */
   $(function(){
+    $(".if-d-sub").click(function(){
+      var pdstate = "待审核";
+      UpAJAX(pdstate);
+    })
     $(".if-d-yes").click(function(){
       var pdstate = "待审核";
       UpAJAX(pdstate);

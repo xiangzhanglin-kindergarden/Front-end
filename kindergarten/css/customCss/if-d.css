@@ -6,7 +6,10 @@
  *
 */
 
-
+.if-d-sub,
+.if-d-resub{
+	/*display: none;*/
+}
 
 .if-d-page-status{
 	padding-top: 1.5%;
