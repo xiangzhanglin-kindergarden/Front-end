@@ -28,7 +28,7 @@ $(document).ready(function () {
                 divVideo.className = "everyVideo";
                 var video = document.createElement("video");
                 video.src = videoListAdreeUrl;
-                video.setAttribute("data-pid", videoList[i].mcId);
+                video.setAttribute("data-mcid", videoList[i].mvId);
                 mainVideo[0].appendChild(divVideo);
                 divVideo.appendChild(video);
             }
@@ -127,7 +127,7 @@ $(document).ready(function () {
                         var checked = theI[k].getAttribute("checked");
                         console.log(checked);
                         if (checked == "true"){
-                            delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-pid") + ",";
+                            delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-mcid") + ",";
                         }
                     }
 
