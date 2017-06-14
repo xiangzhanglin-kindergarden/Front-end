@@ -71,7 +71,7 @@
             dictRemoveFile: "删除",
             dictMaxFilesExceeded: "超过最大上传的文件数量！",
 
-//            acceptedFiles: "*'",//指明允许  上传的文件类型,
+            acceptedFiles: "video/rm,video/rmvb,video/avi,video/mp4,video/3gp,video/mkv",//指明允许  上传的文件类型,
 
             // Dropzone settings
             init: function () {
@@ -87,6 +87,8 @@
                 this.on("successmultiple", function (files) {
                     console.log(files);
                     alert("提交成功!请刷新页面");
+//                    window.close();
+
                 });
                 this.on("errormultiple", function (files, response) {
                 });

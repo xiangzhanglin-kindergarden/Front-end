@@ -16,9 +16,22 @@ $(document).ready(function () {
         },
         success: function (data) {
             var videoData = JSON.parse(data);
-            console.log(videoData);
 
 
+            var videoList = videoData.tlist;
+            console.log(videoList);
+            for(var i=0;i<videoList.length;i++){
+                var mainVideo = $(".mainVideo");
+                var videoListAdress = JSON.parse(videoList[i].mvAdress);
+                var videoListAdreeUrl = videoListAdress.url;
+                var divVideo = document.createElement("div");
+                divVideo.className = "everyVideo";
+                var video = document.createElement("video");
+                video.src = videoListAdreeUrl;
+                video.setAttribute("data-pid", videoList[i].mcId);
+                mainVideo[0].appendChild(divVideo);
+                divVideo.appendChild(video);
+            }
 
 
 
@@ -114,9 +127,32 @@ $(document).ready(function () {
                         var checked = theI[k].getAttribute("checked");
                         console.log(checked);
                         if (checked == "true"){
-                            // delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-pid") + ",";
+                            delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-pid") + ",";
                         }
                     }
+
+                    var message = confirm("确定要删除吗？");
+                    if(message){
+                        $.ajax({
+                            type: "post",
+                            url: "http://119.29.53.178:8080/kindergarden/MovieDelete",
+                            data: "mvid="+delVideo,
+                            beforeSend: function (xhr) {
+                                xhr.withCredentials = true;
+                                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                            },
+                            success: function () {
+                                console.log("success");
+                                alert("删除成功！");
+                                window.location.reload();
+
+                            },
+                            error: function (err) {
+                                console.log(err.status);
+                            }
+                        });
+                    }
+                    
                 });
 
 
@@ -132,6 +168,7 @@ $(document).ready(function () {
 
             });
 
+            showVideo();
 
         },
         error: function (err) {
