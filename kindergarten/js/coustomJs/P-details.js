@@ -763,6 +763,10 @@ function CG(data){
 
 /*   上传AJAX   */
   $(function(){
+    $(".if-d-resub").click(function(){
+      var pdstate = "草稿";
+      UpAJAX(pdstate);
+    })
     $(".if-d-sub").click(function(){
       var pdstate = "待审核";
       UpAJAX(pdstate);
