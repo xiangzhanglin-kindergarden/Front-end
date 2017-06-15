@@ -10,8 +10,7 @@ function classManagenment(data) {
 
     var addNewClass = creatNewClass[0],
         upgradeClass = classInput[0],
-        delClass = classInput[1],
-        refreshData = classInput[1];
+        delClass = classInput[1];
 
 
 
@@ -21,9 +20,6 @@ function classManagenment(data) {
         if(message){
             upgradeTheClass();
         }
-    });
-    refreshData.addEventListener("click", function () {
-        window.location.reload();
     });
     
     showClassDetails(data);

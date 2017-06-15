@@ -35,6 +35,8 @@
                     <input type="button" value="升级班级">
                     <input class="buttonDel" type="button" value="删除班级">
                     <input class="buttonRefresh" type="button" value="刷新数据">
+                    <input id="inputSearch" type="text" placeholder="班级名/老师名">
+                    <input class="buttonSearch" type="button" value="搜索班级">
                 </div>
                 <div class="ibox-content">
                     <div class="jqGrid_wrapper">
@@ -60,6 +62,9 @@
 <!-- 自定义js -->
 <script src="js/content.js?v=1.0.0"></script>
 
+<script type="text/javascript" src="js/customJs/classSearch.js"></script>
+<script type="text/javascript" src="js/customJs/classInitData.js"></script>
+
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function () {
@@ -81,44 +86,16 @@
             },
             success: function (data) {
                 $(".adding")[0].remove();
-                row = data;
-                var evergTeacher = [];
-                for(var i=0;i<data.length;i++){
-                    if (data[i].tTeacher != undefined){
-                        if (data[i].tTeacher.indexOf(",") != "-1"){
-                            evergTeacher[i] = data[i].tTeacher.split(",");
-                            for (var t = 0;t<evergTeacher.length;t++){
-                                row[i].tNameOne = evergTeacher[i][0];
-                                row[i].tNameTwo = evergTeacher[i][1];
-                                row[i].tNameThree = evergTeacher[i][2];
-                            }
-                        }else {
-                            row[i].tNameOne = "无";
-                            row[i].tNameTwo = "无";
-                            row[i].tNameThree = "无";
-                        }
-                    }else {
-                        row[i].tNameOne = "无";
-                        row[i].tNameTwo = "无";
-                        row[i].tNameThree = "无";
-                    }
+                row = initClassData(data);
 
-                    row[i].id = i + 1;
-                    row[i].cId = data[i].cId;
-                    row[i].cName = data[i].cName;
-                    row[i].sNum = data[i].sNumber;
-                }
                 $.jgrid.defaults.styleUI = 'Bootstrap';
 
                 var table_list_2 = $("#table_list_2");
 
-                // Configuration for jqGrid Example 2
                 table_list_2.jqGrid({
                     datatype: "local",
                     loadonce: true,
                     gridview: true, //加速显示
-//            sortname: 'id',  //排序字段名
-//            sortorder: "asc",//排序方式：正序
                     height: 493,
                     autowidth: true,
                     shrinkToFit: true,

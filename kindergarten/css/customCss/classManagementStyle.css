@@ -45,3 +45,15 @@
 .buttonRefresh {
     background-color: #23c6c8;
 }
+.buttonSearch{
+    background-color: #1c84c6;
+}
+#inputSearch{
+    margin-left: 30px;
+    width: 200px;
+    height: 28px;
+    line-height: 28px;
+    color: #1c84c6;
+    padding-left: 10px;
+    border: 1px solid #1c84c6;
+}

@@ -1,3 +1,5 @@
+
+
 function addTeacher(theCaption,data,theIndex) {
     console.log("addTeacher");
     var box = $(".box");

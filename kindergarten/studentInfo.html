@@ -34,6 +34,9 @@
                     <input class="buttonAdd" type="button" value="添加学生">
                     <input class="buttonEdit" type="button" value="编辑学生">
                     <input class="buttonDel" type="button" value="删除学生">
+                    <input class="buttonRefresh" type="button" value="刷新数据">
+                    <input id="inputSearch" type="text" placeholder="班级/家长名/家长电话/学生名">
+                    <input class="buttonSearch" type="button" value="搜索学生">
                 </div>
                 <div class="ibox-content">
                     <div class="jqGrid_wrapper">
@@ -68,6 +71,9 @@
 <!-- 自定义js -->
 <script src="js/content.js?v=1.0.0"></script>
 
+<script type="text/javascript" src="js/customJs/studentSearch.js"></script>
+<script type="text/javascript" src="js/customJs/studentInitData.js"></script>
+
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function () {
@@ -100,41 +106,8 @@
             success:function (data) {
                 $(".adding")[0].remove();
                 console.log("数据加载成功！");
-                row = data;
                 console.log(data);
-                var sParent = {
-                    name: "",
-                    tell: ""
-                };
-                var everyParent = [];
-                for (var j=0;j<data.length;j++){
-                    if (data[j].sAcount == undefined){
-                        data[j].sAcount = "未填写家长.未填写电话";
-                    }else if (data[j].sAcount.indexOf(".") != "-1"){
-                        everyParent = data[j].sAcount.split(".");
-                        var sParentNow = [];
-                        for(var p=0;p<everyParent.length-1;p++){
-                            sParentNow[p]= everyParent[p].split(":");
-                            sParent.name = sParent.name + sParentNow[p][0] + "  ";
-                            sParent.tell = sParent.tell + sParentNow[p][1] + "  ";
-                        }
-
-                        row[j].sParentName = sParent.name;//家长姓名
-                        row[j].sTell = sParent.tell;//家长电话
-                        sParent = {name: "", tell: ""};
-                    }else {
-                        var sParents = data[j].sAcount.split(":");
-                        row[j].sParentName = sParents[0];//家长姓名
-                        row[j].sTell = sParents[1];//家长电话
-                    }
-                    row[j].id = j+1;
-                    row[j].sId = data[j].sId;//ID
-                    row[j].sName = data[j].sName;//姓名
-                    row[j].sSex = data[j].sSex;//性别
-                    row[j].cId = data[j].cId;//班级
-                    row[j].sIdentifyId = data[j].sIdentifyId;//身份证号
-                    row[j].sPassword = data[j].sPassword;//密码
-                }
+                row = initData(data);
 
                 $.jgrid.defaults.styleUI = 'Bootstrap';
 
