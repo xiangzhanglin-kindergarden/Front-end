@@ -17,7 +17,7 @@ $(window).on("load",function () {
         $.ajax({
             type: "post",
             url: "http://119.29.53.178:8080/kindergarden/ClassSearch",
-            data: "sss="+searchValue,
+            data: "classSearch="+searchValue,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -40,6 +40,7 @@ $(window).on("load",function () {
             },
             error: function (err) {
                 console.log(err.status);
+                alert("出现错误："+err.status);
             }
         });
     });

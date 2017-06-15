@@ -82,6 +82,7 @@ function classManagenment(data) {
             },
             error: function (err) {
                 console.log(err.status);
+                alert("出现错误："+err.status);
             }
         });
         
@@ -102,6 +103,7 @@ function classManagenment(data) {
             },
             error: function (err) {
                 console.log(err.status);
+                alert("出现错误："+err.status);
             }
         });
     }

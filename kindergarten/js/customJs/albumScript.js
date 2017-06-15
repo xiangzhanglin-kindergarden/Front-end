@@ -72,6 +72,7 @@ $(window).ready(function () {
         },
         error: function (err) {
             console.log("出现错误："+err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -300,6 +301,7 @@ function searchClass() {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 

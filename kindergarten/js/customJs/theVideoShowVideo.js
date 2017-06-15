@@ -316,6 +316,7 @@ function showVideo() {
                         },
                         error: function (err) {
                             console.log(err.status);
+                            alert("出现错误："+err.status);
                         }
                     });
                 }
@@ -341,6 +342,7 @@ function showVideo() {
                     },
                     error: function (err) {
                         console.log(err.status);
+                        alert("出现错误："+err.status);
                     }
                 });
 

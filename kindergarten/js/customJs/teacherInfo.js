@@ -192,6 +192,7 @@ function addTeacher(theCaption,data,theIndex) {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
     
@@ -243,7 +244,7 @@ function addSubmit() {
             window.location.reload();
         },
         error: function (err) {
-            alert("出现错误："+err.status)
+            alert("出现错误："+err.status);
             console.log(err.status);
         }
     });
@@ -291,6 +292,7 @@ function editSubmit(theId) {
         },
         error: function (err) {
             alert("出现错误："+err.status);
+            alert("出现错误："+err.status);
         }
     });
 }
@@ -317,6 +319,7 @@ function delTeacher(data,theIndex) {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
     

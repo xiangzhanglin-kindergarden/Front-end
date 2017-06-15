@@ -352,6 +352,7 @@ function addTheBox(theCaption,theIndex,data) {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
 
     });
@@ -562,6 +563,7 @@ function addSubmit() {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -624,6 +626,7 @@ function editSubmit(id) {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -659,6 +662,7 @@ function delData(delIndex) {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 }

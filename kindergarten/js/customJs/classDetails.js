@@ -155,6 +155,7 @@ $(document).ready(function () {
                     },
                     error: function (err) {
                         console.log(err.status);
+                        alert("出现错误："+err.status);
                     }
                 });
 
@@ -192,6 +193,7 @@ $(document).ready(function () {
             },
             error: function (err) {
                 console.log(err.status);
+                alert("出现错误："+err.status);
             }
         });
 
