@@ -37,6 +37,9 @@ $(window).on("load",function () {
                         table_list_2.jqGrid('addRowData',i+1,row[i]);
                     }
                 }
+                
+                //查看详情
+                showDetails(theData);
             },
             error: function (err) {
                 console.log(err.status);
