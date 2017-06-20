@@ -51,7 +51,7 @@ $(document).ready(function(){
       error: function (err) {
         console.log(err.status);
       }
-  });
+ 	 });
 	}
 
 
@@ -160,6 +160,7 @@ $(document).ready(function(){
 						showLesson
 					);
 					$(".c-week").val($(".week").val());
+					$("#change-class").attr("disabled",false);
 					// $(".c-week option").each(function(){
 					// 	if ($(".week").val()==$(this).html()) {
 					// 		$(this).attr("selected",true);
@@ -209,6 +210,7 @@ $(document).ready(function(){
 					// 	};
 					// });
 					$(".removeTclassse").val($(".addNewClass").val());
+					$("#change-class").attr("disabled",false);
 					// $(".removeTclassse option").each(function(){
 					// 	if ($(".addNewClass").val()==$(this).html()) {
 					// 		$(this).attr("selected",true);
