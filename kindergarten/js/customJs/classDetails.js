@@ -42,6 +42,22 @@ $(document).ready(function () {
     var cancle = document.createElement("input");
     changeInfo[0].addEventListener("click",editRow);
 
+
+
+    var delClass = $("input.buttonDel");
+    delClass.onclick = function () {
+        var dIndex = $("#table_list_2").jqGrid("getGridParam", "selrow");
+        if (dIndex == null){
+            alert("请选择要删除的行！");
+        }else {
+            var message = confirm("确定要删除吗？");
+            if(message){
+                delTheClass();
+            }
+        }
+
+    };
+
     function editRow() {
         for(var s=0;s<spans.length;s++){
             spans[s].innerHTML = "";
@@ -202,6 +218,29 @@ $(document).ready(function () {
 
 
     }
+
+
+
+    function delTheClass() {
+        $.ajax({
+            type: "post",
+            url: "http://119.29.53.178:8080/kindergarden/ClassDelete",
+            data: "classDelete="+rowId,
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
+            success: function () {
+                alert("删除成功！");
+                // window.location.reload();//刷新页面
+            },
+            error: function (err) {
+                console.log(err.status);
+                alert("出现错误："+err.status);
+            }
+        });
+    }
+
 
 
     //班级学生信息
