@@ -76,7 +76,7 @@ function delPhotos() {
             if(message){
                 $.ajax({
                     type: "post",
-                    url: "http://119.29.53.178:8080/kindergarden/PictureContentDlete",
+                    url: "http://172.20.2.164:8080/kindergarden/PictureContentDlete",
                     data: "PidJson="+delId,
                     beforeSend: function (xhr) {
                         xhr.withCredentials = true;
@@ -142,7 +142,7 @@ function addPhotoAjax() {
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/PcAdd",
+        url: "http://172.20.2.164:8080/kindergarden/PcAdd",
         data: "PictureContentJson="+JSON.stringify(value),
         beforeSend: function (xhr) {
             xhr.withCredentials = true;

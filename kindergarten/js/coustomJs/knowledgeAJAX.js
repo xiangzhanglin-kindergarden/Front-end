@@ -26,7 +26,7 @@ $(function(){
   var markurl;   //用于存储分页用的url信息；
 
 
-  IPnub = "119.29.53.178:8080/";
+  IPnub = "172.20.2.164:8080/";
 
 
 /*    打开页面初始化AJAX     */
@@ -172,7 +172,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://119.29.53.178:8080/kindergarden/DeleteGrowth?idnews="+ID,
+          url:"http://172.20.2.164:8080/kindergarden/DeleteGrowth?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -217,7 +217,7 @@ $(function(){
 	    }else{
 	      $.ajax({
 	        type:"get",
-	        url:"http://119.29.53.178:8080/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+	        url:"http://172.20.2.164:8080/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
 	        dataType:"JSON",
 	        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 	        beforeSend:function(xhr){
@@ -292,7 +292,7 @@ $(function(){
 
         $.ajax({
           type:"post",
-          url:"http://119.29.53.178:8080/kindergarden/GrowthAdd",
+          url:"http://172.20.2.164:8080/kindergarden/GrowthAdd",
           data:"NewsAdd="+myjson,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",

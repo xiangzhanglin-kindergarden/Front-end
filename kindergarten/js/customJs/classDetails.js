@@ -131,7 +131,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "get",
-                    url: "http://119.29.53.178:8080/kindergarden/TeacherShowAll",
+                    url: "http://172.20.2.164:8080/kindergarden/TeacherShowAll",
                     // dataType: "JSON",
                     contentType:"application/x-www-form-urlencoded;charset=utf-8",
                     beforeSend: function (xhr) {
@@ -193,7 +193,7 @@ $(document).ready(function () {
         };
         $.ajax({
             type:"post",
-            url:"http://119.29.53.178:8080/kindergarden/ClassUpate",
+            url:"http://172.20.2.164:8080/kindergarden/ClassUpate",
             data:"classUpdate="+JSON.stringify(values),
             contentType:"application/x-www-form-urlencoded;charset=utf-8",
             beforeSend: function (xhr) {
@@ -224,7 +224,7 @@ $(document).ready(function () {
     function delTheClass() {
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassDelete",
+            url: "http://172.20.2.164:8080/kindergarden/ClassDelete",
             data: "classDelete="+rowId,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -248,7 +248,7 @@ $(document).ready(function () {
     var table_list_1 = $("#table_list_1");
     $.ajax({
         type: "get",
-        url: "http://119.29.53.178:8080/kindergarden/ClassDetails?classid="+rowId,
+        url: "http://172.20.2.164:8080/kindergarden/ClassDetails?classid="+rowId,
         contentType:"application/x-www-form-urlencoded;charset=utf-8",
         beforeSend: function (xhr) {
             xhr.withCredentials = true;

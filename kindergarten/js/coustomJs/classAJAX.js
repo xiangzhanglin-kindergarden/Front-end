@@ -34,7 +34,7 @@ $(document).ready(function(){
     //加载班级
     $.ajax({
       type: "post",
-      url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+      url: "http://172.20.2.164:8080/kindergarden/ClassShow",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend: function (xhr) {
         xhr.withCredentials = true;
@@ -75,7 +75,7 @@ $(document).ready(function(){
 			// "cid":userClass,
 		});
 		ajax(
-			"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+			"http://172.20.2.164:8080/kindergarden/Lessonshowteacher",
 			"lessonJson="+lesson,
 			showLesson
 		);
@@ -137,7 +137,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/LessonAddteacher",
+				"http://172.20.2.164:8080/kindergarden/LessonAddteacher",
 				"lessonInJson="+courseMsg,
 				function(res){
 
@@ -155,7 +155,7 @@ $(document).ready(function(){
 						// "cid":userClass,
 					});
 					ajax(
-						"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+						"http://172.20.2.164:8080/kindergarden/Lessonshowteacher",
 						"lessonJson="+lesson,
 						showLesson
 					);
@@ -181,7 +181,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/LessonAdd",
+				"http://172.20.2.164:8080/kindergarden/LessonAdd",
 				"lessonInJson="+courseMsg,
 				function(res){
 
@@ -199,7 +199,7 @@ $(document).ready(function(){
 						// "cid":userClass,
 					});
 					ajax(
-						"http://119.29.53.178:8080/kindergarden/LessonShow",
+						"http://172.20.2.164:8080/kindergarden/LessonShow",
 						"lessonJson="+lesson,
 						showLesson
 					);
@@ -238,7 +238,7 @@ $(document).ready(function(){
 				// "cid":userClass,
 			});
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/Lessonshowteacher",
+				"http://172.20.2.164:8080/kindergarden/Lessonshowteacher",
 				"lessonJson="+lesson,
 				showLesson
 			);
@@ -254,7 +254,7 @@ $(document).ready(function(){
 				"lfri":null
 			});
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/LessonShow",
+				"http://172.20.2.164:8080/kindergarden/LessonShow",
 				"lessonJson="+lesson,
 				showLesson
 			);
@@ -269,7 +269,7 @@ $(document).ready(function(){
 		$("#new-class").attr("disabled",false);
 		$("#change-class").attr("disabled",false);
 		$(".c-week").attr("disabled",false);
-		ajax("http://119.29.53.178:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+		ajax("http://172.20.2.164:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
 	})
 	var value = [];
 	//点击修改按钮
@@ -336,14 +336,14 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://119.29.53.178:8080/kindergarden/LessonUpdate",
+				"http://172.20.2.164:8080/kindergarden/LessonUpdate",
 				"lessonJson="+courseMsg,
 				function(res){
 			})
 		}else{
 			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
 			console.log(courseMsg);
-			ajax("http://119.29.53.178:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
+			ajax("http://172.20.2.164:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
 				$(".mail-box td").each(function(){
 					if ($(this).attr("class") != "class-time"){
 						var value = $(this).children().val()

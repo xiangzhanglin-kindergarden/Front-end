@@ -54,7 +54,7 @@ $(function(){
     kindNub = "2";
   }
 
-  IPnub = "119.29.53.178:8080/";
+  IPnub = "172.20.2.164:8080/";
 
 
 /*    打开页面初始化AJAX     */
@@ -371,7 +371,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://119.29.53.178:8080/kindergarden/DeleteNews?idnews="+ID,
+          url:"http://172.20.2.164:8080/kindergarden/DeleteNews?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -429,7 +429,7 @@ $(function(){
     if (keyword==""&&keytime==""&&keyname=="") {
       $.ajax({
         type:"get",
-        url:"http://119.29.53.178:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -467,7 +467,7 @@ $(function(){
     }else{
       $.ajax({
         type:"get",
-        url:"http://119.29.53.178:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){

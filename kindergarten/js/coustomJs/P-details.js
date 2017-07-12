@@ -295,9 +295,9 @@ $(function(){
 			editor = new wangEditor('div1');
 
 			// 图片上传路径
-			//editor.config.uploadImgUrl = 'http://119.29.53.178:8080/retirement/uploadPic/fileUpLoad.action';
-			// editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/Upload';
-			editor.config.uploadImgUrl = 'http://119.29.53.178:8080/kindergarden/imageUpload';
+			//editor.config.uploadImgUrl = 'http://172.20.2.164:8080/retirement/uploadPic/fileUpLoad.action';
+			// editor.config.uploadImgUrl = 'http://172.20.2.164:8080/kindergarden/Upload';
+			editor.config.uploadImgUrl = 'http://172.20.2.164:8080/kindergarden/imageUpload';
 
 			// 隐藏掉插入网络图片功能
 	    editor.config.hideLinkImg = true;
@@ -394,7 +394,7 @@ $(function(){
     dictMaxFilesExceeded: "您最多只能上传20个文件！",
     dictResponseError: '文件上传失败!',
     method:"post",
-    url:"http://119.29.53.178:8080/kindergarden/Upload",
+    url:"http://172.20.2.164:8080/kindergarden/Upload",
     // url:"#",
     paramName:"file",
     //setParameterEncoding:AFJSONParameterEncoding
@@ -515,7 +515,7 @@ $(function(){
     var control = $("#file-0");
     control.fileinput({
       language: 'zh', //设置语言
-      uploadUrl: "http://119.29.53.178:8080/kindergarden/imageUpload", //上传的地址
+      uploadUrl: "http://172.20.2.164:8080/kindergarden/imageUpload", //上传的地址
       allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
       uploadAsync: true, //默认异步上传
       showUpload: true, //是否显示上传按钮
@@ -581,7 +581,7 @@ $(function(){
 $(function(){
   $.ajax({
     type:"post",
-    url:"http://119.29.53.178:8080/kindergarden/SreachByID?idnews="+pageid,
+    url:"http://172.20.2.164:8080/kindergarden/SreachByID?idnews="+pageid,
     dataType:"JSON",
     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 
@@ -740,7 +740,7 @@ function CG(data){
 
   		$.ajax({
   			type:"post",
-  			url:"http://119.29.53.178:8080/kindergarden/StateChange?idnews="+pageid+"&state="+status,
+  			url:"http://172.20.2.164:8080/kindergarden/StateChange?idnews="+pageid+"&state="+status,
   			dataType:"JSON",
   			contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 
@@ -834,7 +834,7 @@ function CG(data){
 
     $.ajax({
       type:"post",
-      url:"http://119.29.53.178:8080/kindergarden/UpdateNews",
+      url:"http://172.20.2.164:8080/kindergarden/UpdateNews",
       data:inNewsAdd,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
