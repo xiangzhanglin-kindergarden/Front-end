@@ -16,7 +16,7 @@ $(window).on("load",function () {
 
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/StudentSearch",
+            url: "http://172.20.2.164:8080/kindergarden/StudentSearch",
             data: "sss="+searchValue,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;

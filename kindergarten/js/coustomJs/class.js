@@ -7,7 +7,8 @@
 */
 
 var nowWeek;
-
+var secondTeamFweek;
+var nowTeamFweek;
 
 
 /*++++++++++++++++++++++++++++++++++++++++++*/
@@ -89,6 +90,7 @@ function close_new_class(){
 
 // 判断周数和时间，隐藏上过的课；
 $(function(){
+	var thenull = getClassWeek();
 	nowWeekBG();
 })
 
@@ -157,6 +159,10 @@ $(function(){
 	var date = new Date();
 	var week = getClassWeek();
 
+	if (nowTeamFweek>=secondTeamFweek) {
+		week = nowTeamFweek - secondTeamFweek+1;
+	};
+
 	for(var i=1;i<=26;i++){
 		var newWeek = $("<option>"+i+"</option>");
 		if (i==week) {
@@ -172,12 +178,24 @@ $(function(){
 		//切换周数的时候的功能函数
 		$(".differ-class-box [name='week']").on("change",function(){
 			var newWeek = $(this).val();
+
+			if (nowTeamFweek>=secondTeamFweek) {
+				newWeek = parseInt(newWeek);
+				newWeek=newWeek+secondTeamFweek-1;
+			};
+			console.log(newWeek);
 			getXDate(newWeek);
 			courseBG(newWeek);
 		})
 		//切换班级的时候的功能函数
 		$(".differ-class-box [name='class']").on("change",function(){
 			var newWeek = $(".differ-class-box [name='week']").val();
+
+			if (nowTeamFweek>=secondTeamFweek) {
+				newWeek = parseInt(newWeek);
+				newWeek=newWeek+secondTeamFweek-1;
+			};
+			console.log(newWeek);
 			getXDate(newWeek);
 		})
 	})
@@ -233,6 +251,8 @@ $(function(){
 		var arr=[];
 		console.log(d.getMonth()+1);
 
+		$(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+
 		for(var i=0; i<7; i++){
 			if (i<6) {
 				$(".class-table thead th:eq("+(i+1)+") span").html((d.getDate())+"日");
@@ -241,7 +261,10 @@ $(function(){
 			d.setDate(d.getDate()+1);
 			console.log(arr[i]);
 		}
-		$(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+
+
+
 
 	}
 
@@ -256,11 +279,14 @@ $(function(){
 function getClassWeek(){
 	var d1 = new Date();
 	var d2 = new Date();
+	var d3 = new Date();
+	
 	d2.setMonth(0);
 	d2.setDate(1);
 
-	// d1.setMonth(0);
-	// d1.setDate(9);
+	d3.setMonth(7);
+	d3.setDate(1);
+
 
 	var yearFirstDay = d2.getDay();
 	console.log("本年第一天是周："+yearFirstDay);
@@ -268,12 +294,31 @@ function getClassWeek(){
 		yearFirstDay=7;
 	};
 
+	var newteamDay = d3.getDay();
+	console.log("7月第一天是周："+newteamDay);
+	if (newteamDay==0) {
+		newteamDay=7;
+	};
+
+	var rqa = d3-d2;
+	var s1a = Math.ceil(rqa/(24*60*60*1000));
+	++s1a;
+
+	var s2a;
+	var s3a = s1a-1;
+	s2a = Math.ceil((s3a+yearFirstDay)/7);
+	
+	nowWeek = s2a;
+	console.log("7月一日"+"是本年第"+s1a+"天，第"+s2a+"周");//周日做为下周的开始计算
+	secondTeamFweek = s2a;
+
+
 	// var weekday = yearFirstDay == 0?1:(7-yearFirstDay+1);
 
 
 	var rq = d1-d2;
 	var s1 = Math.ceil(rq/(24*60*60*1000));
-	++s1;   
+	++s1;
 
 	var s2;
 	var s3 = s1-1;
@@ -281,12 +326,16 @@ function getClassWeek(){
 	
 	nowWeek = s2;
 	console.log("今天"+d1+"是本年第"+s1+"天，第"+s2+"周");//周日做为下周的开始计算
+	nowTeamFweek = s2;
 	return s2;
 }
 
 
 $(function(){
 	var newWeek = $(".differ-class-box [name='week']").val();
+	if (nowTeamFweek>=secondTeamFweek) {
+		newWeek=nowTeamFweek;
+	};
 	console.log(newWeek);
 	getXDate(newWeek);
 })

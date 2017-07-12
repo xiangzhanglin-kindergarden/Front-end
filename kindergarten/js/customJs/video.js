@@ -39,7 +39,7 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://119.29.53.178:8080/kindergarden/MCShowAdmini";
+        url = "http://172.20.2.164:8080/kindergarden/MCShowAdmini";
         theData = "pageNum="+pageNum;
         loadClass();
 
@@ -52,7 +52,7 @@ $(window).ready(function () {
         var teacher = JSON.parse(teacherData);
 
         theData = "mcJson="+teacher.cId+"&pageNum="+pageNum;
-        url = "http://119.29.53.178:8080/kindergarden/MCShowClass";
+        url = "http://172.20.2.164:8080/kindergarden/MCShowClass";
 
         var classVideoChoose = $(".classVideoChoose");
         $(".chooseClass").remove();
@@ -111,7 +111,7 @@ $(window).ready(function () {
         if (name == "校园活动"){
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MCShowAdmini?pageNum="+pageNum,
+                url: "http://172.20.2.164:8080/kindergarden/MCShowAdmini?pageNum="+pageNum,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -178,7 +178,7 @@ $(window).ready(function () {
     function loadClass() {
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+            url: "http://172.20.2.164:8080/kindergarden/ClassShow",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -373,7 +373,7 @@ $(window).ready(function () {
 
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MovieContentAdd",
+                url: "http://172.20.2.164:8080/kindergarden/MovieContentAdd",
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 data: "MCJson="+JSON.stringify(values),
                 beforeSend: function (xhr) {
@@ -472,7 +472,7 @@ $(window).ready(function () {
         if(message){
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MovieContentDelete",
+                url: "http://172.20.2.164:8080/kindergarden/MovieContentDelete",
                 data: "mcJson="+delVideo,
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -506,7 +506,7 @@ $(window).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/MCClassApp",
+            url: "http://172.20.2.164:8080/kindergarden/MCClassApp",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             data: "mcJson="+theClassName+"&pageNum="+1,
             beforeSend: function (xhr) {

@@ -221,6 +221,7 @@ $(function(){
         xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
       },
       success:function(data){
+        console.log(data);
         if (data.length==0||data.false=="false") {
           $(".news-lists").remove();
         }else{

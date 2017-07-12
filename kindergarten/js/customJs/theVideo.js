@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/MovieShowWeb",
+        url: "http://172.20.2.164:8080/kindergarden/MovieShowWeb",
         data: "MCid="+theVideoMcid+"&pageNum="+pageNum,
         beforeSend: function (xhr) {
             xhr.withCredentials = true;
@@ -135,7 +135,7 @@ $(document).ready(function () {
                     if(message){
                         $.ajax({
                             type: "post",
-                            url: "http://119.29.53.178:8080/kindergarden/MovieDelete",
+                            url: "http://172.20.2.164:8080/kindergarden/MovieDelete",
                             data: "mvid="+delVideo,
                             beforeSend: function (xhr) {
                                 xhr.withCredentials = true;

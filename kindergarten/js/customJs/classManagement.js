@@ -71,14 +71,27 @@ function classManagenment(data) {
         console.log("upgrade");
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassUp",
+            url: "http://172.20.2.164:8080/kindergarden/ClassUp",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             },
             success: function () {
-                alert("升级成功！");
-                window.location.reload();//刷新页面
+                $.ajax({
+                    type: "post",
+                    url: "http://172.20.2.164:8080/kindergarden/StudentShowAll",
+                    beforeSend: function (xhr) {
+                        xhr.withCredentials = true;
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    },
+                    success: function () {
+                        alert("升级成功");
+                        window.location.reload();//刷新页面
+                    },
+                    error: function (err) {
+                        console.log(err.status);
+                    }
+                });
             },
             error: function (err) {
                 console.log(err.status);
@@ -91,7 +104,7 @@ function classManagenment(data) {
         var delId = data[index-1].cId;
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassDelete",
+            url: "http://172.20.2.164:8080/kindergarden/ClassDelete",
             data: "classDelete="+delId,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
