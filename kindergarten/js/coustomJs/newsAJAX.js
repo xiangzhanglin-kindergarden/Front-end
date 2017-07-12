@@ -214,6 +214,7 @@ $(function(){
     $.ajax({
       type:"get",
       url:"http://"+IPnub+address+trans+ptrans,
+      // url:"http://"+IPnub+address+"?A=&B=通过&C=C&D=D&pageNum=1",
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

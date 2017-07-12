@@ -737,12 +737,19 @@ function CG(data){
   	$(".if-d-page-status input[name='save']").click(function(){
   		var status = $(".mail-box-header select option:selected").text();
   		console.log(status);
+      if (status=='通过') {
+        status = 1;
+      }else if(status=='未通过'){
+        status = 2;
+      }else if(status=='待审核'){
+        status = 3;
+      }
 
   		$.ajax({
   			type:"post",
   			url:"http://172.20.2.164:8080/kindergarden/StateChange?idnews="+pageid+"&state="+status,
   			dataType:"JSON",
-  			contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+  			contentType:"application/x-www-form-urlencoded;charset=utf-8",
 
   			beforeSend:function(xhr){
   				xhr.withCredentials = true;

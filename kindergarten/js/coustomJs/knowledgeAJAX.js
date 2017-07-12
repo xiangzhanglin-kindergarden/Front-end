@@ -213,7 +213,26 @@ $(function(){
 	    var keytime = $(".k-i-time input").val();
 	    var keyname = $(".k-i-person input").val();
 	    if (keyword==""&&keytime==""&&keyname=="") {
-	      alert("请输入要查询的内容！");
+	      // alert("请输入要查询的内容！");
+        $.ajax({
+          type:"get",
+          url:"http://"+IPnub+address+trans,
+          dataType:"JSON",
+          contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+          beforeSend:function(xhr){
+            xhr.withCredentials = true;
+            xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+          },
+          success:function(data){
+            $(".know-lists").remove();
+            addList(data);
+          },
+          error:function(jqHXR, textStatus, errorThrown){
+            console.log("错误:"+jqHXR.status);
+            console.log("错误:"+textStatus);
+            console.log("错误:"+errorThrown);
+          }
+        })
 	    }else{
 	      $.ajax({
 	        type:"get",
