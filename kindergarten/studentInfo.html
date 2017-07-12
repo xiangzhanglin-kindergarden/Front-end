@@ -83,10 +83,10 @@
         var teacherData = sessionStorage.getItem("teacherData");
 
         if (usertype == 1){
-            url = "http://119.29.53.178:8080/kindergarden/StudentShowAll";
+            url = "http://172.20.2.164:8080/kindergarden/StudentShowAll";
         }else {
             var teacher = JSON.parse(teacherData);
-            url = "http://119.29.53.178:8080/kindergarden/ClassDetails?classid=" + teacher.cId;
+            url = "http://172.20.2.164:8080/kindergarden/ClassDetails?classid=" + teacher.cId;
         }
 
         $.ajax({
