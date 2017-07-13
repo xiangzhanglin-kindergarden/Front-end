@@ -8,7 +8,7 @@
 
 .if-d-sub,
 .if-d-resub{
-	/*display: none;*/
+	display: none;
 }
 
 .if-d-page-status{

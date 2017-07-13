@@ -838,10 +838,18 @@ function CG(data){
       url2:reurl2,
     }
     console.log(inNewsAdd);
+    // inNewsAdd = JSON.stringify(inNewsAdd);
+
+    if (restate=="草稿") {
+      URLADD = "http://172.20.2.164:8080/kindergarden/UpdateNews2";
+    }else{
+      URLADD = "http://172.20.2.164:8080/kindergarden/UpdateNews";
+    }
+
 
     $.ajax({
       type:"post",
-      url:"http://172.20.2.164:8080/kindergarden/UpdateNews",
+      url:URLADD,
       data:inNewsAdd,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",

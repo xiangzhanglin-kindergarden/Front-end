@@ -18,15 +18,25 @@ $(document).ready(function () {
             // var videoData = JSON.parse(data);
             var videoData;
             if(typeof (data) == 'object'){
+                console.log("对象");
                 videoData = data;
             }else {
+                console.log("字符串");
                 // videoData = JSON.parse(data);
-                var str = JSON.stringify(data);
-                var str1 = JSON.parse(str);
+                var str = JSON.stringify(data);  
+                var str1 = JSON.parse(str);  
                 videoData = str1;
+                // console.log(typeof(str));
+                // console.log(typeof(str1));
+                // console.log(typeof(videoData));
+                videoData = $.parseJSON(videoData);
+                console.log(typeof(videoData));
+                
             }
-            console.log(data);  
-            if (data="显示失败") {
+            // console.log(data);  
+            // console.log("------------------------");
+            // console.log(videoData);
+            if (data=="显示失败") {
                 
             }else{
                 var videoList = videoData.tlist;

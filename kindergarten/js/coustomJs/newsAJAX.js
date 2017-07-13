@@ -184,16 +184,17 @@ $(function(){
       address = "kindergarden/GgStateSreach";
     }else if(btnkind=="我的草稿") {
       address = "kindergarden/SreachCg";
-      trans = "?issuer="+pushname+"&pageNum="+"1";
+      // trans = "?issuer="+pushname+"&pageNum="+"1";
+      trans = "?issuer="+pushname;
       // trans = "?issuer="+encodeURI(encodeURI(pushname))+"&pageNum="+"1";
       // trans = "?issuer="+escape(pushname)+"&pageNum="+"1";
       // trans = "?issuer="+encodeURI(pushname)+"&pageNum="+"1";
 
     }
-
     if (kindNub=="2") {
       address = address+kindNub;
       if (btnkind!="我的草稿") {
+        console.log(trans);
         trans = trans+"&issuer="+pushname;
         // trans = trans+"&issuer="+encodeURI(encodeURI(pushname));
         // trans = trans+"&issuer="+escape(pushname);
@@ -216,6 +217,7 @@ $(function(){
     console.log(trans);
     console.log("");
     console.log("http://"+IPnub+address+trans);
+    console.log("http://"+IPnub+address+trans+ptrans);
     statusall="";
     statuspass="";
     statusunpass="";
@@ -442,7 +444,7 @@ $(function(){
     if (keyword==""&&keytime==""&&keyname=="") {
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A="+encodeURI(encodeURI("全部"))+"&B=&C=&D=&pageNum=1",
+        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -478,10 +480,13 @@ $(function(){
       })
 
     }else{
+      if (keytime!="") {
+        // keytime = keytime+" 00:00";
+      };
       $.ajax({
         type:"get",
-        // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
-        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
+        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+escape(keyword)+"&time="+escape(keytime)+"&issuer="+escape(keyname)+"&pageNum="+1,
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
