@@ -86,7 +86,12 @@ $(window).ready(function () {
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            videoData = JSON.parse(data).tlist;
+            //videoData = JSON.parse(data).tlist;
+            if(typeof (data) == 'object'){
+                videoData = data.tlist;
+            }else {
+                videoData = JSON.parse(data).tlist;
+            }
 
             showData(videoData);
 
@@ -127,7 +132,12 @@ $(window).ready(function () {
                     $("#main").remove();
 
                     backClassVideo[0].value = "返回本班活动";
-                    var videoData = JSON.parse(data).tlist;
+                    var videoData;
+                    if(typeof (data) == 'object'){
+                        videoData = data.tlist;
+                    }else {
+                        videoData = JSON.parse(data).tlist;
+                    }
 
                     var main = document.createElement("div");
                     main.id = "main";
@@ -190,7 +200,12 @@ $(window).ready(function () {
                 $(".chooseClass")[0].appendChild(adding);
             },
             success: function (classdata) {
-                var classData = JSON.parse(classdata);
+                var classData;
+                if(typeof (classdata) == 'object'){
+                    classData = classdata;
+                }else {
+                    classData = JSON.parse(classdata);
+                }
                 $(".adding").remove();
                 for (var clas = 0; clas < classData.length; clas++) {
                     optionClass[clas] = classData[clas].cName;

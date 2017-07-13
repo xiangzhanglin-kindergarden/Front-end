@@ -76,7 +76,12 @@ function showVideo() {
                         var mainComment = $(".mainComment");
                         $(".pLoading").remove();
                         mainComment.find(".mainCommentContent").remove();
-                        var comment = JSON.parse(data);
+                        var comment;
+                        if(typeof (data) == 'object'){
+                            comment = data;
+                        }else {
+                            comment = JSON.parse(data);
+                        }
 
                         theComment.find("h3").html("评论"+"("+comment.length+")");
                         for(var i=0;i<comment.length;i++){

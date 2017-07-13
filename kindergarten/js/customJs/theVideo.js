@@ -18,9 +18,10 @@ $(document).ready(function () {
             // var videoData = JSON.parse(data);
             var videoData;
             if(typeof (data) == 'object'){
+                videoData = data;
+            }else {
                 videoData = JSON.parse(data);
             }
-            videoData = data;
             console.log(data);  
             if (data="显示失败") {
                 
