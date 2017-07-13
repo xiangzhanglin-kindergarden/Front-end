@@ -20,7 +20,10 @@ $(document).ready(function () {
             if(typeof (data) == 'object'){
                 videoData = data;
             }else {
-                videoData = JSON.parse(data);
+                // videoData = JSON.parse(data);
+                var str = JSON.stringify(data);
+                var str1 = JSON.parse(str);
+                videoData = str1;
             }
             console.log(data);  
             if (data="显示失败") {
