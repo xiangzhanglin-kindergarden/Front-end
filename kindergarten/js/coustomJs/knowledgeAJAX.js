@@ -303,7 +303,7 @@ $(function(){
           issuer:pushname,
           title:gtitle,
           kind:"成长知识",
-          url1:gurl1,
+          url1:reurl1,
           url2:gurl2,
         }
         console.log(inNewsAdd);
