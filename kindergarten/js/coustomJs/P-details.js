@@ -32,7 +32,7 @@ $(function(){
 
 	username = sessionStorage.getItem("user");
   usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
-	pageid = sessionStorage.getItem("pageID");  //0为老师，1为校长
+	pageid = sessionStorage.getItem("pageID");  //文章ID
 	pushname = sessionStorage.getItem("pushname");  
   
   console.log(username);
@@ -737,13 +737,13 @@ function CG(data){
   	$(".if-d-page-status input[name='save']").click(function(){
   		var status = $(".mail-box-header select option:selected").text();
   		console.log(status);
-      if (status=='通过') {
-        status = 1;
-      }else if(status=='待审核'){
-        status = 2;
-      }else if(status=='未通过'){
-        status = 3;
-      }
+      // if (status=='通过') {
+      //   status = 1;
+      // }else if(status=='待审核'){
+      //   status = 2;
+      // }else if(status=='未通过'){
+      //   status = 3;
+      // }
 
   		$.ajax({
   			type:"post",
