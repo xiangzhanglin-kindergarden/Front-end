@@ -15,8 +15,11 @@ $(document).ready(function () {
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            // var videoData = JSON.parse(data);
-            var videoData = data;
+            if(typeof(data)=='object'){
+                var videoData = JSON.parse(data);
+            }else{
+                var videoData = data;
+            }
             console.log(data);  
             if (data="显示失败") {
                 

@@ -346,7 +346,12 @@ $(window).ready(function () {
         var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
         var teacherData = sessionStorage.getItem("teacherData");
         // var teacher = JSON.parse(teacherData);
-        var teacher = teacherData;
+        if(typeof(teacherData)=='object'){
+            var teacher = JSON.parse(teacherData);
+        }else{
+            var teacher = teacherData;
+        }
+        
 
         var mcPeople = "";
         var mcclassid = "";
