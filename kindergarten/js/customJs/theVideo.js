@@ -15,22 +15,16 @@ $(document).ready(function () {
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            if(typeof(data)=='object'){
-                var videoData = JSON.parse(data);
-                console.log("对象");
-            }else{
-                console.log("字符串");
-                var str = JSON.stringify(data);  
-                var str1 = JSON.parse(data);  
-                var videoData = str1;
-                console.log(videoData);
+            // var videoData = JSON.parse(data);
+            var videoData;
+            if(typeof (data) == 'object'){
+                videoData = JSON.parse(data);
             }
+            videoData = data;
             console.log(data);  
-            if (data=="显示失败") {
+            if (data="显示失败") {
                 
             }else{
-                console.log("执行");
-
                 var videoList = videoData.tlist;
                 console.log(videoList);
                 if (videoList!=null || videoList!="" || videoList!="undefined") {
