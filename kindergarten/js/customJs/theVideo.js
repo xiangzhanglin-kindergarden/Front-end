@@ -21,7 +21,7 @@ $(document).ready(function () {
             }else{
                 console.log("字符串");
                 var str = JSON.stringify(data);  
-                var str1 = JSON.parse(data);  
+                var str1 = JSON.parse(str);  
                 var videoData = str1;
                 console.log(videoData);
             }

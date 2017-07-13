@@ -90,7 +90,9 @@ $(function(){
 
     //url后面的内容
     // trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
-    trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
+    // trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
+    // trans = "?A="+escape(statusall)+"&B="+escape(statuspass)+"&C="+escape(statusunpass)+"&D="+escape(statuswait);
+    trans = "?A="+encodeURI(statusall)+"&B="+encodeURI(statuspass)+"&C="+encodeURI(statusunpass)+"&D="+encodeURI(statuswait);
     ptrans = "&pageNum="+npage;
     toSureAddress(btnkind, kindNub);
 
@@ -156,7 +158,9 @@ $(function(){
       console.log("待审核："+statuswait);
 
       // trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
-      trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
+      // trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
+      trans = "?A="+encodeURI(statusall)+"&B="+encodeURI(statuspass)+"&C="+encodeURI(statusunpass)+"&D="+encodeURI(statuswait);
+      // trans = "?A="+escape(statusall)+"&B="+escape(statuspass)+"&C="+escape(statusunpass)+"&D="+escape(statuswait);
       ptrans = "&pageNum="+npage;
       toSureKind()
     }
@@ -181,14 +185,19 @@ $(function(){
     }else if(btnkind=="我的草稿") {
       address = "kindergarden/SreachCg";
       // trans = "?issuer="+pushname+"&pageNum="+"1";
-      trans = "?issuer="+encodeURI(encodeURI(pushname))+"&pageNum="+"1";
+      // trans = "?issuer="+encodeURI(encodeURI(pushname))+"&pageNum="+"1";
+      // trans = "?issuer="+escape(pushname)+"&pageNum="+"1";
+      trans = "?issuer="+encodeURI(pushname)+"&pageNum="+"1";
+
     }
 
     if (kindNub=="2") {
       address = address+kindNub;
       if (btnkind!="我的草稿") {
         // trans = trans+"&issuer="+pushname;
-        trans = trans+"&issuer="+encodeURI(encodeURI(pushname));
+        // trans = trans+"&issuer="+encodeURI(encodeURI(pushname));
+        // trans = trans+"&issuer="+escape(pushname);
+        trans = trans+"&issuer="+encodeURI(pushname);
       };
     }
 
@@ -472,7 +481,8 @@ $(function(){
       $.ajax({
         type:"get",
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
-        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
+        // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
+        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+escape(keyword)+"&time="+escape(keytime)+"&issuer="+escape(keyname)+"&pageNum="+1,
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
