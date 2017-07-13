@@ -15,23 +15,33 @@ $(document).ready(function () {
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            var videoData = JSON.parse(data);
-
-
-            var videoList = videoData.tlist;
-            console.log(videoList);
-            for(var i=0;i<videoList.length;i++){
-                var mainVideo = $(".mainVideo");
-                var videoListAdress = JSON.parse(videoList[i].mvAdress);
-                var videoListAdreeUrl = videoListAdress.url;
-                var divVideo = document.createElement("div");
-                divVideo.className = "everyVideo";
-                var video = document.createElement("video");
-                video.src = videoListAdreeUrl;
-                video.setAttribute("data-mcid", videoList[i].mvId);
-                mainVideo[0].appendChild(divVideo);
-                divVideo.appendChild(video);
+            // var videoData = JSON.parse(data);
+            var videoData = data;
+            console.log(data);  
+            if (data="显示失败") {
+                
+            }else{
+                var videoList = videoData.tlist;
+                console.log(videoList);
+                if (videoList!=null || videoList!="" || videoList!="undefined") {
+                    for(var i=0;i<videoList.length;i++){
+                        var mainVideo = $(".mainVideo");
+                        var videoListAdress = JSON.parse(videoList[i].mvAdress);
+                        var videoListAdreeUrl = videoListAdress.url;
+                        var divVideo = document.createElement("div");
+                        divVideo.className = "everyVideo";
+                        var video = document.createElement("video");
+                        video.src = videoListAdreeUrl;
+                        video.setAttribute("data-mcid", videoList[i].mvId);
+                        mainVideo[0].appendChild(divVideo);
+                        divVideo.appendChild(video);
+                    }
+                };
             }
+
+            
+
+            
 
 
 

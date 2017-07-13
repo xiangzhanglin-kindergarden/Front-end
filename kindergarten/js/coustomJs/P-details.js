@@ -739,9 +739,9 @@ function CG(data){
   		console.log(status);
       if (status=='通过') {
         status = 1;
-      }else if(status=='未通过'){
-        status = 2;
       }else if(status=='待审核'){
+        status = 2;
+      }else if(status=='未通过'){
         status = 3;
       }
 

@@ -345,7 +345,8 @@ $(window).ready(function () {
         //发布权限
         var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
         var teacherData = sessionStorage.getItem("teacherData");
-        var teacher = JSON.parse(teacherData);
+        // var teacher = JSON.parse(teacherData);
+        var teacher = teacherData;
 
         var mcPeople = "";
         var mcclassid = "";
