@@ -89,7 +89,8 @@ $(function(){
     npage = "1";
 
     //url后面的内容
-    trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
+    // trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
+    trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
     ptrans = "&pageNum="+npage;
     toSureAddress(btnkind, kindNub);
 
@@ -154,7 +155,8 @@ $(function(){
       console.log("未通过："+statusunpass);
       console.log("待审核："+statuswait);
 
-      trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
+      // trans = "?A="+statusall+"&B="+statuspass+"&C="+statusunpass+"&D="+statuswait;
+      trans = "?A="+encodeURI(encodeURI(statusall))+"&B="+encodeURI(encodeURI(statuspass))+"&C="+encodeURI(encodeURI(statusunpass))+"&D="+encodeURI(encodeURI(statuswait));
       ptrans = "&pageNum="+npage;
       toSureKind()
     }
@@ -178,15 +180,15 @@ $(function(){
       address = "kindergarden/GgStateSreach";
     }else if(btnkind=="我的草稿") {
       address = "kindergarden/SreachCg";
-      // username = "123";
-      trans = "?issuer="+pushname+"&pageNum="+"1";
+      // trans = "?issuer="+pushname+"&pageNum="+"1";
+      trans = "?issuer="+encodeURI(encodeURI(pushname))+"&pageNum="+"1";
     }
 
     if (kindNub=="2") {
       address = address+kindNub;
       if (btnkind!="我的草稿") {
-        // username = "123";
-        trans = trans+"&issuer="+pushname;
+        // trans = trans+"&issuer="+pushname;
+        trans = trans+"&issuer="+encodeURI(encodeURI(pushname));
       };
     }
 
@@ -431,7 +433,7 @@ $(function(){
     if (keyword==""&&keytime==""&&keyname=="") {
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A="+encodeURI(encodeURI("全部"))+"&B=&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -469,7 +471,8 @@ $(function(){
     }else{
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
