@@ -43,8 +43,19 @@ $(document).ready(function () {
     changeInfo[0].addEventListener("click",editRow);
 
 
+    $(".buttonDel").click(function(){
+        var dIndex = $("#table_list_2").jqGrid("getGridParam", "selrow");
+        if (dIndex == null){
+            alert("请选择要删除的行！");
+        }else {
+            var message = confirm("确定要删除吗？");
+            if(message){
+                delTheClass();
+            }
+        }
+    })
 
-    var delClass = $("input.buttonDel");
+    /*var delClass = $("input.buttonDel");
     delClass.onclick = function () {
         var dIndex = $("#table_list_2").jqGrid("getGridParam", "selrow");
         if (dIndex == null){
@@ -55,9 +66,8 @@ $(document).ready(function () {
                 delTheClass();
             }
         }
-
     };
-
+*/
     function editRow() {
         for(var s=0;s<spans.length;s++){
             spans[s].innerHTML = "";
