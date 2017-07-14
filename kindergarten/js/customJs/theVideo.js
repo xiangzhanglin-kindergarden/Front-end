@@ -20,7 +20,7 @@ $(document).ready(function () {
     console.log(teacher);
 
     var pageNum = 1;
-    if (theVideoMname!=teacher.tName) {
+    if (theVideoMname=="园长") {
         if (usertype==0) {
             $(".videoAdd").css({"visibility":"hidden"});
             $(".videoManage").css({"visibility":"hidden"});
