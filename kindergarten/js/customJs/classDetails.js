@@ -238,7 +238,10 @@ $(document).ready(function () {
             },
             success: function () {
                 alert("删除成功！");
+                // $(".if-d-backbtn a").trigger("click");
                 // window.location.reload();//刷新页面
+                window.history.go(-1);
+                // window.location.reload(); 
             },
             error: function (err) {
                 console.log(err.status);
