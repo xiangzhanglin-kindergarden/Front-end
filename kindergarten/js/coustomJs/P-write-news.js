@@ -175,12 +175,18 @@ function creatFJ(files, response){
     
     var I2div = $("<div class='file-name'>"+files[i].name+"</div>");
 
+    var delbutton = $("<div class='file-del'></div>")
+    var delbuttonInnner = $("<button class='btn btn-danger btn-circle btn-lg' type='button' onclick='delFJ(this)'><i class='fa fa-times'></i></button>")
+
+
     Idiv.append(Iimg);
     Ia.append(Ispan);
     Ia.append(Idiv);
     Ia.append(I2div);
     O2div.append(Ia);
+    delbutton.append(delbuttonInnner);
     Odiv.append(O2div);
+    Odiv.append(delbutton);
     $(".attachment").prepend(Odiv);
   }
 }
@@ -230,6 +236,12 @@ function suffixPD(obj){
   }
 }
 
+
+//  删除附件 按钮
+function delFJ(obj){
+  console.log("删除");
+  $(obj).parent().parent().remove();
+}
 
 
 /* 上传封面 */

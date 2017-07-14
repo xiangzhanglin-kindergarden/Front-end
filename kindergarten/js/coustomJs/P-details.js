@@ -255,6 +255,8 @@ $(function(){
 //   点击编辑 修改文章内容
 $(function(){
 	$(".if-d-page-status input[name='edit']").bind("click",function(){
+
+    $(".file-del").css({"display":"block"});
 		//创建富文本
 		createWrite();
 
@@ -272,6 +274,7 @@ $(function(){
 //  取消修改 按钮
 $(function(){
 	$(".if-d-no").bind("click",function(){
+    $(".file-del").css({"display":"none"});
 		$(".if-d-content").css("display","block");
 		$(".if-d-write-box").css({"display":"none"})
 		editor.destroy();
@@ -282,6 +285,14 @@ $(function(){
 		$(".ibox").css({"display":"none"});
 	})
 })
+
+//  删除附件 按钮
+function delFJ(obj){
+  console.log("删除");
+  $(obj).parent().parent().remove();
+}
+
+
 
 
 
@@ -604,12 +615,9 @@ $(function(){
         $("#if-d-status option[value='waiting']").attr("selected",true);
         console.log(3);
       }
-      // data.title.charset="UTF-8";
 
       //修改标题
-      // $(".if-d-t-c-box p[name='title']").html(data.title);
-      $(".if-d-t-c-box p[name='title']").html(decodeURI(data.title));
-      console.log(decodeURI(data.title));
+      $(".if-d-t-c-box p[name='title']").html(data.title);
 
       //修改发布人
       $(".if-d-t-name").html(data.issuer);
@@ -704,12 +712,17 @@ function showFJ(data){
     
     var I2div = $("<div class='file-name'>"+theName+"</div>");
 
+    var delbutton = $("<div class='file-del'></div>")
+    var delbuttonInnner = $("<button class='btn btn-danger btn-circle btn-lg' type='button' onclick='delFJ(this)'><i class='fa fa-times'></i></button>")
+    
     Idiv.append(Iimg);
     Ia.append(Ispan);
     Ia.append(Idiv);
     Ia.append(I2div);
     O2div.append(Ia);
+    delbutton.append(delbuttonInnner);
     Odiv.append(O2div);
+    Odiv.append(delbutton);
     $(".attachment").prepend(Odiv);
   }
 
@@ -835,18 +848,13 @@ function CG(data){
     var myjson;
     inNewsAdd = {
       idnews:pageid,
-      title:encodeURI(encodeURI(retitle)),
-      message:encodeURI(encodeURI(remessage)),
-      url1:encodeURI(encodeURI(reurl1)),
-      url2:encodeURI(encodeURI(reurl2)),
-      // title:escape(retitle),
-      // message:escape(remessage),
-      // url1:escape(reurl1),
-      // url2:escape(reurl2),
+      title:retitle,
+      message:remessage,
+      url1:reurl1,
+      url2:reurl2,
     }
     console.log(inNewsAdd);
-    var inNewsAdd2 = JSON.stringify(inNewsAdd);
-    inNewsAdd = JSON.parse(inNewsAdd2);
+    // inNewsAdd = JSON.stringify(inNewsAdd);
 
     if (restate=="草稿") {
       URLADD = "http://172.20.2.164:8080/kindergarden/UpdateNews2";
@@ -860,7 +868,7 @@ function CG(data){
       url:URLADD,
       data:inNewsAdd,
       dataType:"JSON",
-      contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+      contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
         xhr.withCredentials = true;
         xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");

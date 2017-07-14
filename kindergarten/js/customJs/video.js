@@ -314,6 +314,11 @@ $(window).ready(function () {
             everyDiv.appendChild(videoDes);
             videoDes.appendChild(videoDesP);
 
+
+
+
+            sessionStorage.setItem("upperman",videoData[i].mcpeople);
+
         }
 
 
@@ -365,8 +370,12 @@ $(window).ready(function () {
             var teacher = JSON.parse(teacherData);
         }else{
             var teacher = teacherData;
+            teacher = $.parseJSON(teacher);
         }
+        console.log(teacher);
         
+        // console.log(typeof(teacher));
+        // console.log(teacher.tName);
 
         var mcPeople = "";
         var mcclassid = "";
@@ -380,37 +389,46 @@ $(window).ready(function () {
 
         buttonsSure.click(function () {
             console.log("buttonSure");
+            // console.log(teacher);
+            // console.log(teacher.tName);
 
 
-            var values = {
-                "mcpeople": mcPeople,
-                "mctime": null,
-                "mccontent": textArea.val(),
-                "mcclassid": mcclassid,
-                "mcid": null
-            };
+            if (textArea.val()==""||textArea.val()==null||textArea.val()==undefined) {
+                alert("请在 活动描述 框里输入内容");
+            }else{
+                var values = {
+                    "mcpeople": mcPeople,
+                    "mctime": null,
+                    "mccontent": textArea.val(),
+                    "mcclassid": mcclassid,
+                    "mcid": null
+                };
 
-            console.log(values);
+                console.log(values);
 
-            $.ajax({
-                type: "post",
-                url: "http://172.20.2.164:8080/kindergarden/MovieContentAdd",
-                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-                data: "MCJson="+JSON.stringify(values),
-                beforeSend: function (xhr) {
-                    xhr.withCredentials = true;
-                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-                },
-                success: function (classData) {
-                    alert(classData);
-                    window.location.reload();
+                $.ajax({
+                    type: "post",
+                    url: "http://172.20.2.164:8080/kindergarden/MovieContentAdd",
+                    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                    data: "MCJson="+JSON.stringify(values),
+                    beforeSend: function (xhr) {
+                        xhr.withCredentials = true;
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    },
+                    success: function (classData) {
+                        alert(classData);
+                        window.location.reload();
 
-                },
-                error: function (err) {
-                    console.log(err.status);
-                    alert("出现错误："+err.status);
-                }
-            });
+                    },
+                    error: function (err) {
+                        console.log(err.status);
+                        alert("出现错误："+err.status);
+                    }
+                });
+            }
+
+
+            
 
         });
 

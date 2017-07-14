@@ -3,8 +3,28 @@
  */
 $(document).ready(function () {
 
+    var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
     var theVideoMcid = sessionStorage.getItem("theVideoMcid");
+    var theVideoMname = sessionStorage.getItem("upperman");
+    var teacherData = sessionStorage.getItem("teacherData");
+
+
+    if(typeof(teacherData)=='object'){
+        var teacher = JSON.parse(teacherData);
+    }else{
+        var teacher = teacherData;
+        teacher = $.parseJSON(teacher);
+    }
+    console.log(teacher.tName);
+
     var pageNum = 1;
+    if (theVideoMname!=teacher.tName) {
+        if (usertype==0) {
+            $(".videoAdd").css({"visibility":"hidden"});
+            $(".videoManage").css({"visibility":"hidden"});
+        };
+    };
+    
 
     $.ajax({
         type: "post",
@@ -18,10 +38,10 @@ $(document).ready(function () {
             // var videoData = JSON.parse(data);
             var videoData;
             if(typeof (data) == 'object'){
-                console.log("对象");
+                // console.log("对象");
                 videoData = data;
             }else {
-                console.log("字符串");
+                // console.log("字符串");
                 // videoData = JSON.parse(data);
                 var str = JSON.stringify(data);  
                 var str1 = JSON.parse(str);  

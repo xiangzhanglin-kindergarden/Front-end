@@ -348,8 +348,11 @@ $(function(){
     // 权限判断
       //0为老师，1为校长
       if (usertype==0) {
-        $(".news-list-func .n-l-f-btn-del").remove();
-        $(".news-list-func .n-l-f-btn-c").css({"width":"40%"});
+        lookkind = $("body").attr("name");
+        if (lookkind == "body") {
+          $(".news-list-func .n-l-f-btn-del").remove();
+          $(".news-list-func .n-l-f-btn-c").css({"width":"40%"});
+        }
       };
 
     // 类别判断

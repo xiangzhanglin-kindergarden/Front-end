@@ -4,6 +4,11 @@
  *   
  *
 */
+.file-del{
+	display: block;
+	width: 200px;
+	text-align: center;
+}
 .if-w-title{
 	margin-bottom: 30px;
 	color: #000;
