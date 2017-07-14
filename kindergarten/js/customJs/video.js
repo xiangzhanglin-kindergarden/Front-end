@@ -90,7 +90,9 @@ $(window).ready(function () {
             if(typeof (data) == 'object'){
                 videoData = data.tlist;
             }else {
-                videoData = JSON.parse(data).tlist;
+                // videoData = JSON.parse(data).tlist;
+                videoData = $.parseJSON(data);
+                videoData = videoData.tlist;
             }
 
             showData(videoData);

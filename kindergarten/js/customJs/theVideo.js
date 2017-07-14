@@ -14,7 +14,7 @@ $(document).ready(function () {
     }else{
         // console.log(typeof(teacherData));
         var teacher = teacherData;
-        teacher = $.parseJSON(teacher);
+        // teacher = $.parseJSON(teacher);
     }
     console.log(teacher.tName);
     console.log(teacher);
