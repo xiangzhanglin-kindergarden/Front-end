@@ -13,7 +13,7 @@ function showVideo() {
     imgs.each(function () {
         var nowImg = this;
         $(nowImg).click(function () {
-            // var nowUrl = this.src;
+            var nowUrl = this.src;
 
             gray.show();
             var oImg = document.createElement("video");

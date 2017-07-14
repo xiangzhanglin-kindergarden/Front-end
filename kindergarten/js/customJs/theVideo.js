@@ -14,9 +14,10 @@ $(document).ready(function () {
     }else{
         // console.log(typeof(teacherData));
         var teacher = teacherData;
-        // teacher = $.parseJSON(teacher);
+        teacher = $.parseJSON(teacher);
     }
     console.log(teacher.tName);
+    console.log(teacher);
 
     var pageNum = 1;
     if (theVideoMname!=teacher.tName) {
@@ -65,8 +66,10 @@ $(document).ready(function () {
                 if (videoList!=null || videoList!="" || videoList!="undefined") {
                     for(var i=0;i<videoList.length;i++){
                         var mainVideo = $(".mainVideo");
-                        var videoListAdress = JSON.parse(videoList[i].mvAdress);
-                        var videoListAdreeUrl = videoListAdress.url;
+                        // var videoListAdress = JSON.parse(videoList[i].mvAdress);
+                        var videoListAdress = videoList[i].mvAdress;
+                        // var videoListAdreeUrl = videoListAdress.url;
+                        var videoListAdreeUrl = videoListAdress;
                         var divVideo = document.createElement("div");
                         divVideo.className = "everyVideo";
                         var video = document.createElement("video");

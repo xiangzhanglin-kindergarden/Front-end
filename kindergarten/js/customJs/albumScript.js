@@ -320,7 +320,8 @@ function showData(imgData) {
         if (theImgFace == undefined){
             imgFace = "img/albumFace.png";
         }else {
-            imgFace = JSON.parse(theImgFace).url;
+            // imgFace = JSON.parse(theImgFace).url;
+            imgFace = theImgFace;
         }
         console.log(imgFace);
 
