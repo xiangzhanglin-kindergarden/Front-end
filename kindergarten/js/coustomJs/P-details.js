@@ -604,9 +604,12 @@ $(function(){
         $("#if-d-status option[value='waiting']").attr("selected",true);
         console.log(3);
       }
+      // data.title.charset="UTF-8";
 
       //修改标题
-      $(".if-d-t-c-box p[name='title']").html(data.title);
+      // $(".if-d-t-c-box p[name='title']").html(data.title);
+      $(".if-d-t-c-box p[name='title']").html(decodeURI(data.title));
+      console.log(decodeURI(data.title));
 
       //修改发布人
       $(".if-d-t-name").html(data.issuer);
@@ -832,13 +835,18 @@ function CG(data){
     var myjson;
     inNewsAdd = {
       idnews:pageid,
-      title:retitle,
-      message:remessage,
-      url1:reurl1,
-      url2:reurl2,
+      title:encodeURI(encodeURI(retitle)),
+      message:encodeURI(encodeURI(remessage)),
+      url1:encodeURI(encodeURI(reurl1)),
+      url2:encodeURI(encodeURI(reurl2)),
+      // title:escape(retitle),
+      // message:escape(remessage),
+      // url1:escape(reurl1),
+      // url2:escape(reurl2),
     }
     console.log(inNewsAdd);
-    // inNewsAdd = JSON.stringify(inNewsAdd);
+    var inNewsAdd2 = JSON.stringify(inNewsAdd);
+    inNewsAdd = JSON.parse(inNewsAdd2);
 
     if (restate=="草稿") {
       URLADD = "http://172.20.2.164:8080/kindergarden/UpdateNews2";
@@ -852,7 +860,7 @@ function CG(data){
       url:URLADD,
       data:inNewsAdd,
       dataType:"JSON",
-      contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+      contentType:"application/x-www-form-urlencoded; charset=UTF-8",
       beforeSend:function(xhr){
         xhr.withCredentials = true;
         xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
