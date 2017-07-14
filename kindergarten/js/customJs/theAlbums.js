@@ -41,8 +41,11 @@ $(document).ready(function () {
             var imgList = imgData.tlist;
             for (var i=0;i<imgList.length;i++){
                 var mainPhoto = $(".mainPhoto");
-                var imgListAdress = JSON.parse(imgList[i].xcAdress);
-                var imgListAdreeUrl = imgListAdress.url;
+                // var imgListAdress = JSON.parse(imgList[i].xcAdress);
+                // console.log(imgList[i].xcAdress);
+                var imgListAdress = imgList[i].xcAdress;
+                // var imgListAdreeUrl = imgListAdress.url;
+                var imgListAdreeUrl = imgListAdress;
                 var divImg = document.createElement("div");
                 divImg.className = "everyImg";
                 var img = document.createElement("img");

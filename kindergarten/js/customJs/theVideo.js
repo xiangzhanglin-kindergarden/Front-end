@@ -12,8 +12,9 @@ $(document).ready(function () {
     if(typeof(teacherData)=='object'){
         var teacher = JSON.parse(teacherData);
     }else{
+        // console.log(typeof(teacherData));
         var teacher = teacherData;
-        teacher = $.parseJSON(teacher);
+        // teacher = $.parseJSON(teacher);
     }
     console.log(teacher.tName);
 
