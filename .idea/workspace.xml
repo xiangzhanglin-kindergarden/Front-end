@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/coustomJs/newsAJAX.js" afterPath="$PROJECT_DIR$/kindergarten/js/coustomJs/newsAJAX.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,34 +59,12 @@
       <file leaf-file-name="theVideo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+            <state relative-caret-position="1404">
+              <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
               <folding>
-                <marker date="1499936803820" expanded="true" signature="0:44" placeholder="/** Created by Sunshine on 2017/5/27. ...*/" />
-                <marker date="1499936803820" expanded="true" signature="75:6620" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="174:6606" placeholder="{&quot;type&quot;: &quot;post&quot;...}" />
-                <marker date="1499936803820" expanded="true" signature="356:479" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="514:6520" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="1018:1765" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="2005:2664" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="2887:6481" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="3004:3066" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="3149:3421" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="3277:3347" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="3858:3963" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4053:4499" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4175:4479" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4245:4327" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4375:4457" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4572:6101" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4753:5087" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="4918:5065" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="5444:5627" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="5678:5872" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="5924:6012" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="6155:6293" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="6342:6466" placeholder="{...}" />
-                <marker date="1499936803820" expanded="true" signature="6552:6600" placeholder="{...}" />
+                <marker date="1500028606546" expanded="true" signature="2659:3124" placeholder="{...}" />
+                <marker date="1500028606546" expanded="true" signature="2659:3142" placeholder="{...}" />
+                <marker date="1500028606546" expanded="true" signature="2659:7897" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -95,22 +73,20 @@
       <file leaf-file-name="theVideoShowVideo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/theVideoShowVideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="1539">
               <caret line="59" column="22" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="video.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/video.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="527" column="16" selection-start-line="527" selection-start-column="16" selection-end-line="527" selection-end-column="16" />
+            <state relative-caret-position="5029">
+              <caret line="547" column="16" selection-start-line="547" selection-start-column="16" selection-end-line="547" selection-end-column="16" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
-                <element signature="e#2667#5068#0" expanded="false" />
-                <element signature="e#5112#8130#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,18 +119,18 @@
       <file leaf-file-name="classDetails.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/classDetails.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="60" column="68" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
+            <state relative-caret-position="448">
+              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classDetails.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="classDetails.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="275">
+              <caret line="256" column="80" selection-start-line="256" selection-start-column="75" selection-end-line="256" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -227,10 +203,10 @@
         <option value="$PROJECT_DIR$/kindergarten/classManagement.html" />
         <option value="$PROJECT_DIR$/kindergarten/classDetails.html" />
         <option value="$PROJECT_DIR$/kindergarten/css/customCss/classDetailsStyle.css" />
-        <option value="$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/theVideoShowVideo.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/video.js" />
+        <option value="$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js" />
       </list>
     </option>
   </component>
@@ -271,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -347,6 +322,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,9 +357,21 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/coustomJs/knowledge.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/albumUpload.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/classDetails.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/css/customCss/if-d.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/css/customCss/if-w.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/coustomJs/P-details.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/coustomJs/P-write-news.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/coustomJs/knowledgeAJAX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/coustomJs/newsAJAX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/customJs/albumScript.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/customJs/theAlbums.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/js/customJs/video.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/video.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kindergarten/videoUpload.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="已创建" />
@@ -596,7 +584,9 @@
       <workItem from="1499390644057" duration="75000" />
       <workItem from="1499873884521" duration="286000" />
       <workItem from="1499929494773" duration="592000" />
-      <workItem from="1499935725583" duration="1161000" />
+      <workItem from="1499935725583" duration="1791000" />
+      <workItem from="1499939150833" duration="2446000" />
+      <workItem from="1500028589841" duration="610000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -815,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499936637013</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="ajax success后增加判断">
+      <created>1499936901315</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1499936901315</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191565000" />
+    <option name="totallyTimeSpent" value="195251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -827,21 +824,21 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19114584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1218,22 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kindergarten/classDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="60" column="68" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1259,41 +1240,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="1404">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
           <folding>
-            <marker date="1499936803820" expanded="true" signature="0:44" placeholder="/** Created by Sunshine on 2017/5/27. ...*/" />
-            <marker date="1499936803820" expanded="true" signature="75:6620" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="174:6606" placeholder="{&quot;type&quot;: &quot;post&quot;...}" />
-            <marker date="1499936803820" expanded="true" signature="356:479" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="514:6520" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="1018:1765" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="2005:2664" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="2887:6481" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="3004:3066" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="3149:3421" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="3277:3347" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="3858:3963" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4053:4499" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4175:4479" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4245:4327" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4375:4457" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4572:6101" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4753:5087" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="4918:5065" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="5444:5627" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="5678:5872" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="5924:6012" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="6155:6293" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="6342:6466" placeholder="{...}" />
-            <marker date="1499936803820" expanded="true" signature="6552:6600" placeholder="{...}" />
+            <marker date="1500028606546" expanded="true" signature="2659:3124" placeholder="{...}" />
+            <marker date="1500028606546" expanded="true" signature="2659:3142" placeholder="{...}" />
+            <marker date="1500028606546" expanded="true" signature="2659:7897" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/theVideoShowVideo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="1539">
           <caret line="59" column="22" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="22" />
           <folding />
         </state>
@@ -1301,13 +1260,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/video.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="527" column="16" selection-start-line="527" selection-start-column="16" selection-end-line="527" selection-end-column="16" />
+        <state relative-caret-position="5029">
+          <caret line="547" column="16" selection-start-line="547" selection-start-column="16" selection-end-line="547" selection-end-column="16" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="e#2667#5068#0" expanded="false" />
-            <element signature="e#5112#8130#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kindergarten/classDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/classDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="256" column="80" selection-start-line="256" selection-start-column="75" selection-end-line="256" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
