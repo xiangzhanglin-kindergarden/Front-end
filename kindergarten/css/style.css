@@ -50,7 +50,8 @@ a:focus {
 }
 
 .nav > li > a {
-    color: #a7b1c2;
+    /*color: #a7b1c2;*/
+    color: #ddf0ed;   /*米色*/
     font-weight: 600;
     padding: 14px 20px 14px 25px;
 }
@@ -90,7 +91,8 @@ a:focus {
 
 .navbar-default {
     background-color: transparent;
-    border-color: #2f4050;
+    /*border-color: #2f4050;*/
+    border-color: #f1ae7c;    /* 蓝色基调 */
     position: relative;
 }
 
@@ -494,7 +496,8 @@ body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
     position: absolute;
     left: 70px;
     top: 0px;
-    background-color: #2f4050;
+    /*background-color: #2f4050;*/
+    background-color: #f1ae7c;
     padding: 10px 10px 0 10px;
     font-size: 12px;
     display: block;
@@ -531,7 +534,8 @@ body.canvas-menu.mini-navbar .navbar-default .nav > li > .nav-second-level li a 
 
 body.canvas-menu nav.navbar-static-side {
     z-index: 2001;
-    background: #2f4050;
+     /*background: #2f4050; */
+     background: #f1ae7c; 
     height: 100%;
     position: fixed;
     display: none;
@@ -1383,23 +1387,28 @@ button.dim:active:before {
 /* TOOLTIPS */
 
 .tooltip-inner {
-    background-color: #2F4050;
+    /*background-color: #2F4050;*/
+    background-color: #f1ae7c;
 }
 
 .tooltip.top .tooltip-arrow {
-    border-top-color: #2F4050;
+    /*border-top-color: #2F4050;*/
+    background-color: #f1ae7c;
 }
 
 .tooltip.right .tooltip-arrow {
-    border-right-color: #2F4050;
+    /*border-right-color: #2F4050;*/
+    background-color: #f1ae7c;
 }
 
 .tooltip.bottom .tooltip-arrow {
-    border-bottom-color: #2F4050;
+    /*border-bottom-color: #2F4050;*/
+    background-color: #f1ae7c;
 }
 
 .tooltip.left .tooltip-arrow {
-    border-left-color: #2F4050;
+    /*border-left-color: #2F4050;*/
+    background-color: #f1ae7c;
 }
 
 
@@ -3257,7 +3266,8 @@ a.forum-item-title:hover {
     padding: 12px 10px;
     margin: 0;
     border-radius: 0;
-    background: #2f4050;
+    /*background: #2f4050;*/
+    background: #f1ae7c;
     color: #fff;
     text-align: center;
     border-right: 1px solid #334556;
@@ -3366,7 +3376,8 @@ body.boxed-layout {
 }
 
 body.boxed-layout #wrapper {
-    background-color: #2f4050;
+    /*background-color: #2f4050;*/
+    background-color: #f1ae7c;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3511,7 +3522,8 @@ video {
 #wrapper {
     width: 100%;
     overflow-x: hidden;
-    background-color: #2f4050;
+    /*background-color: #2f4050;*/
+    background-color: #f1ae7c;
 }
 
 .wrapper {
@@ -3806,7 +3818,8 @@ nav.page-tabs .page-tabs-content {
 }
 
 .nav-tabs > li > a {
-    color: #A7B1C2;
+    /*color: #A7B1C2;*/
+    color: #ddf0ed;
     font-weight: 600;
     padding: 10px 20px 10px 25px;
 }
@@ -4353,7 +4366,8 @@ a.close-canvas-menu {
     top: 10px;
     right: 15px;
     z-index: 1011;
-    color: #a7b1c2;
+    /*color: #a7b1c2;*/
+    color: #ddf0ed;
 }
 
 a.close-canvas-menu:hover {
@@ -5622,7 +5636,8 @@ dd.project-people {
 .article h1 {
     font-size: 48px;
     font-weight: 700;
-    color: #2F4050;
+    /*color: #2F4050;*/
+    color: #f1ae7c;
 }
 
 .article p {
@@ -5790,7 +5805,8 @@ del {
 }
 
 .small-chat-box .heading {
-    background: #2f4050;
+    /*background: #2f4050;*/
+    background: #f1ae7c;
     padding: 8px 15px;
     font-weight: bold;
     color: #fff;
@@ -7183,7 +7199,8 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .content-tabs {
-    border-bottom: solid 2px #2f4050;
+    /*border-bottom: solid 2px #2f4050;*/
+    border-bottom: solid 2px #f1ae7c;
 }
 
 .page-tabs a {
@@ -7195,13 +7212,16 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .page-tabs a.active {
-    background: #2f4050;
-    color: #a7b1c2;
+    /*background: #2f4050;*/
+    background: #f1ae7c;
+    /*color: #a7b1c2;*/
+    color: #ddf0ed;
 }
 
 .page-tabs a.active:hover,
 .page-tabs a.active i:hover {
-    background: #293846;
+    /*background: #293846;*/
+    background: #8192d6;  /*  hover蓝色  */
     color: #fff;
 }
 
@@ -7572,7 +7592,8 @@ body.skin-3 {
 }
 
 .navbar-static-side {
-    background: #2f4050;
+    /*background: #2f4050;*/
+    background: #f1ae7c;
 }
 
 .nav-close {
@@ -7819,7 +7840,8 @@ body.skin-3 {
     height: 38px;
     width: 38px;
     display: block;
-    background: #2f4050;
+    /*background: #2f4050;*/
+    background: #f1ae7c;
     padding: 9px 8px;
     text-align: center;
     color: #fff;

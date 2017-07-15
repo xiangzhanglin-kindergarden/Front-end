@@ -56,7 +56,7 @@ function showVideo() {
             //显示评论
             function theComment() {
                 // console.log(nowImg);
-                var nowImgId = nowImg.getAttribute("data-pid");
+                var nowImgId = nowImg.getAttribute("data-mcid");
                 $.ajax({
                     type: "post",
                     url: "http://172.20.2.164:8080/kindergarden/CommunicateShow",
@@ -176,7 +176,7 @@ function showVideo() {
             function releaseComment() {
 
                 //发表评论
-                var nowImgId = nowImg.getAttribute("data-pid");
+                var nowImgId = nowImg.getAttribute("data-mcid");
                 var mainCommentInput = $(".mainCommentInput");
                 var editComment = mainCommentInput.find("input.editComment");//评论框
                 var buttonRelease = mainCommentInput.find(".buttonSure").find("input");

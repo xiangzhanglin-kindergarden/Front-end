@@ -251,6 +251,9 @@ $(function(){
 		var arr=[];
 		console.log(d.getMonth()+1);
 
+
+
+/*
 		$(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
 
 		for(var i=0; i<7; i++){
@@ -264,7 +267,7 @@ $(function(){
 		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
 
 
-
+*/
 
 	}
 

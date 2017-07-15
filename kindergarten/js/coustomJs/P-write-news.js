@@ -1,28 +1,9 @@
 
-var usertype    //用户类型，0为老师，1位校长
-var username    //用户名
-var pushname    //发布人的名字
+var usertype     //用户类型，0为老师，1位校长
+var username     //用户名
+var pushname     //发布人的名字
+var teacherData  //老师信息，目的是获取班级
 
-
-
-
-
-
-
-$(function(){
-	username = sessionStorage.getItem("user");
-  usertype = sessionStorage.getItem("nub");  
-	pushname = sessionStorage.getItem("pushname");  
-	console.log(username);
-  console.log(usertype);
-	console.log(pushname);
-	// usertype = 0;
-	if (usertype == 0) {
-
-
-	}
-
-})
 
 
 var oldcover    //存储原封面
@@ -35,6 +16,42 @@ var remessage    //富文本内容
 var rekind       //新闻、公告
 var reurl1       //封面
 var reurl2 = new Array();       //附件
+var recId = null;       //班级
+
+
+
+$(function(){
+  teacherData = sessionStorage.getItem("teacherData");
+  // console.log(typeof(teacherData));
+  
+	username = sessionStorage.getItem("user");
+  usertype = sessionStorage.getItem("nub");  
+	pushname = sessionStorage.getItem("pushname");  
+	console.log(username);
+  console.log(usertype);
+  console.log(pushname);
+	console.log(teacher);
+	// usertype = 0;
+	if (usertype == 0) {
+    if(typeof(teacherData)=='object'){
+        var teacher = JSON.parse(teacherData);
+    }else{
+        // console.log(typeof(teacherData));
+        // teacherData = JSON.stringify(teacherData);
+        // teacherData = JSON.parse(teacherData);
+        var teacher = teacherData;
+        teacher = $.parseJSON(teacher);
+    }
+    
+    recId = teacher.cId;
+
+	}
+
+})
+
+
+
+
 
 
 oldcover = $(".if-d-cover img").attr('src');
@@ -369,6 +386,8 @@ $(function(){
     }
     console.log(reurl2);
 
+
+
     inNewsAdd = {
       issuer:pushname,
       time:null,
@@ -379,6 +398,7 @@ $(function(){
       url1:reurl1,
       url2:reurl2,
       totalPage:null,
+      cid:recId,
     }
     console.log(inNewsAdd);
     myjson = JSON.stringify(inNewsAdd);
@@ -399,7 +419,9 @@ $(function(){
         if (data.success=="success") {
           alert("提交成功！");
           window.location.href = "allNewsManagement.html";
-        };
+        }else{
+          alert("提交失败");
+        }
       },
       error:function(jqHXR){
         console.log("错误:"+jqHXR.status);

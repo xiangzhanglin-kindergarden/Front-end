@@ -1,7 +1,7 @@
 var usertype    //用户类型，0为老师，1位校长
 var username    //用户名
 var pushname    //发布人的名字
-
+var teacherData
 
 
 // 获取用户名和用户类型
@@ -9,10 +9,23 @@ $(function(){
 	username = sessionStorage.getItem("user");
 	usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
 	pushname = sessionStorage.getItem("pushname");
+  teacherData = sessionStorage.getItem("teacherData");
+
   console.log(username);
   console.log(usertype);
-	console.log(pushname);
+  console.log(pushname);
 	// usertype = 0;
+
+
+  if(typeof(teacherData)=='object'){
+      var teacher = JSON.parse(teacherData);
+  }else{
+      // console.log(typeof(teacherData));
+      var teacher = teacherData;
+      // teacher = $.parseJSON(teacher);
+  }
+  console.log(teacher);
+
 
   lookkind = $("body").attr("name");
   if (lookkind == "all") {
