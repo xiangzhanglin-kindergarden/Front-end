@@ -343,12 +343,12 @@
     Date.DEFAULTS = {
         // 全局参数
         opacity: 0.90,               // 不透明度
-        color: '255,255,255',        // 颜色
+        color: '253,190,52',        // 颜色
         shadowColor: '255,255,255',  // 阴影颜色
         shadowBlur: 15,              // 发光程度
         // 坐标参数
-        offsetX: 0.5,                // X坐标偏移
-        offsetY: 0.5,                // Y坐标偏移
+        offsetX: 0.8,                // X坐标偏移
+        offsetY: 0.3,                // Y坐标偏移
         isClickOffset: false,        // 鼠标坐标偏移
         // 坐标参数
         isDate: true,                // 是否显示日期
