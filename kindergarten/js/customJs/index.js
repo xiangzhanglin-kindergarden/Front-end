@@ -6,7 +6,7 @@ $(document).ready(function () {
     var manager = sessionStorage.getItem("user");
     var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
     if (usertype == null||usertype == "") {
-      // window.location.href="login.html";
+      window.location.href="login.html";
     };
     
 
