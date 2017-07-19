@@ -85,7 +85,13 @@
                 $(".ibox-content")[0].appendChild(adding);
             },
             success: function (data) {
-                $(".adding")[0].remove();
+                var navigatorName = "Microsoft Internet Explorer"; 
+                if(navigator.appName == navigatorName){
+                   $(".adding")[0].removeNode(true);
+                }else{
+                    $(".adding")[0].remove();
+                }
+                
                 row = initClassData(data);
 
                 $.jgrid.defaults.styleUI = 'Bootstrap';
