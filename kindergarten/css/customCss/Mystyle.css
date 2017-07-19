@@ -348,7 +348,15 @@ color: #000;
 	/*color: #6C6C6C;*/
 }
 
-
+.delayimg{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -78px;
+	margin-top: -47.5px;
+	z-index: 100;
+	opacity: 0;
+}
 
 
 

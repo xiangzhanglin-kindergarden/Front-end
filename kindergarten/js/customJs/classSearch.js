@@ -3,7 +3,7 @@
  */
 $(window).on("load",function () {
     var inputSearch = $("input#inputSearch");
-    var buttonSearch = $("input.buttonSearch");
+    var buttonSearch = $(".buttonSearch");
 
     //刷新数据
     var buttonRefresh = $("input.buttonRefresh");
@@ -13,6 +13,7 @@ $(window).on("load",function () {
 
     buttonSearch.click(function () {
         var searchValue = inputSearch.val();
+        console.log(searchValue);
 
         $.ajax({
             type: "post",
@@ -24,7 +25,7 @@ $(window).on("load",function () {
             },
             success: function (data) {
                 console.log(data);
-                if (data == "查找失败"){
+                if (data == "查找失败" || data == "false" || data == "false2"){
                     alert(data);
                 }else {
                     var theData = JSON.parse(data);

@@ -286,6 +286,8 @@ $(document).ready(function(){
 
 	//修改的方法
 	$(".mail-box-header").delegate("#change-class-yes","click",function(){
+		$("#new-class").attr("disabled",true);
+		$("#change-class").attr("disabled",true);
 		$(".class-table tr td input").each(function(){
 			if ($(this).val()==null||$(this).val()=="") {
 				$(this).val(0);
@@ -339,11 +341,20 @@ $(document).ready(function(){
 				"http://172.20.2.164:8080/kindergarden/LessonUpdate",
 				"lessonJson="+courseMsg,
 				function(res){
+					$(".delayimg").css({"opacity":1});
+					setTimeout(function(){
+						$(".delayimg").css({"opacity":0});
+						$("#new-class").attr("disabled",false);
+						$("#change-class").attr("disabled",false);
+					},500);
 			})
+			
+
 		}else{
 			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
 			console.log(courseMsg);
 			ajax("http://172.20.2.164:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
+				$(".delayimg").css({"opacity":1});
 				$(".mail-box td").each(function(){
 					if ($(this).attr("class") != "class-time"){
 						var value = $(this).children().val()
@@ -367,6 +378,11 @@ $(document).ready(function(){
 					}
 				})
 				$(".mail-box td input").remove();
+				setTimeout(function(){
+					$(".delayimg").css({"opacity":0});
+					$("#new-class").attr("disabled",false);
+					$("#change-class").attr("disabled",false);
+				},500);
 			})
 		}
 		
@@ -397,6 +413,7 @@ $(document).ready(function(){
 		console.log(data);
 		if(data.result == false){
 			$("#change-class").attr("disabled",true);
+			$("#new-class").attr("disabled",false)
 			alert("当前周和班级的课程还未添加")
 			$(".class-table tr:eq(1) td:eq(1)").html("")
 			$(".class-table tr:eq(2) td:eq(1)").html("")
@@ -423,6 +440,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(5)").html("")
 			$(".class-table tr:eq(4) td:eq(5)").html("")
 		}else{
+			$("#new-class").attr("disabled",true);
+			$("#change-class").attr("disabled",false)
 			localStorage.setItem("ll",data.lId);
 			var reg = /[^,]+/g;
 

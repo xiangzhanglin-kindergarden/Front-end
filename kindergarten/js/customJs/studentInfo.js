@@ -193,9 +193,9 @@ function addTheBox(theCaption,theIndex,data) {
                     input.type = "text";
                     input.placeholder = caption[i];
 
-                    theBox.append(theBoxInput);
                     theBoxInput.appendChild(span);
                     theBoxInput.appendChild(input);
+                    theBox.appendChild(theBoxInput);
                 }
 
             }

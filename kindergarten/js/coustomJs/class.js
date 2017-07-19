@@ -18,6 +18,7 @@ var nowTeamFweek;
 //新增课表按钮
 $(function(){
 	$("#new-class").bind("click",function(){
+		$("*").stop(true);
 		$(".cover").css({"z-index":1001});
 		$(".new-class").css({"z-index":1002});
 		$(".cover").animate({"opacity":1});
