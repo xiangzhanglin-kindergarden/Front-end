@@ -357,6 +357,11 @@ color: #000;
 	z-index: 100;
 	opacity: 0;
 }
+.removeTclass,
+.addNewClass,
+{
+	visibility: hidden; 
+}
 
 
 

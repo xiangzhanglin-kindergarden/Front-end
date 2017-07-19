@@ -127,7 +127,7 @@ $(document).ready(function(){
 			var courseMsg = JSON.stringify({
 				"lId":null,
 				"cName":userClass,
-				"lWeek":$(".week").val(),
+				"lWeek":$(".c-week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
 				"lWed":lWed,
@@ -146,7 +146,7 @@ $(document).ready(function(){
 					var lesson = JSON.stringify({
 						"lId":null,
 						"cName":userClass,
-						"lWeek":$(".week").val(),
+						"lWeek":$(".c-week").val(),
 						"lMon":null,
 						"lTue":null,
 						"lWed":null,
@@ -159,10 +159,10 @@ $(document).ready(function(){
 						"lessonJson="+lesson,
 						showLesson
 					);
-					$(".c-week").val($(".week").val());
+					$(".c-week").val($(".c-week").val());
 					$("#change-class").attr("disabled",false);
 					// $(".c-week option").each(function(){
-					// 	if ($(".week").val()==$(this).html()) {
+					// 	if ($(".c-week").val()==$(this).html()) {
 					// 		$(this).attr("selected",true);
 					// 	};
 					// }) 
@@ -171,8 +171,8 @@ $(document).ready(function(){
 		}else{
 			var courseMsg = JSON.stringify({
 				"lId":null,
-				"cName":$(".addNewClass").val(),
-				"lWeek":$(".week").val(),
+				"cName":$(".removeTclassse").val(),
+				"lWeek":$(".c-week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
 				"lWed":lWed,
@@ -189,8 +189,8 @@ $(document).ready(function(){
 
 					var lesson = JSON.stringify({
 						"lId":null,
-						"cName":$(".addNewClass").val(),
-						"lWeek":$(".week").val(),
+						"cName":$(".removeTclassse").val(),
+						"lWeek":$(".c-week").val(),
 						"lMon":null,
 						"lTue":null,
 						"lWed":null,
@@ -203,16 +203,16 @@ $(document).ready(function(){
 						"lessonJson="+lesson,
 						showLesson
 					);
-					$(".c-week").val($(".week").val());
+					$(".c-week").val($(".c-week").val());
 					// $(".c-week option").each(function(){
-					// 	if ($(".week").val()==$(this).html()) {
+					// 	if ($(".c-week").val()==$(this).html()) {
 					// 		$(this).attr("selected",true);
 					// 	};
 					// });
-					$(".removeTclassse").val($(".addNewClass").val());
+					$(".removeTclassse").val($(".removeTclassse").val());
 					$("#change-class").attr("disabled",false);
 					// $(".removeTclassse option").each(function(){
-					// 	if ($(".addNewClass").val()==$(this).html()) {
+					// 	if ($(".removeTclassse").val()==$(this).html()) {
 					// 		$(this).attr("selected",true);
 					// 	};
 					// });
@@ -328,7 +328,7 @@ $(document).ready(function(){
 			var courseMsg = JSON.stringify({
 				"lId":localStorage.getItem("ll"),
 				"cName":userClass,
-				"lWeek":$(".week").val(),
+				"lWeek":$(".c-week").val(),
 				"lMon":lMon,
 				"lTue":lTue,
 				"lWed":lWed,
@@ -351,7 +351,7 @@ $(document).ready(function(){
 			
 
 		}else{
-			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
+			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".c-week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
 			console.log(courseMsg);
 			ajax("http://172.20.2.164:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
 				$(".delayimg").css({"opacity":1});
