@@ -135,29 +135,34 @@ function addPhotoAjax() {
         cid: cid
     };
 
-    console.log(value);
+    if(input.val() == ""){
+        alert("请输入相册名称！");
+    }else  if(textarea.val() == ""){
+        alert("请输入相册描述");
+    }else {
+        $.ajax({
+            type: "post",
+            url: "http://172.20.2.164:8080/kindergarden/PcAdd",
+            data: "PictureContentJson="+JSON.stringify(value),
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
+            success: function () {
+                console.log("success");
+                alert("相册创建成功，请进入相册添加照片");
+                window.location.reload();
+            },
+            error: function (err) {
+                console.log(err.status);
+                alert("出现错误："+err.status);
+            }
+        });
+    }
 
 
 
 
-    $.ajax({
-        type: "post",
-        url: "http://172.20.2.164:8080/kindergarden/PcAdd",
-        data: "PictureContentJson="+JSON.stringify(value),
-        beforeSend: function (xhr) {
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        },
-        success: function () {
-            console.log("success");
-            alert("相册创建成功，请进入相册添加照片");
-            window.location.reload();
-        },
-        error: function (err) {
-            console.log(err.status);
-            alert("出现错误："+err.status);
-        }
-    });
 
 
 }
