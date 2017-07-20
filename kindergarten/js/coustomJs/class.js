@@ -92,7 +92,7 @@ function close_new_class(){
 // 判断周数和时间，隐藏上过的课；
 $(function(){
 	var thenull = getClassWeek();
-	nowWeekBG();
+	// nowWeekBG();
 })
 
 	function nowWeekBG(){
@@ -106,25 +106,25 @@ $(function(){
 			$(".class-time").removeClass("class-end");
 		}else{
 			for(var i=1; i<=4; i++){
-				for(var j=1; j<week; j++){
+				for(var j=2; j<week+1; j++){
 					// console.log("第"+i+"列，第"+j+"行:"+$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").html());
 					$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").addClass("class-end");
 				}
 			}
 			if (hour>=9 && hour <10) {
-				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
-			}else if (hour>=10 && hour<14) {
-				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
 				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
-			}else if (hour>=14 && hour<15) {
-				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=10 && hour<14) {
 				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
 				$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
-			}else if (hour>=15) {
-				$(".class-table tbody tr:nth-child(1) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=14 && hour<15) {
 				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
 				$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
 				$(".class-table tbody tr:nth-child(4) td:eq("+week+")").addClass("class-end");
+			}else if (hour>=15) {
+				$(".class-table tbody tr:nth-child(2) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(3) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(4) td:eq("+week+")").addClass("class-end");
+				$(".class-table tbody tr:nth-child(5) td:eq("+week+")").addClass("class-end");
 			};
 		}
 	}

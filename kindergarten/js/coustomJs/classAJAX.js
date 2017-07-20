@@ -96,32 +96,42 @@ $(document).ready(function(){
 			$(".new-table tr:eq(1) td:eq(1) input").val(),
 			$(".new-table tr:eq(2) td:eq(1) input").val(),
 			$(".new-table tr:eq(3) td:eq(1) input").val(),
-			$(".new-table tr:eq(4) td:eq(1) input").val()
+			$(".new-table tr:eq(4) td:eq(1) input").val(),
+			$(".new-table tr:eq(5) td:eq(1) input").val(),
+			$(".new-table tr:eq(6) td:eq(1) input").val()
 			// ""
 		])
 		var lTue = String([
 			$(".new-table tr:eq(1) td:eq(2) input").val(),
 			$(".new-table tr:eq(2) td:eq(2) input").val(),		
 			$(".new-table tr:eq(3) td:eq(2) input").val(),
-			$(".new-table tr:eq(4) td:eq(2) input").val()
+			$(".new-table tr:eq(4) td:eq(2) input").val(),
+			$(".new-table tr:eq(5) td:eq(2) input").val(),
+			$(".new-table tr:eq(6) td:eq(2) input").val()
 		])
 		var lWed = String([
 			$(".new-table tr:eq(1) td:eq(3) input").val(),
 			$(".new-table tr:eq(2) td:eq(3) input").val(),		
 			$(".new-table tr:eq(3) td:eq(3) input").val(),
-			$(".new-table tr:eq(4) td:eq(3) input").val()
+			$(".new-table tr:eq(4) td:eq(3) input").val(),
+			$(".new-table tr:eq(5) td:eq(3) input").val(),
+			$(".new-table tr:eq(6) td:eq(3) input").val()
 		])
 		var lThu = String([
 			$(".new-table tr:eq(1) td:eq(4) input").val(),
 			$(".new-table tr:eq(2) td:eq(4) input").val(),		
 			$(".new-table tr:eq(3) td:eq(4) input").val(),
-			$(".new-table tr:eq(4) td:eq(4) input").val()
+			$(".new-table tr:eq(4) td:eq(4) input").val(),
+			$(".new-table tr:eq(5) td:eq(4) input").val(),
+			$(".new-table tr:eq(6) td:eq(4) input").val()
 		])
 		var lfri = String([
 			$(".new-table tr:eq(1) td:eq(5) input").val(),
 			$(".new-table tr:eq(2) td:eq(5) input").val(),		
 			$(".new-table tr:eq(3) td:eq(5) input").val(),
-			$(".new-table tr:eq(4) td:eq(5) input").val()
+			$(".new-table tr:eq(4) td:eq(5) input").val(),
+			$(".new-table tr:eq(5) td:eq(5) input").val(),
+			$(".new-table tr:eq(6) td:eq(5) input").val()
 		])
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
@@ -298,31 +308,41 @@ $(document).ready(function(){
 			$(".class-table tr:eq(1) td:eq(1) input").val(),
 			$(".class-table tr:eq(2) td:eq(1) input").val(),
 			$(".class-table tr:eq(3) td:eq(1) input").val(),
-			$(".class-table tr:eq(4) td:eq(1) input").val()
+			$(".class-table tr:eq(4) td:eq(1) input").val(),
+			$(".class-table tr:eq(5) td:eq(1) input").val(),
+			$(".class-table tr:eq(6) td:eq(1) input").val()
 		])
 		var lTue = String([
 			$(".class-table tr:eq(1) td:eq(2) input").val(),
 			$(".class-table tr:eq(2) td:eq(2) input").val(),		
 			$(".class-table tr:eq(3) td:eq(2) input").val(),
-			$(".class-table tr:eq(4) td:eq(2) input").val()
+			$(".class-table tr:eq(4) td:eq(2) input").val(),
+			$(".class-table tr:eq(5) td:eq(2) input").val(),
+			$(".class-table tr:eq(6) td:eq(2) input").val()
 		])
 		var lWed = String([
 			$(".class-table tr:eq(1) td:eq(3) input").val(),
 			$(".class-table tr:eq(2) td:eq(3) input").val(),		
 			$(".class-table tr:eq(3) td:eq(3) input").val(),
-			$(".class-table tr:eq(4) td:eq(3) input").val()
+			$(".class-table tr:eq(4) td:eq(3) input").val(),
+			$(".class-table tr:eq(5) td:eq(3) input").val(),
+			$(".class-table tr:eq(6) td:eq(3) input").val()
 		])
 		var lThu = String([
 			$(".class-table tr:eq(1) td:eq(4) input").val(),
 			$(".class-table tr:eq(2) td:eq(4) input").val(),		
 			$(".class-table tr:eq(3) td:eq(4) input").val(),
-			$(".class-table tr:eq(4) td:eq(4) input").val()
+			$(".class-table tr:eq(4) td:eq(4) input").val(),
+			$(".class-table tr:eq(5) td:eq(4) input").val(),
+			$(".class-table tr:eq(6) td:eq(4) input").val()
 		])
 		var lfri = String([
 			$(".class-table tr:eq(1) td:eq(5) input").val(),
 			$(".class-table tr:eq(2) td:eq(5) input").val(),		
 			$(".class-table tr:eq(3) td:eq(5) input").val(),
-			$(".class-table tr:eq(4) td:eq(5) input").val()
+			$(".class-table tr:eq(4) td:eq(5) input").val(),
+			$(".class-table tr:eq(5) td:eq(5) input").val(),
+			$(".class-table tr:eq(6) td:eq(5) input").val()
 		])
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
@@ -419,26 +439,36 @@ $(document).ready(function(){
 			$(".class-table tr:eq(2) td:eq(1)").html("")
 			$(".class-table tr:eq(3) td:eq(1)").html("")
 			$(".class-table tr:eq(4) td:eq(1)").html("")
+			$(".class-table tr:eq(5) td:eq(1)").html("")
+			$(".class-table tr:eq(6) td:eq(1)").html("")
 
 			$(".class-table tr:eq(1) td:eq(2)").html("")
 			$(".class-table tr:eq(2) td:eq(2)").html("")
 			$(".class-table tr:eq(3) td:eq(2)").html("")
 			$(".class-table tr:eq(4) td:eq(2)").html("")
+			$(".class-table tr:eq(5) td:eq(2)").html("")
+			$(".class-table tr:eq(6) td:eq(2)").html("")
 
 			$(".class-table tr:eq(1) td:eq(3)").html("")
 			$(".class-table tr:eq(2) td:eq(3)").html("")
 			$(".class-table tr:eq(3) td:eq(3)").html("")
 			$(".class-table tr:eq(4) td:eq(3)").html("")
+			$(".class-table tr:eq(5) td:eq(3)").html("")
+			$(".class-table tr:eq(6) td:eq(3)").html("")
 
 			$(".class-table tr:eq(1) td:eq(4)").html("")
 			$(".class-table tr:eq(2) td:eq(4)").html("")
 			$(".class-table tr:eq(3) td:eq(4)").html("")
 			$(".class-table tr:eq(4) td:eq(4)").html("")
+			$(".class-table tr:eq(5) td:eq(4)").html("")
+			$(".class-table tr:eq(6) td:eq(4)").html("")
 
 			$(".class-table tr:eq(1) td:eq(5)").html("")
 			$(".class-table tr:eq(2) td:eq(5)").html("")
 			$(".class-table tr:eq(3) td:eq(5)").html("")
 			$(".class-table tr:eq(4) td:eq(5)").html("")
+			$(".class-table tr:eq(5) td:eq(5)").html("")
+			$(".class-table tr:eq(6) td:eq(5)").html("")
 		}else{
 			$("#new-class").attr("disabled",true);
 			$("#change-class").attr("disabled",false)
@@ -480,26 +510,36 @@ $(document).ready(function(){
 			$(".class-table tr:eq(2) td:eq(1)").html(oneDay[1]);
 			$(".class-table tr:eq(3) td:eq(1)").html(oneDay[2]);
 			$(".class-table tr:eq(4) td:eq(1)").html(oneDay[3]);
+			$(".class-table tr:eq(5) td:eq(1)").html(oneDay[4]);
+			$(".class-table tr:eq(6) td:eq(1)").html(oneDay[5]);
 
 			$(".class-table tr:eq(1) td:eq(2)").html(twoDay[0]);
 			$(".class-table tr:eq(2) td:eq(2)").html(twoDay[1]);
 			$(".class-table tr:eq(3) td:eq(2)").html(twoDay[2]);
 			$(".class-table tr:eq(4) td:eq(2)").html(twoDay[3]);
+			$(".class-table tr:eq(5) td:eq(2)").html(twoDay[4]);
+			$(".class-table tr:eq(6) td:eq(2)").html(twoDay[5]);
 
 			$(".class-table tr:eq(1) td:eq(3)").html(threeDay[0]);
 			$(".class-table tr:eq(2) td:eq(3)").html(threeDay[1]);
 			$(".class-table tr:eq(3) td:eq(3)").html(threeDay[2]);
 			$(".class-table tr:eq(4) td:eq(3)").html(threeDay[3]);
+			$(".class-table tr:eq(5) td:eq(1)").html(threeDay[4]);
+			$(".class-table tr:eq(6) td:eq(1)").html(threeDay[5]);
 
 			$(".class-table tr:eq(1) td:eq(4)").html(fourDay[0]);
 			$(".class-table tr:eq(2) td:eq(4)").html(fourDay[1]);
 			$(".class-table tr:eq(3) td:eq(4)").html(fourDay[2]);
 			$(".class-table tr:eq(4) td:eq(4)").html(fourDay[3]);
+			$(".class-table tr:eq(5) td:eq(1)").html(fourDay[4]);
+			$(".class-table tr:eq(6) td:eq(1)").html(fourDay[5]);
 
 			$(".class-table tr:eq(1) td:eq(5)").html(fiveDay[0]);
 			$(".class-table tr:eq(2) td:eq(5)").html(fiveDay[1]);
 			$(".class-table tr:eq(3) td:eq(5)").html(fiveDay[2]);
 			$(".class-table tr:eq(4) td:eq(5)").html(fiveDay[3]);
+			$(".class-table tr:eq(5) td:eq(1)").html(fiveDay[4]);
+			$(".class-table tr:eq(6) td:eq(1)").html(fiveDay[5]);
 		}
 
 	}

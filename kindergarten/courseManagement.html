@@ -21,7 +21,7 @@
 </head>
 
 <body class="gray-bg">
-  <div class="wrapper wrapper-content">
+  <div class="wrapper wrapper-content course-margin">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 animated fadeInRight class-mg">
         <div class="mail-box-header">
@@ -41,9 +41,19 @@
         <div class="mail-box">
 
           <table class="table table-bordered class-table">
+            <colgroup>
+              <col style="width: 8.335%;">
+              <col style="width: 8.335%;">
+              <col style>
+              <col style>
+              <col style>
+              <col style>
+              <col style>
+            </colgroup>
             <thead>
               <tr>
-                <th>时间<span></span></th>
+                <th class = "class-th-time">时<span></span></th>
+                <th class = "class-th-time2">间<span></span></th>
                 <th>周一<span></span></th>
                 <th>周二<span></span></th>
                 <th>周三<span></span></th>
@@ -53,7 +63,8 @@
             </thead>
             <tbody>
               <tr>
-                <td class="class-time">上午9:00~9:45</td>
+                <td class="class-time CT-B class-end"></td>
+                <td class="class-time class-end"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -61,7 +72,8 @@
                 <td></td>
               </tr>
               <tr>
-                <td class="class-time">上午10:00~10:45</td>
+                <td class="class-time CT-B CT-T class-end">上午</td>
+                <td class="class-time class-end"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -69,7 +81,8 @@
                 <td></td>
               </tr>
               <tr>
-                <td class="class-time">下午2:00~2:45</td>
+                <td class="class-time CT-T class-end"></td>
+                <td class="class-time class-end"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -77,12 +90,35 @@
                 <td></td>
               </tr>
               <tr>
-                <td class="class-time">下午3:00~3:45</td>
+                <td class="class-time CT-B class-end"></td>
+                <td class="class-time class-end"></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
+              </tr>
+              <tr>
+                <td class="class-time CT-B CT-T class-end">下午</td>
+                <td class="class-time class-end"></td>
+                <td>物理课</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="class-time CT-T class-end"></td>
+                <td class="class-time class-end"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="class-time class-end">周工作重</td>
+                <td colspan="6"></td>
               </tr>
             </tbody>
           </table>
@@ -115,9 +151,18 @@
     </div>
     <div class="new-box">
       <table class="table table-bordered new-table" id="new-table">
+        <colgroup>
+          <col style="width: 5.556%;">
+          <col style="width: 11.113%;">
+          <col style>
+          <col style>
+          <col style>
+          <col style>
+          <col style>
+        </colgroup>
         <thead>
           <tr>
-            <th>时间</th>
+            <th colspan="2">时间</th>
             <th>周一</th>
             <th>周二</th>
             <th>周三</th>
@@ -127,7 +172,8 @@
         </thead>
         <tbody>
           <tr>
-            <td class="class-time">上午9:00~9:45</td>
+            <td class="class-time CT-B class-end"></td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
@@ -135,7 +181,8 @@
             <td><input class='class-change-input' value=''></td>
           </tr>
           <tr>
-            <td class="class-time">上午10:00~10:45</td>
+            <td class="class-time CT-B CT-T class-end">上午</td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
@@ -143,7 +190,8 @@
             <td><input class='class-change-input' value=''></td>
           </tr>
           <tr>
-            <td class="class-time">下午2:00~2:45</td>
+            <td class="class-time CT-T class-end"></td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
@@ -151,12 +199,35 @@
             <td><input class='class-change-input' value=''></td>
           </tr>
           <tr>
-            <td class="class-time">下午3:00~3:45</td>
+            <td class="class-time CT-B class-end"></td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
+          </tr><tr>
+            <td class="class-time CT-B CT-T class-end">下午</td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+          <tr>
+            <td class="class-time CT-T class-end"></td>
+            <td class="class-end"><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td>
+          </tr>
+          <tr>
+            <td class="class-end">周工作重</td>
+            <!-- <td colspan="6"><input class='class-change-input' value=''></td> -->
+            <td colspan="6"><textarea style="width: 94.44%;resize: none"></textarea></td>
           </tr>
         </tbody>
       </table>
