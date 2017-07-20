@@ -59,13 +59,17 @@ $(document).ready(function () {
             //上传图片
             var photoAdd = $("input.photoAdd");
             var uploadPhoto = $(".uploadPhoto");
+            var uploadMultipleBoolean = false;
+            if($("img").length != 0){
+                uploadMultipleBoolean = true;
+            }
 
             photoAdd.click(function () {
                 var oIframe = document.createElement("iframe");
                 oIframe.className = "oIframe";
                 oIframe.width = "100%";
                 oIframe.height = "100%";
-                oIframe.src = "albumUpload.html";
+                oIframe.src = "albumUpload.html?uploadMultipleBoolean="+uploadMultipleBoolean;
                 uploadPhoto[0].appendChild(oIframe);
                 gray.show();
                 uploadPhoto.show(200);

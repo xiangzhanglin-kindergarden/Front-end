@@ -24,7 +24,8 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>照片上传</h5>
+                    <h4>照片上传</h4>
+                    <p>首次上传只能上传一张照片（作为封面）</p>
                 </div>
                 <div class="ibox-content">
                     <form id="my-awesome-dropzone" class="dropzone" name = "ima" method="post"><!--提交地址-->
@@ -57,13 +58,16 @@
 
         var theImgData = sessionStorage.getItem("theImgData");
         var picId = JSON.parse(theImgData).picid;
+        var uploadMultipleBoolean = false;
+        var href = window.location.href;
+        uploadMultipleBoolean = href.split('=')[1];
 
 
         Dropzone.options.myAwesomeDropzone = {
 //            url: "#",
             url: "http://172.20.2.164:8080/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
             autoProcessQueue: false,
-            uploadMultiple: true,//允许 Dropzone 一次提交多个文件
+            uploadMultiple: uploadMultipleBoolean,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,
             maxFiles: 100,
             addRemoveLinks: true,
@@ -85,10 +89,8 @@
                     myDropzone.processQueue();
                 });
                 this.on("sendingmultiple", function () {});
-                this.on("successmultiple", function (files) {
-                    console.log(files);
-                    // alert("提交成功!请刷新页面");
-                    window.location.reload();
+                this.on("successmultiple", function () {
+                    window.history.back();
                 });
                 this.on("errormultiple", function (files, response) {
                 });
