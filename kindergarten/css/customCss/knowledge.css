@@ -139,15 +139,19 @@ color: #000;
 		float: right;
 		margin-right: 30px;
 	}
-	.know-newpage-btn button{
+	.know-newpage-btn button.btn-warning{
+		margin-left: 10px;
 		color: #fff;
 		border-color: rgb(255,153,102);
 		background-color: rgb(255, 153, 102)
 	}
-	.know-newpage-btn button:hover{
+	.know-newpage-btn button.btn-warning:hover{
 		color: #fff;
 		border-color: rgb(255,153,102);
 		background-color: #FFA97E
+	}
+	.renews{
+		margin-right: 10px;
 	}
 
 /*      全部、新闻、公告 分类按钮 部分  END    */

@@ -262,6 +262,27 @@ $(function(){
 	      })
 	    }
 	  })
+    $(".renews").bind("click",function(){
+      $.ajax({
+        type:"get",
+        url:"http://"+IPnub+address+trans,
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          $(".know-lists").remove();
+          addList(data);
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+    })
 	})
 
 /*    输入搜索  END*/
