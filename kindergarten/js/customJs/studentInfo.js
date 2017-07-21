@@ -689,13 +689,14 @@ function showDetails(data) {
             for(var i=0;i<row.length;i++){
                 var divContnet = document.createElement("div");
                 divContnet.className = "contentData";
-                theContent.append(divContnet);
+                
                 var spanCaption = document.createElement("span");
                 var spanContent = document.createElement("span");
                 divContnet.appendChild(spanCaption);
                 divContnet.appendChild(spanContent);
                 spanCaption.innerHTML = caption[i];
                 spanContent.innerHTML = row[i];
+                theContent.appendChild(divContnet);
             }
 
 

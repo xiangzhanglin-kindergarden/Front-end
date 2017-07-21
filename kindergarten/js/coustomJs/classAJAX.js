@@ -544,6 +544,3 @@ $(document).ready(function(){
 
 	}
 })
-
-
-
