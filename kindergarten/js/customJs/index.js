@@ -43,4 +43,15 @@ $(document).ready(function () {
     // console.log(pushname);
     sessionStorage.setItem("pushname",pushname);
     console.log(sessionStorage.getItem("pushname"));
+
+
+    $(".J_tabExit").bind("click",function(){
+        sessionStorage.removeItem("user");
+        sessionStorage.removeItem("nub");
+        sessionStorage.removeItem("teacherData");
+        window.location.href="login.html";
+    })
+
+
 });
+

@@ -249,12 +249,13 @@ color: #000;
 		float: right;
 		margin-right: 30px;
 	}
-	.news-newpage-btn button{
+	.news-newpage-btn button.adds{
+		margin-left: 10px!important;;
 		color: #fff;
 		border-color: rgb(255,153,102);
 		background-color: rgb(255, 153, 102)
 	}
-	.news-newpage-btn button:hover{
+	.news-newpage-btn button.adds:hover{
 		color: #fff;
 		border-color: rgb(255,153,102);
 		background-color: #FFA97E

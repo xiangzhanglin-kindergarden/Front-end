@@ -245,10 +245,11 @@ $(document).ready(function(){
 				"lWed":null,
 				"lThu":null,
 				"lfri":null,
-				// "cid":userClass,
 			});
+			console.log(lesson);
 			ajax(
 				"http://172.20.2.164:8080/kindergarden/Lessonshowteacher",
+				// "http://172.20.2.164:8080/kindergarden/LessonShow",
 				"lessonJson="+lesson,
 				showLesson
 			);
@@ -286,8 +287,11 @@ $(document).ready(function(){
 	$("#change-class").on("click",function(){
 		$(".differ-class-box [name='class']").attr("disabled",true);
 		$(".differ-class-box [name='week']").attr("disabled",true);
+		console.log("this");
 		$("td").each(function(){
-			if ($(this).attr("class") != "class-time"){
+			console.log($(this).attr("class"));
+			// if ($(this).attr("class")!="class-time CT-B class-end"|| $(this).attr("class")!="class-time CT-B CT-T class-end" || $(this).attr("class")!="class-time CT-T class-end"){
+			if ($(this).attr("class")==undefined || $(this).attr("class")=="" || $(this).attr("class")=="class-time class-end" || $(this).attr("class")=="class-end"){
 				$(this).html("<input class='class-change-input' value='"+$(this).html()+"'>")
 			}
 		})
@@ -381,14 +385,16 @@ $(document).ready(function(){
 						console.log(value);
 						if (value!="0") {
 							$(this).append(value);
-							$("#change-class-yes").animate({"opacity":0});
-							$("#change-class-no").animate({"opacity":0});
+							// $("#change-class-yes").animate({"opacity":0});
+							// $("#change-class-no").animate({"opacity":0});
 
 							$("#change-class-yes").addClass("myHidden");
 							$("#change-class-no").addClass("myHidden");
 							setTimeout(function(){
 								$("#change-class").removeClass("myHidden");
 								$("#change-class").animate({"opacity":1});
+								// $("#change-class-yes").animate({"opacity":1});
+								// $("#change-class-no").animate({"opacity":1});
 							},1);
 							$(".differ-class-box [name='class']").attr("disabled",false);
 							$(".differ-class-box [name='week']").attr("disabled",false);
@@ -497,8 +503,9 @@ $(document).ready(function(){
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
 				obj[3] = obj[3].replace(/"/g,"");
+				obj[5] = obj[5].replace(/"/g,"");
 				
-				for(i=0;i<=3;i++){
+				for(i=0;i<=5;i++){
 					if (obj[i]==0) {
 						obj[i]=null;
 					};

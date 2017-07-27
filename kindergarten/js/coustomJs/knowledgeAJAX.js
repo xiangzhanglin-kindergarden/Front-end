@@ -206,6 +206,7 @@ $(function(){
 /*+++++++++++++++++++++++++++++++++++++++*/
 
 /*   输入搜索  START*/
+var k_s_flag = 0;
 
 	$(function(){
 	  $(".know-search button").bind("click",function(){
@@ -213,26 +214,30 @@ $(function(){
 	    var keytime = $(".k-i-time input").val();
 	    var keyname = $(".k-i-person input").val();
 	    if (keyword==""&&keytime==""&&keyname=="") {
-	      // alert("请输入要查询的内容！");
-        $.ajax({
-          type:"get",
-          url:"http://"+IPnub+address+trans,
-          dataType:"JSON",
-          contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-          beforeSend:function(xhr){
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
-          },
-          success:function(data){
-            $(".know-lists").remove();
-            addList(data);
-          },
-          error:function(jqHXR, textStatus, errorThrown){
-            console.log("错误:"+jqHXR.status);
-            console.log("错误:"+textStatus);
-            console.log("错误:"+errorThrown);
-          }
-        })
+        if (k_s_flag==0) {
+  	      alert("请输入要查询的内容！");
+        }else{
+          $.ajax({
+            type:"get",
+            url:"http://"+IPnub+address+trans,
+            dataType:"JSON",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend:function(xhr){
+              xhr.withCredentials = true;
+              xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+            },
+            success:function(data){
+              $(".know-lists").remove();
+              addList(data);
+              k_s_flag=0;
+            },
+            error:function(jqHXR, textStatus, errorThrown){
+              console.log("错误:"+jqHXR.status);
+              console.log("错误:"+textStatus);
+              console.log("错误:"+errorThrown);
+            }
+          })
+        }
 	    }else{
 	      $.ajax({
 	        type:"get",
@@ -244,6 +249,7 @@ $(function(){
 	          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
 	        },
 	        success:function(data){
+            k_s_flag = 1;
 	          
             console.log(data);
             if (data.length==0) {
@@ -273,6 +279,10 @@ $(function(){
           xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
         },
         success:function(data){
+          k_s_flag=0;
+          $(".k-i-keyword input").val("");
+          $(".k-i-time input").val("");
+          $(".k-i-person input").val("");
           $(".know-lists").remove();
           addList(data);
         },

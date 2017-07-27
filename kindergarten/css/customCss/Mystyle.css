@@ -195,10 +195,11 @@ color: #000;
 }
 
 .class-table:not(.new-table) td:not(.class-time):not(.class-end):hover{
-	background: url(../img/class-over.png);
-	background-repeat: no-repeat;
-	background-size: 15%;
-	background-position: 90%,100%;
+	/*background: url(../img/class-over.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-size: 15%;*/
+	/*background-position: 90%,100%;*/
+	background: rgba(102,102,102,0.4);
 }
 
 .class-table th,td{
@@ -241,15 +242,16 @@ color: #000;
 }
 .class-table tbody td:not(.class-time){
 	border: 0;
-	color: #fff;
-	background: rgba(0,0,0,0.1);
+	color: #000;
+	background: rgba(245,245,245,0.3);
 }
 .class-end{
 	height: 100%;
 	background: rgb(245,245,245);
 }
 .class-time.class-end{
-	background: rgba(245,245,245,0.9);
+	background: rgba(0,0,0,0.1);
+	
 }
 .class-change-input{
 	width: 100%;
@@ -389,7 +391,7 @@ color: #000;
 	font-size: 16px;
 	font-weight: 500;
 	/*color: #6C6C6C;*/
-}.class-table tbody
+}
 
 .delayimg{
 	position: fixed;

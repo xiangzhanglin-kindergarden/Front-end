@@ -362,7 +362,7 @@ $(function(){
       //0为老师，1为校长
       if (usertype==0) {
         lookkind = $("body").attr("name");
-        if (lookkind == "body") {
+        if (lookkind == "all") {
           $(".news-list-func .n-l-f-btn-del").remove();
           $(".news-list-func .n-l-f-btn-c").css({"width":"40%"});
         }
@@ -451,49 +451,95 @@ $(function(){
 /*+++++++++++++++++++++++++++++++++++++++*/
 
 /*   输入搜索  START*/
-
+var n_s_flag = 0;
 $(function(){
   $(".news-search button").bind("click",function(){
     var keyword = $(".n-i-keyword input").val();
     var keytime = $(".n-i-time input").val();
     var keyname = $(".n-i-person input").val();
     if (keyword==""&&keytime==""&&keyname=="") {
-      $.ajax({
-        type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
-        dataType:"JSON",
-        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-        beforeSend:function(xhr){
-          xhr.withCredentials = true;
-          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
-        },
-        success:function(data){
-          if (data.length==0||data.false=="false") {
-            $(".news-lists").remove();
-          }else{
-            $(".news-lists").remove();
+      if (n_s_flag==0) {
+        alert("请输入搜索内容");
+      }else{
+        n_s_flag = 1;
+        if (usertype==0) {
+          $.ajax({
+            type:"get",
+            url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+            dataType:"JSON",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend:function(xhr){
+              xhr.withCredentials = true;
+              xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+            },
+            success:function(data){
+              if (data.length==0||data.false=="false") {
+                $(".news-lists").remove();
+              }else{
+                $(".news-lists").remove();
 
-            $(".news-nchange-btn button").removeClass("btn-info");
-            $(".news-nchange-btn button").removeClass("btn-white");
-            $(".news-nchange-btn button").addClass("btn-white");
-            $(".news-nchange-btn button:first-child").addClass("btn-info");
-            $(".news-nchange-btn button:first-child").removeClass("btn-white");
-            
-            $(".n-s-kind").removeClass("n-s-chosed");
-            $("#n-s-all").addClass("n-s-chosed");
+                $(".news-nchange-btn button").removeClass("btn-info");
+                $(".news-nchange-btn button").removeClass("btn-white");
+                $(".news-nchange-btn button").addClass("btn-white");
+                $(".news-nchange-btn button:first-child").addClass("btn-info");
+                $(".news-nchange-btn button:first-child").removeClass("btn-white");
+                
+                // $(".n-s-kind").removeClass("n-s-chosed");
+                // $("#n-s-all").addClass("n-s-chosed");
 
 
 
-            addList(data);
+                addList(data);
 
-          }
-        },
-        error:function(jqHXR, textStatus, errorThrown){
-          console.log("错误:"+jqHXR.status);
-          console.log("错误:"+textStatus);
-          console.log("错误:"+errorThrown);
+              }
+            },
+            error:function(jqHXR, textStatus, errorThrown){
+              console.log("错误:"+jqHXR.status);
+              console.log("错误:"+textStatus);
+              console.log("错误:"+errorThrown);
+            }
+          })
+        }else{
+          $.ajax({
+            type:"get",
+            url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+            dataType:"JSON",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend:function(xhr){
+              xhr.withCredentials = true;
+              xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+            },
+            success:function(data){
+              if (data.length==0||data.false=="false") {
+                $(".news-lists").remove();
+              }else{
+                $(".news-lists").remove();
+
+                $(".news-nchange-btn button").removeClass("btn-info");
+                $(".news-nchange-btn button").removeClass("btn-white");
+                $(".news-nchange-btn button").addClass("btn-white");
+                $(".news-nchange-btn button:first-child").addClass("btn-info");
+                $(".news-nchange-btn button:first-child").removeClass("btn-white");
+                
+                $(".n-s-kind").removeClass("n-s-chosed");
+                $("#n-s-all").addClass("n-s-chosed");
+
+
+
+                addList(data);
+
+              }
+            },
+            error:function(jqHXR, textStatus, errorThrown){
+              console.log("错误:"+jqHXR.status);
+              console.log("错误:"+textStatus);
+              console.log("错误:"+errorThrown);
+            }
+          })
         }
-      })
+      }
+      
+      
 
     }else{
       if (keytime!="") {
@@ -511,6 +557,7 @@ $(function(){
           xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
         },
         success:function(data){
+          n_s_flag = 1;
           console.log(data);
           $(".news-nchange-btn button").addClass("btn-white");
           $(".news-nchange-btn button").removeClass("btn-info");
@@ -519,6 +566,91 @@ $(function(){
             page(1);
           }else{
             $(".news-lists").remove();
+            addList(data);
+
+          }
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+    }
+  })
+  $(".renews").bind("click",function(){
+
+    if (usertype==0) {
+      $.ajax({
+        type:"get",
+        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          n_s_flag = 1;
+          if (data.length==0||data.false=="false") {
+            $(".news-lists").remove();
+          }else{
+            $(".news-lists").remove();
+
+            $(".news-nchange-btn button").removeClass("btn-info");
+            $(".news-nchange-btn button").removeClass("btn-white");
+            $(".news-nchange-btn button").addClass("btn-white");
+            $(".news-nchange-btn button:first-child").addClass("btn-info");
+            $(".news-nchange-btn button:first-child").removeClass("btn-white");
+            
+            // $(".n-s-kind").removeClass("n-s-chosed");
+            // $("#n-s-all").addClass("n-s-chosed");
+
+            $(".n-i-keyword input").val("");
+            $(".n-i-time input").val("");
+            $(".n-i-person input").val("");
+
+
+            addList(data);
+
+          }
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+    }else{
+      $.ajax({
+        type:"get",
+        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          n_s_flag = 1;
+          if (data.length==0||data.false=="false") {
+            $(".news-lists").remove();
+          }else{
+            $(".news-lists").remove();
+
+            $(".news-nchange-btn button").removeClass("btn-info");
+            $(".news-nchange-btn button").removeClass("btn-white");
+            $(".news-nchange-btn button").addClass("btn-white");
+            $(".news-nchange-btn button:first-child").addClass("btn-info");
+            $(".news-nchange-btn button:first-child").removeClass("btn-white");
+            
+            $(".n-s-kind").removeClass("n-s-chosed");
+            $("#n-s-all").addClass("n-s-chosed");
+
+            $(".n-i-keyword input").val("");
+            $(".n-i-time input").val("");
+            $(".n-i-person input").val("");
+
             addList(data);
 
           }

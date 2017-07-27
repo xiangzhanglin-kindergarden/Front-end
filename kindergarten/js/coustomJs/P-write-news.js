@@ -329,12 +329,23 @@ $(function(){
 /*   上传AJAX   */
   $(function(){
     $(".if-w-sub-btn").click(function(){
-      var pdstate = "待审核";
-      UpAJAX(pdstate);
+      retitle = $(".if-w-change-title input").val();     //获取标题
+      if (retitle==null||retitle==undefined||retitle=="") {
+        alert("请输入标题！");
+      }else{
+        var pdstate = "待审核";
+        UpAJAX(pdstate);
+      }
+      
     })
     $(".if-w-save-btn").click(function(){
-      var pdstate = "草稿";
-      UpAJAX(pdstate);
+      retitle = $(".if-w-change-title input").val();      //获取标题
+      if (retitle==null||retitle==undefined||retitle=="") {
+        alert("请输入标题！");
+      }else{
+        var pdstate = "草稿";
+        UpAJAX(pdstate);
+      }
     })
   })
 
@@ -342,7 +353,7 @@ $(function(){
 
     restate = pdstate;
 
-    retitle = $(".if-w-change-title input").val(); //获取标题
+    // retitle = $(".if-w-change-title input").val(); //获取标题
 
     //获取富文本内容
     var html = editor.$txt.html();

@@ -139,7 +139,7 @@ oldcover = $(".if-d-cover img").attr('src');
 
 /*    弹出添加框  */
 	$(function(){
-		$(".know-newpage-btn button").click(function(){
+		$(".know-newpage-btn .adds").click(function(){
 			// 移出隐藏
 			$(".know-new-box").removeClass("myHidden");
 			$(".cover").removeClass("myHidden");
@@ -151,7 +151,7 @@ oldcover = $(".if-d-cover img").attr('src');
 			$(".cover").addClass("fadeIn");
 
 			// “新增”按钮不可使用
-			$(".know-newpage-btn button").attr("disable",true);
+			$(".know-newpage-btn .adds").attr("disable",true);
 		})
 	})
 
