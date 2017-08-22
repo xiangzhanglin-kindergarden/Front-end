@@ -258,11 +258,38 @@
   font-size: 30px;
   text-align: center;
 }
-
-
-
-
-
+.classtable .CT-B{
+  border-bottom: 0;
+}
+.classtable .CT-T{
+  border-top: 0;
+}
+.classtable .class-th-time{
+  padding-right: 1px;
+  border-right: 0;
+  text-align: right;
+}
+.classtable .class-th-time2{
+  padding-left: 1px;
+  border-left: 0;
+  text-align: left;
+}
+.classtable thead th{
+  position: relative;
+}
+.classtable thead span{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  /*color: #6C6C6C;*/
+}
+@media screen and (max-width: 400px){
+  .phoneBorderBox{
+    width: 200%;
+  }
+}
 
 
 /*

@@ -121,31 +121,41 @@ $(document).ready(function(){
     };
     
     if(data.result == false){
-      alert("当前周和班级的课程还未添加")
-      $(".classtable table tr:eq(1) td:eq(1)").html("")
-      $(".classtable table tr:eq(2) td:eq(1)").html("")
-      $(".classtable table tr:eq(3) td:eq(1)").html("")
-      $(".classtable table tr:eq(4) td:eq(1)").html("")
+      // alert("当前周和班级的课程还未添加")
+      $(".classtable table tr:eq(1) td:eq(2)").html("");
+      $(".classtable table tr:eq(2) td:eq(2)").html("");
+      $(".classtable table tr:eq(3) td:eq(2)").html("");
+      $(".classtable table tr:eq(4) td:eq(2)").html("");
+      $(".classtable table tr:eq(5) td:eq(2)").html("");
+      $(".classtable table tr:eq(6) td:eq(2)").html("");
 
-      $(".classtable table tr:eq(1) td:eq(2)").html("")
-      $(".classtable table tr:eq(2) td:eq(2)").html("")
-      $(".classtable table tr:eq(3) td:eq(2)").html("")
-      $(".classtable table tr:eq(4) td:eq(2)").html("")
+      $(".classtable table tr:eq(1) td:eq(3)").html("");
+      $(".classtable table tr:eq(2) td:eq(3)").html("");
+      $(".classtable table tr:eq(3) td:eq(3)").html("");
+      $(".classtable table tr:eq(4) td:eq(3)").html("");
+      $(".classtable table tr:eq(5) td:eq(3)").html("");
+      $(".classtable table tr:eq(6) td:eq(3)").html("");
 
-      $(".classtable table tr:eq(1) td:eq(3)").html("")
-      $(".classtable table tr:eq(2) td:eq(3)").html("")
-      $(".classtable table tr:eq(3) td:eq(3)").html("")
-      $(".classtable table tr:eq(4) td:eq(3)").html("")
+      $(".classtable table tr:eq(1) td:eq(4)").html("");
+      $(".classtable table tr:eq(2) td:eq(4)").html("");
+      $(".classtable table tr:eq(3) td:eq(4)").html("");
+      $(".classtable table tr:eq(4) td:eq(4)").html("");
+      $(".classtable table tr:eq(5) td:eq(4)").html("");
+      $(".classtable table tr:eq(6) td:eq(4)").html("");
 
-      $(".classtable table tr:eq(1) td:eq(4)").html("")
-      $(".classtable table tr:eq(2) td:eq(4)").html("")
-      $(".classtable table tr:eq(3) td:eq(4)").html("")
-      $(".classtable table tr:eq(4) td:eq(4)").html("")
+      $(".classtable table tr:eq(1) td:eq(5)").html("");
+      $(".classtable table tr:eq(2) td:eq(5)").html("");
+      $(".classtable table tr:eq(3) td:eq(5)").html("");
+      $(".classtable table tr:eq(4) td:eq(5)").html("");
+      $(".classtable table tr:eq(5) td:eq(5)").html("");
+      $(".classtable table tr:eq(6) td:eq(5)").html("");
 
-      $(".classtable table tr:eq(1) td:eq(5)").html("")
-      $(".classtable table tr:eq(2) td:eq(5)").html("")
-      $(".classtable table tr:eq(3) td:eq(5)").html("")
-      $(".classtable table tr:eq(4) td:eq(5)").html("")
+      $(".classtable table tr:eq(1) td:eq(6)").html("");
+      $(".classtable table tr:eq(2) td:eq(6)").html("");
+      $(".classtable table tr:eq(3) td:eq(6)").html("");
+      $(".classtable table tr:eq(4) td:eq(6)").html("");
+      $(".classtable table tr:eq(5) td:eq(6)").html("");
+      $(".classtable table tr:eq(6) td:eq(6)").html("");
     }else{
       localStorage.setItem("ll",data.lId);
       var reg = /[^,]+/g;
@@ -180,30 +190,40 @@ $(document).ready(function(){
         }
         return obj;
       }
-      $(".classtable table tr:eq(1) td:eq(1)").html(oneDay[0]);
-      $(".classtable table tr:eq(2) td:eq(1)").html(oneDay[1]);
-      $(".classtable table tr:eq(3) td:eq(1)").html(oneDay[2]);
-      $(".classtable table tr:eq(4) td:eq(1)").html(oneDay[3]);
+      $(".classtable table tr:eq(1) td:eq(2)").html(oneDay[0]);
+      $(".classtable table tr:eq(2) td:eq(2)").html(oneDay[1]);
+      $(".classtable table tr:eq(3) td:eq(2)").html(oneDay[2]);
+      $(".classtable table tr:eq(4) td:eq(2)").html(oneDay[3]);
+      $(".classtable table tr:eq(5) td:eq(2)").html(oneDay[4]);
+      $(".classtable table tr:eq(6) td:eq(2)").html(oneDay[5]);
 
-      $(".classtable table tr:eq(1) td:eq(2)").html(twoDay[0]);
-      $(".classtable table tr:eq(2) td:eq(2)").html(twoDay[1]);
-      $(".classtable table tr:eq(3) td:eq(2)").html(twoDay[2]);
-      $(".classtable table tr:eq(4) td:eq(2)").html(twoDay[3]);
+      $(".classtable table tr:eq(1) td:eq(3)").html(twoDay[0]);
+      $(".classtable table tr:eq(2) td:eq(3)").html(twoDay[1]);
+      $(".classtable table tr:eq(3) td:eq(3)").html(twoDay[2]);
+      $(".classtable table tr:eq(4) td:eq(3)").html(twoDay[3]);
+      $(".classtable table tr:eq(5) td:eq(3)").html(twoDay[4]);
+      $(".classtable table tr:eq(6) td:eq(3)").html(twoDay[5]);
 
-      $(".classtable table tr:eq(1) td:eq(3)").html(threeDay[0]);
-      $(".classtable table tr:eq(2) td:eq(3)").html(threeDay[1]);
-      $(".classtable table tr:eq(3) td:eq(3)").html(threeDay[2]);
-      $(".classtable table tr:eq(4) td:eq(3)").html(threeDay[3]);
+      $(".classtable table tr:eq(1) td:eq(4)").html(threeDay[0]);
+      $(".classtable table tr:eq(2) td:eq(4)").html(threeDay[1]);
+      $(".classtable table tr:eq(3) td:eq(4)").html(threeDay[2]);
+      $(".classtable table tr:eq(4) td:eq(4)").html(threeDay[3]);
+      $(".classtable table tr:eq(5) td:eq(4)").html(threeDay[4]);
+      $(".classtable table tr:eq(6) td:eq(4)").html(threeDay[5]);
 
-      $(".classtable table tr:eq(1) td:eq(4)").html(fourDay[0]);
-      $(".classtable table tr:eq(2) td:eq(4)").html(fourDay[1]);
-      $(".classtable table tr:eq(3) td:eq(4)").html(fourDay[2]);
-      $(".classtable table tr:eq(4) td:eq(4)").html(fourDay[3]);
+      $(".classtable table tr:eq(1) td:eq(5)").html(fourDay[0]);
+      $(".classtable table tr:eq(2) td:eq(5)").html(fourDay[1]);
+      $(".classtable table tr:eq(3) td:eq(5)").html(fourDay[2]);
+      $(".classtable table tr:eq(4) td:eq(5)").html(fourDay[3]);
+      $(".classtable table tr:eq(5) td:eq(5)").html(fourDay[4]);
+      $(".classtable table tr:eq(6) td:eq(5)").html(fourDay[5]);
 
-      $(".classtable table tr:eq(1) td:eq(5)").html(fiveDay[0]);
-      $(".classtable table tr:eq(2) td:eq(5)").html(fiveDay[1]);
-      $(".classtable table tr:eq(3) td:eq(5)").html(fiveDay[2]);
-      $(".classtable table tr:eq(4) td:eq(5)").html(fiveDay[3]);
+      $(".classtable table tr:eq(1) td:eq(6)").html(fiveDay[0]);
+      $(".classtable table tr:eq(2) td:eq(6)").html(fiveDay[1]);
+      $(".classtable table tr:eq(3) td:eq(6)").html(fiveDay[2]);
+      $(".classtable table tr:eq(4) td:eq(6)").html(fiveDay[3]);
+      $(".classtable table tr:eq(5) td:eq(6)").html(fiveDay[4]);
+      $(".classtable table tr:eq(6) td:eq(6)").html(fiveDay[5]);
     }
   }
 })
