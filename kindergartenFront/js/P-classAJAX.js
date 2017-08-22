@@ -23,19 +23,16 @@ $(document).ready(function(){
 
 
       var week = $(".dform-group option:selected").val();
-      
+
+
       IP = "172.20.2.164:8080/";
       url = "kindergarden/LessonShow";
 
-
-
-    /*
-      cClass = "大一班";
-    */
-
-      myweek = "1";
+      myweek = $(".classtable table").attr("name");
       cClass = $(".classtable table caption span").html();
       console.log(cClass);
+
+      $('.reremove').css({"display":"none"});
 
       //myjson  字符串
       myjson = {
@@ -76,6 +73,7 @@ $(document).ready(function(){
 
   //切换班的时候的功能函数
   $(".class-group select").on("change",function(){
+
     cClass = $(this).val();
     console.log(myweek);
     $(".classtable table caption span").html(cClass);
@@ -182,8 +180,9 @@ $(document).ready(function(){
       function delWord(obj){
         obj[0] = obj[0].replace(/"/g,"");
         obj[3] = obj[3].replace(/"/g,"");
+        obj[5] = obj[5].replace(/"/g,"");
         
-        for(i=0;i<=3;i++){
+        for(i=0;i<=5;i++){
           if (obj[i]==0) {
             obj[i]=null;
           };

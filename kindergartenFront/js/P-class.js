@@ -24,6 +24,8 @@ $(function(){
 	if (nowTeamFweek>=secondTeamFweek) {
 		week = nowTeamFweek - secondTeamFweek+1;
 	};
+	$(".classtable table").attr("name",week)
+	$(".reremove").html("第"+week+"周")
 })
 
 

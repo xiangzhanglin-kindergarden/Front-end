@@ -1,6 +1,8 @@
+var teacherData;
+
 $(function(){
-  var username = sessionStorage.getItem("user");
-  var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长，2位家长
+  username = sessionStorage.getItem("user");
+  usertype = sessionStorage.getItem("nub");  //0为老师，1为校长，2位家长
 
   console.log(usertype);
   console.log(username);
@@ -10,10 +12,10 @@ $(function(){
   allClass();
   if (usertype == 1){//园长
 
-      
+
 
   }else if (usertype == 0) {
-    
+
     teacherData = sessionStorage.getItem("teacherData");
     var data = JSON.parse(teacherData);
     console.log(data);
@@ -24,7 +26,7 @@ $(function(){
 
 
   }else if (usertype == 2) {
-    
+
     teacherData = sessionStorage.getItem("teacherData");
     var data = JSON.parse(teacherData);
     console.log(data);
@@ -51,10 +53,14 @@ function allClass(){
       xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     },
     success: function (classdata) {
+      var data = JSON.parse(teacherData);
+      var classId = data.cId;
+
       var classData = JSON.parse(classdata);
       var classlang = classData.length-2;
+
       for(var i=0;i<classlang;i++){
-        if (i==0) {
+        if (classData[i].cId == classId) {
           $(".classtable table caption span").html(classData[i].cName);
         };
         $(".removeTclassse").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
@@ -63,15 +69,6 @@ function allClass(){
     },
     error: function (err) {
       console.log(err.status);
-
     }
   });
 }
-
-
-$(function(){
-  $(".leaveBtn").bind("click",function(){
-    localStorage.removeItem('user');
-    localStorage.removeItem('nub');
-  })
-})

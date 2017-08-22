@@ -503,7 +503,7 @@ $(document).ready(function(){
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
 				obj[3] = obj[3].replace(/"/g,"");
-				// obj[5] = obj[5].replace(/"/g,"");
+				obj[5] = obj[5].replace(/"/g,"");
 				
 				for(i=0;i<=5;i++){
 					if (obj[i]==0) {

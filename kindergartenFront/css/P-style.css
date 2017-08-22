@@ -289,6 +289,9 @@
   .phoneBorderBox{
     width: 200%;
   }
+  .classtable thead span{
+    font-size: 13px;
+  }
 }
 
 
