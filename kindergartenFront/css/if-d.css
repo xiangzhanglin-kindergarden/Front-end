@@ -1,0 +1,629 @@
+
+/*
+ *
+ *   资讯详情 界面
+ *   
+ *
+*/
+
+
+
+.if-d-page-status{
+	padding-top: 1.5%;
+	padding-right: 1.6%;
+	padding-left: 3%;
+	height: 80px;
+	/*padding: 1.8% 1.6% 1.8% 3%;*/
+	border:1px dashed rgb(217,217,217);
+	margin-bottom: 50px;
+	font-size: 18px;
+	cursor: default;
+	overflow: hidden;
+}
+@media screen and (min-width: 1700px){
+	.if-d-page-status{
+		padding-top: 1.4%;
+		padding-right: 1.2%;
+		padding-left: 2.6%;
+		height: 80px;
+		/*padding: 1.4% 1.2% 1.4% 2.6%;*/
+		font-size: 20px;
+	}
+}
+.if-d-page-status span{
+	float: left;
+	margin-top: 0.2%;
+	margin-right: 2%;
+}
+.if-d-page-status select{
+	float: left;
+	width: 30%;
+	padding-bottom:5px;
+	margin-top: 0.1%;
+	background-color: #D8D5D5;
+}
+.if-d-page-status input{
+	float: right;
+	width: 7%;
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+	margin-right: 15px;
+}
+.if-d-page-status input[name='change'],
+.if-d-page-status input[name='edit']{
+	width: 10%;
+}
+
+.if-d-title{
+	margin-bottom: 30px;
+	color: #000;
+}
+.if-d-t-content{
+	width: 80%;
+	border-bottom: 1px solid #D0D0D0;
+	margin: 0 auto;
+}
+.if-d-t-content p{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "黑体";
+}
+.if-d-t-info {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: "MicroSoft Yahei";
+	font-size: 18px;
+}
+.if-d-t-info :first-child{
+	margin-left: 5%;
+}
+.if-d-t-info :last-child{
+	float: right;
+	margin-right: 5%;
+}
+.if-d-content{
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-bottom: 100px;
+}
+.if-d-content img{
+	max-width:100%; 
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.if-d-box{
+	margin-bottom: 100px;
+}
+.if-d-box .mail-box{
+  padding-top:100px;
+}
+.if-d-backbtn{
+	position: fixed;
+	top: 30px;
+	left: 0px;
+	width: 11%;
+	min-width: 110px;
+	height: 50px;
+	border: 1px solid #EBE9E9;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 0 1px 1px #D3D3D3;
+	margin-left: -2.5%;
+	font-size: 20px;
+	text-align: right;
+	line-height: 50px;
+	color: #000;
+	background-color: #fff;
+	z-index: 100;
+	cursor: pointer;	
+
+	transition:margin-left,background-color 1s,1s;
+	-moz-transition:margin-left,background-color 1s,1s; /* Firefox 4 */
+	-webkit-transition:margin-left,background-color 1s,1s; /* Safari and Chrome */
+	-o-transition:margin-left,background-color 1s,1s; /* Opera */
+
+
+}
+
+.if-d-backbtn:hover{
+	margin-left: -0.1%;
+	background-color: rgb(51,112,183);
+}
+.if-d-backbtn a{
+	float: right;
+	width: 100%;
+	height: 100%;
+	padding-right: 14%;
+	transition: color 0.3s;
+	-moz-transition: color 0.3s; /* Firefox 4 */
+	-webkit-transition: color 0.3s; /* Safari and Chrome */
+	-o-transition: color 0.3s; /* Opera */
+}
+
+.if-d-backbtn:hover a{
+	color: #fff;
+}
+
+.if-d-p-s-e-btn{
+	position: absolute;
+	float: right;
+	/*right: 11.2%;*/
+	right: 0;
+	width: 130px;
+	margin-top: 70px;
+}
+.if-d-p-s-e-btn :first-child{
+	margin-right: 11%;
+}
+.if-d-write-box{
+	display: none;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+.if-d-write-box #div1{
+	min-height: 800px;
+}
+.if-d-write-box img{
+	max-width:100%; 
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.if-d-change-title{
+	display: none;
+	padding-left: 10%;
+	margin-top: -20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "黑体";
+}
+
+.if-d-t-content input{
+	width: 75%;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+
+
+
+
+/*    封面上传    */
+.if-d-cover-box{
+	position: relative;
+	height: 300px;
+	right: 0;
+}
+.if-d-cover{
+	display: inline-block;
+	float: left;
+	width: 40%;
+	height: 200px;
+}
+.if-d-c-border{
+	position: relative;
+	height: 183px;
+	border: 3px dashed #e6e6e6;
+	margin: 20px;
+	text-align: center;
+}
+.if-d-c-border img{
+	height: 90%;
+	max-width: 90%;
+	margin-top: 10px;
+}
+.if-d-c-border span{
+	position: absolute;
+	bottom: 2px;
+	right: 6px;
+	padding: 2px;
+	font-size: 15px;
+	color: #FC0000;
+	background-color: rgba(233,233,233,.5);
+	cursor: default;
+}
+.if-d-cover-c-b{
+	float: right;
+	margin-right: 5%;
+	width: 50%;
+}
+.if-d-cover-c-b .file-drop-zone{
+	border:0;
+	padding: 0;
+	margin: 0;
+}
+.if-d-cover-c-b .file-actions{
+	display: none;
+}
+.if-d-recover{
+	display:none;
+	text-align: center;
+	opacity:0;
+}	
+
+
+
+/*  附件上传  */
+.ibox{
+	display: none;
+}
+.file-box .file .imagebox{
+	display: table-cell;
+	height: 200px;
+	width: 197.5px;
+	vertical-align: middle;
+}
+.file-box .file .imagebox img{
+	max-height: 100%;
+	margin: 0 auto;
+}
+.file-box .file .file-name{
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+/*            按钮动画              */
+
+	.if-d-page-status input[name='edit'],
+	.if-d-page-status input[name='save'],
+	.if-d-page-status input[name='cancel']{
+		position: relative;
+		display: none;
+		right: -100px;
+		opacity: 0;
+	}
+
+		/*    select选项卡背景色渐变    */
+
+			/* 灰变白 */
+				@keyframes grayToWhite
+				{
+				from {background: #D0D0D0;}
+				to {background: #fff;}
+				}
+
+				@-moz-keyframes grayToWhite /* Firefox */
+				{
+				from {background: #D0D0D0;}
+				to {background: #fff;}
+				}
+
+				@-webkit-keyframes grayToWhite /* Safari 和 Chrome */
+				{
+				from {background: #D0D0D0;}
+				to {background: #fff;}
+				}
+
+				@-o-keyframes grayToWhite /* Opera */
+				{
+				from {background: #D0D0D0;}
+				to {background: #fff;}
+				}
+
+			/* 白变灰 */
+				@keyframes WhiteTogray
+				{
+				from {background: #fff;}
+				to {background: #D0D0D0;}
+				}
+
+				@-moz-keyframes WhiteTogray /* Firefox */
+				{
+				from {background: #fff;}
+				to {background: #D0D0D0;}
+				}
+
+				@-webkit-keyframes WhiteTogray /* Safari 和 Chrome */
+				{
+				from {background: #fff;}
+				to {background: #D0D0D0;}
+				}
+
+				@-o-keyframes WhiteTogray /* Opera */
+				{
+				from {background: #fff;}
+				to {background: #D0D0D0;}
+				}
+
+
+	.gtw{
+		animation:grayToWhite 1s;
+		-moz-animation:grayToWhite 1s; /* Firefox */
+		-webkit-animation:grayToWhite 1s; /* Safari and Chrome */
+		-o-animation:grayToWhite 1s; /* Opera */
+	}
+	.wtg{
+		animation:WhiteTogray 1s;
+		-moz-animation:WhiteTogray 1s; /* Firefox */
+		-webkit-animation:WhiteTogray 1s; /* Safari and Chrome */
+		-o-animation:WhiteTogray 1s; /* Opera */
+	}
+
+
+
+
+		/*    保存、取消、修改 按钮的动画   */
+			/*   保存与取消往左运动    */
+				@keyframes FadeLeft
+					{
+					from {right: -100px;opacity: 0;}
+					to {right: 0px;opacity: 1;}
+					}
+
+					@-moz-keyframes FadeLeft /* Firefox */
+					{
+					from {right: -100px;opacity: 0;}
+					to {right: 0px;opacity: 1;}
+					}
+
+					@-webkit-keyframes FadeLeft /* Safari 和 Chrome */
+					{
+					from {right: -100px;opacity: 0;}
+					to {right: 0px;opacity: 1;}
+					}
+
+					@-o-keyframes FadeLeft /* Opera */
+					{
+					from {right: -100px;opacity: 0;}
+					to {right: 0px;opacity: 1;}
+					}
+
+	.rtl{
+		animation:FadeLeft 1s;
+		-moz-animation:FadeLeft 1s; /* Firefox */
+		-webkit-animation:FadeLeft 1s; /* Safari and Chrome */
+		-o-animation:FadeLeft 1s; /* Opera */
+	}
+
+			/*   修改往右运动    */
+				@keyframes FadeRight
+					{
+					from {margin-right: 15px;opacity: 1;}
+					to {margin-right: -100px;opacity: 0;}
+					}
+
+					@-moz-keyframes FadeRight /* Firefox */
+					{
+					from {margin-right: 15px;opacity: 1;}
+					to {margin-right: -100px;opacity: 0;}
+					}
+
+					@-webkit-keyframes FadeRight /* Safari 和 Chrome */
+					{
+					from {margin-right: 15px;opacity: 1;}
+					to {margin-right: -100px;opacity: 0;}
+					}
+
+					@-o-keyframes FadeRight /* Opera */
+					{
+					from {margin-right: 15px;opacity: 1;}
+					to {margin-right: -100px;opacity: 0;}
+					}
+	.ltr1{
+		animation:FadeRight 1s;
+		-moz-animation:FadeRight 1s; /* Firefox */
+		-webkit-animation:FadeRight 1s; /* Safari and Chrome */
+		-o-animation:FadeRight 1s; /* Opera */
+	}
+
+			/*  保存、取消往右运动    */
+				@keyframes TransRight
+					{
+					from {transform:rotate(0deg)}
+					to {transform:rotate(180deg)}
+					}
+
+					@-moz-keyframes TransRight /* Firefox */
+					{
+					from {transform:rotate(0deg)}
+					to {transform:rotate(180deg)}
+					}
+
+					@-webkit-keyframes TransRight /* Safari 和 Chrome */
+					{
+					from {transform:rotate(0deg)}
+					to {transform:rotate(180deg)}
+					}
+
+					@-o-keyframes TransRight /* Opera */
+					{
+					from {transform:rotate(0deg)}
+					to {transform:rotate(180deg)}
+					}
+	.ltr2{
+		animation:TransRight 1s;
+		-moz-animation:TransRight 1s; /* Firefox */
+		-webkit-animation:TransRight 1s; /* Safari and Chrome */
+		-o-animation:TransRight 1s; /* Opera */
+	}
+
+
+			/*   修改往左运动    */
+				@keyframes FadeLeftB
+					{
+					from {margin-right: -100px;opacity: 0;}
+					to {margin-right: 15px;opacity: 1;}
+					}
+
+					@-moz-keyframes FadeLeftB /* Firefox */
+					{
+					from {margin-right: -100px;opacity: 0;}
+					to {margin-right: 15px;opacity: 1;}
+					}
+
+					@-webkit-keyframes FadeLeftB /* Safari 和 Chrome */
+					{
+					from {margin-right: -100px;opacity: 0;}
+					to {margin-right: 15px;opacity: 1;}
+					}
+
+					@-o-keyframes FadeLeftB /* Opera */
+					{
+					from {margin-right: -100px;opacity: 0;}
+					to {margin-right: 15px;opacity: 1;}
+					}
+	.ltrB{
+		animation:FadeLeftB 1s;
+		-moz-animation:FadeLeftB 1s; /* Firefox */
+		-webkit-animation:FadeLeftB 1s; /* Safari and Chrome */
+		-o-animation:FadeLeftB 1s; /* Opera */
+	}
+
+
+		/*   编辑按钮 效应   */
+			/*   √ × 的向上运动    */
+				@keyframes moveUp
+					{
+					from {margin-top: 70px;}
+					to {margin-top: -10px;}
+					}
+
+					@-moz-keyframes moveUp /* Firefox */
+					{
+					from {margin-top: 70px;}
+					to {margin-top: -10px;}
+					}
+
+					@-webkit-keyframes moveUp /* Safari 和 Chrome */
+					{
+					from {margin-top: 70px;}
+					to {margin-top: -10px;}
+					}
+
+					@-o-keyframes moveUp /* Opera */
+					{
+					from {margin-top: 70px;}
+					to {margin-top: -10px;}
+					}
+	.dtu{
+		animation:moveUp 1s;
+		-moz-animation:moveUp 1s; /* Firefox */
+		-webkit-animation:moveUp 1s; /* Safari and Chrome */
+		-o-animation:moveUp 1s; /* Opera */
+	}
+
+			/*   √ × 的向下运动    */
+				@keyframes moveDown
+					{
+					from {margin-top: -10px;}
+					to {margin-top: 70px;}
+					}
+
+					@-moz-keyframes moveDown /* Firefox */
+					{
+					from {margin-top: -10px;}
+					to {margin-top: 70px;}
+					}
+
+					@-webkit-keyframes moveDown /* Safari 和 Chrome */
+					{
+					from {margin-top: -10px;}
+					to {margin-top: 70px;}
+					}
+
+					@-o-keyframes moveDown /* Opera */
+					{
+					from {margin-top: -10px;}
+					to {margin-top: 70px;}
+					}
+	.utd{
+		animation:moveDown 1s;
+		-moz-animation:moveDown 1s; /* Firefox */
+		-webkit-animation:moveDown 1s; /* Safari and Chrome */
+		-o-animation:moveDown 1s; /* Opera */
+	}
+
+			/*   保存、取消 的向上运动    */
+				@keyframes moveUpB
+					{
+					from {margin-top: 0;}
+					to {margin-top: -70px;}
+					}
+
+					@-moz-keyframes moveUpB /* Firefox */
+					{
+					from {margin-top: 0;}
+					to {margin-top: -70px;}
+					}
+
+					@-webkit-keyframes moveUpB /* Safari 和 Chrome */
+					{
+					from {margin-top: 0;}
+					to {margin-top: -70px;}
+					}
+
+					@-o-keyframes moveUpB /* Opera */
+					{
+					from {margin-top: 0;}
+					to {margin-top: -70px;}
+					}
+	.dtu2{
+		animation:moveUpB 1s;
+		-moz-animation:moveUpB 1s; /* Firefox */
+		-webkit-animation:moveUpB 1s; /* Safari and Chrome */
+		-o-animation:moveUpB 1s; /* Opera */
+	}
+
+					/*   保存、取消 的向上运动    */
+				@keyframes moveDownB
+					{
+					from {margin-top: -70px;}
+					to {margin-top: 0;}
+					}
+
+					@-moz-keyframes moveDownB /* Firefox */
+					{
+					from {margin-top: -70px;}
+					to {margin-top: 0;}
+					}
+
+					@-webkit-keyframes moveDownB /* Safari 和 Chrome */
+					{
+					from {margin-top: -70px;}
+					to {margin-top: 0;}
+					}
+
+					@-o-keyframes moveDownB /* Opera */
+					{
+					from {margin-top: -70px;}
+					to {margin-top: 0;}
+					}
+	.utd2{
+		animation:moveDownB 1s;
+		-moz-animation:moveDownB 1s; /* Firefox */
+		-webkit-animation:moveDownB 1s; /* Safari and Chrome */
+		-o-animation:moveDownB 1s; /* Opera */
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

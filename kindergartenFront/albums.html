@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>相册管理</title>
+
+    <link rel="shortcut icon" href="img/title.png">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style+.css?v=4.1.0" rel="stylesheet">
+
+    <link href="css/customCss/albumStyle.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="gray" style="display: none"></div><!--点击出现灰色阴影-->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>重庆邮电大学幼儿园相册</h5>
+                </div>
+                <div class="addAlbums">
+                    <div class="chooseClass f_right">
+                        <span>点击查询对应班级的活动</span>
+                        <label>
+                            <select class="chooseClassSelect" name="chooseClass" id="">
+                                <option value="null">请选择班级</option>
+                            </select>
+                            <input type="button" class="chooseClassButton" value="查询">
+                            <input type="button" style="display: none" class="chooseSchool" value="返回校园图鉴">
+                        </label>
+                    </div>
+                    <div class="classAlbumsChoose f_right" style="display: none">
+                        <input class="schoolChoose" type="button" value="校园图鉴">
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id="main">
+                        <h3 class="theTitle">校园图鉴</h3>
+                        <!--<div class="box">-->
+                            <!--<div class="pic">-->
+                                <!--<img src="img/a1.jpg" alt="">-->
+                                <!--<p>2015年</p>-->
+                                <!--<p>校园运动会</p>-->
+                                <!--<p>fdjklasadfkl fadlksjfl kasdjfl asdlkf als;d flaksdf</p>-->
+                                <!--<i class="manageImg"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="addAlbumsBox" style="display: none">
+                        <div class="title">
+                            <i class="close"></i>
+                            <h3>创建相册</h3>
+                        </div>
+                        <div class="inputs">
+                            <div class="everyInput">
+                                <span>相册名称</span>
+                                <input type="text" placeholder="相册名称">
+                            </div>
+                            <div class="everyInput">
+                                <span>相册描述</span>
+                                <textarea class ="describ" type="text" placeholder="相册描述"></textarea>
+                            </div>
+                            <!--<div class="addPhoto everyInput">-->
+                                <!--<span>上传封面</span>-->
+                                <!--<a href="javascript:;" class="a-upload">-->
+                                    <!--<input id="st18" onchange="previewImage(this,5)" class="change" type="file">-->
+                                <!--</a>-->
+                                <!--<div id="preview5">-->
+                                    <!--<img src="" alt="" id="imghead5" height="200" width="200" style="display:none;">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="buttonsSure">
+                            <input class="sure" type="button" value="确定">
+                            <input class="cancle" type="button" value="取消">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+
+
+<!-- 自定义js -->
+<script src="js/content.js?v=1.0.0"></script>
+
+<script type="text/javascript" src="js/customJs/albumsRelease.js"></script>
+<script type="text/javascript" src="js/customJs/albumScript.js"></script>
+
+
+</body>
+
+</html>

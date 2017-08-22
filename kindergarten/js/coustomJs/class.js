@@ -254,21 +254,21 @@ $(function(){
 
 
 
-/*
-		$(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+
+		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
 
 		for(var i=0; i<7; i++){
 			if (i<6) {
-				$(".class-table thead th:eq("+(i+1)+") span").html((d.getDate())+"日");
+				$(".class-table thead th:eq("+(i+2)+") span").html((d.getDate())+"日");
 			};
 			arr.push((d.getMonth()+1)+'月'+d.getDate()+'日 （'+getDayName(d.getDay())+'）');
 			d.setDate(d.getDate()+1);
 			console.log(arr[i]);
 		}
-		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
+		$(".class-table thead th:eq(1) span").html(d.getMonth()+1+"月");
 
 
-*/
+
 
 	}
 

@@ -1,0 +1,306 @@
+html body{
+    width: 100%;
+    height: 100%;
+}
+
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+.addVideos{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    padding: 10px 20px;
+}
+.addVideos input{
+    width: 80px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.buttonAdd{
+    background-color: #1ab394;
+}
+.buttonDel, .buttonSure{
+    background-color: #ed5565;
+}
+.buttonCancle{
+    background-color: #f7a54a;
+}
+.photoCancle{
+    background-color: #f7a54a;
+}
+
+
+#main{
+    width: 90%;
+    min-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+#main .every{
+    margin: 20px 0;
+    width: auto;
+    min-width: 1300px;
+    height: 130px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+#main .every .inputCheck{
+    width: 100px;
+    height: 130px;
+}
+#main .every .inputCheck span.spanCheck{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 55px auto;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+}
+#main .every .information{
+    width: 300px;
+    height: 130px;
+}
+.every .information .addPeople, .every .information .addTime{
+    width: auto;
+    height: 60px;
+    line-height: 60px;
+}
+.every .information span{
+    font-size: 18px;
+}
+.every .theVideo{
+    margin: 0 20px;
+    width: 130px;
+    height: 130px;
+}
+.every .theVideo a{
+    display: block;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 20px;
+
+}
+.every .videoDes{
+    margin-left: 20px;
+    width: 800px;
+    height: 130px;
+    overflow: hidden;
+}
+.every .videoDes p{
+    width: auto;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 15px;
+    text-indent: 30px;
+}
+
+
+
+
+/*上传照片*/
+.uploadVideo{
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    left: 185px;
+    z-index: 100;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+i.close{
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    right: 10px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
+
+.gray{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #f3f3f4;
+    opacity: 0.7;
+}
+
+iframe{
+    border: none;
+}
+
+
+
+
+/*创建视频*/
+.addVideoBox{
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    position: absolute;
+    left: 30%;
+    top: 150px;
+    z-index: 15;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.addVideoBox .close{
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    right: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
+.addVideoBox .title h3{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+    padding-left: 20px;
+}
+.addVideoBox .inputs{
+    width: 100%;
+    height: 250px;
+}
+.addVideoBox .inputs .everyInput{
+    width: 498px;
+    height: 60px;
+    padding: 10px 0 0 20px;
+}
+.addVideoBox .inputs .everyInput>span{
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.addVideoBox .inputs .everyInput>span.thePeople{
+    margin-left: 45px;
+}
+.addVideoBox .inputs .everyInput>input, .addVideoBox .inputs .everyInput>textarea{
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    float: left;
+    margin-left: 20px;
+    line-height: 25px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    /*color: #b4e68c;*/
+}
+.addVideoBox .inputs .everyInput>textarea{
+    height: 120px;
+}
+.buttonsSure{
+    width: 230px;
+    height: auto;
+    margin: 0 0 0 250px;
+}
+.buttonsSure input{
+    width: 80px;
+    height: 30px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow:  0 0 2px #e5a953;
+    color: white;
+    line-height: 30px;
+}
+.buttonsSure .sure{
+    background-color: #00B2E2;
+}
+.buttonsSure .cancle{
+    background-color: #f8ac59;
+}
+
+body.overy{
+    overflow: hidden;
+}
+.gray{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #f3f3f4;
+    opacity: 0.7;
+}
+
+
+
+/*选择班级*/
+.chooseClass, .classVideoChoose{
+    width: auto;
+    height: 40px;
+    margin-right: 100px;
+    background-color: white;
+}
+.chooseClass span{
+    font-size: 16px;
+    line-height: 40px;
+}
+.chooseClass label select{
+    margin-left: 20px;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #23c6c8;
+}
+.chooseClass input.chooseClassButton{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #23c6c8;
+}
+.chooseClass input.chooseSchool{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(255, 153, 102);
+}
+.adding{
+    float: left;
+}
+
+
+
+
+.classVideoChoose .schoolChoose{
+    width: auto !important;
+    background-color: #00B2E2;
+}

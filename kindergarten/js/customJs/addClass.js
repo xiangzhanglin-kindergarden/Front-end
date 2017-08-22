@@ -51,6 +51,7 @@ $(document).ready(function () {
                     teacherDiv.appendChild(adding);
                 },
                 success: function (dataStr) {
+                    console.log(dataStr);
                     var nowTeacher;
                     var data = JSON.parse(dataStr);
                     $(".adding")[0].remove();

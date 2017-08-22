@@ -248,6 +248,7 @@ color: #000;
 .class-end{
 	height: 100%;
 	background: rgb(245,245,245);
+	/*background: #000;*/
 }
 .class-time.class-end{
 	background: rgba(0,0,0,0.1);

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<head>
+  <title>重邮幼儿园-用户前台中心</title>
+
+  <!-- META DATA -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  
+  <!-- ICON css-->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bicolor.min.css">
+
+  <!-- 全局 CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.css?v=4.4.0">
+
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- canvas背景  -->
+  <link rel="stylesheet" href="plungs/bg-circle/demo/style/index.css">
+  <!-- bootstrapSelect  -->
+  <link rel="stylesheet" href="plungs/bootstrapSelect/css/bootstrap-select.css">
+  <!-- CSS3 btn  -->
+  <link rel="stylesheet" href="plungs/css3btn/css/style.css">
+  <!-- 视频播放  -->
+  <link rel="stylesheet" href="plungs/video/css/fz-video.css">
+  <link rel="stylesheet" href="plungs/video/font/iconfont.css">
+
+
+
+
+  <!-- 自定义css -->
+  <link rel="stylesheet" href="css/P-style.css">
+  <link rel="stylesheet" href="css/P-banner.css">
+  
+</head>
+
+<body>
+  <div id="awd-site-wrap" class="bg bg-home">
+
+  <div id="bg">
+    <div id="overlay">
+      <div class="awd-site-bg bg-home"></div>
+      <div class="awd-site-bg bg-subscribe"></div>
+      <div class="awd-site-bg bg-about"></div>
+      <div class="awd-site-bg bg-contact"></div>
+      <div class="awd-site-bg bg-services"></div>
+    </div>
+    <canvas id="awd-site-canvas"></canvas>
+  </div>
+
+  <!-- START 头部 -->
+  <header id="awd-site-header">
+    <div id="awd-site-logo" class="animated" data-animation="fadeInDown" data-animation-delay="500">
+      <h1><a href="#" class="go-slide" data-slide="home"><i class="fa fa-user-circle-o"></i><span>管理员</span></a></h1>
+    </div>
+
+    <button class="menu-toggle animated" data-animation="fadeInDown" data-animation-delay="500" data-role="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- START 导航BOX -->
+    <nav id="awd-site-nav" class="navigation animated" data-animation="fadeInDown" data-animation-delay="500">
+      <div class="nav-container">
+
+        <!-- START 导航 -->
+        <ul>
+          <li><a href="#" data-slide="home" class="active show-home-btn">首页</a></li>
+          <li><a href="#" data-slide="subscribe" class="show-class-btn">学生课表</a></li>
+          <li><a href="#" data-slide="about" class="show-news-btn">新闻/公告</a></li>
+          <li><a href="#" data-slide="services" class="show-know-btn">校园知识</a></li>
+          <li><a href="#" data-slide="contact" class="show-albums-btn">生活点滴</a></li>
+        </ul>
+        <!-- END 导航 -->
+      </div>
+    </nav>
+    <!-- END 导航BOX -->
+  </header>
+  <!-- END 头部 -->
+
+  <!-- START 主要内容 -->
+  <main id="awd-site-main">
+  <!-- START 选择区 -->
+  <section id="awd-site-content">
+    <div class="sections-block">
+      <div class="slides">
+
+        <div class="slides-wrap">
+          <!-- HOME 选择区 -->
+          <div class="slide-item" data-slide-id="home">
+            <!-- START HOME 内容部分 -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- START 动画区域-->
+                  <div class="slide-content">
+                    <div class="row">
+                      <div class="col-lg-5 col-lg-offset-1 col-md-6 svm home-title">
+                        <div class="section-info">
+                          <!-- START 标题 -->
+                          <h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="50">Hey
+                              朋友!<br> 欢迎来到重邮幼儿园</h2>
+                          <!-- END 标题 -->
+                          <a href="../kindergarten/index.html" class="btn animated enterBack" target="_blank" data-animation="fadeIn" data-animation-delay="60">进入管理系统</a>
+                          <a href="logIn.html" class="btn animated leaveBtn" data-animation="fadeIn" data-animation-delay="60">退出登录</a>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 svm home-news">
+                        <div class="section-info text-left">
+                          <div class="countdown">
+                            <div id="clock" class="animated" data-animation="fadeIn" data-animation-delay="60">
+                              <div class="theNews row">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <!-- END 动画区域-->
+                </div>
+              </div>
+            </div>
+            <!-- END HOME 内容部分 -->
+          </div>
+
+          <!-- 课表 选择区 -->
+          <div class="slide-item" data-slide-id="subscribe">
+            <!-- START 内容部分 -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+
+                  <!-- START 具体内容-->
+                  <div class="slide-content class-slide-content">
+                    <div class="row">
+                      <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-6 animated"  data-animation="fadeIn" data-animation-delay="60">
+                        
+                        <div class="class-box">
+                          <div class="class-select">
+                            <div class="row">
+
+                              <div class="col-xs-2 theClassChose">
+                                <div class="class-group">
+                                  <select name="class" class="removeTclassse selectpicker form-control className">
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+
+                                <div class="form-group">
+                                  <select class="selectpicker form-control week">
+                                    <option class="first">第1周</option>
+                                    <option>第2周</option>
+                                    <option>第3周</option>
+                                    <option>第4周</option>
+                                    <option>第5周</option>
+                                    <option>第6周</option>
+                                    <option>第7周</option>
+                                    <option>第8周</option>
+                                    <option>第9周</option>
+                                    <option>第10周</option>
+                                    <option>第11周</option>
+                                    <option>第12周</option>
+                                    <option>第13周</option>
+                                    <option>第14周</option>
+                                    <option>第15周</option>
+                                    <option>第16周</option>
+                                    <option>第17周</option>
+                                    <option>第18周</option>
+                                    <option>第19周</option>
+                                    <option>第20周</option>
+                                    <option>第21周</option>
+                                    <option>第22周</option>
+                                    <option>第23周</option>
+                                    <option>第24周</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="classtable">
+                            <table class="table table-bordered">
+                              <caption><span></span>的课表</caption>
+                              <thead>
+                                <tr>
+                                  <th>时间\日期</th>
+                                  <th>周一</th>
+                                  <th>周二</th>
+                                  <th>周三</th>
+                                  <th>周四</th>
+                                  <th>周五</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>9:00-9:45 am</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>10:00-10:45 am</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>2:00-2:45 pm</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>3:00-3:45 pm</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END 具体内容-->
+                </div>
+              </div>
+              <!-- END ROW -->
+            </div>
+            <!-- END 内容部分 -->
+          </div>
+
+          <!-- 新闻公告 选择区 -->
+          <div class="slide-item" data-slide-id="about">
+            <!-- START 内容部分 -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+
+                  <!-- START 具体的部分-->
+                  <div class="slide-content">
+                    <div class="row">
+                      <div class="col-md-12">
+
+                        <!-- START 具体内容-->
+                        <div class="slide-content class-slide-content">
+                          <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-6 animated" data-animation="fadeIn" data-animation-delay="60">
+                              
+                              <div class="news-box">
+                                <div class="news-select">
+                                  <div class="row">
+                                    <a href="#" class="hvr-trim button2 
+                                    col-lg-offset-8 
+                                    col-md-offset-6 
+                                    col-xs-2
+                                    news-all">全部</a>
+                                    <a href="#" class="hvr-trim button2 col-xs-2 news-new">新闻</a>
+                                    <a href="#" class="hvr-trim button2 col-xs-2 news-notice">公告</a>
+                                  </div>
+                                </div>
+                                <!-- 分页按钮 -->
+                                <div class="btn-group pull-right page-btn-box">
+                                  <button id="n-previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+                                  </button>
+                                  <button id="n-next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+                                  </button>
+                                  <input id="n-write-nub" class="form-control input-sm" type="text" placeholder="页数">
+                                </div>
+                                <!-- 分页按钮  END -->
+                                <div class="news-table">
+                                  <div class="row">
+                                  </div>
+                                </div>
+                                
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- END 具体内容-->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END 具体的部分-->
+                </div>
+              </div>
+            </div>
+            <!-- END 内容部分 -->
+          </div>
+
+          <!-- 成长知识 选择区 -->
+          <div class="slide-item" data-slide-id="services">
+            <!-- START 内容区域 -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- START 具体的部分-->
+                  <div class="slide-content">
+                    <div class="row">
+                      <div class="col-md-12">
+
+                        <!-- START 具体内容-->
+                        <div class="slide-content class-slide-content">
+                          <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-6 animated" data-animation="fadeIn" data-animation-delay="60">
+                              <div class="know-box">
+                                <div class="know-table">
+                                  <div class="row">
+                                    <!-- 分页按钮 -->
+                                    <div class="btn-group pull-right page-btn-box">
+                                      <button id="k-previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+                                      </button>
+                                      <button id="k-next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+                                      </button>
+                                      <input id="k-write-nub" class="form-control input-sm" type="text" placeholder="页数">
+                                    </div>
+                                    <!-- 分页按钮  END -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END 具体内容-->
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- END 具体的部分-->
+                </div>
+              </div>
+              <!-- END ROW -->
+            </div>
+            <!-- END 内容区域 -->
+          </div>
+
+          <!-- 生活点滴 选择区 -->
+          <div class="slide-item" data-slide-id="contact">
+            <!-- START 内容部分 -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- START 动画-->
+                  <div class="slide-content">
+                    <div class="row">
+                      <div class="slide-content class-slide-content">
+                        <div class="row">
+                          <div id="test" class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-6 animated albumsBox" data-animation="fadeIn" data-animation-delay="60">
+                          <div class="close-frame">
+                            <i class="fa fa-times-circle"></i>
+                          </div>
+                          
+                          
+                          <div class="album-list-func col-lg-5">
+                            <div>
+                              <div id="slide" class="slide" class="index-slide" alt="star">
+
+                                <!-- 轮播图片数量可自行增减 -->
+                                <div class="img"><img src="img/1.jpg"/></div>
+                                <div class="img"><img src="img/2.jpg"/></div>
+                                <div class="img"><img src="img/3.jpg"/></div>
+                                <div class="img"><img src="img/4.jpg"/></div>
+                                <div class="img"><img src="img/5.jpg"/></div>
+                                <div class="slide-bt"></div>
+                                <div class="m-toleft" onclick="left()"></div>
+                                <div class="m-toright" onclick="right()"></div>
+                              </div>
+                            </div>
+                            <a href="##" class="hvr-shutter-out-vertical button enter-album">进入相册</a>
+                          </div>
+                          <div class="album-list-func col-lg-5 col-lg-offset-1">
+                            <div id="testBox">
+                              
+                            </div>
+                            <a href="##" class="hvr-shutter-out-vertical button enter-video">进入视频</a>
+                          </div>
+
+                          <iframe src='##' frameborder='0'></iframe>
+  
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- END 动画-->
+                </div>
+              </div>
+              <!-- END ROW -->
+            </div>
+            <!-- END 内容部分 -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END 选择区 -->
+  </main>
+  <!-- END 主要内容 -->
+
+
+  <footer id="awd-site-footer">
+    <!-- START 下标 -->
+    <div class="copyright animated" data-animation="fadeInUp" data-animation-delay="500">
+      <!-- <p>© 2017 重邮团队</p> -->
+    </div>
+    <!-- END 下标 -->
+
+
+  </footer>
+
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/vendor.js"></script>
+  <script src="js/options.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- 圆形背景 -->
+  <script src="plungs/bg-circle/lib/quietflow.min.js"></script>
+  <script src="plungs/bg-circle/demo/js/index.js"></script>
+  <script src="plungs/bg-circle/demo/js/prism.js"></script>
+
+  <!-- 视频播放  -->
+   <script src="plungs/video/js/fz-video.js"></script> 
+
+  <!-- bootstrapSelect  -->
+   <script src="plungs/bootstrapSelect/js/bootstrap-select.js"></script> 
+
+  <!-- 自定义JS -->
+  <script src="js/P-style.js"></script>
+  <script src="js/P-homeAJAX.js"></script>
+  <script src="js/P-classAJAX.js"></script>
+  <script src="js/P-knowAJAX.js"></script>
+  <script src="js/P-newsAJAX.js"></script>
+  <script src="js/P-album.js"></script>
+  
+  <script src="js/P-banner.js"></script>
+  
+  <script>
+    var FZ_VIDEO = new createVideo(
+      "testBox",  //容器的id
+      {
+        url:'video/video.mp4',  //视频地址
+        autoplay  : false        //是否自动播放
+      }
+    );
+  </script>
+  
+</body>
+</html>
