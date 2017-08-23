@@ -97,6 +97,7 @@ function close_new_class(){
 
 	function nowWeekBG(){
 		$(".class-table tbody td").removeClass("class-end");
+		$(".class-time").addClass("class-end");
 		var date = new Date();
 		var week = date.getUTCDay();
 		var hour = date.getHours();

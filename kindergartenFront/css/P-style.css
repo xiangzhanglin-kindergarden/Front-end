@@ -285,13 +285,31 @@
   font-weight: 500;
   /*color: #6C6C6C;*/
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
   .phoneBorderBox{
-    width: 200%;
+    position: relative;
+    /*overflow-x: scroll;*/
+  }
+  .nextroll{
+    /*width: 680px;*/
+  }
+  .table>thead>tr>th{
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 15px;
   }
   .classtable thead span{
+    bottom: -1px;
+    right: -1px;
     font-size: 13px;
   }
+  .classtable tbody td{
+    font-size: 10px;
+  }
+}
+.workspace{
+  text-align: left;
+  padding-left: 5%;
 }
 
 

@@ -47,6 +47,8 @@ $(document).ready(function(){
         lWed:null,
         lThu:null,
         lfri:null,
+        workimportant:null,
+        shuxin:null
       };
       myjson = JSON.stringify(myjson);
       console.log(cClass);
@@ -68,7 +70,9 @@ $(document).ready(function(){
       "lTue":null,
       "lWed":null,
       "lThu":null,
-      "lfri":null
+      "lfri":null,
+      "workimportant":null,
+      "shuxin":null
     });
     console.log(lesson);
     ajax("http://172.20.2.164:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
@@ -88,7 +92,9 @@ $(document).ready(function(){
       "lTue":null,
       "lWed":null,
       "lThu":null,
-      "lfri":null
+      "lfri":null,
+      "workimportant":null,
+      "shuxin":null
     });
     console.log(lesson);
     ajax("http://172.20.2.164:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
@@ -157,27 +163,48 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(6)").html("");
       $(".classtable table tr:eq(5) td:eq(6)").html("");
       $(".classtable table tr:eq(6) td:eq(6)").html("");
+
+      $(".classtable table tr:eq(1) td:eq(1)").html("");
+      $(".classtable table tr:eq(2) td:eq(1)").html("");
+      $(".classtable table tr:eq(3) td:eq(1)").html("");
+      $(".classtable table tr:eq(4) td:eq(1)").html("");
+      $(".classtable table tr:eq(5) td:eq(1)").html("");
+      $(".classtable table tr:eq(6) td:eq(1)").html("");
+
+      $(".workspace").html("");
     }else{
       localStorage.setItem("ll",data.lId);
       var reg = /[^,]+/g;
+      var reg2 = /[^\\n]+/g;
 
       var oneDay = JSON.stringify(data.lMon);
       var twoDay = JSON.stringify(data.lTue);
       var threeDay = JSON.stringify(data.lWed);
       var fourDay = JSON.stringify(data.lThu);
       var fiveDay = JSON.stringify(data.lfri);
+      var classType = JSON.stringify(data.shuxin);
+      var workSpace = JSON.stringify(data.workimportant);
 
       oneDay = oneDay.match(reg);
       twoDay = twoDay.match(reg);
       threeDay = threeDay.match(reg);
       fourDay = fourDay.match(reg);
       fiveDay = fiveDay.match(reg);
+      classType = classType.match(reg);
+      workSpace = workSpace.match(reg2);
 
       oneDay = delWord(oneDay);
       twoDay = delWord(twoDay);
       threeDay = delWord(threeDay);
       fourDay = delWord(fourDay);
       fiveDay = delWord(fiveDay);
+      classType = delWord(classType);
+      workSpace = delWord2(workSpace);
+
+      var newWorkSpace = "";
+      for(var i = 0; i<workSpace.length; i++){
+        newWorkSpace = newWorkSpace+workSpace[i]+'</br>';
+      }
 
 
       function delWord(obj){
@@ -192,6 +219,12 @@ $(document).ready(function(){
         }
         return obj;
       }
+      function delWord2(obj){
+        obj[0] = obj[0].replace(/"/g,"");
+        obj[obj.length-1] = obj[obj.length-1].replace(/"/g,"");
+        return obj;
+      }
+
       $(".classtable table tr:eq(1) td:eq(2)").html(oneDay[0]);
       $(".classtable table tr:eq(2) td:eq(2)").html(oneDay[1]);
       $(".classtable table tr:eq(3) td:eq(2)").html(oneDay[2]);
@@ -226,6 +259,15 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(6)").html(fiveDay[3]);
       $(".classtable table tr:eq(5) td:eq(6)").html(fiveDay[4]);
       $(".classtable table tr:eq(6) td:eq(6)").html(fiveDay[5]);
+
+      $(".classtable table tr:eq(1) td:eq(1)").html(classType[0]);
+      $(".classtable table tr:eq(2) td:eq(1)").html(classType[1]);
+      $(".classtable table tr:eq(3) td:eq(1)").html(classType[2]);
+      $(".classtable table tr:eq(4) td:eq(1)").html(classType[3]);
+      $(".classtable table tr:eq(5) td:eq(1)").html(classType[4]);
+      $(".classtable table tr:eq(6) td:eq(1)").html(classType[5]);
+
+      $(".workspace").html(newWorkSpace);
     }
   }
 })

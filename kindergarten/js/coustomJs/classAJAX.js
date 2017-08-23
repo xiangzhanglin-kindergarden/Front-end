@@ -133,6 +133,17 @@ $(document).ready(function(){
 			$(".new-table tr:eq(5) td:eq(6) input").val(),
 			$(".new-table tr:eq(6) td:eq(6) input").val()
 		])
+		var classshuxin = String([
+			$(".new-table tr:eq(1) td:eq(1) input").val(),
+			$(".new-table tr:eq(2) td:eq(1) input").val(),		
+			$(".new-table tr:eq(3) td:eq(1) input").val(),
+			$(".new-table tr:eq(4) td:eq(1) input").val(),
+			$(".new-table tr:eq(5) td:eq(1) input").val(),
+			$(".new-table tr:eq(6) td:eq(1) input").val()
+		])
+		var workspace = $(".writeworkspace").val();
+		console.log(workspace);
+
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
 				"lId":null,
@@ -143,6 +154,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"workimportant":workspace,
+				"shuxin":classshuxin
 				// "cid":userClass
 			});
 			console.log(courseMsg);
@@ -162,6 +175,8 @@ $(document).ready(function(){
 						"lWed":null,
 						"lThu":null,
 						"lfri":null,
+						"workimportant":null,
+						"shuxin":null
 						// "cid":userClass,
 					});
 					ajax(
@@ -187,7 +202,9 @@ $(document).ready(function(){
 				"lTue":lTue,
 				"lWed":lWed,
 				"lThu":lThu,
-				"lfri":lfri
+				"lfri":lfri,
+				"workimportant":workspace,
+				"shuxin":classshuxin
 			});
 			console.log(courseMsg);
 			ajax(
@@ -206,6 +223,8 @@ $(document).ready(function(){
 						"lWed":null,
 						"lThu":null,
 						"lfri":null,
+						"workimportant":null,
+						"shuxin":null
 						// "cid":userClass,
 					});
 					ajax(
@@ -245,6 +264,8 @@ $(document).ready(function(){
 				"lWed":null,
 				"lThu":null,
 				"lfri":null,
+				"workimportant":null,
+				"shuxin":null
 			});
 			console.log(lesson);
 			ajax(
@@ -262,7 +283,9 @@ $(document).ready(function(){
 				"lTue":null,
 				"lWed":null,
 				"lThu":null,
-				"lfri":null
+				"lfri":null,
+				"workimportant":null,
+				"shuxin":null
 			});
 			ajax(
 				"http://172.20.2.164:8080/kindergarden/LessonShow",
@@ -291,8 +314,11 @@ $(document).ready(function(){
 		$("td").each(function(){
 			// console.log($(this).attr("class"));
 			// if ($(this).attr("class")!="class-time CT-B class-end"|| $(this).attr("class")!="class-time CT-B CT-T class-end" || $(this).attr("class")!="class-time CT-T class-end"){
-			if ($(this).attr("class")==undefined || $(this).attr("class")=="" || $(this).attr("class")=="class-time class-end" || $(this).attr("class")=="class-end" || $(this).attr("class")=="class-time"){
+			if ($(this).attr("class")==undefined || $(this).attr("class")=="" || $(this).attr("class")=="class-time class-end2 class-end" || $(this).attr("class")=="class-time class-end2" || $(this).attr("class")=="class-end"){
 				$(this).html("<input class='class-change-input' value='"+$(this).html()+"'>")
+			}
+			if ($(this).attr("class")=="workspace class-end" || $(this).attr("class")=="workspace"){
+				$(this).html("<textarea class='class-change-input'>"+$(this).html().replace(/<br>/g,'\n')+"</textarea>")
 			}
 		})
 		// console.log(value);
@@ -348,6 +374,16 @@ $(document).ready(function(){
 			$(".class-table tr:eq(5) td:eq(6) input").val(),
 			$(".class-table tr:eq(6) td:eq(6) input").val()
 		])
+		var classshuxin = String([
+			$(".class-table tr:eq(1) td:eq(1) input").val(),
+			$(".class-table tr:eq(2) td:eq(1) input").val(),		
+			$(".class-table tr:eq(3) td:eq(1) input").val(),
+			$(".class-table tr:eq(4) td:eq(1) input").val(),
+			$(".class-table tr:eq(5) td:eq(1) input").val(),
+			$(".class-table tr:eq(6) td:eq(1) input").val()
+		])
+		var workspace = $(".workspace textarea").val();
+		console.log(workspace);
 		if (usertype == 0) {
 			var courseMsg = JSON.stringify({
 				"lId":localStorage.getItem("ll"),
@@ -358,6 +394,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"workimportant":workspace,
+				"shuxin":classshuxin
 				// "cid":userClass
 			});
 			console.log(courseMsg);
@@ -375,7 +413,18 @@ $(document).ready(function(){
 			
 
 		}else{
-			var courseMsg = JSON.stringify({"lId":localStorage.getItem("ll"),"cName":$(".differ-class-box [name='class']").val(),"lWeek":$(".c-week").val(),"lMon":lMon,"lTue":lTue,"lWed":lWed,"lThu":lThu,"lfri":lfri});
+			var courseMsg = JSON.stringify({
+				"lId":localStorage.getItem("ll"),
+				"cName":$(".differ-class-box [name='class']").val(),
+				"lWeek":$(".c-week").val(),
+				"lMon":lMon,
+				"lTue":lTue,
+				"lWed":lWed,
+				"lThu":lThu,
+				"lfri":lfri,
+				"workimportant":workspace,
+				"shuxin":classshuxin
+			});
 			console.log(courseMsg);
 			ajax("http://172.20.2.164:8080/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
 				$(".delayimg").css({"opacity":1});
@@ -384,26 +433,37 @@ $(document).ready(function(){
 						var value = $(this).children().val()
 						console.log(value);
 						if (value!="0") {
-							$(this).append(value);
-							// $("#change-class-yes").animate({"opacity":0});
-							// $("#change-class-no").animate({"opacity":0});
+							if ($(this).attr("class")=="workspace" || $(this).attr("class")=="workspace class-end") {
+								value = value.match(/[^\n]+/g);
+								// console.log(value);
+								var newWorkSpace = "";
+								for(var i = 0; i<value.length; i++){
+									newWorkSpace = newWorkSpace+value[i]+'</br>';
+								}
+								$(this).append(newWorkSpace);
+							}else{
+								$(this).append(value);
+								// $("#change-class-yes").animate({"opacity":0});
+								// $("#change-class-no").animate({"opacity":0});
 
-							$("#change-class-yes").addClass("myHidden");
-							$("#change-class-no").addClass("myHidden");
-							setTimeout(function(){
-								$("#change-class").removeClass("myHidden");
-								$("#change-class").animate({"opacity":1});
-								// $("#change-class-yes").animate({"opacity":1});
-								// $("#change-class-no").animate({"opacity":1});
-							},1);
-							$(".differ-class-box [name='class']").attr("disabled",false);
-							$(".differ-class-box [name='week']").attr("disabled",false);
-							close_new_class();
+								$("#change-class-yes").addClass("myHidden");
+								$("#change-class-no").addClass("myHidden");
+								setTimeout(function(){
+									$("#change-class").removeClass("myHidden");
+									$("#change-class").animate({"opacity":1});
+									// $("#change-class-yes").animate({"opacity":1});
+									// $("#change-class-no").animate({"opacity":1});
+								},1);
+								$(".differ-class-box [name='class']").attr("disabled",false);
+								$(".differ-class-box [name='week']").attr("disabled",false);
+								close_new_class();
+							}
 						};
 						
 					}
 				})
 				$(".mail-box td input").remove();
+				$(".mail-box td textarea").remove();
 				setTimeout(function(){
 					$(".delayimg").css({"opacity":0});
 					$("#new-class").attr("disabled",true);
@@ -475,30 +535,53 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(6)").html("")
 			$(".class-table tr:eq(5) td:eq(6)").html("")
 			$(".class-table tr:eq(6) td:eq(6)").html("")
+
+			$(".class-table tr:eq(1) td:eq(1)").html("")
+			$(".class-table tr:eq(2) td:eq(1)").html("")
+			$(".class-table tr:eq(3) td:eq(1)").html("")
+			$(".class-table tr:eq(4) td:eq(1)").html("")
+			$(".class-table tr:eq(5) td:eq(1)").html("")
+			$(".class-table tr:eq(6) td:eq(1)").html("")
+
+			$(".workspace").html("")
 		}else{
 			$("#new-class").attr("disabled",true);
 			$("#change-class").attr("disabled",false)
 			localStorage.setItem("ll",data.lId);
 			var reg = /[^,]+/g;
+			var reg2 = /[^\\n]+/g;
 
 			var oneDay = JSON.stringify(data.lMon);
 			var twoDay = JSON.stringify(data.lTue);
 			var threeDay = JSON.stringify(data.lWed);
 			var fourDay = JSON.stringify(data.lThu);
 			var fiveDay = JSON.stringify(data.lfri);
+			var classType = JSON.stringify(data.shuxin);
+			var workSpace = JSON.stringify(data.workimportant);
 
 			oneDay = oneDay.match(reg);
 			twoDay = twoDay.match(reg);
 			threeDay = threeDay.match(reg);
 			fourDay = fourDay.match(reg);
 			fiveDay = fiveDay.match(reg);
+			classType = classType.match(reg);
+			workSpace = workSpace.match(reg2);
+			
+
 
 			oneDay = delWord(oneDay);
 			twoDay = delWord(twoDay);
 			threeDay = delWord(threeDay);
 			fourDay = delWord(fourDay);
 			fiveDay = delWord(fiveDay);
+			classType = delWord(classType);
+			workSpace = delWord2(workSpace);
+			console.log(workSpace)
 
+			var newWorkSpace = "";
+			for(var i = 0; i<workSpace.length; i++){
+				newWorkSpace = newWorkSpace+workSpace[i]+'</br>';
+			}
 
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
@@ -510,6 +593,11 @@ $(document).ready(function(){
 						obj[i]=null;
 					};
 				}
+				return obj;
+			}
+			function delWord2(obj){
+				obj[0] = obj[0].replace(/"/g,"");
+				obj[obj.length-1] = obj[obj.length-1].replace(/"/g,"");
 				return obj;
 			}
 
@@ -547,6 +635,16 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(6)").html(fiveDay[3]);
 			$(".class-table tr:eq(5) td:eq(6)").html(fiveDay[4]);
 			$(".class-table tr:eq(6) td:eq(6)").html(fiveDay[5]);
+
+			$(".class-table tr:eq(1) td:eq(1)").html(classType[0]);
+			$(".class-table tr:eq(2) td:eq(1)").html(classType[1]);
+			$(".class-table tr:eq(3) td:eq(1)").html(classType[2]);
+			$(".class-table tr:eq(4) td:eq(1)").html(classType[3]);
+			$(".class-table tr:eq(5) td:eq(1)").html(classType[4]);
+			$(".class-table tr:eq(6) td:eq(1)").html(classType[5]);
+
+			$(".workspace").html(newWorkSpace);
+
 		}
 
 	}

@@ -250,6 +250,9 @@ color: #000;
 	background: rgb(245,245,245);
 	/*background: #000;*/
 }
+.class-end2{
+	color: #333;
+}
 .class-time.class-end{
 	background: rgba(0,0,0,0.1);
 	
@@ -411,7 +414,10 @@ color: #000;
 .course-margin{
 	margin-bottom: 30px;
 }
-
+.workspace{
+	text-align: left;
+	padding-left: 7%!important;
+}
 
 
 

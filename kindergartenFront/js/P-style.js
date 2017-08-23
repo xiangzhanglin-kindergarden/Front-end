@@ -53,7 +53,10 @@ function allClass(){
       xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     },
     success: function (classdata) {
-      if (usertype != 0){//老师,家长
+      if (usertype == 0){//老师,家长
+        var data = JSON.parse(teacherData);
+        var classId = data.cId;
+      }else if (usertype == 2) {
         var data = JSON.parse(teacherData);
         var classId = data.Object.cId;
       }
