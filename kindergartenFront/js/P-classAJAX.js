@@ -30,6 +30,9 @@ $(document).ready(function(){
 
       myweek = $(".classtable table").attr("name");
       cClass = $(".classtable table caption span").html();
+      if (usertype==2) {
+        cClass = $(".classtable table caption span").attr("name");
+      }
       console.log(cClass);
 
       $('.reremove').css({"display":"none"});

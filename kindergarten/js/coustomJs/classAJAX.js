@@ -287,9 +287,9 @@ $(document).ready(function(){
 	$("#change-class").on("click",function(){
 		$(".differ-class-box [name='class']").attr("disabled",true);
 		$(".differ-class-box [name='week']").attr("disabled",true);
-		console.log("this");
+		// console.log("this");
 		$("td").each(function(){
-			console.log($(this).attr("class"));
+			// console.log($(this).attr("class"));
 			// if ($(this).attr("class")!="class-time CT-B class-end"|| $(this).attr("class")!="class-time CT-B CT-T class-end" || $(this).attr("class")!="class-time CT-T class-end"){
 			if ($(this).attr("class")==undefined || $(this).attr("class")=="" || $(this).attr("class")=="class-time class-end" || $(this).attr("class")=="class-end"){
 				$(this).html("<input class='class-change-input' value='"+$(this).html()+"'>")

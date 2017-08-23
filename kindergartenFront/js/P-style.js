@@ -38,7 +38,7 @@ $(function(){
     $("#awd-site-logo span").html(username);
 
     $(".enterBack").remove();
-
+    $(".theClassChose").remove();
   }
 })
 
@@ -53,16 +53,29 @@ function allClass(){
       xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     },
     success: function (classdata) {
-      var data = JSON.parse(teacherData);
-      var classId = data.cId;
-
+      if (usertype != 0){//老师,家长
+        var data = JSON.parse(teacherData);
+        var classId = data.Object.cId;
+      }
+      
       var classData = JSON.parse(classdata);
       var classlang = classData.length-2;
 
       for(var i=0;i<classlang;i++){
-        if (classData[i].cId == classId) {
-          $(".classtable table caption span").html(classData[i].cName);
-        };
+        if (usertype == 0){
+          if (classData[i].cId == classId) {
+            $(".classtable table caption span").html(classData[i].cName);
+          };
+        }else if(usertype == 1){
+          if (i == 0) {
+            $(".classtable table caption span").html(classData[i].cName);
+          };
+        }else if(usertype == 2){
+          if (classData[i].cId == classId) {
+            $(".classtable table caption span").attr("name",classData[i].cName);
+          };
+        }
+        
         $(".removeTclassse").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
         $(".addNewClass").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
       }
