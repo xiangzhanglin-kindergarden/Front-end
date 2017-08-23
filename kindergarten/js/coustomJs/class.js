@@ -90,10 +90,10 @@ function close_new_class(){
 
 
 // 判断周数和时间，隐藏上过的课；
-$(function(){
-	var thenull = getClassWeek();
-	// nowWeekBG();
-})
+	$(function(){
+		var thenull = getClassWeek();
+		nowWeekBG();
+	})
 
 	function nowWeekBG(){
 		$(".class-table tbody td").removeClass("class-end");
@@ -103,9 +103,10 @@ $(function(){
 		console.log("周"+week+"时间："+hour);
 		if (week==0||week==6) {
 			$(".class-table td").addClass("class-end");
-			$(".class-time").removeClass("class-end");
+			$(".class-time").addClass("class-end");
 		}else{
-			for(var i=1; i<=4; i++){
+			/*
+			for(var i=1; i<=6; i++){
 				for(var j=2; j<week+1; j++){
 					// console.log("第"+i+"列，第"+j+"行:"+$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").html());
 					$(".class-table tbody tr:nth-child("+i+") td:eq("+j+")").addClass("class-end");
@@ -126,6 +127,7 @@ $(function(){
 				$(".class-table tbody tr:nth-child(4) td:eq("+week+")").addClass("class-end");
 				$(".class-table tbody tr:nth-child(5) td:eq("+week+")").addClass("class-end");
 			};
+			*/
 		}
 	}
 

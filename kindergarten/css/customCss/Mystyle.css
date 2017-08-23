@@ -400,7 +400,7 @@ color: #000;
 	top: 50%;
 	margin-left: -78px;
 	margin-top: -47.5px;
-	z-index: 100;
+	/*z-index: 100;*/
 	opacity: 0;
 }
 .removeTclass,
