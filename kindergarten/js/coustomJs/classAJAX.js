@@ -437,9 +437,12 @@ $(document).ready(function(){
 								value = value.match(/[^\n]+/g);
 								// console.log(value);
 								var newWorkSpace = "";
-								for(var i = 0; i<value.length; i++){
-									newWorkSpace = newWorkSpace+value[i]+'</br>';
-								}
+								if (value!= null) {
+									for(var i = 0; i<value.length; i++){
+										newWorkSpace = newWorkSpace+value[i]+'</br>';
+									}
+								}else{newWorkSpace=""}
+								
 								$(this).append(newWorkSpace);
 							}else{
 								$(this).append(value);
@@ -585,7 +588,7 @@ $(document).ready(function(){
 
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
-				obj[3] = obj[3].replace(/"/g,"");
+				// obj[3] = obj[3].replace(/"/g,"");
 				obj[5] = obj[5].replace(/"/g,"");
 				
 				for(i=0;i<=5;i++){

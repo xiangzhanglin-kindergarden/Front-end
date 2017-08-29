@@ -546,7 +546,7 @@ color: #000;
   }
   .news-list-func{
     float: left;
-    width: 24%;
+    width: 22%;
     height: 90%;
     line-height: 77px;
     text-align: center;
@@ -561,7 +561,7 @@ color: #000;
   @media screen and (max-width: 400px){
     .news-list-func a{
       font-size: 15px;
-      width: 78px;
+      width: 100%;
       height: 40px;
       line-height: 40px;
       padding-top:0;

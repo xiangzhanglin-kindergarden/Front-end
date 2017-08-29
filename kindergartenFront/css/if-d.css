@@ -76,12 +76,16 @@
 	font-family: "MicroSoft Yahei";
 	font-size: 18px;
 }
-.if-d-t-info :first-child{
+.if-d-t-info div{
 	margin-left: 5%;
 }
 .if-d-t-info :last-child{
-	float: right;
+	/*float: right;*/
 	margin-right: 5%;
+}
+.if-d-t-time{
+	margin-right: 0px;
+	margin-left: 5%;
 }
 .if-d-content{
 	padding-left: 10%;
