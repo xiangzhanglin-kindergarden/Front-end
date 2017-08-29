@@ -91,13 +91,13 @@ $(document).ready(function () {
     function submitaddClass() {
 
         var inputValus = $(".theRow").find("input");
-        console.log(inputValus);
+        var theClassSize = $(".theClassSize option:selected").text();
 
         var className = inputValus[0].value;
-        var classNameT = className.substring(0,1),
-            classNameC = className.substring(1);
+        // var classNameT = className.substring(0,1),
+        //     classNameC = className.substring(1);
         var tTeachers = inputValus[1].value +","+ inputValus[2].value +","+ inputValus[3].value;
-        var cName = classNameT+","+classNameC;
+        var cName = theClassSize+","+className;
 
         var value = {
             cId: null,
@@ -105,27 +105,47 @@ $(document).ready(function () {
             tTeacher: tTeachers,
             sNumber: null
         };
+        if(value.cName === ""){
+            alert("请输入班级名称！");
+        }else if(className ===""){
+            alert("请输入班级名称！");
+        }else if(inputValus[1].value ===""){
+            alert("请选择班主任！");
+        }else if(inputValus[2].value ===""){
+            alert("请选择普通教师！");
+        }else if(inputValus[3].value ===""){
+            alert("请选择保育员！");
+        }else if(tTeachers === ""){
+            alert("请选择教师！");
+        }else {
+            $.ajax({
+                type:"post",
+                url:"http://172.20.2.164:8080/kindergarden/ClassAdd",
+                data:"classAdd="+JSON.stringify(value),
+                contentType:"application/x-www-form-urlencoded;charset=utf-8",
+                beforeSend: function (xhr) {
+                    xhr.withCredentials = true;
+                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                },
+                success: function (data) {
+                    console.log(data.indexOf("班级名重复"));
+                    if(data && data.indexOf("班级名重复") !== -1){
+                        var err = data + "请重新输入班级名称!";
+                        alert(err);
+                    }else if(data && data.indexOf("ok") !== -1){
+                        alert("班级创建成功！");
+                        window.location.href = "classManagement.html";
+                    }else {
+                        alert(data);
+                    }
+                },
+                error: function (err) {
+                    console.log(err.status);
+                    alert("出现错误："+err.status);
+                }
+            });
+        }
 
-        console.log(value);
-        $.ajax({
-            type:"post",
-            url:"http://172.20.2.164:8080/kindergarden/ClassAdd",
-            data:"classAdd="+JSON.stringify(value),
-            contentType:"application/x-www-form-urlencoded;charset=utf-8",
-            beforeSend: function (xhr) {
-                xhr.withCredentials = true;
-                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            },
-            success: function () {
-                alert("班级创建成功！");
-                console.log("success");
-                window.location.href = "classManagement.html"
-            },
-            error: function (err) {
-                console.log(err.status);
-                alert("出现错误："+err.status);
-            }
-        });
 
     }
 

@@ -25,17 +25,39 @@ $(window).on("load",function () {
             },
             success: function (data) {
                 console.log(data);
-                if (data == "查找失败" || data == "false" || data == "false2"){
-                    alert(data);
+                if (data.indexOf("查找失败") !== -1 || data.indexOf("false") !== -1){
+                    alert("查找失败");
                 }else {
+                    var rows = [];
                     var theData = JSON.parse(data);
-                    var row = initClassData(theData);
-                    console.log(row);
+                    if(theData.length !== "undefined"){
+                        var row = {
+                            id:"1",
+                            cId:theData.cId,
+                            cName:theData.cName,
+                            tNameOne:theData.tTeacher.split(",")[0],
+                            tNameTwo:theData.tTeacher.split(",")[1],
+                            tNameThree:theData.tTeacher.split(",")[2],
+                            sNum:theData.sNumber
+                        };
+                        rows.push(row);
+                    }else {
+                        for(var k=0;k<theData.length;k++){
+                            rows[k].id = k+1;
+                            rows[k].cId = theData[k].cId;
+                            rows[k].cName = theData[k].cName;
+                            rows[k].tNameOne = theData[k].tTeacher.split(",")[0];
+                            rows[k].tNameTwo = theData[k].tTeacher.split(",")[1];
+                            rows[k].tNameThree = theData[k].tTeacher.split(",")[2];
+                            rows[k].sNum = theData[k].sNumber;
+                        }
+                    }
+                    console.log(rows);
                     //添加数据
                     var table_list_2 = $("#table_list_2");
                     table_list_2.clearGridData();
-                    for(var i=0;i<row.length;i++){
-                        table_list_2.jqGrid('addRowData',i+1,row[i]);
+                    for(var i=0;i<rows.length;i++){
+                        table_list_2.jqGrid('addRowData',i+1,rows[i]);
                     }
                 }
             },

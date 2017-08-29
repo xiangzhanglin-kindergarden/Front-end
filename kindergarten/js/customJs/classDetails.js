@@ -192,32 +192,45 @@ $(document).ready(function () {
         var classNameT = className.substring(0,1),
             classNameC = className.substring(1);
         var cName = classNameT +","+ classNameC;
-        var values = {
-            cId: rowId,
-            cName: cName,
-            tTeacher: inputs[1].value+","+inputs[2].value+","+inputs[3].value
-        };
-        $.ajax({
-            type:"post",
-            url:"http://172.20.2.164:8080/kindergarden/ClassUpate",
-            data:"classUpdate="+JSON.stringify(values),
-            contentType:"application/x-www-form-urlencoded;charset=utf-8",
-            beforeSend: function (xhr) {
-                xhr.withCredentials = true;
-                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            },
-            success: function () {
-                alert("修改成功！");
-                console.log("success");
-                console.log(values);
-                // window.location.reload();
-                window.location.href = "classManagement.html"
-            },
-            error: function (err) {
-                console.log(err.status);
-                alert("出现错误："+err.status);
-            }
-        });
+        if(className === ""){
+            alert("班级名称不能为空");
+        }else if(classNameC === ""){
+            alert("班级名不能为空");
+        }else if(inputs[1].value === ""){
+            alert("请选择班主任");
+        }else if(inputs[2].value ===""){
+            alert("请选择普通教师！");
+        }else if(inputs[3].value ===""){
+            alert("请选择保育员！");
+        }else {
+            var values = {
+                cId: rowId,
+                cName: cName,
+                tTeacher: inputs[1].value+","+inputs[2].value+","+inputs[3].value
+            };
+            $.ajax({
+                type:"post",
+                url:"http://172.20.2.164:8080/kindergarden/ClassUpate",
+                data:"classUpdate="+JSON.stringify(values),
+                contentType:"application/x-www-form-urlencoded;charset=utf-8",
+                beforeSend: function (xhr) {
+                    xhr.withCredentials = true;
+                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                },
+                success: function () {
+                    alert("修改成功！");
+                    console.log("success");
+                    console.log(values);
+                    // window.location.reload();
+                    window.location.href = "classManagement.html";
+                },
+                error: function (err) {
+                    console.log(err.status);
+                    alert("出现错误："+err.status);
+                }
+            });
+        }
+
 
 
 
@@ -240,7 +253,8 @@ $(document).ready(function () {
                 alert("删除成功！");
                 // $(".if-d-backbtn a").trigger("click");
                 // window.location.reload();//刷新页面
-                window.history.go(-1);
+                // window.history.go(-1);
+                window.location.href = "classManagement.html";
                 // window.location.reload(); 
             },
             error: function (err) {
