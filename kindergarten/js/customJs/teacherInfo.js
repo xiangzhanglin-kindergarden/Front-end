@@ -46,7 +46,8 @@ function addTeacher(theCaption,data,theIndex) {
         },
         success: function (classData) {
             $(".adding").remove();
-            for(var clas=0;clas<classData.length;clas++){
+            optionClass[0] = " ";
+            for(var clas=1;clas<classData.length;clas++){
                 optionClass[clas] = classData[clas].cName;
             }
             
@@ -217,37 +218,49 @@ function addSubmit() {
     console.log(theBoxInput);
     console.log(theBoxSelect);
 
-    values = {
-        cId: cName,
-        tId: null,
-        tName: theBoxInput[0].value,
-        tPhone: theBoxInput[1].value,
-        tSex: theBoxSelect[1].value,
-        tgrade: theBoxSelect[0].value,
-        tWorkId: theBoxInput[2].value
-    };
+    if(theBoxInput[0].value === ""){
+        alert("教师名字不能为空！");
+    }else if(theBoxSelect[0].value ===""){
+        alert("授课班级不能为空！");
+    }else if(theBoxInput[1].value.length !== 11){
+        alert("电话号码必须为11位数字！");
+    }else if(theBoxInput[2].value === ""){
+        alert("登陆密码/工号不能为空！");
+    }else {
+        values = {
+            cId: cName,
+            tId: null,
+            tName: theBoxInput[0].value,
+            tPhone: theBoxInput[1].value,
+            tSex: theBoxSelect[1].value,
+            tgrade: theBoxSelect[0].value,
+            tWorkId: theBoxInput[2].value
+        };
 
-    $.ajax({
-        type:"post",
-        url:"http://172.20.2.164:8080/kindergarden/Teacheradd",
-        data:"TeacherJson="+JSON.stringify(values),
-        contentType:"application/x-www-form-urlencoded;charset=utf-8",
-        beforeSend: function (xhr) {
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        },
-        success: function () {
-            alert("添加成功！");
-            console.log(values);
-            var box = $(".box");
-            box.hide(800);
-            window.location.reload();
-        },
-        error: function (err) {
-            alert("出现错误："+err.status);
-            console.log(err.status);
-        }
-    });
+        $.ajax({
+            type:"post",
+            url:"http://172.20.2.164:8080/kindergarden/Teacheradd",
+            data:"TeacherJson="+JSON.stringify(values),
+            contentType:"application/x-www-form-urlencoded;charset=utf-8",
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
+            success: function () {
+                alert("添加成功！");
+                console.log(values);
+                var box = $(".box");
+                box.hide(800);
+                window.location.reload();
+            },
+            error: function (err) {
+                alert("出现错误："+err.status);
+                console.log(err.status);
+            }
+        });
+    }
+
+
 }
 
 
@@ -263,38 +276,50 @@ function editSubmit(theId) {
         classNameC = className.substring(1);
     var cName = classNameT+","+classNameC;
 
-    values = {
-        cId: cName,
-        tId: theId,
-        tName: theBoxInput[0].value,
-        tPhone: theBoxInput[1].value,
-        tSex: theBoxSelect[1].value,
-        tgrade: theBoxSelect[0].value,
-        tWorkId: theBoxInput[2].value
-    };
-    console.log(values);
+    var isPhone = /^1[3,5,8]\d{9}$/;
+    if(theBoxInput[0].value === ""){
+        alert("教师名字不能为空！");
+    }else if(theBoxSelect[0].value ===""){
+        alert("授课班级不能为空！");
+    }else if(!isPhone.test(theBoxInput[1].value)){
+        alert("电话号码必须为11位数字！");
+    }else if(theBoxInput[2].value === ""){
+        alert("登陆密码/工号不能为空！");
+    }else {
+        values = {
+            cId: cName,
+            tId: theId,
+            tName: theBoxInput[0].value,
+            tPhone: theBoxInput[1].value,
+            tSex: theBoxSelect[1].value,
+            tgrade: theBoxSelect[0].value,
+            tWorkId: theBoxInput[2].value
+        };
+        console.log(values);
 
-    $.ajax({
-        type:"post",
-        url:"http://172.20.2.164:8080/kindergarden/TeacherUpdate",
-        // dataType:"JSON",
-        data:"TeacherJson="+JSON.stringify(values),
-        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-        beforeSend: function (xhr) {
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        },
-        success: function () {
-            alert("修改成功！");
-            var box = $(".box");
-            box.hide(800);
-            window.location.reload();
-        },
-        error: function (err) {
-            alert("出现错误："+err.status);
-            alert("出现错误："+err.status);
-        }
-    });
+        $.ajax({
+            type:"post",
+            url:"http://172.20.2.164:8080/kindergarden/TeacherUpdate",
+            // dataType:"JSON",
+            data:"TeacherJson="+JSON.stringify(values),
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
+            success: function () {
+                alert("修改成功！");
+                var box = $(".box");
+                box.hide(800);
+                window.location.reload();
+            },
+            error: function (err) {
+                alert("出现错误："+err.status);
+                alert("出现错误："+err.status);
+            }
+        });
+    }
+
 }
 
 

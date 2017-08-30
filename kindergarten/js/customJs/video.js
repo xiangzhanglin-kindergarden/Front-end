@@ -14,6 +14,9 @@ $(window).ready(function () {
     var optionClass = [];
 
 
+    var addVideoBoxBollean = true;
+
+
     close.click(function () {
         closeAddAlbumsBox();
     });
@@ -348,10 +351,13 @@ $(window).ready(function () {
 
     function releaseVideo() {
         var addVideoBox = $(".addVideoBox");
+        if(addVideoBoxBollean){
+            addVideoBox.click(function () {
+                releaseVideoAjax();
+                addVideoBoxBollean = false;
+            });
+        }
 
-        addVideoBox.click(function () {
-            releaseVideoAjax();
-        });
 
 
     }
@@ -368,11 +374,11 @@ $(window).ready(function () {
         var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
         var teacherData = sessionStorage.getItem("teacherData");
         // var teacher = JSON.parse(teacherData);
-        if(typeof(teacherData)=='object'){
+        if(typeof(teacherData) ==='object'){
             var teacher = JSON.parse(teacherData);
         }else{
             var teacher = teacherData;
-            teacher = $.parseJSON(teacher);
+            //teacher = $.parseJSON(teacher);
         }
         console.log(teacher);
         
