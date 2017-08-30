@@ -32,7 +32,7 @@ function addTeacher(theCaption,data,theIndex) {
 
     $.ajax({
         type: "get",
-        url: "http://172.20.2.164:8080/kindergarden/ClassShow",
+        url: "http://localhost/kindergarden/ClassShow",
         dataType: "JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend: function (xhr) {
@@ -239,7 +239,7 @@ function addSubmit() {
 
         $.ajax({
             type:"post",
-            url:"http://172.20.2.164:8080/kindergarden/Teacheradd",
+            url:"http://localhost/kindergarden/Teacheradd",
             data:"TeacherJson="+JSON.stringify(values),
             contentType:"application/x-www-form-urlencoded;charset=utf-8",
             beforeSend: function (xhr) {
@@ -299,7 +299,7 @@ function editSubmit(theId) {
 
         $.ajax({
             type:"post",
-            url:"http://172.20.2.164:8080/kindergarden/TeacherUpdate",
+            url:"http://localhost/kindergarden/TeacherUpdate",
             // dataType:"JSON",
             data:"TeacherJson="+JSON.stringify(values),
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
@@ -330,7 +330,7 @@ function delTeacher(data,theIndex) {
 
     $.ajax({
         type: "post",
-        url: "http://172.20.2.164:8080/kindergarden/TeacherDelete",
+        url: "http://localhost/kindergarden/TeacherDelete",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         data: "id="+delId,
         beforeSend: function (xhr) {

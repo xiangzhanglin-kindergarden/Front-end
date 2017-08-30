@@ -18,7 +18,7 @@ $(document).ready(function(){
 			var IP = "";     //IP地址
 
 
-			IP = "172.20.2.164:8080/";
+			IP = "localhost/";
 
 			if (userClass=="user-manager") {
 				userClass = 1;

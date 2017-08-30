@@ -76,7 +76,7 @@ oldcover = $(".if-d-cover img").attr('src');
 		var control = $("#file-0");
 		control.fileinput({
 			language: 'zh', //设置语言
-			uploadUrl: "http://172.20.2.164:8080/kindergarden/imageUpload", //上传的地址
+			uploadUrl: "http://localhost/kindergarden/imageUpload", //上传的地址
 			allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
 			uploadAsync: true, //默认异步上传
 			showUpload: true, //是否显示上传按钮

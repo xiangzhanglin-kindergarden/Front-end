@@ -59,7 +59,7 @@ function showVideo() {
                 var nowImgId = nowImg.getAttribute("data-mcid");
                 $.ajax({
                     type: "post",
-                    url: "http://172.20.2.164:8080/kindergarden/CommunicateShow",
+                    url: "http://localhost/kindergarden/CommunicateShow",
                     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                     data: "XId="+nowImgId,
                     beforeSend: function (xhr) {
@@ -302,7 +302,7 @@ function showVideo() {
 
                         $.ajax({
                             type: "post",
-                            url: "http://172.20.2.164:8080/kindergarden/CommunicateAdd",
+                            url: "http://localhost/kindergarden/CommunicateAdd",
                             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                             data: "CommuniJson="+JSON.stringify(theValue),
                             beforeSend: function (xhr) {
@@ -334,7 +334,7 @@ function showVideo() {
             function delCommentAjax(commid) {
                 $.ajax({
                     type: "post",
-                    url: "http://172.20.2.164:8080/kindergarden/CommunicateDelete",
+                    url: "http://localhost/kindergarden/CommunicateDelete",
                     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                     data: "ComId="+commid,
                     beforeSend: function (xhr) {

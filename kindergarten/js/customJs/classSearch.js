@@ -17,7 +17,7 @@ $(window).on("load",function () {
 
         $.ajax({
             type: "post",
-            url: "http://172.20.2.164:8080/kindergarden/ClassSearch",
+            url: "http://localhost/kindergarden/ClassSearch",
             data: "classSearch="+searchValue,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;

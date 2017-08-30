@@ -16,7 +16,7 @@
   var kmarkurl;   //用于存储分页用的url信息；
 
 
-  IPnub = "172.20.2.164:8080/";
+  IPnub = "localhost/";
 
 
 
@@ -33,7 +33,7 @@ $(function(){
   function kfindAJAX(){
     $.ajax({
       type:"get",
-      url:"http://172.20.2.164:8080/kindergarden/ShowAllGrowth?pageNum="+1,
+      url:"http://localhost/kindergarden/ShowAllGrowth?pageNum="+1,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
@@ -257,7 +257,7 @@ $(function(){
 
     $.ajax({
       type:"get",
-      url:"http://172.20.2.164:8080/kindergarden/ShowAllGrowth?pageNum="+kflag,
+      url:"http://localhost/kindergarden/ShowAllGrowth?pageNum="+kflag,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

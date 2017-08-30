@@ -26,7 +26,7 @@ $(function(){
   var markurl;   //用于存储分页用的url信息；
 
 
-  IPnub = "172.20.2.164:8080/";
+  IPnub = "localhost/";
 
 
 /*    打开页面初始化AJAX     */
@@ -172,7 +172,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://172.20.2.164:8080/kindergarden/DeleteGrowth?idnews="+ID,
+          url:"http://localhost/kindergarden/DeleteGrowth?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -241,7 +241,7 @@ var k_s_flag = 0;
 	    }else{
 	      $.ajax({
 	        type:"get",
-	        url:"http://172.20.2.164:8080/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+	        url:"http://localhost/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
 	        dataType:"JSON",
 	        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 	        beforeSend:function(xhr){
@@ -342,7 +342,7 @@ var k_s_flag = 0;
 
         $.ajax({
           type:"post",
-          url:"http://172.20.2.164:8080/kindergarden/GrowthAdd",
+          url:"http://localhost/kindergarden/GrowthAdd",
           data:"NewsAdd="+myjson,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",

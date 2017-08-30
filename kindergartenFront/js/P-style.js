@@ -46,7 +46,7 @@ function allClass(){
   //加载班级
   $.ajax({
     type: "post",
-    url: "http://172.20.2.164:8080/kindergarden/ClassShow",
+    url: "http://localhost/kindergarden/ClassShow",
     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
     beforeSend: function (xhr) {
       xhr.withCredentials = true;

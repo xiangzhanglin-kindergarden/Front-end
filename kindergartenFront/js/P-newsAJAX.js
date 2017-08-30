@@ -22,7 +22,7 @@
 
 
 
-IPnub = "172.20.2.164:8080/";
+IPnub = "localhost/";
 nowpage = 1;
 
 

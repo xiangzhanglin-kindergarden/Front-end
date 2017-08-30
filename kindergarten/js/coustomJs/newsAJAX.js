@@ -67,7 +67,7 @@ $(function(){
     kindNub = "2";
   }
 
-  IPnub = "172.20.2.164:8080/";
+  IPnub = "localhost/";
 
 
 /*    打开页面初始化AJAX     */
@@ -402,7 +402,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://172.20.2.164:8080/kindergarden/DeleteNews?idnews="+ID,
+          url:"http://localhost/kindergarden/DeleteNews?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -465,7 +465,7 @@ $(function(){
         if (usertype==0) {
           $.ajax({
             type:"get",
-            url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+            url:"http://localhost/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend:function(xhr){
@@ -502,7 +502,7 @@ $(function(){
         }else{
           $.ajax({
             type:"get",
-            url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+            url:"http://localhost/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend:function(xhr){
@@ -547,7 +547,7 @@ $(function(){
       };
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        url:"http://localhost/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+escape(keyword)+"&time="+escape(keytime)+"&issuer="+escape(keyname)+"&pageNum="+1,
         dataType:"JSON",
@@ -583,7 +583,7 @@ $(function(){
     if (usertype==0) {
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+        url:"http://localhost/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -624,7 +624,7 @@ $(function(){
     }else{
       $.ajax({
         type:"get",
-        url:"http://172.20.2.164:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        url:"http://localhost/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){

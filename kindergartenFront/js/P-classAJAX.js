@@ -25,7 +25,8 @@ $(document).ready(function(){
       var week = $(".dform-group option:selected").val();
 
 
-      IP = "172.20.2.164:8080/";
+      // IP = "172.20.2.164:8080/";
+      IP = "localhost/";
       url = "kindergarden/LessonShow";
 
       myweek = $(".classtable table").attr("name");
@@ -75,7 +76,7 @@ $(document).ready(function(){
       "shuxin":null
     });
     console.log(lesson);
-    ajax("http://172.20.2.164:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+    ajax("http://localhost/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
   })
 
   //切换班的时候的功能函数
@@ -97,7 +98,7 @@ $(document).ready(function(){
       "shuxin":null
     });
     console.log(lesson);
-    ajax("http://172.20.2.164:8080/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+    ajax("http://localhost/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
   })
 
 

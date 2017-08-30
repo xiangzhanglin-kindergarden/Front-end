@@ -15,7 +15,7 @@
 
 
 
-hIPnub = "172.20.2.164:8080/";
+hIPnub = "localhost/";
 
 
 $(function(){

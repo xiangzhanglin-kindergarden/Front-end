@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "post",
-        url: "http://172.20.2.164:8080/kindergarden/MovieShowWeb",
+        url: "http://localhost/kindergarden/MovieShowWeb",
         data: "MCid="+theVideoMcid+"&pageNum="+pageNum,
         beforeSend: function (xhr) {
             xhr.withCredentials = true;
@@ -188,7 +188,7 @@ $(document).ready(function () {
                     if(message){
                         $.ajax({
                             type: "post",
-                            url: "http://172.20.2.164:8080/kindergarden/MovieDelete",
+                            url: "http://localhost/kindergarden/MovieDelete",
                             data: "mvid="+delVideo,
                             beforeSend: function (xhr) {
                                 xhr.withCredentials = true;
