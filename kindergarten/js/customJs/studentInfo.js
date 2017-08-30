@@ -2,6 +2,8 @@
  * Created by Sunshine on 2017/4/1.
  */
 
+
+var isChecked = false;
 function addTheBox(theCaption,theIndex,data) {
     var box = $(".theBox");
     var theBox = box[0];
@@ -344,10 +346,13 @@ function addTheBox(theCaption,theIndex,data) {
             checkInput();
 
             //提交信息
-
             if (theCaption == "添加"){
                 var add = buttonInput.find("input")[0];
-                add.addEventListener("click",addSubmit);
+                add.addEventListener("click",function () {
+                    if(isChecked){
+                        addSubmit();
+                    }
+                });
             }
         },
         error: function (err) {
@@ -503,6 +508,7 @@ function checkInput() {
     });
     chooseTime[0].readOnly = true;
 
+    isChecked = true;
 }
 
 
@@ -530,42 +536,57 @@ function addSubmit() {
     var cNameC = cName.substring(0,1),
         cNameT = cName.substring(1);
     var theCname = cNameC+","+cNameT;
-    values = {
-        sId: null,
-        sName: theBoxInput[0].value,
-        sIdentifyId: theBoxInput[1].value,
-        sSex: theBoxSelect[0].value,
-        sComeAge: theBoxSelect[1].value,
-        cId: theCname,
-        sComeTime: theBoxInput[2].value,
-        sAcount: sAcount,
-        sPassword: "123456",
-        sAddress: address
-    };
 
-    console.log(values);
+    if(theBoxInput[0].value === ""){
+        alert("请填写学生姓名！");
+    }else if(theBoxInput[1].value === ""){
+        alert("请输入正确18号身份证！");
+    }else if(theBoxInput[2].value === ""){
+        alert("请选择入学时间！");
+    }else if(addressSelect[0].value === ""){
+        alert("请填写家长信息！");
+    }else if(addressSelect[1].value === ""){
+        alert("请填写家长信息！");
+    }else if(addressInput[0].value === ""){
+        alert("请填写家庭住址！");
+    }else {
+        values = {
+            sId: null,
+            sName: theBoxInput[0].value,
+            sIdentifyId: theBoxInput[1].value,
+            sSex: theBoxSelect[0].value,
+            sComeAge: theBoxSelect[1].value,
+            cId: theCname,
+            sComeTime: theBoxInput[2].value,
+            sAcount: sAcount,
+            sPassword: "123456",
+            sAddress: address
+        };
 
-    $.ajax({
-        type:"post",
-        url:"http://172.20.2.164:8080/kindergarden/StudentAdd",
-        // dataType:"JSON",
-        data:"studentjson="+JSON.stringify(values),
-        contentType:"application/x-www-form-urlencoded;charset=utf-8",
-        beforeSend: function (xhr) {
-            xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        },
-        success: function () {
-            alert("添加成功！");
-            var box = $(".theBox");
-            box.hide(800);
-            window.location.reload();
-        },
-        error: function (err) {
-            console.log(err.status);
-            alert("出现错误："+err.status);
-        }
-    });
+
+        $.ajax({
+            type:"post",
+            url:"http://172.20.2.164:8080/kindergarden/StudentAdd",
+            // dataType:"JSON",
+            data:"studentjson="+JSON.stringify(values),
+            contentType:"application/x-www-form-urlencoded;charset=utf-8",
+            beforeSend: function (xhr) {
+                xhr.withCredentials = true;
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
+            success: function () {
+                alert("添加成功！");
+                var box = $(".theBox");
+                box.hide(800);
+                window.location.reload();
+            },
+            error: function (err) {
+                console.log(err.status);
+                alert("出现错误："+err.status + "，信息填写错误");
+            }
+        });
+    }
+
 
 }
 

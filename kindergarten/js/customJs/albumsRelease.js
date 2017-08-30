@@ -44,6 +44,7 @@ $(window).on("load",function () {
 
     delPhoto.click(function () {
         $("input.photoCancle").show(200);
+        $("input.photoCancle").parent().append("<span class='theAttentionP' style='margin: 13px'>请选择需要删除的相册</span>");
         delPhotos();
     })
 
@@ -102,6 +103,7 @@ function delPhotos() {
 
     var cancle = $("input.photoCancle");
     cancle.click(function () {
+        $(".theAttentionP").remove();
         $("i.manageImg").remove();
         $(this).hide(200);
     })

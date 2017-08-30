@@ -98,6 +98,9 @@ $(document).ready(function () {
                     management.hide(400);
                 },500);
 
+                console.log(photoCancle[0]);
+                photoCancle.parent().append("<span class='theAttentionP' style='margin: 10px'>请选择需要删除的图片</span>");
+
                 photoCancle.click(function () {
                     photoCancle.hide(400);
                     photoDel.hide(400);
@@ -105,6 +108,7 @@ $(document).ready(function () {
                         management.show(400);
                     },500);
 
+                    $(".theAttentionP").remove();
                     $("i.manageImg").remove();
                 });
 

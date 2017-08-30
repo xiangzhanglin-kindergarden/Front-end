@@ -77,7 +77,7 @@
             dictMaxFilesExceeded: "超过最大上传的文件数量！",
 
 
-            acceptedFiles: "image/jpg,image/jpeg,image/png'",//指明允许  上传的文件类型,
+            acceptedFiles: "image/jpg,image/jpeg,image/png,image/bmp'",//指明允许  上传的文件类型,
 
             // Dropzone settings
             init: function () {
@@ -90,7 +90,7 @@
                 });
                 this.on("sendingmultiple", function () {});
                 this.on("successmultiple", function () {
-                    window.history.back();
+                    window.location.href = "theAlbums.html";
                 });
                 this.on("errormultiple", function (files, response) {
                 });

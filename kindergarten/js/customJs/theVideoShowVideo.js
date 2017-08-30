@@ -288,42 +288,46 @@ function showVideo() {
                 });
 
                 function commentAjax(editValue,poneId,ptwoId) {
-                    var theValue = {
-                        comId: null,
-                        poneId: poneId,
-                        ptwoId: ptwoId,
-                        comTime: null,
-                        comContent: editValue,
-                        xId: nowImgId
-                    };
+                    if(editValue === ""){
+                        alert("评论/回复不能为空！");
+                    }else {
+                        var theValue = {
+                            comId: null,
+                            poneId: poneId,
+                            ptwoId: ptwoId,
+                            comTime: null,
+                            comContent: editValue,
+                            xId: nowImgId
+                        };
 
-                    console.log(theValue);
-                    $.ajax({
-                        type: "post",
-                        url: "http://172.20.2.164:8080/kindergarden/CommunicateAdd",
-                        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-                        data: "CommuniJson="+JSON.stringify(theValue),
-                        beforeSend: function (xhr) {
-                            xhr.withCredentials = true;
-                            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-                        },
-                        success: function () {
-                            if (ptwoId == null){
-                                alert("评论成功！");
-                            }else {
-                                alert("回复成功！");
+                        $.ajax({
+                            type: "post",
+                            url: "http://172.20.2.164:8080/kindergarden/CommunicateAdd",
+                            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                            data: "CommuniJson="+JSON.stringify(theValue),
+                            beforeSend: function (xhr) {
+                                xhr.withCredentials = true;
+                                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                            },
+                            success: function () {
+                                if (ptwoId == null){
+                                    alert("评论成功！");
+                                }else {
+                                    alert("回复成功！");
+                                }
+                                $(".mainComment").find(".mainCommentContent").remove();
+
+                                $(".mainCommentInput").remove();
+                                theComment();
+
+                            },
+                            error: function (err) {
+                                console.log(err.status);
+                                alert("出现错误："+err.status);
                             }
-                            $(".mainComment").find(".mainCommentContent").remove();
+                        });
+                    }
 
-                            $(".mainCommentInput").remove();
-                            theComment();
-
-                        },
-                        error: function (err) {
-                            console.log(err.status);
-                            alert("出现错误："+err.status);
-                        }
-                    });
                 }
             }
 

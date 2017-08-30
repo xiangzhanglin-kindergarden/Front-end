@@ -123,7 +123,7 @@ $(document).ready(function () {
             videoManage.click(function () {
                 videoDel.show(400);
                 videoCancle.show(400);
-
+                videoDel.parent().append("<span class='theAttentionP' style='margin: 13px'>请选择需要删除的视频</span>");
                 setTimeout(function () {
                     videoManage.hide(400);
                 },500);
@@ -140,6 +140,7 @@ $(document).ready(function () {
                         videoManage.show(400);
                     },500);
 
+                    $(".theAttentionP").remove();
                     $("i.manageVideo").remove();
                 });
 

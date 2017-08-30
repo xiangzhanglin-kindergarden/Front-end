@@ -471,6 +471,7 @@ $(window).ready(function () {
 
         buttonSure.show(400);
         buttonCancle.show(400);
+        buttonDel.parent().append("<span class='theAttentionP' style='margin: 13px'>请选择需要删除的活动</span>");
 
         setTimeout(function () {
             buttonDel.hide(400);
@@ -486,6 +487,8 @@ $(window).ready(function () {
             setTimeout(function () {
                 buttonDel.show(400);
             },500);
+
+            $(".theAttentionP").remove();
             $("span.spanCheck").remove();
         });
 
