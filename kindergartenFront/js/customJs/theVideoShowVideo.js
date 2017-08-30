@@ -1,10 +1,14 @@
 /**
+ * Created by Sunshine on 2017/6/14.
+ */
+/**
  * Created by Sunshine on 2017/5/20.
  */
-function showPhoto() {
-    var imgs = $(".mainPhoto").find(".everyImg").find("img");
+function showVideo() {
+    var imgs = $(".mainVideo").find(".everyVideo").find("video");
     var gray = $(".gray");
-    var show = $(".showPhoto");
+    var show = $(".showVideo");
+    console.log(imgs);
 
     imgs.each(function () {
         var nowImg = this;
@@ -12,18 +16,19 @@ function showPhoto() {
             var nowUrl = this.src;
 
             gray.show();
-            var oImg = document.createElement("img");
+            var oImg = document.createElement("video");
             oImg.src = nowUrl;
-            oImg.className = "nowImg";
+            oImg.className = "nowVideo";
+            oImg.id = "nowVideo";
+            oImg.controls = "controls";
             show.find(".content")[0].appendChild(oImg);
 
             var wh = $(nowImg).width()/$(nowImg).height();
             var imgW = show.width()*0.49;
             var imgH = imgW/wh;
             var theTop = (800-imgH)/2;
-            // var imgH = (minH-)/2;
             $(oImg).css("margin-top",theTop);
-            var theChangeImg = show.find(".changePhoto").find("img");
+            var theChangeImg = show.find(".changeVideo").find("img");
             var theChangeImgH = (800-60)/2;
             theChangeImg.each(function () {
                 $(this).css("margin-top",theChangeImgH);
@@ -41,17 +46,17 @@ function showPhoto() {
             function closeShow() {
                 gray.hide();
                 show.hide();
-                $(".nowImg").remove();
+                $(".nowVideo").remove();
                 $(".mainComment").find(".mainCommentContent").remove();
                 $(".mainCommentInput").remove();
             }
-            
+
 
 
             //显示评论
             function theComment() {
                 // console.log(nowImg);
-                var nowImgId = nowImg.getAttribute("data-pid");
+                var nowImgId = nowImg.getAttribute("data-mcid");
                 $.ajax({
                     type: "post",
                     url: "http://172.20.2.164:8080/kindergarden/CommunicateShow",
@@ -71,9 +76,13 @@ function showPhoto() {
                         var mainComment = $(".mainComment");
                         $(".pLoading").remove();
                         mainComment.find(".mainCommentContent").remove();
-                        var comment = JSON.parse(data);
+                        var comment;
+                        if(typeof (data) == 'object'){
+                            comment = data;
+                        }else {
+                            comment = JSON.parse(data);
+                        }
 
-                        console.log(comment);
                         theComment.find("h3").html("评论"+"("+comment.length+")");
                         for(var i=0;i<comment.length;i++){
                             var mainCommentContent = document.createElement("div");
@@ -85,7 +94,7 @@ function showPhoto() {
                                 var theCommentValue = document.createElement("span");
                                 var delComment = document.createElement("i");
                                 delComment.className = "delComment";
-                                
+
                                 theCommentValue.className = "theCommentValue";
                                 theCommentValue.innerHTML = "：" + comment[i].comContent;
                                 theCommentValue.setAttribute("data-commentId",comment[i].comId);
@@ -159,7 +168,7 @@ function showPhoto() {
                     }
                 });
             }
-            
+
             theComment();
 
 
@@ -167,7 +176,7 @@ function showPhoto() {
             function releaseComment() {
 
                 //发表评论
-                var nowImgId = nowImg.getAttribute("data-pid");
+                var nowImgId = nowImg.getAttribute("data-mcid");
                 var mainCommentInput = $(".mainCommentInput");
                 var editComment = mainCommentInput.find("input.editComment");//评论框
                 var buttonRelease = mainCommentInput.find(".buttonSure").find("input");
@@ -291,7 +300,6 @@ function showPhoto() {
                             xId: nowImgId
                         };
 
-                        console.log(theValue);
                         $.ajax({
                             type: "post",
                             url: "http://172.20.2.164:8080/kindergarden/CommunicateAdd",
@@ -354,5 +362,5 @@ function showPhoto() {
         });
     });
 
-    
+
 }

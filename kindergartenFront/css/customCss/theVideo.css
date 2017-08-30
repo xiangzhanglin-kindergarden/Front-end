@@ -170,6 +170,176 @@ i.manageVideo{
 
 
 
+/*相册详情*/
+.showVideo{
+    display: none;
+    width: 60%;
+    background-color: black;
+    height: 96%;
+    min-height: 800px;
+    position: fixed;
+    top:2%;
+    left: 20%;
+    z-index: 120;
+}
+.showVideo .content{
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    height: 90%;
+}
+.showVideo .content .changeVideo{
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+.showVideo .content .changeVideo img{
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    opacity: 0.3;
+}
+.showVideo .content .changeVideo img:hover{
+    opacity: 0.8;
+}
+.showVideo .content img{
+    width: 70%;
+    height: auto;
+    max-height: 90%;
+    margin-top: 5%;
+}
+.showVideo .comment{
+    width: 28%;
+    height: 85%;
+    margin-top: 4%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 10px;
+}
+.showVideo .close{
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.5;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.showVideo .close:hover{
+    opacity: 0.9;
+}
+.close:before{
+    content: "\e088";
+}
+/*评论*/
+.showVideo .comment h3{
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+.showVideo .comment .thepLoading{
+    padding-left: 10px;
+}
+.showVideo .comment .mainComment{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+.showVideo .comment .mainComment .mainCommentContent{
+    width: auto;
+    height: auto;
+}
+.showVideo .comment .mainComment .mainCommentContent span{
+    display: inline-block;
+    height: 30px;
+}
+.showVideo .comment .mainComment .mainCommentContent span.people{
+    font-weight: 700;
+    cursor: pointer;
+}
+.showVideo .comment .mainComment .mainCommentContent .sendMainCommentContent{
+    width: auto;
+    height: auto;
+    padding-left: 15px;
+}
+.showVideo .comment .mainCommentInput{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+}
+.showVideo .comment input.editComment{
+    width: 90%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showVideo .comment .mainCommentInput .buttonSure{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+.showVideo .comment .mainCommentInput .buttonSure input{
+    float: right;
+    width: 60px;
+    height: 30px;
+    margin-right: 10%;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+.showVideo .comment .mainCommentInput{
+    margin-bottom: 10px;
+}
+.showVideo .comment .mainCommentInput input.replyComment{
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showVideo .comment .mainCommentInput input.replyButton{
+    margin-left: 5%;
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+.showVideo .comment .mainCommentContent:hover i.delComment{
+    opacity: 1;
+}
+
+i.delComment{
+    width: 14px;
+    height: 16px;
+    display: block;
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    float: right;
+    background: url(../../img/delIco.png)
+}
+#nowVideo{
+    width: 70% !important;
+    border: 1px solid #eee;
+}
+
 
 
 .f_left{

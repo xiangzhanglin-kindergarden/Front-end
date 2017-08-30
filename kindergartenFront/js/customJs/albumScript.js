@@ -23,12 +23,12 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
+        url = "http://172.20.2.164:8080/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
         loadClass();
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        url = "http://119.29.53.178:8080/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
+        url = "http://172.20.2.164:8080/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
 
         var classAlbumsChoose = $(".classAlbumsChoose");
         $(".chooseClass").remove();
@@ -72,6 +72,7 @@ $(window).ready(function () {
         },
         error: function (err) {
             console.log("出现错误："+err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -82,7 +83,7 @@ $(window).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+            url: "http://172.20.2.164:8080/kindergarden/ClassShow",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -158,7 +159,7 @@ $(window).ready(function () {
         if (name == "校园图鉴"){
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/PCtShowteacher?cid="+1+"&pageNum="+1,
+                url: "http://172.20.2.164:8080/kindergarden/PCtShowteacher?cid="+1+"&pageNum="+1,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -273,7 +274,7 @@ function searchClass() {
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/PCShowApp",
+        url: "http://172.20.2.164:8080/kindergarden/PCShowApp",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         data: "cid="+theClassName+"&pageNum="+1,
         beforeSend: function (xhr) {
@@ -300,6 +301,7 @@ function searchClass() {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -318,7 +320,8 @@ function showData(imgData) {
         if (theImgFace == undefined){
             imgFace = "img/albumFace.png";
         }else {
-            imgFace = JSON.parse(theImgFace).url;
+            // imgFace = JSON.parse(theImgFace).url;
+            imgFace = theImgFace;
         }
         console.log(imgFace);
 

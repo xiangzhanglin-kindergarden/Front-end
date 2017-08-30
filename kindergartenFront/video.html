@@ -7,7 +7,7 @@
 
     <title>视频管理</title>
 
-    <link rel="shortcut icon" href="img/title.png">
+    <link rel="shortcut icon" href="logo.ico">
     <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -26,12 +26,15 @@
                     <h5>视频</h5>
                     <div class="ibox-tools">
                         <a class="close-link">
-                            <i class="fa fa-times"></i>
+                            <!--<i class="fa fa-times"></i>-->
                         </a>
                     </div>
                 </div>
                 <div class="addVideos">
-
+                    <input class="buttonAdd" type="button" value="创建活动">
+                    <input class="buttonDel" type="button" value="删除活动">
+                    <input class="buttonSure" style="display: none;width:70px;" type="button" value="确认删除">
+                    <input class="buttonCancle" style="display: none;width:60px;" type="button" value="取消">
                     <div class="chooseClass f_right">
                         <span>点击查询对应班级的活动</span>
                         <label>
@@ -41,6 +44,9 @@
                             <input type="button" class="chooseClassButton" value="查询">
                             <input type="button" style="display: none" class="chooseSchool" value="返回校园图鉴">
                         </label>
+                    </div>
+                    <div class="classVideoChoose f_right" style="display: none">
+                        <input class="schoolChoose" type="button" value="校园活动">
                     </div>
                 </div>
                 <div class="ibox-content">
@@ -75,12 +81,12 @@
                         </div>
                         <div class="inputs">
                             <div class="everyInput">
-                                <span>发布人</span>
+                                <span class="theReleasePeople">发布人</span>
                                 <span class="thePeople">园长</span>
                             </div>
                             <div class="everyInput">
-                                <span>活动描述</span>
-                                <textarea class ="describ" type="text" placeholder="活动描述"></textarea>
+                                <span>标题</span>
+                                <textarea class ="describ" type="text" placeholder="标题"></textarea>
                             </div>
                         </div>
                         <div class="buttonsSure">
@@ -107,6 +113,7 @@
 
 
 <!-- 自定义js -->
+<script src="js/content.js?v=1.0.0"></script>
 <script type="text/javascript" src="js/customJs/video.js"></script>
 
 </body>

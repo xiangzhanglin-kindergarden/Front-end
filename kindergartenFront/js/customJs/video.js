@@ -14,6 +14,9 @@ $(window).ready(function () {
     var optionClass = [];
 
 
+    var addVideoBoxBollean = true;
+
+
     close.click(function () {
         closeAddAlbumsBox();
     });
@@ -39,7 +42,7 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://119.29.53.178:8080/kindergarden/MCShowAdmini";
+        url = "http://172.20.2.164:8080/kindergarden/MCShowAdmini";
         theData = "pageNum="+pageNum;
         loadClass();
 
@@ -52,7 +55,7 @@ $(window).ready(function () {
         var teacher = JSON.parse(teacherData);
 
         theData = "mcJson="+teacher.cId+"&pageNum="+pageNum;
-        url = "http://119.29.53.178:8080/kindergarden/MCShowClass";
+        url = "http://172.20.2.164:8080/kindergarden/MCShowClass";
 
         var classVideoChoose = $(".classVideoChoose");
         $(".chooseClass").remove();
@@ -86,7 +89,14 @@ $(window).ready(function () {
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            videoData = JSON.parse(data).tlist;
+            //videoData = JSON.parse(data).tlist;
+            if(typeof (data) == 'object'){
+                videoData = data.tlist;
+            }else {
+                // videoData = JSON.parse(data).tlist;
+                videoData = $.parseJSON(data);
+                videoData = videoData.tlist;
+            }
 
             showData(videoData);
 
@@ -97,6 +107,7 @@ $(window).ready(function () {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 
@@ -110,7 +121,7 @@ $(window).ready(function () {
         if (name == "校园活动"){
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MCShowAdmini?pageNum="+pageNum,
+                url: "http://172.20.2.164:8080/kindergarden/MCShowAdmini?pageNum="+pageNum,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -126,7 +137,12 @@ $(window).ready(function () {
                     $("#main").remove();
 
                     backClassVideo[0].value = "返回本班活动";
-                    var videoData = JSON.parse(data).tlist;
+                    var videoData;
+                    if(typeof (data) == 'object'){
+                        videoData = data.tlist;
+                    }else {
+                        videoData = JSON.parse(data).tlist;
+                    }
 
                     var main = document.createElement("div");
                     main.id = "main";
@@ -177,7 +193,7 @@ $(window).ready(function () {
     function loadClass() {
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/ClassShow",
+            url: "http://172.20.2.164:8080/kindergarden/ClassShow",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -189,7 +205,12 @@ $(window).ready(function () {
                 $(".chooseClass")[0].appendChild(adding);
             },
             success: function (classdata) {
-                var classData = JSON.parse(classdata);
+                var classData;
+                if(typeof (classdata) == 'object'){
+                    classData = classdata;
+                }else {
+                    classData = JSON.parse(classdata);
+                }
                 $(".adding").remove();
                 for (var clas = 0; clas < classData.length; clas++) {
                     optionClass[clas] = classData[clas].cName;
@@ -298,6 +319,11 @@ $(window).ready(function () {
             everyDiv.appendChild(videoDes);
             videoDes.appendChild(videoDesP);
 
+
+
+
+            sessionStorage.setItem("upperman",videoData[i].mcpeople);
+
         }
 
 
@@ -325,10 +351,13 @@ $(window).ready(function () {
 
     function releaseVideo() {
         var addVideoBox = $(".addVideoBox");
+        if(addVideoBoxBollean){
+            addVideoBox.click(function () {
+                releaseVideoAjax();
+                addVideoBoxBollean = false;
+            });
+        }
 
-        addVideoBox.click(function () {
-            releaseVideoAjax();
-        });
 
 
     }
@@ -344,7 +373,17 @@ $(window).ready(function () {
         //发布权限
         var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
         var teacherData = sessionStorage.getItem("teacherData");
-        var teacher = JSON.parse(teacherData);
+        // var teacher = JSON.parse(teacherData);
+        if(typeof(teacherData) ==='object'){
+            var teacher = JSON.parse(teacherData);
+        }else{
+            var teacher = teacherData;
+            //teacher = $.parseJSON(teacher);
+        }
+        console.log(teacher);
+        
+        // console.log(typeof(teacher));
+        // console.log(teacher.tName);
 
         var mcPeople = "";
         var mcclassid = "";
@@ -358,36 +397,46 @@ $(window).ready(function () {
 
         buttonsSure.click(function () {
             console.log("buttonSure");
+            // console.log(teacher);
+            // console.log(teacher.tName);
 
 
-            var values = {
-                "mcpeople": mcPeople,
-                "mctime": null,
-                "mccontent": textArea.val(),
-                "mcclassid": mcclassid,
-                "mcid": null
-            };
+            if (textArea.val()==""||textArea.val()==null||textArea.val()==undefined) {
+                alert("请在 活动描述 框里输入内容");
+            }else{
+                var values = {
+                    "mcpeople": mcPeople,
+                    "mctime": null,
+                    "mccontent": textArea.val(),
+                    "mcclassid": mcclassid,
+                    "mcid": null
+                };
 
-            console.log(values);
+                console.log(values);
 
-            $.ajax({
-                type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MovieContentAdd",
-                contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-                data: "MCJson="+JSON.stringify(values),
-                beforeSend: function (xhr) {
-                    xhr.withCredentials = true;
-                    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-                },
-                success: function (classData) {
-                    alert(classData);
-                    window.location.reload();
+                $.ajax({
+                    type: "post",
+                    url: "http://172.20.2.164:8080/kindergarden/MovieContentAdd",
+                    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+                    data: "MCJson="+JSON.stringify(values),
+                    beforeSend: function (xhr) {
+                        xhr.withCredentials = true;
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    },
+                    success: function (classData) {
+                        alert(classData);
+                        window.location.reload();
 
-                },
-                error: function (err) {
-                    console.log(err.status);
-                }
-            });
+                    },
+                    error: function (err) {
+                        console.log(err.status);
+                        alert("出现错误："+err.status);
+                    }
+                });
+            }
+
+
+            
 
         });
 
@@ -422,6 +471,7 @@ $(window).ready(function () {
 
         buttonSure.show(400);
         buttonCancle.show(400);
+        buttonDel.parent().append("<span class='theAttentionP' style='margin: 13px'>请选择需要删除的活动</span>");
 
         setTimeout(function () {
             buttonDel.hide(400);
@@ -437,6 +487,8 @@ $(window).ready(function () {
             setTimeout(function () {
                 buttonDel.show(400);
             },500);
+
+            $(".theAttentionP").remove();
             $("span.spanCheck").remove();
         });
 
@@ -470,7 +522,7 @@ $(window).ready(function () {
         if(message){
             $.ajax({
                 type: "post",
-                url: "http://119.29.53.178:8080/kindergarden/MovieContentDelete",
+                url: "http://172.20.2.164:8080/kindergarden/MovieContentDelete",
                 data: "mcJson="+delVideo,
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -484,6 +536,7 @@ $(window).ready(function () {
                 },
                 error: function (err) {
                     console.log(err.status);
+                    alert("出现错误："+err.status);
                 }
             });
         }
@@ -503,7 +556,7 @@ $(window).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "http://119.29.53.178:8080/kindergarden/MCClassApp",
+            url: "http://172.20.2.164:8080/kindergarden/MCClassApp",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             data: "mcJson="+theClassName+"&pageNum="+1,
             beforeSend: function (xhr) {
@@ -530,6 +583,7 @@ $(window).ready(function () {
             },
             error: function (err) {
                 console.log(err.status);
+                alert("出现错误："+err.status);
             }
         });
 

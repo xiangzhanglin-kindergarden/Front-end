@@ -3,22 +3,87 @@
  */
 $(document).ready(function () {
 
+    var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
     var theVideoMcid = sessionStorage.getItem("theVideoMcid");
+    var theVideoMname = sessionStorage.getItem("upperman");
+    var teacherData = sessionStorage.getItem("teacherData");
+
+
+    if(typeof(teacherData)=='object'){
+        var teacher = JSON.parse(teacherData);
+    }else{
+        // console.log(typeof(teacherData));
+        var teacher = teacherData;
+        // teacher = $.parseJSON(teacher);
+    }
+    console.log(teacher.tName);
+    console.log(teacher);
+
     var pageNum = 1;
+    if (theVideoMname=="园长") {
+        if (usertype==0) {
+            $(".videoAdd").css({"visibility":"hidden"});
+            $(".videoManage").css({"visibility":"hidden"});
+        };
+    };
+    
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/MovieShowWeb",
+        url: "http://172.20.2.164:8080/kindergarden/MovieShowWeb",
         data: "MCid="+theVideoMcid+"&pageNum="+pageNum,
         beforeSend: function (xhr) {
             xhr.withCredentials = true;
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         },
         success: function (data) {
-            var videoData = JSON.parse(data);
-            console.log(videoData);
+            // var videoData = JSON.parse(data);
+            var videoData;
+            if(typeof (data) == 'object'){
+                // console.log("对象");
+                videoData = data;
+            }else {
+                // console.log("字符串");
+                // videoData = JSON.parse(data);
+                var str = JSON.stringify(data);  
+                var str1 = JSON.parse(str);  
+                videoData = str1;
+                // console.log(typeof(str));
+                // console.log(typeof(str1));
+                // console.log(typeof(videoData));
+                videoData = $.parseJSON(videoData);
+                console.log(typeof(videoData));
+                
+            }
+            // console.log(data);  
+            // console.log("------------------------");
+            // console.log(videoData);
+            if (data=="显示失败") {
+                
+            }else{
+                var videoList = videoData.tlist;
+                console.log(videoList);
+                if (videoList!=null || videoList!="" || videoList!="undefined") {
+                    for(var i=0;i<videoList.length;i++){
+                        var mainVideo = $(".mainVideo");
+                        // var videoListAdress = JSON.parse(videoList[i].mvAdress);
+                        var videoListAdress = videoList[i].mvAdress;
+                        // var videoListAdreeUrl = videoListAdress.url;
+                        var videoListAdreeUrl = videoListAdress;
+                        var divVideo = document.createElement("div");
+                        divVideo.className = "everyVideo";
+                        var video = document.createElement("video");
+                        video.src = videoListAdreeUrl;
+                        video.setAttribute("data-mcid", videoList[i].mvId);
+                        mainVideo[0].appendChild(divVideo);
+                        divVideo.appendChild(video);
+                    }
+                };
+            }
 
+            
 
+            
 
 
 
@@ -58,7 +123,7 @@ $(document).ready(function () {
             videoManage.click(function () {
                 videoDel.show(400);
                 videoCancle.show(400);
-
+                videoDel.parent().append("<span class='theAttentionP' style='margin: 13px'>请选择需要删除的视频</span>");
                 setTimeout(function () {
                     videoManage.hide(400);
                 },500);
@@ -75,6 +140,7 @@ $(document).ready(function () {
                         videoManage.show(400);
                     },500);
 
+                    $(".theAttentionP").remove();
                     $("i.manageVideo").remove();
                 });
 
@@ -114,9 +180,32 @@ $(document).ready(function () {
                         var checked = theI[k].getAttribute("checked");
                         console.log(checked);
                         if (checked == "true"){
-                            // delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-pid") + ",";
+                            delVideo = delVideo + $(theI[k]).parent().find("video")[0].getAttribute("data-mcid") + ",";
                         }
                     }
+
+                    var message = confirm("确定要删除吗？");
+                    if(message){
+                        $.ajax({
+                            type: "post",
+                            url: "http://172.20.2.164:8080/kindergarden/MovieDelete",
+                            data: "mvid="+delVideo,
+                            beforeSend: function (xhr) {
+                                xhr.withCredentials = true;
+                                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                            },
+                            success: function () {
+                                console.log("success");
+                                alert("删除成功！");
+                                window.location.reload();
+
+                            },
+                            error: function (err) {
+                                console.log(err.status);
+                            }
+                        });
+                    }
+                    
                 });
 
 
@@ -132,6 +221,7 @@ $(document).ready(function () {
 
             });
 
+            showVideo();
 
         },
         error: function (err) {

@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "post",
-        url: "http://119.29.53.178:8080/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+pageNum,
+        url: "http://172.20.2.164:8080/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+pageNum,
         data:theIndex,
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend: function (xhr) {
@@ -41,8 +41,11 @@ $(document).ready(function () {
             var imgList = imgData.tlist;
             for (var i=0;i<imgList.length;i++){
                 var mainPhoto = $(".mainPhoto");
-                var imgListAdress = JSON.parse(imgList[i].xcAdress);
-                var imgListAdreeUrl = imgListAdress.url;
+                // var imgListAdress = JSON.parse(imgList[i].xcAdress);
+                // console.log(imgList[i].xcAdress);
+                var imgListAdress = imgList[i].xcAdress;
+                // var imgListAdreeUrl = imgListAdress.url;
+                var imgListAdreeUrl = imgListAdress;
                 var divImg = document.createElement("div");
                 divImg.className = "everyImg";
                 var img = document.createElement("img");
@@ -56,13 +59,17 @@ $(document).ready(function () {
             //上传图片
             var photoAdd = $("input.photoAdd");
             var uploadPhoto = $(".uploadPhoto");
+            var uploadMultipleBoolean = false;
+            if($("img").length != 0){
+                uploadMultipleBoolean = true;
+            }
 
             photoAdd.click(function () {
                 var oIframe = document.createElement("iframe");
                 oIframe.className = "oIframe";
                 oIframe.width = "100%";
                 oIframe.height = "100%";
-                oIframe.src = "albumUpload.html";
+                oIframe.src = "albumUpload.html?uploadMultipleBoolean="+uploadMultipleBoolean;
                 uploadPhoto[0].appendChild(oIframe);
                 gray.show();
                 uploadPhoto.show(200);
@@ -91,6 +98,9 @@ $(document).ready(function () {
                     management.hide(400);
                 },500);
 
+                console.log(photoCancle[0]);
+                photoCancle.parent().append("<span class='theAttentionP' style='margin: 10px'>请选择需要删除的图片</span>");
+
                 photoCancle.click(function () {
                     photoCancle.hide(400);
                     photoDel.hide(400);
@@ -98,6 +108,7 @@ $(document).ready(function () {
                         management.show(400);
                     },500);
 
+                    $(".theAttentionP").remove();
                     $("i.manageImg").remove();
                 });
 
@@ -144,7 +155,7 @@ $(document).ready(function () {
                     if(message){
                         $.ajax({
                             type: "post",
-                            url: "http://119.29.53.178:8080/kindergarden/PictureDelete",
+                            url: "http://172.20.2.164:8080/kindergarden/PictureDelete",
                             data: "Xidjson="+delPhoto,
                             beforeSend: function (xhr) {
                                 xhr.withCredentials = true;
@@ -182,6 +193,7 @@ $(document).ready(function () {
         },
         error: function (err) {
             console.log(err.status);
+            alert("出现错误："+err.status);
         }
     });
 
