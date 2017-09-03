@@ -39,7 +39,7 @@ $(document).ready(function () {
             
             $.ajax({
                 type: "get",
-                url: "http://localhost/kindergarden/TeacherShowAll",
+                url: "http://"+IPADDRESS+"/kindergarden/TeacherShowAll",
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -120,7 +120,7 @@ $(document).ready(function () {
         }else {
             $.ajax({
                 type:"post",
-                url:"http://localhost/kindergarden/ClassAdd",
+                url:"http://"+IPADDRESS+"/kindergarden/ClassAdd",
                 data:"classAdd="+JSON.stringify(value),
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 beforeSend: function (xhr) {

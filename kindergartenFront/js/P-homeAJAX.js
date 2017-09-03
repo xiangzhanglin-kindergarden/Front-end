@@ -3,7 +3,7 @@
 *     首页 新闻公告 
 *
 */
-  var hIPnub;   //存储ip地址
+  // var hIPnub;   //存储ip地址
   var haddress;  //存储后半部地址
   var htrans   //传递的参数
 
@@ -15,7 +15,7 @@
 
 
 
-hIPnub = "localhost/";
+// hIPnub = "localhost/";
 
 
 $(function(){
@@ -48,12 +48,12 @@ $(function(){
 /*   查询AJAX   */
 
   function hfindAJAX(){
-    console.log("http://"+hIPnub+haddress+htrans);
-    h_markurl = "http://"+hIPnub+haddress+htrans;
+    console.log("http://"+IPADDRESS+haddress+htrans);
+    h_markurl = "http://"+IPADDRESS+haddress+htrans;
 
     $.ajax({
       type:"get",
-      url:"http://"+hIPnub+haddress+htrans,
+      url:"http://"+IPADDRESS+haddress+htrans,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

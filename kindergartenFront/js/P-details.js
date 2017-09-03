@@ -57,7 +57,7 @@ $(function(){
 $(function(){
   $.ajax({
     type:"post",
-    url:"http://localhost/kindergarden/SreachByID?idnews="+pageid,
+    url:"http://"+IPADDRESS+"/kindergarden/SreachByID?idnews="+pageid,
     dataType:"JSON",
     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 

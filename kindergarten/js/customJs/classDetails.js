@@ -137,7 +137,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "get",
-                    url: "http://localhost/kindergarden/TeacherShowAll",
+                    url: "http://"+IPADDRESS+"/kindergarden/TeacherShowAll",
                     // dataType: "JSON",
                     contentType:"application/x-www-form-urlencoded;charset=utf-8",
                     beforeSend: function (xhr) {
@@ -210,7 +210,7 @@ $(document).ready(function () {
             };
             $.ajax({
                 type:"post",
-                url:"http://localhost/kindergarden/ClassUpate",
+                url:"http://"+IPADDRESS+"/kindergarden/ClassUpate",
                 data:"classUpdate="+JSON.stringify(values),
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 beforeSend: function (xhr) {
@@ -243,7 +243,7 @@ $(document).ready(function () {
     function delTheClass() {
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/ClassDelete",
+            url: "http://"+IPADDRESS+"/kindergarden/ClassDelete",
             data: "classDelete="+rowId,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -271,7 +271,7 @@ $(document).ready(function () {
     var table_list_1 = $("#table_list_1");
     $.ajax({
         type: "get",
-        url: "http://localhost/kindergarden/ClassDetails?classid="+rowId,
+        url: "http://"+IPADDRESS+"/kindergarden/ClassDetails?classid="+rowId,
         contentType:"application/x-www-form-urlencoded;charset=utf-8",
         beforeSend: function (xhr) {
             xhr.withCredentials = true;

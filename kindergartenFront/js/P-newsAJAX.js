@@ -80,12 +80,12 @@ $(function(){
 /*   查询AJAX   */
 
   function findAJAX(){
-    console.log("http://"+IPnub+address+trans);
-    n_markurl = "http://"+IPnub+address+trans;
+    console.log("http://"+IPADDRESS+address+trans);
+    n_markurl = "http://"+IPADDRESS+address+trans;
 
     $.ajax({
       type:"get",
-      url:"http://"+IPnub+address+trans+"&pageNum="+1,
+      url:"http://"+IPADDRESS+address+trans+"&pageNum="+1,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

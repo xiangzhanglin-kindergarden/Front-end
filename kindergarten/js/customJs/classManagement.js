@@ -71,7 +71,7 @@ function classManagenment(data) {
         console.log("upgrade");
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/ClassUp",
+            url: "http://"+IPADDRESS+"/kindergarden/ClassUp",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -79,7 +79,7 @@ function classManagenment(data) {
             success: function () {
                 $.ajax({
                     type: "post",
-                    url: "http://localhost/kindergarden/StudentShowAll",
+                    url: "http://"+IPADDRESS+"/kindergarden/StudentShowAll",
                     beforeSend: function (xhr) {
                         xhr.withCredentials = true;
                         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -104,7 +104,7 @@ function classManagenment(data) {
         var delId = data[index-1].cId;
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/ClassDelete",
+            url: "http://"+IPADDRESS+"/kindergarden/ClassDelete",
             data: "classDelete="+delId,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;

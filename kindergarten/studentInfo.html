@@ -59,6 +59,7 @@
 <!-- 全局js -->
 <script src="js/jquery.min.js?v=2.1.4"></script>
 <script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/self-option.js"></script>
 <script src="js/customJs/mobiscroll.custom-2.6.2.min.js"></script>
 
 <!-- Peity -->
@@ -83,10 +84,10 @@
         var teacherData = sessionStorage.getItem("teacherData");
 
         if (usertype == 1){
-            url = "http://localhost/kindergarden/StudentShowAll";
+            url = "http://"+IPADDRESS+"/kindergarden/StudentShowAll";
         }else {
             var teacher = JSON.parse(teacherData);
-            url = "http://localhost/kindergarden/ClassDetails?classid=" + teacher.cId;
+            url = "http://"+IPADDRESS+"/kindergarden/ClassDetails?classid=" + teacher.cId;
         }
 
         $.ajax({

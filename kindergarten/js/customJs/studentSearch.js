@@ -16,7 +16,7 @@ $(window).on("load",function () {
 
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/StudentSearch",
+            url: "http://"+IPADDRESS+"/kindergarden/StudentSearch",
             data: "sss="+searchValue,
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;

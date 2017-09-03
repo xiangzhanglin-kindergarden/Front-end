@@ -36,7 +36,7 @@ function addTheBox(theCaption,theIndex,data) {
 
     $.ajax({
         type: "get",
-        url: "http://localhost/kindergarden/ClassShow",
+        url: "http://"+IPADDRESS+"/kindergarden/ClassShow",
         dataType: "JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend: function (xhr) {
@@ -566,7 +566,7 @@ function addSubmit() {
 
         $.ajax({
             type:"post",
-            url:"http://localhost/kindergarden/StudentAdd",
+            url:"http://"+IPADDRESS+"/kindergarden/StudentAdd",
             // dataType:"JSON",
             data:"studentjson="+JSON.stringify(values),
             contentType:"application/x-www-form-urlencoded;charset=utf-8",
@@ -631,7 +631,7 @@ function editSubmit(id) {
 
     $.ajax({
         type:"post",
-        url:"http://localhost/kindergarden/StudentUpdate",
+        url:"http://"+IPADDRESS+"/kindergarden/StudentUpdate",
         // dataType:"JSON",
         data:"StudentJson="+JSON.stringify(values),
         contentType:"application/x-www-form-urlencoded;charset=utf-8",
@@ -670,7 +670,7 @@ function delData(delIndex) {
     console.log(delId);
     $.ajax({
         type: "post",
-        url: "http://localhost/kindergarden/StudentDlete",
+        url: "http://"+IPADDRESS+"/kindergarden/StudentDlete",
         data: "sid="+delId,
         beforeSend: function (xhr) {
             xhr.withCredentials = true;

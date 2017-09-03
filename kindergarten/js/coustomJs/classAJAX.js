@@ -34,7 +34,7 @@ $(document).ready(function(){
     //加载班级
     $.ajax({
       type: "post",
-      url: "http://localhost/kindergarden/ClassShow",
+      url: "http://"+IPADDRESS+"/kindergarden/ClassShow",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend: function (xhr) {
         xhr.withCredentials = true;
@@ -75,7 +75,7 @@ $(document).ready(function(){
 			// "cid":userClass,
 		});
 		ajax(
-			"http://localhost/kindergarden/Lessonshowteacher",
+			"http://"+IPADDRESS+"/kindergarden/Lessonshowteacher",
 			"lessonJson="+lesson,
 			showLesson
 		);
@@ -160,7 +160,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://localhost/kindergarden/LessonAddteacher",
+				"http://"+IPADDRESS+"/kindergarden/LessonAddteacher",
 				"lessonInJson="+courseMsg,
 				function(res){
 
@@ -180,7 +180,7 @@ $(document).ready(function(){
 						// "cid":userClass,
 					});
 					ajax(
-						"http://localhost/kindergarden/Lessonshowteacher",
+						"http://"+IPADDRESS+"/kindergarden/Lessonshowteacher",
 						"lessonJson="+lesson,
 						showLesson
 					);
@@ -208,7 +208,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://localhost/kindergarden/LessonAdd",
+				"http://"+IPADDRESS+"/kindergarden/LessonAdd",
 				"lessonInJson="+courseMsg,
 				function(res){
 
@@ -228,7 +228,7 @@ $(document).ready(function(){
 						// "cid":userClass,
 					});
 					ajax(
-						"http://localhost/kindergarden/LessonShow",
+						"http://"+IPADDRESS+"/kindergarden/LessonShow",
 						"lessonJson="+lesson,
 						showLesson
 					);
@@ -269,7 +269,7 @@ $(document).ready(function(){
 			});
 			console.log(lesson);
 			ajax(
-				"http://localhost/kindergarden/Lessonshowteacher",
+				"http://"+IPADDRESS+"/kindergarden/Lessonshowteacher",
 				// "http://172.20.2.164:8080/kindergarden/LessonShow",
 				"lessonJson="+lesson,
 				showLesson
@@ -288,7 +288,7 @@ $(document).ready(function(){
 				"shuxin":null
 			});
 			ajax(
-				"http://localhost/kindergarden/LessonShow",
+				"http://"+IPADDRESS+"/kindergarden/LessonShow",
 				"lessonJson="+lesson,
 				showLesson
 			);
@@ -303,7 +303,7 @@ $(document).ready(function(){
 		$("#new-class").attr("disabled",false);
 		$("#change-class").attr("disabled",false);
 		$(".c-week").attr("disabled",false);
-		ajax("http://localhost/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+		ajax("http://"+IPADDRESS+"/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
 	})
 	var value = [];
 	//点击修改按钮
@@ -400,7 +400,7 @@ $(document).ready(function(){
 			});
 			console.log(courseMsg);
 			ajax(
-				"http://localhost/kindergarden/LessonUpdate",
+				"http://"+IPADDRESS+"/kindergarden/LessonUpdate",
 				"lessonJson="+courseMsg,
 				function(res){
 					$(".delayimg").css({"opacity":1});
@@ -426,7 +426,7 @@ $(document).ready(function(){
 				"shuxin":classshuxin
 			});
 			console.log(courseMsg);
-			ajax("http://localhost/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
+			ajax("http://"+IPADDRESS+"/kindergarden/LessonUpdate","lessonJson="+courseMsg,function(res){
 				$(".delayimg").css({"opacity":1});
 				$(".mail-box td").each(function(){
 					if ($(this).attr("class") != "class-time"){

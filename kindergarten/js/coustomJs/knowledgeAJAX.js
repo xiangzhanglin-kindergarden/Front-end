@@ -19,14 +19,14 @@ $(function(){
 
 
 
-  var IPnub;   //存储ip地址
+  // var IPADDRESS;   //存储ip地址
   var address;  //存储后半部地址
   var trans   //传递的参数
 
   var markurl;   //用于存储分页用的url信息；
 
 
-  IPnub = "localhost/";
+  // IPADDRESS = "localhost/";
 
 
 /*    打开页面初始化AJAX     */
@@ -35,7 +35,7 @@ $(function(){
 		address = "kindergarden/ShowAllGrowth";
 		trans = "?pageNum="+1;
 		findAJAX();
-    markurl = "http://"+IPnub+address+trans;
+    markurl = "http://"+IPADDRESS+address+trans;
     
   })
 
@@ -46,7 +46,7 @@ $(function(){
 
     $.ajax({
       type:"get",
-      url:"http://"+IPnub+address+trans,
+      url:"http://"+IPADDRESS+address+trans,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
@@ -172,7 +172,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://localhost/kindergarden/DeleteGrowth?idnews="+ID,
+          url:"http://"+IPADDRESS+"/kindergarden/DeleteGrowth?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -219,7 +219,7 @@ var k_s_flag = 0;
         }else{
           $.ajax({
             type:"get",
-            url:"http://"+IPnub+address+trans,
+            url:"http://"+IPADDRESS+address+trans,
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend:function(xhr){
@@ -241,7 +241,7 @@ var k_s_flag = 0;
 	    }else{
 	      $.ajax({
 	        type:"get",
-	        url:"http://localhost/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+	        url:"http://"+IPADDRESS+"/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
 	        dataType:"JSON",
 	        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 	        beforeSend:function(xhr){
@@ -271,7 +271,7 @@ var k_s_flag = 0;
     $(".renews").bind("click",function(){
       $.ajax({
         type:"get",
-        url:"http://"+IPnub+address+trans,
+        url:"http://"+IPADDRESS+address+trans,
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -342,7 +342,7 @@ var k_s_flag = 0;
 
         $.ajax({
           type:"post",
-          url:"http://localhost/kindergarden/GrowthAdd",
+          url:"http://"+IPADDRESS+"/kindergarden/GrowthAdd",
           data:"NewsAdd="+myjson,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",

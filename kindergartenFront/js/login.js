@@ -15,11 +15,11 @@ $(document).ready(function(){
 
 			var myjson;      //传递参数的内容
 			var url = "";    //物理地址
-			var IP = "";     //IP地址
+			// var IP = "";     //IP地址
 
 
 			// IP = "172.20.2.164:8080/";
-			IP = "localhost/";
+			// IP = "localhost/";
 
 			if (userClass=="user-manager") {
 				userClass = 1;
@@ -46,7 +46,7 @@ $(document).ready(function(){
 				$.ajax({
 					// type:"get",
 					type:"post",
-					url:"http://"+IP+url,
+					url:"http://"+IPADDRESS+url,
 					data:myjson,
 					dataType:"JSON",
 					// contentType:"application/x-www-form-urlencoded;charset=UTF-8",

@@ -23,12 +23,12 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://localhost/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
+        url = "http://"+IPADDRESS+"/kindergarden/PCtShowteacher?pageNum=" + pageNum + "&cid="+1;
         loadClass();
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        url = "http://localhost/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
+        url = "http://"+IPADDRESS+"/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
 
         var classAlbumsChoose = $(".classAlbumsChoose");
         $(".chooseClass").remove();
@@ -83,7 +83,7 @@ $(window).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/ClassShow",
+            url: "http://"+IPADDRESS+"/kindergarden/ClassShow",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -159,7 +159,7 @@ $(window).ready(function () {
         if (name == "校园图鉴"){
             $.ajax({
                 type: "post",
-                url: "http://localhost/kindergarden/PCtShowteacher?cid="+1+"&pageNum="+1,
+                url: "http://"+IPADDRESS+"/kindergarden/PCtShowteacher?cid="+1+"&pageNum="+1,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -274,7 +274,7 @@ function searchClass() {
 
     $.ajax({
         type: "post",
-        url: "http://localhost/kindergarden/PCShowApp",
+        url: "http://"+IPADDRESS+"/kindergarden/PCShowApp",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         data: "cid="+theClassName+"&pageNum="+1,
         beforeSend: function (xhr) {

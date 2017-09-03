@@ -42,7 +42,7 @@ $(window).ready(function () {
 
     //园长
     if (usertype == 1){
-        url = "http://localhost/kindergarden/MCShowAdmini";
+        url = "http://"+IPADDRESS+"/kindergarden/MCShowAdmini";
         theData = "pageNum="+pageNum;
         loadClass();
 
@@ -55,7 +55,7 @@ $(window).ready(function () {
         var teacher = JSON.parse(teacherData);
 
         theData = "mcJson="+teacher.cId+"&pageNum="+pageNum;
-        url = "http://localhost/kindergarden/MCShowClass";
+        url = "http://"+IPADDRESS+"/kindergarden/MCShowClass";
 
         var classVideoChoose = $(".classVideoChoose");
         $(".chooseClass").remove();
@@ -121,7 +121,7 @@ $(window).ready(function () {
         if (name == "校园活动"){
             $.ajax({
                 type: "post",
-                url: "http://localhost/kindergarden/MCShowAdmini?pageNum="+pageNum,
+                url: "http://"+IPADDRESS+"/kindergarden/MCShowAdmini?pageNum="+pageNum,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -193,7 +193,7 @@ $(window).ready(function () {
     function loadClass() {
         $.ajax({
             type: "post",
-            url: "http://localhost/kindergarden/ClassShow",
+            url: "http://"+IPADDRESS+"/kindergarden/ClassShow",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend: function (xhr) {
                 xhr.withCredentials = true;
@@ -416,7 +416,7 @@ $(window).ready(function () {
 
                 $.ajax({
                     type: "post",
-                    url: "http://localhost/kindergarden/MovieContentAdd",
+                    url: "http://"+IPADDRESS+"/kindergarden/MovieContentAdd",
                     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                     data: "MCJson="+JSON.stringify(values),
                     beforeSend: function (xhr) {
@@ -522,7 +522,7 @@ $(window).ready(function () {
         if(message){
             $.ajax({
                 type: "post",
-                url: "http://localhost/kindergarden/MovieContentDelete",
+                url: "http://"+IPADDRESS+"/kindergarden/MovieContentDelete",
                 data: "mcJson="+delVideo,
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
@@ -556,7 +556,7 @@ $(window).ready(function () {
 
         $.ajax({
             type: "post",
-            url: "http://localhostlocalhost/kindergarden/MCClassApp",
+            url: "http://"+IPADDRESS+"/kindergarden/MCClassApp",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             data: "mcJson="+theClassName+"&pageNum="+1,
             beforeSend: function (xhr) {

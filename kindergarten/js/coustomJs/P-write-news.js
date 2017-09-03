@@ -75,7 +75,7 @@ $(function(){
 			editor = new wangEditor('div1');
 
 			// 图片上传路径
-			editor.config.uploadImgUrl = 'http://localhost/kindergarden/imageUpload';
+			editor.config.uploadImgUrl = 'http://'+IPADDRESS+'/kindergarden/imageUpload';
 			// 隐藏掉插入网络图片功能。该配置，只有在你正确配置了图片上传功能之后才可用。
 	    editor.config.hideLinkImg = true;
 
@@ -138,7 +138,7 @@ $(function(){
     dictMaxFilesExceeded: "您最多只能上传20个文件！",
     dictResponseError: '文件上传失败!',
     method:"post",
-    url:"http://localhost/kindergarden/Upload",
+    url:"http://"+IPADDRESS+"/kindergarden/Upload",
     // url:"#",
     paramName:"file",
     //setParameterEncoding:AFJSONParameterEncoding
@@ -269,7 +269,7 @@ $(function(){
     var control = $("#file-0");
     control.fileinput({
       language: 'zh', //设置语言
-      uploadUrl: "http://localhost/kindergarden/imageUpload", //上传的地址
+      uploadUrl: "http://"+IPADDRESS+"/kindergarden/imageUpload", //上传的地址
       allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
       uploadAsync: true, //默认异步上传
       showUpload: true, //是否显示上传按钮
@@ -416,7 +416,7 @@ $(function(){
 
     $.ajax({
       type:"post",
-      url:"http://localhost/kindergarden/Newsadd",
+      url:"http://"+IPADDRESS+"/kindergarden/Newsadd",
       data:"NewsAdd="+myjson,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",

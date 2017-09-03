@@ -42,6 +42,7 @@
 <!-- 全局js -->
 <script src="js/jquery.min.js?v=2.1.4"></script>
 <script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/self-option.js"></script>
 
 
 
@@ -65,7 +66,7 @@
 
         Dropzone.options.myAwesomeDropzone = {
 //            url: "#",
-            url: "http://localhost/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
+            url: "http://"+IPADDRESS+"/kindergarden/PictureAdd?picturecontenid="+picId,//提交地址
             autoProcessQueue: false,
             uploadMultiple: uploadMultipleBoolean,//允许 Dropzone 一次提交多个文件
             parallelUploads: 100,

@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "post",
-        url: "http://localhost/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+pageNum,
+        url: "http://"+IPADDRESS+"/kindergarden/PictureShowWeb?pid="+theIndex+"&pageNum="+pageNum,
         data:theIndex,
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend: function (xhr) {
@@ -155,7 +155,7 @@ $(document).ready(function () {
                     if(message){
                         $.ajax({
                             type: "post",
-                            url: "http://localhost/kindergarden/PictureDelete",
+                            url: "http://"+IPADDRESS+"/kindergarden/PictureDelete",
                             data: "Xidjson="+delPhoto,
                             beforeSend: function (xhr) {
                                 xhr.withCredentials = true;

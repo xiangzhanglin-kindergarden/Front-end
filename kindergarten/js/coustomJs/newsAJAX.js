@@ -41,7 +41,7 @@ $(function(){
 })
 
 
-  var IPnub;   //存储ip地址
+  // var IPADDRESS;   //存储ip地址
   var address;  //存储后半部地址
   var trans   //传递的参数
   var ptrans  //传递页数
@@ -67,7 +67,7 @@ $(function(){
     kindNub = "2";
   }
 
-  IPnub = "localhost/";
+  // IPADDRESS = ""+IPADDRESS+"/";
 
 
 /*    打开页面初始化AJAX     */
@@ -223,24 +223,24 @@ $(function(){
 /*   查询AJAX   */
 
   function findAJAX(){
-    console.log(IPnub);
+    console.log(IPADDRESS);
     console.log("");
     console.log(address);
     console.log("");
     console.log(trans);
     console.log("");
-    console.log("http://"+IPnub+address+trans);
-    console.log("http://"+IPnub+address+trans+ptrans);
+    console.log("http://"+IPADDRESS+address+trans);
+    console.log("http://"+IPADDRESS+address+trans+ptrans);
     statusall="";
     statuspass="";
     statusunpass="";
     statuswait="";
-    markurl = "http://"+IPnub+address+trans;
+    markurl = "http://"+IPADDRESS+address+trans;
 
     $.ajax({
       type:"get",
-      url:"http://"+IPnub+address+trans+ptrans,
-      // url:"http://"+IPnub+address+"?A=&B=通过&C=C&D=D&pageNum=1",
+      url:"http://"+IPADDRESS+address+trans+ptrans,
+      // url:"http://"+IPADDRESS+address+"?A=&B=通过&C=C&D=D&pageNum=1",
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
@@ -402,7 +402,7 @@ $(function(){
         console.log(ID);
         $.ajax({
           type:"get",
-          url:"http://localhost/kindergarden/DeleteNews?idnews="+ID,
+          url:"http://"+IPADDRESS+"/kindergarden/DeleteNews?idnews="+ID,
           dataType:"JSON",
           contentType:"application/x-www-form-urlencoded;charset=UTF-8",
           beforeSend:function(xhr){
@@ -465,7 +465,7 @@ $(function(){
         if (usertype==0) {
           $.ajax({
             type:"get",
-            url:"http://localhost/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+            url:"http://"+IPADDRESS+"/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend:function(xhr){
@@ -502,7 +502,7 @@ $(function(){
         }else{
           $.ajax({
             type:"get",
-            url:"http://localhost/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+            url:"http://"+IPADDRESS+"/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
             dataType:"JSON",
             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
             beforeSend:function(xhr){
@@ -547,7 +547,7 @@ $(function(){
       };
       $.ajax({
         type:"get",
-        url:"http://localhost/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+        url:"http://"+IPADDRESS+"/kindergarden/NewsSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+encodeURI(encodeURI(keyword))+"&time="+encodeURI(encodeURI(keytime))+"&issuer="+encodeURI(encodeURI(keyname))+"&pageNum="+1,
         // url:"http://172.20.2.164:8080/kindergarden/NewsSreach?title="+escape(keyword)+"&time="+escape(keytime)+"&issuer="+escape(keyname)+"&pageNum="+1,
         dataType:"JSON",
@@ -583,7 +583,7 @@ $(function(){
     if (usertype==0) {
       $.ajax({
         type:"get",
-        url:"http://localhost/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
+        url:"http://"+IPADDRESS+"/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){
@@ -624,7 +624,7 @@ $(function(){
     }else{
       $.ajax({
         type:"get",
-        url:"http://localhost/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
+        url:"http://"+IPADDRESS+"/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1",
         dataType:"JSON",
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         beforeSend:function(xhr){

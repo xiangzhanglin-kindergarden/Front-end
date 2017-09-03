@@ -6,7 +6,7 @@
 
 
 
-  var IPnub;   //存储ip地址
+  // var IPnub;   //存储ip地址
   var kaddress;  //存储后半部地址
   var ktrans   //传递的参数
 
@@ -16,7 +16,7 @@
   var kmarkurl;   //用于存储分页用的url信息；
 
 
-  IPnub = "localhost/";
+  // IPnub = ""+IPADDRESS+"/";
 
 
 
@@ -33,7 +33,7 @@ $(function(){
   function kfindAJAX(){
     $.ajax({
       type:"get",
-      url:"http://localhost/kindergarden/ShowAllGrowth?pageNum="+1,
+      url:"http://"+IPADDRESS+"/kindergarden/ShowAllGrowth?pageNum="+1,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){
@@ -257,7 +257,7 @@ $(function(){
 
     $.ajax({
       type:"get",
-      url:"http://localhost/kindergarden/ShowAllGrowth?pageNum="+kflag,
+      url:"http://"+IPADDRESS+"/kindergarden/ShowAllGrowth?pageNum="+kflag,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

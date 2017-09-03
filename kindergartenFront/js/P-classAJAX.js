@@ -19,14 +19,14 @@ $(document).ready(function(){
 
       var myjson = "";      //传递参数的内容
       var url = "";    //物理地址
-      var IP = "";     //IP地址
+      // var IP = "";     //IP地址
 
 
       var week = $(".dform-group option:selected").val();
 
 
       // IP = "172.20.2.164:8080/";
-      IP = "localhost/";
+      // IP = ""+IPADDRESS+"/";
       url = "kindergarden/LessonShow";
 
       myweek = $(".classtable table").attr("name");
@@ -54,7 +54,7 @@ $(document).ready(function(){
       myjson = JSON.stringify(myjson);
       console.log(cClass);
       console.log(myjson);
-      ajax("http://"+IP+url,"lessonJson="+myjson,showLesson);
+      ajax("http://"+IPADDRESS+url,"lessonJson="+myjson,showLesson);
   })    
 
 
@@ -76,7 +76,7 @@ $(document).ready(function(){
       "shuxin":null
     });
     console.log(lesson);
-    ajax("http://localhost/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+    ajax("http://"+IPADDRESS+"/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
   })
 
   //切换班的时候的功能函数
@@ -98,7 +98,7 @@ $(document).ready(function(){
       "shuxin":null
     });
     console.log(lesson);
-    ajax("http://localhost/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
+    ajax("http://"+IPADDRESS+"/kindergarden/LessonShow","lessonJson="+lesson,showLesson);
   })
 
 

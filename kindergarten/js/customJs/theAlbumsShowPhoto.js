@@ -54,7 +54,7 @@ function showPhoto() {
                 var nowImgId = nowImg.getAttribute("data-pid");
                 $.ajax({
                     type: "post",
-                    url: "http://localhost/kindergarden/CommunicateShow",
+                    url: "http://"+IPADDRESS+"/kindergarden/CommunicateShow",
                     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                     data: "XId="+nowImgId,
                     beforeSend: function (xhr) {
@@ -294,7 +294,7 @@ function showPhoto() {
                         console.log(theValue);
                         $.ajax({
                             type: "post",
-                            url: "http://localhost/kindergarden/CommunicateAdd",
+                            url: "http://"+IPADDRESS+"/kindergarden/CommunicateAdd",
                             contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                             data: "CommuniJson="+JSON.stringify(theValue),
                             beforeSend: function (xhr) {
@@ -326,7 +326,7 @@ function showPhoto() {
             function delCommentAjax(commid) {
                 $.ajax({
                     type: "post",
-                    url: "http://localhost/kindergarden/CommunicateDelete",
+                    url: "http://"+IPADDRESS+"/kindergarden/CommunicateDelete",
                     contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                     data: "ComId="+commid,
                     beforeSend: function (xhr) {

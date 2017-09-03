@@ -4,6 +4,7 @@
  *   
  *
 */
+console.log(IPADDRESS);
 $(document).ready(function(){
 	$("#submit-btn").bind(
 		"click",
@@ -18,7 +19,7 @@ $(document).ready(function(){
 			var IP = "";     //IP地址
 
 
-			IP = "localhost/";
+			// IPADDRESS = "localhost/";
 
 			if (userClass=="user-manager") {
 				userClass = 1;
@@ -44,7 +45,7 @@ $(document).ready(function(){
 				$.ajax({
 					// type:"get",
 					type:"post",
-					url:"http://"+IP+url,
+					url:"http://"+IPADDRESS+url,
 					data:myjson,
 					dataType:"JSON",
 					// contentType:"application/x-www-form-urlencoded;charset=UTF-8",
