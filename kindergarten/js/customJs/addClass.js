@@ -54,7 +54,7 @@ $(document).ready(function () {
                     console.log(dataStr);
                     var nowTeacher;
                     var data = JSON.parse(dataStr);
-                    $(".adding")[0].remove();
+                    $(".adding").remove();
                     for (var d=0;d<data.length;d++){
                         tName[d] = data[d].tName;
                         var tInput = document.createElement("input");

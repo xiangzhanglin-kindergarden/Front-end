@@ -42,6 +42,7 @@ $(document).ready(function(){
 			CheckEmpty();
 
 			if (CHECK_EMPTY==true) {
+				console.log("CHECK_EMPTY==true");
 				$.ajax({
 					// type:"get",
 					type:"post",

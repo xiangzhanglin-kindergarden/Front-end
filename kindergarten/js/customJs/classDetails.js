@@ -283,7 +283,7 @@ $(document).ready(function () {
             $(".ibox-content")[0].appendChild(adding);
         },
         success: function (rowData) {
-            $(".adding")[0].remove();
+            $(".adding").remove();
             theRow = JSON.parse(rowData);
             console.log(theRow);
             

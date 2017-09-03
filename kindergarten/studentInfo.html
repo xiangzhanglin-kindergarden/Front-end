@@ -105,7 +105,7 @@
                 $(".ibox-content")[0].appendChild(adding);
             },
             success:function (data) {
-                $(".adding")[0].remove();
+                $(".adding").remove();
                 console.log("数据加载成功！");
                 console.log(data);
                 row = initData(data);
