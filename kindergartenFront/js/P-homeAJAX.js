@@ -18,6 +18,7 @@
 // hIPnub = "localhost/";
 
 
+
 $(function(){
   hbtnkind = "全部";
   htoSurehAddress(hbtnkind);
@@ -40,10 +41,12 @@ $(function(){
 
     htrans = "?A=&B=通过&C=&D=&pageNum="+1;
 
+
     hfindAJAX();
   }
 
-
+// http://119.29.225.57:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1
+// http://119.29.225.57:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1
 
 /*   查询AJAX   */
 

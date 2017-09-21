@@ -6,10 +6,11 @@ $(function(){
 
   console.log(usertype);
   console.log(username);
+
   if (usertype == null||usertype == "") {
     window.location.href = "logIn.html";
   };
-  allClass();
+  
   if (usertype == 1){//园长
 
 
@@ -40,6 +41,8 @@ $(function(){
     $(".enterBack").remove();
     $(".theClassChose").remove();
   }
+
+  allClass();
 })
 
 function allClass(){
@@ -60,6 +63,7 @@ function allClass(){
         var data = JSON.parse(teacherData);
         var classId = data.Object.cId;
       }
+
       
       var classData = JSON.parse(classdata);
       var classlang = classData.length-2;
@@ -79,9 +83,11 @@ function allClass(){
           };
         }
         
-        $(".removeTclassse").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
-        $(".addNewClass").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
+        $("#selectClass.selectpicker").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
+        // $(".formytest").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
+        // $(".addNewClass").append("<option value='"+classData[i].cName+"'>"+classData[i].cName+"</option>")
       }
+      $("#selectClass").selectpicker('refresh');
     },
     error: function (err) {
       console.log(err.status);
