@@ -91,7 +91,8 @@
                 });
                 this.on("sendingmultiple", function () {});
                 this.on("successmultiple", function () {
-                    window.location.href = "theAlbums.html";
+//                    window.location.href = "theAlbums.html";
+                        parent.location.reload();
                 });
                 this.on("errormultiple", function (files, response) {
                 });
