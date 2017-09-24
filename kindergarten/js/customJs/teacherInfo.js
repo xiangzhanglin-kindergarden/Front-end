@@ -93,13 +93,17 @@ function addTeacher(theCaption,data,theIndex) {
                     var spanClass = document.createElement("span");
                     spanClass.innerHTML = caption[i];
                     theBoxClass.appendChild(spanClass);
-                    var selectClass = document.createElement("select");
+                    var selectClass = document.createElement("input");
                     theBoxClass.appendChild(selectClass);
-                    for (var c=0;c<optionClass.length;c++){
-                        var classOption = document.createElement("option");
-                        selectClass.appendChild(classOption);
-                        classOption.innerHTML = optionClass[c];
-                    }
+                    selectClass.type = "text";
+                    selectClass.value = "未分配";
+                    selectClass.readOnly = true;
+                    theBoxClass.appendChild(selectClass);
+                    // for (var c=0;c<optionClass.length;c++){
+                    //     var classOption = document.createElement("option");
+                    //     selectClass.appendChild(classOption);
+                    //     classOption.innerHTML = optionClass[c];
+                    // }
                 }else {
                     var boxInput = document.createElement("div");
                     boxInput.className = "boxInput";
@@ -233,7 +237,7 @@ function addSubmit() {
             tName: theBoxInput[0].value,
             tPhone: theBoxInput[1].value,
             tSex: theBoxSelect[1].value,
-            tgrade: theBoxSelect[0].value,
+            tgrade: "未,分配",
             tWorkId: theBoxInput[2].value
         };
 
@@ -276,12 +280,12 @@ function editSubmit(theId) {
         classNameC = className.substring(1);
     var cName = classNameT+","+classNameC;
 
-    var isPhone = /^1[3,5,8]\d{9}$/;
+    // var isPhone = /^1[3,5,8]\d{9}$/;
     if(theBoxInput[0].value === ""){
         alert("教师名字不能为空！");
     }else if(theBoxSelect[0].value ===""){
         alert("授课班级不能为空！");
-    }else if(!isPhone.test(theBoxInput[1].value)){
+    }else if(theBoxInput[1].value.length != 11){
         alert("电话号码必须为11位数字！");
     }else if(theBoxInput[2].value === ""){
         alert("登陆密码/工号不能为空！");
