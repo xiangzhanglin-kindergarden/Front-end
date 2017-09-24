@@ -104,6 +104,7 @@ function addTeacher(theCaption,data,theIndex) {
                     //     selectClass.appendChild(classOption);
                     //     classOption.innerHTML = optionClass[c];
                     // }
+                    theBoxClass.style.display = "none";
                 }else {
                     var boxInput = document.createElement("div");
                     boxInput.className = "boxInput";
@@ -158,8 +159,8 @@ function addTeacher(theCaption,data,theIndex) {
                 var theBoxInput = boxEdit.find("input");
                 var theBoxSelect = boxEdit.find("select");
                 theBoxInput[0].value = rowData.tName;
-                theBoxInput[1].value = rowData.tPhone;
-                theBoxInput[2].value = rowData.tPassword;
+                theBoxInput[2].value = rowData.tPhone;
+                theBoxInput[3].value = rowData.tPassword;
 
                 theBoxSelect[0].id = "tWork";//班级信息
                 for(var t=0;t<optionWork.length;t++){
@@ -176,12 +177,12 @@ function addTeacher(theCaption,data,theIndex) {
                     theSex.find("option")[1].selected = true;
                 }
 
-                theBoxSelect[2].id = "className";//班级信息
-                for(var o=0;o<optionClass.length;o++){
-                    if (rowData.cId == optionClass[o]){
-                        $("#className").find("option")[o].selected = true;
-                    }
-                }
+                // theBoxSelect[2].id = "className";//班级信息
+                // for(var o=0;o<optionClass.length;o++){
+                //     if (rowData.cId == optionClass[o]){
+                //         $("#className").find("option")[o].selected = true;
+                //     }
+                // }
 
 
                 var edit = buttonInput.find("input")[0];
@@ -275,11 +276,10 @@ function editSubmit(theId) {
     var theBoxInput = boxInput.find("input");
     var theBoxSelect = boxInput.find("select");
 
-    var className = theBoxSelect[2].value;
+    var className = theBoxInput[1].value;
     var classNameT = className.substring(0,1),
         classNameC = className.substring(1);
     var cName = classNameT+","+classNameC;
-
     // var isPhone = /^1[3,5,8]\d{9}$/;
     if(theBoxInput[0].value === ""){
         alert("教师名字不能为空！");

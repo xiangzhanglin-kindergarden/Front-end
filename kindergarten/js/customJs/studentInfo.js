@@ -132,7 +132,7 @@ function addTheBox(theCaption,theIndex,data) {
                     inputParents[2].style.width = "180px";
                     inputParents[0].placeholder = "姓名";
                     inputParents[1].placeholder = "联系电话";
-                    inputParents[2].placeholder = "默认登陆密码：123456";
+                    inputParents[2].placeholder = "登陆密码(身份证后六位)";
                     inputParents[2].readOnly = true;
                 }else if (caption[i] == "家庭住址"){
                     var province = ['省',"直辖市","河北省","山西省","内蒙古自治区","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西壮族自治区","海南省","四川省","贵州省","云南省","西藏自治区","陕西省","甘肃省","青海省","宁夏回族自治区","新疆维吾尔自治区","香港","澳门","台湾"];

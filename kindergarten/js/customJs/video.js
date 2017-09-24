@@ -309,14 +309,14 @@ $(window).ready(function () {
             everyDiv.appendChild(inputCheck);
             everyDiv.appendChild(theVideo);
             theVideo.appendChild(theVideoA);
-            everyDiv.appendChild(information);
+            everyDiv.appendChild(videoDes);
             information.appendChild(addPeople);
             addPeople.appendChild(addPeopleSpan);
             addPeople.appendChild(addPeopleName);
             information.appendChild(addTime);
             addTime.appendChild(addTimeSpan);
             addTime.appendChild(addTheTime);
-            everyDiv.appendChild(videoDes);
+            everyDiv.appendChild(information);
             videoDes.appendChild(videoDesP);
 
 

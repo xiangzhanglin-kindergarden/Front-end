@@ -142,16 +142,17 @@ html body{
 }
 .every .videoDes{
     margin-left: 20px;
-    width: 800px;
+    width: 400px;
     height: 130px;
     overflow: hidden;
 }
 .every .videoDes p{
     width: auto;
-    line-height: 40px;
-    margin-top: 10px;
-    font-size: 15px;
+    line-height: 130px;
+    /*margin-top: 10px;*/
+    font-size: 40px;
     text-indent: 30px;
+    color: #333;
 }
 
 

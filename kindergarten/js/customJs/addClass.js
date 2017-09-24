@@ -31,15 +31,36 @@ $(document).ready(function () {
             var tValue = this;
             teacherDiv.className = "teacherDiv";
             body.appendChild(teacherDiv);
+            var closeSpan = document.createElement("span");
+            closeSpan.className = "close";
+            closeSpan.id = "closeBox";
+            closeSpan.style.right = "0.3em";
+            teacherDiv.appendChild(closeSpan);
+
+            $(closeSpan).click(function () {
+                $(".teacherDiv").remove();
+            });
 
             var pTitle = document.createElement("h2");
             pTitle.className = "teacherSpan";
             pTitle.innerHTML = "请选择教师";
             teacherDiv.appendChild(pTitle);
-            
+            var theUrl = "";
+            switch (index) {
+                case "0":
+                    theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherBymoniter";//班主任http://119.29.225.57:8080/kindergarden/TeacherBymoniter
+                    break;
+                case "1":
+                    theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherByCommontea";//老师
+                    break;
+                case "2":
+                    theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherByBaoyu";//保育员
+                    break;
+                default:
+            }
             $.ajax({
                 type: "get",
-                url: "http://"+IPADDRESS+"/kindergarden/TeacherShowAll",
+                url: theUrl,
                 contentType:"application/x-www-form-urlencoded;charset=UTF-8",
                 beforeSend: function (xhr) {
                     xhr.withCredentials = true;
