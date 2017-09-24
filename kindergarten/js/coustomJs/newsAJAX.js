@@ -79,7 +79,7 @@ $(function(){
     //审核状态
     if (usertype==0) {
       statusall = ""
-      statuspass = "通过";
+      statuspass = encodeURI(encodeURI("通过"));
       statusunpass = "";
       statuswait = "";
     }else{
@@ -154,13 +154,13 @@ $(function(){
             statuswait="";
           }else if ($(this).html()=="待审核") {
             statusall="";
-            statuswait="待审核";
+            statuswait=encodeURI(encodeURI("待审核"));
           }else if ($(this).html()=="通过") {
             statusall="";
-            statuspass="通过";
+            statuspass=encodeURI(encodeURI("通过"));
           }else if ($(this).html()=="未通过") {
             statusall="";
-            statusunpass="未通过";
+            statusunpass=encodeURI(encodeURI("未通过"));
           }
 
         };

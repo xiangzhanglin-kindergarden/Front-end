@@ -45,8 +45,7 @@ $(function(){
     hfindAJAX();
   }
 
-// http://119.29.225.57:8080/kindergarden/AllStateSreach?A=全部&B=&C=&D=&pageNum=1
-// http://119.29.225.57:8080/kindergarden/AllStateSreach?A=&B=通过&C=&D=&pageNum=1
+
 
 /*   查询AJAX   */
 
@@ -55,8 +54,11 @@ $(function(){
     h_markurl = "http://"+IPADDRESS+haddress+htrans;
 
     $.ajax({
-      type:"get",
-      url:"http://"+IPADDRESS+haddress+htrans,
+      // type:"get",
+      type:"post",
+      // url:"http://"+IPADDRESS+haddress+htrans,
+      url:"http://"+IPADDRESS+haddress,
+      data: {A:"",B:encodeURI(encodeURI("通过")),C:"",D:"",pageNum:1},
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",
       beforeSend:function(xhr){

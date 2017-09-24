@@ -70,7 +70,7 @@ $(function(){
       oldclick = "公告";
     }
 
-    trans = "?A=&B=通过&C=&D=";
+    trans = "?A=&B="+encodeURI(encodeURI("通过"))+"&C=&D=";
 
     findAJAX();
   }
