@@ -215,10 +215,10 @@ function addSubmit() {
     var theBoxInput = boxInput.find("input");
     var theBoxSelect = boxInput.find("select");
 
-    var className = theBoxSelect[2].value;
-    var classNameT = className.substring(0,1),
-        classNameC = className.substring(1);
-    var cName = classNameT+","+classNameC;
+    // var className = theBoxSelect[2].value;
+    // var classNameT = className.substring(0,1),
+        // classNameC = className.substring(1);
+    // var cName = classNameT+","+classNameC;
     console.log(theBoxInput);
     console.log(theBoxSelect);
 
@@ -226,19 +226,19 @@ function addSubmit() {
         alert("教师名字不能为空！");
     }else if(theBoxSelect[0].value ===""){
         alert("授课班级不能为空！");
-    }else if(theBoxInput[1].value.length !== 11){
+    }else if(theBoxInput[2].value.length !== 11){
         alert("电话号码必须为11位数字！");
-    }else if(theBoxInput[2].value === ""){
+    }else if(theBoxInput[3].value === ""){
         alert("登陆密码/工号不能为空！");
     }else {
         values = {
-            cId: cName,
+            cId: "未,分配",
             tId: null,
             tName: theBoxInput[0].value,
-            tPhone: theBoxInput[1].value,
+            tPhone: theBoxInput[2].value,
             tSex: theBoxSelect[1].value,
-            tgrade: "未,分配",
-            tWorkId: theBoxInput[2].value
+            tgrade: theBoxSelect[0].value,
+            tWorkId: theBoxInput[3].value
         };
 
         $.ajax({
@@ -285,19 +285,19 @@ function editSubmit(theId) {
         alert("教师名字不能为空！");
     }else if(theBoxSelect[0].value ===""){
         alert("授课班级不能为空！");
-    }else if(theBoxInput[1].value.length != 11){
+    }else if(theBoxInput[2].value.length != 11){
         alert("电话号码必须为11位数字！");
-    }else if(theBoxInput[2].value === ""){
+    }else if(theBoxInput[3].value === ""){
         alert("登陆密码/工号不能为空！");
     }else {
         values = {
             cId: cName,
             tId: theId,
             tName: theBoxInput[0].value,
-            tPhone: theBoxInput[1].value,
+            tPhone: theBoxInput[2].value,
             tSex: theBoxSelect[1].value,
             tgrade: theBoxSelect[0].value,
-            tWorkId: theBoxInput[2].value
+            tWorkId: theBoxInput[3].value
         };
         console.log(values);
 

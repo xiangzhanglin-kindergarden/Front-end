@@ -4,8 +4,6 @@
     <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="parent.location.reload();">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/theVideo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/videoUpload.html" afterPath="$PROJECT_DIR$/kindergarten/videoUpload.html" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,7 +77,7 @@
       <file leaf-file-name="teacherInfo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/teacherInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1944">
+            <state relative-caret-position="-2245">
               <caret line="90" column="38" lean-forward="false" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
               <folding />
             </state>
@@ -89,8 +87,8 @@
       <file leaf-file-name="teacherInfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="99" column="48" lean-forward="false" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
+            <state relative-caret-position="509">
+              <caret line="299" column="34" lean-forward="false" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -542,7 +540,7 @@
       <workItem from="1504450302103" duration="2323000" />
       <workItem from="1505894927426" duration="1194000" />
       <workItem from="1506003954320" duration="86000" />
-      <workItem from="1506241673842" duration="1191000" />
+      <workItem from="1506241673842" duration="1955000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -810,11 +808,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506004017798</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="parent.location.reload();">
+      <created>1506242875947</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1506242875947</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218079000" />
+    <option name="totallyTimeSpent" value="218843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -1264,7 +1269,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/teacherInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
+        <state relative-caret-position="-2245">
           <caret line="90" column="38" lean-forward="false" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
           <folding />
         </state>
@@ -1272,8 +1277,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="99" column="48" lean-forward="false" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
+        <state relative-caret-position="509">
+          <caret line="299" column="34" lean-forward="false" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="34" />
           <folding />
         </state>
       </provider>
