@@ -98,7 +98,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(2) input").val(),
 			$(".new-table tr:eq(4) td:eq(2) input").val(),
 			$(".new-table tr:eq(5) td:eq(2) input").val(),
-			$(".new-table tr:eq(6) td:eq(2) input").val()
+			$(".new-table tr:eq(6) td:eq(2) input").val(),
+			$(".new-table tr:eq(7) td:eq(2) input").val()
 			// ""
 		])
 		var lTue = String([
@@ -107,7 +108,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(3) input").val(),
 			$(".new-table tr:eq(4) td:eq(3) input").val(),
 			$(".new-table tr:eq(5) td:eq(3) input").val(),
-			$(".new-table tr:eq(6) td:eq(3) input").val()
+			$(".new-table tr:eq(6) td:eq(3) input").val(),
+			$(".new-table tr:eq(7) td:eq(3) input").val()
 		])
 		var lWed = String([
 			$(".new-table tr:eq(1) td:eq(4) input").val(),
@@ -115,7 +117,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(4) input").val(),
 			$(".new-table tr:eq(4) td:eq(4) input").val(),
 			$(".new-table tr:eq(5) td:eq(4) input").val(),
-			$(".new-table tr:eq(6) td:eq(4) input").val()
+			$(".new-table tr:eq(6) td:eq(4) input").val(),
+			$(".new-table tr:eq(7) td:eq(4) input").val()
 		])
 		var lThu = String([
 			$(".new-table tr:eq(1) td:eq(5) input").val(),
@@ -123,7 +126,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(5) input").val(),
 			$(".new-table tr:eq(4) td:eq(5) input").val(),
 			$(".new-table tr:eq(5) td:eq(5) input").val(),
-			$(".new-table tr:eq(6) td:eq(5) input").val()
+			$(".new-table tr:eq(6) td:eq(5) input").val(),
+			$(".new-table tr:eq(7) td:eq(5) input").val()
 		])
 		var lfri = String([
 			$(".new-table tr:eq(1) td:eq(6) input").val(),
@@ -131,7 +135,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(6) input").val(),
 			$(".new-table tr:eq(4) td:eq(6) input").val(),
 			$(".new-table tr:eq(5) td:eq(6) input").val(),
-			$(".new-table tr:eq(6) td:eq(6) input").val()
+			$(".new-table tr:eq(6) td:eq(6) input").val(),
+			$(".new-table tr:eq(7) td:eq(6) input").val()
 		])
 		var classshuxin = String([
 			$(".new-table tr:eq(1) td:eq(1) input").val(),
@@ -139,7 +144,8 @@ $(document).ready(function(){
 			$(".new-table tr:eq(3) td:eq(1) input").val(),
 			$(".new-table tr:eq(4) td:eq(1) input").val(),
 			$(".new-table tr:eq(5) td:eq(1) input").val(),
-			$(".new-table tr:eq(6) td:eq(1) input").val()
+			$(".new-table tr:eq(6) td:eq(1) input").val(),
+			$(".new-table tr:eq(7) td:eq(1) input").val()
 		])
 		var workspace = $(".writeworkspace").val();
 		console.log(workspace);
@@ -267,10 +273,9 @@ $(document).ready(function(){
 				"workimportant":null,
 				"shuxin":null
 			});
-			console.log(lesson);
+			// console.log(lesson);
 			ajax(
 				"http://"+IPADDRESS+"/kindergarden/Lessonshowteacher",
-				// "http://172.20.2.164:8080/kindergarden/LessonShow",
 				"lessonJson="+lesson,
 				showLesson
 			);
@@ -340,7 +345,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(2) input").val(),
 			$(".class-table tr:eq(4) td:eq(2) input").val(),
 			$(".class-table tr:eq(5) td:eq(2) input").val(),
-			$(".class-table tr:eq(6) td:eq(2) input").val()
+			$(".class-table tr:eq(6) td:eq(2) input").val(),
+			$(".class-table tr:eq(7) td:eq(2) input").val(),
 		])
 		var lTue = String([
 			$(".class-table tr:eq(1) td:eq(3) input").val(),
@@ -348,7 +354,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(3) input").val(),
 			$(".class-table tr:eq(4) td:eq(3) input").val(),
 			$(".class-table tr:eq(5) td:eq(3) input").val(),
-			$(".class-table tr:eq(6) td:eq(3) input").val()
+			$(".class-table tr:eq(6) td:eq(3) input").val(),
+			$(".class-table tr:eq(7) td:eq(3) input").val()
 		])
 		var lWed = String([
 			$(".class-table tr:eq(1) td:eq(4) input").val(),
@@ -356,7 +363,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(4) input").val(),
 			$(".class-table tr:eq(4) td:eq(4) input").val(),
 			$(".class-table tr:eq(5) td:eq(4) input").val(),
-			$(".class-table tr:eq(6) td:eq(4) input").val()
+			$(".class-table tr:eq(6) td:eq(4) input").val(),
+			$(".class-table tr:eq(7) td:eq(4) input").val()
 		])
 		var lThu = String([
 			$(".class-table tr:eq(1) td:eq(5) input").val(),
@@ -364,7 +372,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(5) input").val(),
 			$(".class-table tr:eq(4) td:eq(5) input").val(),
 			$(".class-table tr:eq(5) td:eq(5) input").val(),
-			$(".class-table tr:eq(6) td:eq(5) input").val()
+			$(".class-table tr:eq(6) td:eq(5) input").val(),
+			$(".class-table tr:eq(7) td:eq(5) input").val()
 		])
 		var lfri = String([
 			$(".class-table tr:eq(1) td:eq(6) input").val(),
@@ -372,7 +381,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(6) input").val(),
 			$(".class-table tr:eq(4) td:eq(6) input").val(),
 			$(".class-table tr:eq(5) td:eq(6) input").val(),
-			$(".class-table tr:eq(6) td:eq(6) input").val()
+			$(".class-table tr:eq(6) td:eq(6) input").val(),
+			$(".class-table tr:eq(7) td:eq(6) input").val()
 		])
 		var classshuxin = String([
 			$(".class-table tr:eq(1) td:eq(1) input").val(),
@@ -380,7 +390,8 @@ $(document).ready(function(){
 			$(".class-table tr:eq(3) td:eq(1) input").val(),
 			$(".class-table tr:eq(4) td:eq(1) input").val(),
 			$(".class-table tr:eq(5) td:eq(1) input").val(),
-			$(".class-table tr:eq(6) td:eq(1) input").val()
+			$(".class-table tr:eq(6) td:eq(1) input").val(),
+			$(".class-table tr:eq(7) td:eq(1) input").val()
 		])
 		var workspace = $(".workspace textarea").val();
 		console.log(workspace);
@@ -410,7 +421,7 @@ $(document).ready(function(){
 						$("#change-class").attr("disabled",false);
 					},500);
 			})
-			
+			window.location.reload()
 
 		}else{
 			var courseMsg = JSON.stringify({
@@ -510,6 +521,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(2)").html("")
 			$(".class-table tr:eq(5) td:eq(2)").html("")
 			$(".class-table tr:eq(6) td:eq(2)").html("")
+			$(".class-table tr:eq(7) td:eq(2)").html("")
 
 			$(".class-table tr:eq(1) td:eq(3)").html("")
 			$(".class-table tr:eq(2) td:eq(3)").html("")
@@ -517,6 +529,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(3)").html("")
 			$(".class-table tr:eq(5) td:eq(3)").html("")
 			$(".class-table tr:eq(6) td:eq(3)").html("")
+			$(".class-table tr:eq(7) td:eq(3)").html("")
 
 			$(".class-table tr:eq(1) td:eq(4)").html("")
 			$(".class-table tr:eq(2) td:eq(4)").html("")
@@ -524,6 +537,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(4)").html("")
 			$(".class-table tr:eq(5) td:eq(4)").html("")
 			$(".class-table tr:eq(6) td:eq(4)").html("")
+			$(".class-table tr:eq(7) td:eq(4)").html("")
 
 			$(".class-table tr:eq(1) td:eq(5)").html("")
 			$(".class-table tr:eq(2) td:eq(5)").html("")
@@ -531,6 +545,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(5)").html("")
 			$(".class-table tr:eq(5) td:eq(5)").html("")
 			$(".class-table tr:eq(6) td:eq(5)").html("")
+			$(".class-table tr:eq(7) td:eq(5)").html("")
 
 			$(".class-table tr:eq(1) td:eq(6)").html("")
 			$(".class-table tr:eq(2) td:eq(6)").html("")
@@ -538,6 +553,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(6)").html("")
 			$(".class-table tr:eq(5) td:eq(6)").html("")
 			$(".class-table tr:eq(6) td:eq(6)").html("")
+			$(".class-table tr:eq(7) td:eq(6)").html("")
 
 			$(".class-table tr:eq(1) td:eq(1)").html("")
 			$(".class-table tr:eq(2) td:eq(1)").html("")
@@ -545,6 +561,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(1)").html("")
 			$(".class-table tr:eq(5) td:eq(1)").html("")
 			$(".class-table tr:eq(6) td:eq(1)").html("")
+			$(".class-table tr:eq(7) td:eq(1)").html("")
 
 			$(".workspace").html("")
 		}else{
@@ -589,9 +606,9 @@ $(document).ready(function(){
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
 				// obj[3] = obj[3].replace(/"/g,"");
-				obj[5] = obj[5].replace(/"/g,"");
+				obj[6] = obj[6].replace(/"/g,"");
 				
-				for(i=0;i<=5;i++){
+				for(i=0;i<=6;i++){
 					if (obj[i]==0) {
 						obj[i]=null;
 					};
@@ -610,6 +627,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(2)").html(oneDay[3]);
 			$(".class-table tr:eq(5) td:eq(2)").html(oneDay[4]);
 			$(".class-table tr:eq(6) td:eq(2)").html(oneDay[5]);
+			$(".class-table tr:eq(7) td:eq(2)").html(oneDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(3)").html(twoDay[0]);
 			$(".class-table tr:eq(2) td:eq(3)").html(twoDay[1]);
@@ -617,6 +635,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(3)").html(twoDay[3]);
 			$(".class-table tr:eq(5) td:eq(3)").html(twoDay[4]);
 			$(".class-table tr:eq(6) td:eq(3)").html(twoDay[5]);
+			$(".class-table tr:eq(7) td:eq(3)").html(twoDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(4)").html(threeDay[0]);
 			$(".class-table tr:eq(2) td:eq(4)").html(threeDay[1]);
@@ -624,6 +643,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(4)").html(threeDay[3]);
 			$(".class-table tr:eq(5) td:eq(4)").html(threeDay[4]);
 			$(".class-table tr:eq(6) td:eq(4)").html(threeDay[5]);
+			$(".class-table tr:eq(7) td:eq(4)").html(threeDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(5)").html(fourDay[0]);
 			$(".class-table tr:eq(2) td:eq(5)").html(fourDay[1]);
@@ -631,6 +651,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(5)").html(fourDay[3]);
 			$(".class-table tr:eq(5) td:eq(5)").html(fourDay[4]);
 			$(".class-table tr:eq(6) td:eq(5)").html(fourDay[5]);
+			$(".class-table tr:eq(7) td:eq(5)").html(fourDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(6)").html(fiveDay[0]);
 			$(".class-table tr:eq(2) td:eq(6)").html(fiveDay[1]);
@@ -638,6 +659,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(6)").html(fiveDay[3]);
 			$(".class-table tr:eq(5) td:eq(6)").html(fiveDay[4]);
 			$(".class-table tr:eq(6) td:eq(6)").html(fiveDay[5]);
+			$(".class-table tr:eq(7) td:eq(6)").html(fiveDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(1)").html(classType[0]);
 			$(".class-table tr:eq(2) td:eq(1)").html(classType[1]);
@@ -645,6 +667,7 @@ $(document).ready(function(){
 			$(".class-table tr:eq(4) td:eq(1)").html(classType[3]);
 			$(".class-table tr:eq(5) td:eq(1)").html(classType[4]);
 			$(".class-table tr:eq(6) td:eq(1)").html(classType[5]);
+			$(".class-table tr:eq(7) td:eq(1)").html(classType[6]);
 
 			$(".workspace").html(newWorkSpace);
 

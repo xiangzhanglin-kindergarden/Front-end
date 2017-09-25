@@ -136,6 +136,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(2)").html("");
       $(".classtable table tr:eq(5) td:eq(2)").html("");
       $(".classtable table tr:eq(6) td:eq(2)").html("");
+      $(".classtable table tr:eq(7) td:eq(2)").html("");
 
       $(".classtable table tr:eq(1) td:eq(3)").html("");
       $(".classtable table tr:eq(2) td:eq(3)").html("");
@@ -143,6 +144,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(3)").html("");
       $(".classtable table tr:eq(5) td:eq(3)").html("");
       $(".classtable table tr:eq(6) td:eq(3)").html("");
+      $(".classtable table tr:eq(7) td:eq(3)").html("");
 
       $(".classtable table tr:eq(1) td:eq(4)").html("");
       $(".classtable table tr:eq(2) td:eq(4)").html("");
@@ -150,6 +152,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(4)").html("");
       $(".classtable table tr:eq(5) td:eq(4)").html("");
       $(".classtable table tr:eq(6) td:eq(4)").html("");
+      $(".classtable table tr:eq(7) td:eq(4)").html("");
 
       $(".classtable table tr:eq(1) td:eq(5)").html("");
       $(".classtable table tr:eq(2) td:eq(5)").html("");
@@ -157,6 +160,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(5)").html("");
       $(".classtable table tr:eq(5) td:eq(5)").html("");
       $(".classtable table tr:eq(6) td:eq(5)").html("");
+      $(".classtable table tr:eq(7) td:eq(5)").html("");
 
       $(".classtable table tr:eq(1) td:eq(6)").html("");
       $(".classtable table tr:eq(2) td:eq(6)").html("");
@@ -164,6 +168,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(6)").html("");
       $(".classtable table tr:eq(5) td:eq(6)").html("");
       $(".classtable table tr:eq(6) td:eq(6)").html("");
+      $(".classtable table tr:eq(7) td:eq(6)").html("");
 
       $(".classtable table tr:eq(1) td:eq(1)").html("");
       $(".classtable table tr:eq(2) td:eq(1)").html("");
@@ -171,6 +176,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(1)").html("");
       $(".classtable table tr:eq(5) td:eq(1)").html("");
       $(".classtable table tr:eq(6) td:eq(1)").html("");
+      $(".classtable table tr:eq(7) td:eq(1)").html("");
 
       $(".workspace").html("");
     }else{
@@ -211,9 +217,9 @@ $(document).ready(function(){
       function delWord(obj){
         obj[0] = obj[0].replace(/"/g,"");
         obj[3] = obj[3].replace(/"/g,"");
-        obj[5] = obj[5].replace(/"/g,"");
+        obj[6] = obj[6].replace(/"/g,"");
         
-        for(i=0;i<=5;i++){
+        for(i=0;i<=6;i++){
           if (obj[i]==0) {
             obj[i]=null;
           };
@@ -232,6 +238,8 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(2)").html(oneDay[3]);
       $(".classtable table tr:eq(5) td:eq(2)").html(oneDay[4]);
       $(".classtable table tr:eq(6) td:eq(2)").html(oneDay[5]);
+      $(".classtable table tr:eq(7) td:eq(2)").html(oneDay[6]);
+
 
       $(".classtable table tr:eq(1) td:eq(3)").html(twoDay[0]);
       $(".classtable table tr:eq(2) td:eq(3)").html(twoDay[1]);
@@ -239,6 +247,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(3)").html(twoDay[3]);
       $(".classtable table tr:eq(5) td:eq(3)").html(twoDay[4]);
       $(".classtable table tr:eq(6) td:eq(3)").html(twoDay[5]);
+      $(".classtable table tr:eq(7) td:eq(3)").html(twoDay[6]);
 
       $(".classtable table tr:eq(1) td:eq(4)").html(threeDay[0]);
       $(".classtable table tr:eq(2) td:eq(4)").html(threeDay[1]);
@@ -246,6 +255,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(4)").html(threeDay[3]);
       $(".classtable table tr:eq(5) td:eq(4)").html(threeDay[4]);
       $(".classtable table tr:eq(6) td:eq(4)").html(threeDay[5]);
+      $(".classtable table tr:eq(7) td:eq(4)").html(threeDay[6]);
 
       $(".classtable table tr:eq(1) td:eq(5)").html(fourDay[0]);
       $(".classtable table tr:eq(2) td:eq(5)").html(fourDay[1]);
@@ -253,6 +263,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(5)").html(fourDay[3]);
       $(".classtable table tr:eq(5) td:eq(5)").html(fourDay[4]);
       $(".classtable table tr:eq(6) td:eq(5)").html(fourDay[5]);
+      $(".classtable table tr:eq(7) td:eq(5)").html(fourDay[6]);
 
       $(".classtable table tr:eq(1) td:eq(6)").html(fiveDay[0]);
       $(".classtable table tr:eq(2) td:eq(6)").html(fiveDay[1]);
@@ -260,6 +271,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(6)").html(fiveDay[3]);
       $(".classtable table tr:eq(5) td:eq(6)").html(fiveDay[4]);
       $(".classtable table tr:eq(6) td:eq(6)").html(fiveDay[5]);
+      $(".classtable table tr:eq(7) td:eq(6)").html(fiveDay[6]);
 
       $(".classtable table tr:eq(1) td:eq(1)").html(classType[0]);
       $(".classtable table tr:eq(2) td:eq(1)").html(classType[1]);
@@ -267,6 +279,7 @@ $(document).ready(function(){
       $(".classtable table tr:eq(4) td:eq(1)").html(classType[3]);
       $(".classtable table tr:eq(5) td:eq(1)").html(classType[4]);
       $(".classtable table tr:eq(6) td:eq(1)").html(classType[5]);
+      $(".classtable table tr:eq(7) td:eq(1)").html(classType[6]);
 
       $(".workspace").html(newWorkSpace);
     }
