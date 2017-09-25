@@ -106,9 +106,7 @@ $(function(){
 		var d=getMonDate(theDate);
 		var arr=[];
 		console.log(d.getMonth()+1);
-		console.log(d);
-
-
+		var nowDayTime = d.getMonth();
 
 
 		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
@@ -121,7 +119,8 @@ $(function(){
 			d.setDate(d.getDate()+1);
 			console.log(arr[i]);
 		}
-		$(".classtable thead tr th:eq(1) span").html(d.getMonth()+1+"月");
+		
+		$(".classtable thead tr th:eq(1) span").html(nowDayTime+1+"月");
 
 
 
