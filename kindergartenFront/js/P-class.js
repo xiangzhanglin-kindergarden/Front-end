@@ -101,11 +101,12 @@ $(function(){
 		var weekday=["周天","周一","周二","周三","周四","周五","周六"];
 		return weekday[day];
 	}
-	// d是当前星期一的日期对象
+	// d是当前星期日的日期对象
 	function getSelectWeek(theDate){
 		var d=getMonDate(theDate);
 		var arr=[];
 		console.log(d.getMonth()+1);
+		console.log(d);
 
 
 

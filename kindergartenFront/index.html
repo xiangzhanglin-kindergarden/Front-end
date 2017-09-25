@@ -27,6 +27,7 @@
 
   <!-- canvas背景  -->
   <link rel="stylesheet" href="plungs/bg-circle/demo/style/index.css">
+
   <!-- bootstrapSelect  -->
   <link rel="stylesheet" href="plungs/bootstrapSelect/css/bootstrap-select.css">
   <!-- CSS3 btn  -->
@@ -482,9 +483,17 @@
   <script src="js/main.js"></script>
 
   <!-- 圆形背景 -->
-  <script src="plungs/bg-circle/lib/quietflow.min.js"></script>
+  <script type="text/javascript">
+  if (screen.width>450){
+    document.write('<script src="plungs/bg-circle/lib/quietflow.min.js"><\/script>');
+    document.write('<script src="plungs/bg-circle/demo/js/index.js"><\/script>');
+    document.write('<script src="plungs/bg-circle/demo/js/prism.js"><\/script>');
+  }
+  </script>
+
+  <!-- <script src="plungs/bg-circle/lib/quietflow.min.js"></script>
   <script src="plungs/bg-circle/demo/js/index.js"></script>
-  <script src="plungs/bg-circle/demo/js/prism.js"></script>
+  <script src="plungs/bg-circle/demo/js/prism.js"></script> -->
 
   <!-- 视频播放  -->
    <!-- <script src="plungs/video/js/fz-video.js"></script>  -->
@@ -499,6 +508,7 @@
   <script src="js/P-class.js"></script>
   <script src="js/P-knowAJAX.js"></script>
   <script src="js/P-newsAJAX.js"></script>
+
   <!-- <script src="js/P-album.js"></script> -->
   
   <!-- <script src="js/P-banner.js"></script> -->
@@ -512,6 +522,8 @@
      }
    );
  </script> -->
+
+
   
 </body>
 </html>
