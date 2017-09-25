@@ -2,6 +2,15 @@
  * Created by Sunshine on 2017/5/15.
  */
 $(document).ready(function () {
+
+    var screnWidth = window.screen.width;
+    var screnHeight = window.screen.height;
+    if(screnWidth <= 800){
+        var showPhotoHeight = screnHeight-0.07*screnHeight;
+        $(".ibox").height(screnHeight - 40);
+        $(".showPhoto").css("height","auto");
+    }
+
     var theImgData = sessionStorage.getItem("theImgData");
     var imgRow = JSON.parse(theImgData);
     var theIndex = imgRow.picid;

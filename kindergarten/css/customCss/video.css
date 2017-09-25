@@ -13,6 +13,8 @@ html body{
 .ibox{
     width: 90%;
     margin: 0 auto;
+    min-width: 1100px;
+    overflow: auto;
 }
 
 /*返回*/
@@ -91,14 +93,14 @@ html body{
 
 #main{
     width: 90%;
-    min-width: 1400px;
+    min-width: 1000px;
     height: auto;
     margin: 0 auto;
 }
 #main .every{
     margin: 20px 0;
     width: auto;
-    min-width: 1300px;
+    /*min-width: 1300px;*/
     height: 130px;
     border: 1px solid #eee;
     border-radius: 10px;

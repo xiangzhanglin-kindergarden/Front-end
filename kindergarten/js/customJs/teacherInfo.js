@@ -79,7 +79,7 @@ function addTeacher(theCaption,data,theIndex) {
                     theBoxSex.appendChild(spanSex);
                     var selectSex = document.createElement("select");
                     theBoxSex.appendChild(selectSex);
-                    var optionSex = ['男','女'];
+                    var optionSex = ['女','男'];
                     for (var s=0;s<optionSex.length;s++){
                         var sexOption = document.createElement("option");
                         selectSex.appendChild(sexOption);
