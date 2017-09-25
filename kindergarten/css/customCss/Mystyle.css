@@ -257,6 +257,7 @@ color: #000;
 	background: rgba(0,0,0,0.1);
 	
 }
+
 .class-change-input{
 	width: 100%;
 }
@@ -383,7 +384,9 @@ color: #000;
 		font-size: 17px;
 	}
 }
-
+tbody > tr.td-border-black >td{
+	border-top: 2px solid #333;
+}
 
 .class-table thead th{
 	position: relative;
