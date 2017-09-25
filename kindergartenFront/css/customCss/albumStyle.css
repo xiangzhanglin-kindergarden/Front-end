@@ -10,10 +10,11 @@ html body{
     padding: 25px 0 15px 15px;
     float: left;
 }
-
 .ibox{
     width: 90%;
     margin: 0 auto;
+    /*min-width: 800px;*/
+    /*overflow: auto;*/
 }
 
 /*返回*/
@@ -60,7 +61,6 @@ html body{
 .if-d-backbtn:hover a{
     color: #fff;
 }
-
 
 .pic{
     padding: 10px;

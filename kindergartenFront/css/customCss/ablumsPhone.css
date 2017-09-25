@@ -1,0 +1,62 @@
+@media screen and (max-width: 800px){
+    .ibox-title{
+        height: 60px;
+    }
+    .ibox{
+        width: 100%;
+        height: auto;
+    }
+    .if-d-backbtn{
+        font-size: 15px;
+        height: 30px;
+        width: 80px;
+        line-height: 30px;
+        top: 57px;
+    }
+    .addAlbums{
+        height: 130px;
+    }
+    .chooseClass{
+        margin: 0;
+    }
+    .chooseClass label{
+        width: 90%;
+    }
+    .chooseClass label select{
+        width: 55%;
+        margin: 0;
+    }
+
+
+    /*相册*/
+    #main{
+        width: 100% !important;
+    }
+
+    .box{
+        width: 50%;
+    }
+    .pic img{
+        width: 100%;
+    }
+    .pic p {
+        width: 100%;
+    }
+
+
+    /*增加相册*/
+    .addAlbumsBox{
+        left: 0;
+        width: 98%;
+    }
+    .addAlbumsBox .inputs .everyInput{
+        width: 100%;
+    }
+    .addAlbumsBox .inputs .everyInput>input, .addAlbumsBox .inputs .everyInput>textarea{
+        width: 60%;
+    }
+    .addAlbumsBox .buttonsSure{
+        width: 90%;
+        margin: 0 0 0 30%;
+    }
+}

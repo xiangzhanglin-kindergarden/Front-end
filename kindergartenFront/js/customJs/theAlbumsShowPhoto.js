@@ -12,6 +12,7 @@ function showPhoto() {
             var nowUrl = this.src;
 
             gray.show();
+            $(".ibox").css("overflow","hidden");
             var oImg = document.createElement("img");
             oImg.src = nowUrl;
             oImg.className = "nowImg";
@@ -44,6 +45,7 @@ function showPhoto() {
                 $(".nowImg").remove();
                 $(".mainComment").find(".mainCommentContent").remove();
                 $(".mainCommentInput").remove();
+                $(".ibox").css("overflow","auto");
             }
             
 
