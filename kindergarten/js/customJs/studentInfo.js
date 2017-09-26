@@ -76,6 +76,7 @@ function addTheBox(theCaption,theIndex,data) {
                 }else if (caption[i] == "入学年龄"){
                     var theBoxAge = document.createElement("div");
                     theBoxAge.className = "theBoxInput";
+                    theBoxAge.id = "theBoxAge";
                     theBox.appendChild(theBoxAge);
 
                     var spanAge = document.createElement("span");
@@ -334,19 +335,19 @@ function addTheBox(theCaption,theIndex,data) {
                         newInputParent[n].type = "text";
                         newParentsInput.appendChild(newInputParent[n]);
                     }
-                    var selectParents = document.createElement("select");
-                    selectParents.className = "selectParents";
-                    var theParents = ["爸爸","妈妈","爷爷","奶奶","外公","外婆","其他"];
-                    newParentsInput.appendChild(selectParents);
-                    for(var ps = 0;ps<theParents.length;ps++){
-                        var options = document.createElement("option");
-                        selectParents.appendChild(options);
-                        options.value = theParents[ps];
-                        options.innerHTML = theParents[ps];
-                    }
+                    // var selectParents = document.createElement("select");
+                    // selectParents.className = "selectParents";
+                    // var theParents = ["爸爸","妈妈","爷爷","奶奶","外公","外婆","其他"];
+                    // newParentsInput.appendChild(selectParents);
+                    // for(var ps = 0;ps<theParents.length;ps++){
+                    //     var options = document.createElement("option");
+                    //     selectParents.appendChild(options);
+                    //     options.value = theParents[ps];
+                    //     options.innerHTML = theParents[ps];
+                    // }
                     newInputParent[0].value = parentName[k];
                     newInputParent[1].value = parentTell[k];
-                    // newInputParent[2].value = "密码：123456（无法修改）";
+                    // newInputParent[2].value = parentName.split("(")[1].split(")")[1];
                     // newInputParent[2].readOnly = true;
                     newParentsInput.firstChild.style.width = "110px";
                     newParentsInput.lastChild.style.width = "180px";
@@ -433,6 +434,17 @@ function checkInput() {
                         parentI[0].appendChild(pI);
                     }else {
                         changeBorder(this,1);
+                        var theBoxAge = $("#theBoxAge");
+                        var date = new Date();
+                        var nowYear = date.getFullYear();
+                        var bornYear = theLength.slice(6,10);
+                        var nowAge = parseInt(nowYear) - parseInt(bornYear);
+                        if(nowAge>7 || nowAge<2){
+                            alert("How old are you? 你身份证填错了吧！");
+                        }else {
+                            theBoxAge.find("option")[nowAge-2].selected = true;
+                        }
+
                     }
                     break;
                 case 2:
@@ -637,7 +649,12 @@ function editSubmit(id) {
     for(var p=0;p<theBoxParent.length;p++){
         theBoxParentsInput[p] = theBoxParent[p].getElementsByTagName("input");
         theBoxParentOption[p] = $(theBoxParent[p]).find(".selectParents").val();
-        sAcount = sAcount + theBoxParentsInput[p][0].value  + "(" + theBoxParentOption[p] +")" +  ":" + theBoxParentsInput[p][1].value + "."
+        if(theBoxParentsInput[p][0].value.indexOf("(") !== -1){
+            sAcount = sAcount + theBoxParentsInput[p][0].value + ":" + theBoxParentsInput[p][1].value + "."
+        }else {
+            sAcount = sAcount + theBoxParentsInput[p][0].value  + "(" + theBoxParentOption[p] +")" +  ":" + theBoxParentsInput[p][1].value + "."
+        }
+
     }
 
     var theBoxAddress = $(".theBoxAddressMain");

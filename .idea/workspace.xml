@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="增加图鉴phone端适配">
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="增加学生家长option选择">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" afterPath="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" />
     </list>
     <ignored path="Front-end.iws" />
@@ -86,8 +85,8 @@
       <file leaf-file-name="studentInfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="639" column="97" lean-forward="false" selection-start-line="639" selection-start-column="97" selection-end-line="639" selection-end-column="97" />
+            <state relative-caret-position="374">
+              <caret line="440" column="76" lean-forward="false" selection-start-line="440" selection-start-column="76" selection-end-line="440" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -437,7 +436,7 @@
       <workItem from="1506423340809" duration="156000" />
       <workItem from="1506423529528" duration="9000" />
       <workItem from="1506423559047" duration="1119000" />
-      <workItem from="1506430297644" duration="2388000" />
+      <workItem from="1506430297644" duration="4703000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -733,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506335478633</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="增加学生家长option选择">
+      <created>1506432713962</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1506432713962</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243256000" />
+    <option name="totallyTimeSpent" value="245571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -796,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="6/1 增加了图鉴的权限" />
     <MESSAGE value="权限基本做完" />
     <MESSAGE value="修复了评论区的一些bug" />
     <MESSAGE value="新增评论删除功能" />
@@ -821,7 +826,8 @@
     <MESSAGE value="parent.location.reload();" />
     <MESSAGE value="修复部分bug" />
     <MESSAGE value="增加图鉴phone端适配" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加图鉴phone端适配" />
+    <MESSAGE value="增加学生家长option选择" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加学生家长option选择" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1190,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="639" column="97" lean-forward="false" selection-start-line="639" selection-start-column="97" selection-end-line="639" selection-end-column="97" />
+        <state relative-caret-position="374">
+          <caret line="440" column="76" lean-forward="false" selection-start-line="440" selection-start-column="76" selection-end-line="440" selection-end-column="76" />
           <folding />
         </state>
       </provider>
