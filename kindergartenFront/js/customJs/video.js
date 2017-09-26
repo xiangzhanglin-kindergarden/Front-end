@@ -299,7 +299,11 @@ $(window).ready(function () {
             var addTimeSpan = document.createElement("span");
             addTimeSpan.innerHTML = "上传时间：";
             var addTheTime = document.createElement("span");
-            addTheTime.innerHTML = videoData[i].mctime;
+            var dataTime = "";
+            if(videoData[i].mctime.split(" ").length === 2){
+                dataTime = videoData[i].mctime.split(" ")[0];
+            }
+            addTheTime.innerHTML = dataTime;
             var videoDes = document.createElement("div");
             videoDes.className = "videoDes f_left";
             var videoDesP = document.createElement("p");
@@ -309,14 +313,14 @@ $(window).ready(function () {
             everyDiv.appendChild(inputCheck);
             everyDiv.appendChild(theVideo);
             theVideo.appendChild(theVideoA);
-            everyDiv.appendChild(information);
+            everyDiv.appendChild(videoDes);
             information.appendChild(addPeople);
             addPeople.appendChild(addPeopleSpan);
             addPeople.appendChild(addPeopleName);
             information.appendChild(addTime);
             addTime.appendChild(addTimeSpan);
             addTime.appendChild(addTheTime);
-            everyDiv.appendChild(videoDes);
+            everyDiv.appendChild(information);
             videoDes.appendChild(videoDesP);
 
 

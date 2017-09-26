@@ -16,8 +16,8 @@ $(document).ready(function () {
         var teacher = teacherData;
         // teacher = $.parseJSON(teacher);
     }
-    console.log(teacher.tName);
-    console.log(teacher);
+    // console.log(teacher.tName);
+    // console.log(teacher);
 
     var pageNum = 1;
     if (theVideoMname=="园长") {

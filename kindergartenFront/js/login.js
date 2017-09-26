@@ -18,7 +18,7 @@ $(document).keydown(function(event){
 
 function enterFront(){
 	
-	var userName = $("#username").val();     //存储用户名
+	var userName = $.trim($("#username").val());     //存储用户名
 	var userPwd = $("#userpassword").val();  //存储密码
 	var userClass = $("input[name='user-class']:checked").attr("class"); //获取老师or管理员登录
 

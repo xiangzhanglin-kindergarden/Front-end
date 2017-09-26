@@ -287,7 +287,7 @@ i.manageVideo{
 }
 .showVideo .comment .mainCommentInput .buttonSure{
     width: 100%;
-    height: auto;
+    height: 46px;
     padding-top: 10px;
 }
 .showVideo .comment .mainCommentInput .buttonSure input{
@@ -347,4 +347,61 @@ i.delComment{
 }
 .f_right{
     float: right;
+}
+
+
+@media screen and (max-width: 800px){
+    .ibox-title{
+        height: 60px;
+    }
+    .ibox{
+        width: 100%;
+        height: auto;
+    }
+    .if-d-backbtn{
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        line-height: 30px;
+        top: 57px;
+    }
+
+    .uploadVideo{
+        width: 98%;
+        left: 1%;
+        top:40px;
+    }
+
+    .showVideo{
+        width: 98%;
+        height: auto;
+        min-height: 0;
+        left: 1%;
+        border-radius: 10px;
+        position: absolute;
+        top: 10%;
+    }
+    .showVideo .content{
+        width: 100%;
+        height: auto;
+        float: none;
+        position: relative;
+        top: 20px;
+    }
+    .showVideo .content .changeVideo{
+        display: none;
+    }
+    .showVideo .content video{
+        width: 100% !important;
+        margin: 10% !important;
+    }
+    .showVideo .comment{
+        /*display: none;*/
+        float: none;
+        width: 100%;
+        height:auto;
+    }
+    i.delComment{
+        opacity: 0.5;
+    }
 }
