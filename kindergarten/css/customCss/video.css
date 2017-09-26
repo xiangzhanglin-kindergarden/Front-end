@@ -16,11 +16,13 @@ html body{
     min-width: 1100px;
     overflow: auto;
 }
-
+.ibox-title{
+    min-height: 70px;
+}
 /*返回*/
 .if-d-backbtn{
     position: fixed;
-    top: 50px;
+    top: 56px;
     left: 0;
     width: 150px;
     /*min-width: 80px;*/
@@ -358,3 +360,122 @@ body.overy{
     width: auto !important;
     background-color: #00B2E2;
 }
+
+
+
+
+
+
+
+
+
+/*手机端适配*/
+@media screen and (max-width: 800px){
+    .ibox-title{
+        height: 60px;
+    }
+    .ibox{
+        width: 100%;
+        height: auto;
+    }
+    .if-d-backbtn{
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        line-height: 30px;
+        top: 57px;
+    }
+
+
+    input{
+        width: auto !important;
+        margin: 0 !important;
+        height: 25px !important;
+        line-height: 25px !important;
+        font-size: 10px;
+    }
+    .addVideos{
+        height: auto;
+    }
+    .chooseClass{
+        float: none;
+        display: block;
+        height: auto;
+    }
+    .chooseClass span{
+        font-size: 13px;
+    }
+    .chooseClass label{
+        display: block;
+    }
+    .chooseClass label select{
+        margin: 0;
+        width: 110px;
+    }
+
+
+    .ibox{
+        min-width: 0;
+    }
+    #main{
+        width: 100%;
+        min-width: 0;
+    }
+
+    #main .every{
+        height: 100px;
+    }
+    #main .every .inputCheck{
+        width: 10%;
+        height: 100%;
+    }
+    #main .every .inputCheck span{
+        margin: 40px auto !important;
+    }
+    .chooseClass, .classVideoChoose{
+        margin: 0;
+    }
+    .every .theVideo{
+        width: 90%;
+        height: 20%;
+        margin: 0;
+        float: none;
+    }
+    .every .theVideo a{
+        font-size: 13px;
+        width: auto;
+        height: auto;
+        line-height: 20px;
+    }
+    .every .videoDes{
+        width: 90%;
+        height: 30%;
+        margin: 0;
+        /*overflow: auto;*/
+        float: none;
+    }
+    .every .videoDes p{
+        height: 50%;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        text-indent: 0;
+        margin: 0;
+    }
+    #main .every .information{
+        width: 90%;
+        height: auto;
+        overflow: auto;
+        float: none;
+    }
+    .every .information .addPeople, .every .information .addTime{
+        height: auto;
+        line-height: 25px;
+    }
+    .every .information .addPeople span, .every .information .addTime span{
+        font-size: 12px;
+    }
+
+}
+
+
