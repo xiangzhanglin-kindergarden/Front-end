@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="增加图鉴phone端适配">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/css/customCss/theVideo.css" afterPath="$PROJECT_DIR$/kindergarten/css/customCss/theVideo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/css/customCss/video.css" afterPath="$PROJECT_DIR$/kindergarten/css/customCss/video.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/video.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/video.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" afterPath="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +36,7 @@
       <file leaf-file-name="albums.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/albums.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="27">
               <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
               <folding />
             </state>
@@ -67,18 +66,38 @@
       <file leaf-file-name="video.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/video.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1651">
-              <caret line="395" column="5" lean-forward="true" selection-start-line="395" selection-start-column="5" selection-end-line="395" selection-end-column="5" />
+            <state relative-caret-position="10665">
+              <caret line="395" column="5" lean-forward="false" selection-start-line="395" selection-start-column="5" selection-end-line="395" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theVideo.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="theVideo.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/theVideo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="289" column="14" lean-forward="false" selection-start-line="289" selection-start-column="14" selection-end-line="289" selection-end-column="14" />
+            <state relative-caret-position="644">
+              <caret line="300" column="23" lean-forward="false" selection-start-line="300" selection-start-column="23" selection-end-line="300" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="studentInfo.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="639" column="97" lean-forward="false" selection-start-line="639" selection-start-column="97" selection-end-line="639" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="studentsMainStyle.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="435" column="13" lean-forward="false" selection-start-line="435" selection-start-column="13" selection-end-line="435" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -87,10 +106,10 @@
       <file leaf-file-name="video.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/video.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
+            <state relative-caret-position="8127">
               <caret line="301" column="30" lean-forward="false" selection-start-line="301" selection-start-column="30" selection-end-line="301" selection-end-column="30" />
               <folding>
-                <marker date="1506409667136" expanded="true" signature="15045:15057" ph="..." />
+                <marker date="1506430139289" expanded="true" signature="15045:15057" ph="..." />
               </folding>
             </state>
           </provider>
@@ -137,7 +156,6 @@
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/studentInitData.js" />
         <option value="$PROJECT_DIR$/kindergarten/theIndex.html" />
         <option value="$PROJECT_DIR$/kindergarten/css/customCss/teacherMainStyle.css" />
-        <option value="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" />
         <option value="$PROJECT_DIR$/kindergarten/css/customCss/classManagementStyle.css" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/classManagement.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/teacherSearch.js" />
@@ -164,7 +182,6 @@
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/addClass.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/albumScript.js" />
         <option value="$PROJECT_DIR$/kindergartenFront/js/customJs/albumScript.js" />
-        <option value="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js" />
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/ablumsPhone.css" />
         <option value="$PROJECT_DIR$/kindergarten/albums.html" />
@@ -177,6 +194,8 @@
         <option value="$PROJECT_DIR$/kindergarten/js/customJs/video.js" />
         <option value="$PROJECT_DIR$/kindergarten/css/customCss/video.css" />
         <option value="$PROJECT_DIR$/kindergarten/css/customCss/theVideo.css" />
+        <option value="$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css" />
+        <option value="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" />
       </list>
     </option>
   </component>
@@ -214,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,21 +256,7 @@
               <item name="Front-end" type="b2602c69:ProjectViewProjectNode" />
               <item name="Front-end" type="462c0819:PsiDirectoryNode" />
               <item name="kindergarten" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="customCss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Front-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kindergarten" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Front-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kindergarten" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="coustomJs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Front-end" type="b2602c69:ProjectViewProjectNode" />
@@ -263,7 +269,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -432,6 +437,7 @@
       <workItem from="1506423340809" duration="156000" />
       <workItem from="1506423529528" duration="9000" />
       <workItem from="1506423559047" duration="1119000" />
+      <workItem from="1506430297644" duration="2388000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -731,7 +737,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240868000" />
+    <option name="totallyTimeSpent" value="243256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -824,13 +830,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -1053,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3618">
-          <caret line="134" column="63" lean-forward="false" selection-start-line="134" selection-start-column="63" selection-end-line="134" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/teacherInfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1154,36 +1146,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kindergarten/albums.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/video.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
+        <state relative-caret-position="8127">
           <caret line="301" column="30" lean-forward="false" selection-start-line="301" selection-start-column="30" selection-end-line="301" selection-end-column="30" />
           <folding>
-            <marker date="1506409667136" expanded="true" signature="15045:15057" ph="..." />
+            <marker date="1506430139289" expanded="true" signature="15045:15057" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/video.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1651">
-          <caret line="395" column="5" lean-forward="true" selection-start-line="395" selection-start-column="5" selection-end-line="395" selection-end-column="5" />
+        <state relative-caret-position="10665">
+          <caret line="395" column="5" lean-forward="false" selection-start-line="395" selection-start-column="5" selection-end-line="395" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/theVideo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="289" column="14" lean-forward="false" selection-start-line="289" selection-start-column="14" selection-end-line="289" selection-end-column="14" />
+        <state relative-caret-position="644">
+          <caret line="300" column="23" lean-forward="false" selection-start-line="300" selection-start-column="23" selection-end-line="300" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kindergarten/albums.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kindergarten/css/customCss/studentsMainStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="435" column="13" lean-forward="false" selection-start-line="435" selection-start-column="13" selection-end-line="435" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="639" column="97" lean-forward="false" selection-start-line="639" selection-start-column="97" selection-end-line="639" selection-end-column="97" />
           <folding />
         </state>
       </provider>

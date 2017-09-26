@@ -429,3 +429,14 @@
     padding-left: 10px;
     border: 1px solid #1c84c6;
 }
+
+
+
+.selectParents{
+    width: 180px;
+    height: 30px;
+    margin: 10px 10px 0 10px;
+    padding-left: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+}

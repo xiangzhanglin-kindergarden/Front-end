@@ -122,18 +122,28 @@ function addTheBox(theCaption,theIndex,data) {
                     theBoxParents.appendChild(theBoxParentsMain);
                     theBoxParents.appendChild(theBoxParentsI);
                     theBoxParentsMain.appendChild(theBoxParentsInput);
-                    for (var j=0;j<3;j++){
+                    for (var j=0;j<2;j++){
                         var inputParent = document.createElement("input");
                         inputParent.type = "text";
                         theBoxParentsInput.appendChild(inputParent);
                     }
+                    var selectParents = document.createElement("select");
+                    selectParents.className = "selectParents";
+                    var theParents = ["爸爸","妈妈","爷爷","奶奶","外公","外婆","其他"];
+                    theBoxParentsInput.appendChild(selectParents);
+                    for(var ps = 0;ps<theParents.length;ps++){
+                        var options = document.createElement("option");
+                        selectParents.appendChild(options);
+                        options.value = theParents[ps];
+                        options.innerHTML = theParents[ps];
+                    }
                     var inputParents = $(".theBoxParentsInput").find("input");
                     inputParents[0].style.width = "110px";
-                    inputParents[2].style.width = "180px";
+                    // inputParents[2].style.width = "180px";
                     inputParents[0].placeholder = "姓名";
-                    inputParents[1].placeholder = "联系电话";
-                    inputParents[2].placeholder = "登陆密码(身份证后六位)";
-                    inputParents[2].readOnly = true;
+                    inputParents[1].placeholder = "联系电话(密码为身份证后六位)";
+                    // inputParents[2].placeholder = "登陆密码(身份证后六位)";
+                    // inputParents[2].readOnly = true;
                 }else if (caption[i] == "家庭住址"){
                     var province = ['省',"直辖市","河北省","山西省","内蒙古自治区","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西壮族自治区","海南省","四川省","贵州省","云南省","西藏自治区","陕西省","甘肃省","青海省","宁夏回族自治区","新疆维吾尔自治区","香港","澳门","台湾"];
 
@@ -223,18 +233,28 @@ function addTheBox(theCaption,theIndex,data) {
                 var addtheBoxParentInput = document.createElement("div");
                 addtheBoxParentInput.className = "theBoxParentsInput";
                 theBoxParentMain.appendChild(addtheBoxParentInput);
-                for (var j=0;j<3;j++){
+                for (var j=0;j<2;j++){
                     var inputParent = document.createElement("input");
                     inputParent.type = "text";
                     addtheBoxParentInput.appendChild(inputParent);
+                }
+                var selectParents = document.createElement("select");
+                selectParents.className = "selectParents";
+                var theParents = ["爸爸","妈妈","爷爷","奶奶","外公","外婆","其他"];
+                addtheBoxParentInput.appendChild(selectParents);
+                for(var ps = 0;ps<theParents.length;ps++){
+                    var options = document.createElement("option");
+                    selectParents.appendChild(options);
+                    options.value = theParents[ps];
+                    options.innerHTML = theParents[ps];
                 }
                 addtheBoxParentInput.firstChild.style.width = "110px";
                 addtheBoxParentInput.lastChild.style.width = "180px";
                 var newParentInput = addtheBoxParentInput.getElementsByTagName("input");
                 newParentInput[0].placeholder = "姓名";
                 newParentInput[1].placeholder = "联系电话";
-                newParentInput[2].placeholder = "默认登陆密码：123456";
-                newParentInput[2].readOnly = true;
+                // newParentInput[2].placeholder = "默认登陆密码：123456";
+                // newParentInput[2].readOnly = true;
             };
 
 
@@ -309,15 +329,25 @@ function addTheBox(theCaption,theIndex,data) {
                     newParentsInput.id = "newParent" + k;
                     editTheBoxParentsMain[0].appendChild(newParentsInput);
                     var newInputParent = [];
-                    for (var n=0;n<3;n++){
+                    for (var n=0;n<2;n++){
                         newInputParent[n] = document.createElement("input");
                         newInputParent[n].type = "text";
                         newParentsInput.appendChild(newInputParent[n]);
                     }
+                    var selectParents = document.createElement("select");
+                    selectParents.className = "selectParents";
+                    var theParents = ["爸爸","妈妈","爷爷","奶奶","外公","外婆","其他"];
+                    newParentsInput.appendChild(selectParents);
+                    for(var ps = 0;ps<theParents.length;ps++){
+                        var options = document.createElement("option");
+                        selectParents.appendChild(options);
+                        options.value = theParents[ps];
+                        options.innerHTML = theParents[ps];
+                    }
                     newInputParent[0].value = parentName[k];
                     newInputParent[1].value = parentTell[k];
-                    newInputParent[2].value = "密码：123456（无法修改）";
-                    newInputParent[2].readOnly = true;
+                    // newInputParent[2].value = "密码：123456（无法修改）";
+                    // newInputParent[2].readOnly = true;
                     newParentsInput.firstChild.style.width = "110px";
                     newParentsInput.lastChild.style.width = "180px";
                 }
@@ -523,9 +553,11 @@ function addSubmit() {
     var sAcount = [];
     var theBoxParent = $(".theBoxParentsInput");
     var theBoxParentsInput = [];
+    var theBoxParentOption = [];
     for(var p=0;p<theBoxParent.length;p++){
         theBoxParentsInput[p] = theBoxParent[p].getElementsByTagName("input");
-        sAcount = sAcount + theBoxParentsInput[p][0].value + ":" + theBoxParentsInput[p][1].value + "."
+        theBoxParentOption[p] = $(theBoxParent[p]).find(".selectParents").val();
+        sAcount = sAcount + theBoxParentsInput[p][0].value + "(" + theBoxParentOption[p] +")" + ":" + theBoxParentsInput[p][1].value + "."
     }
 
     var theBoxAddress = $(".theBoxAddressMain");
@@ -601,9 +633,11 @@ function editSubmit(id) {
     var sAcount = [];
     var theBoxParent = $(".theBoxParentsInput");
     var theBoxParentsInput = [];
+    var theBoxParentOption = [];
     for(var p=0;p<theBoxParent.length;p++){
         theBoxParentsInput[p] = theBoxParent[p].getElementsByTagName("input");
-        sAcount = sAcount + theBoxParentsInput[p][0].value + ":" + theBoxParentsInput[p][1].value + "."
+        theBoxParentOption[p] = $(theBoxParent[p]).find(".selectParents").val();
+        sAcount = sAcount + theBoxParentsInput[p][0].value  + "(" + theBoxParentOption[p] +")" +  ":" + theBoxParentsInput[p][1].value + "."
     }
 
     var theBoxAddress = $(".theBoxAddressMain");
