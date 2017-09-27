@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="增加学生入学年龄自动确定功能">
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="地址默认重庆 修改手机端显示bug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/studentInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/css/customCss/ablumsPhone.css" afterPath="$PROJECT_DIR$/kindergartenFront/css/customCss/ablumsPhone.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/css/customCss/video.css" afterPath="$PROJECT_DIR$/kindergartenFront/css/customCss/video.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/js/customJs/albumScript.js" afterPath="$PROJECT_DIR$/kindergartenFront/js/customJs/albumScript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/js/customJs/video.js" afterPath="$PROJECT_DIR$/kindergartenFront/js/customJs/video.js" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -588,7 +583,7 @@
       <workItem from="1506423529528" duration="9000" />
       <workItem from="1506423559047" duration="1119000" />
       <workItem from="1506430297644" duration="4751000" />
-      <workItem from="1506479552737" duration="3961000" />
+      <workItem from="1506479552737" duration="4004000" />
     </task>
     <task id="LOCAL-00001" summary="5/22  更新了余鹏的代码">
       <created>1495430346401</created>
@@ -898,11 +893,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506435031998</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="地址默认重庆 修改手机端显示bug">
+      <created>1506483919377</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1506483919377</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249580000" />
+    <option name="totallyTimeSpent" value="249623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1551" height="848" extended-state="6" />
@@ -961,7 +963,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复了评论区的一些bug" />
     <MESSAGE value="新增评论删除功能" />
     <MESSAGE value="新增视频等模块" />
     <MESSAGE value="修改了相册" />
@@ -986,7 +987,8 @@
     <MESSAGE value="增加图鉴phone端适配" />
     <MESSAGE value="增加学生家长option选择" />
     <MESSAGE value="增加学生入学年龄自动确定功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加学生入学年龄自动确定功能" />
+    <MESSAGE value="地址默认重庆 修改手机端显示bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="地址默认重庆 修改手机端显示bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
