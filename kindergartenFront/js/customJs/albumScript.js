@@ -236,11 +236,11 @@ function afterSeccess(data) {
     main.show();
     waterFall();
 
-    $(window).on('scroll',function () {
-        if (checkScrollSlide()){
-
-        }
-    });
+    // $(window).on('scroll',function () {
+    //     if (checkScrollSlide()){
+    //
+    //     }
+    // });
 
 
     //跳转至相册详情页
