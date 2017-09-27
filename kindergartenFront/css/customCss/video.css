@@ -442,20 +442,23 @@ body.overy{
         float: none;
     }
     .every .theVideo a{
-        font-size: 13px;
-        width: auto;
+        font-size: 20px;
+        width: 120px;
         height: auto;
-        line-height: 20px;
+        line-height: 22px;
+        position: relative;
+        top: 40px;
+        left: 53%;
     }
     .every .videoDes{
         width: 90%;
         height: 30%;
         margin: 0;
         /*overflow: auto;*/
-        float: none;
+        /*float: none;*/
     }
     .every .videoDes p{
-        height: 50%;
+        height: auto;
         line-height: 30px;
         font-size: 18px;
         font-weight: 700;
@@ -466,7 +469,7 @@ body.overy{
         width: 90%;
         height: auto;
         overflow: auto;
-        float: none;
+        /*float: none;*/
     }
     .every .information .addPeople, .every .information .addTime{
         height: auto;

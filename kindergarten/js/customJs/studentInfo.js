@@ -146,7 +146,7 @@ function addTheBox(theCaption,theIndex,data) {
                     // inputParents[2].placeholder = "登陆密码(身份证后六位)";
                     // inputParents[2].readOnly = true;
                 }else if (caption[i] == "家庭住址"){
-                    var province = ['省',"直辖市","河北省","山西省","内蒙古自治区","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西壮族自治区","海南省","四川省","贵州省","云南省","西藏自治区","陕西省","甘肃省","青海省","宁夏回族自治区","新疆维吾尔自治区","香港","澳门","台湾"];
+                    var province = ['省',"北京市","天津市","上海市","重庆市","河北省","山西省","内蒙古自治区","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西壮族自治区","海南省","四川省","贵州省","云南省","西藏自治区","陕西省","甘肃省","青海省","宁夏回族自治区","新疆维吾尔自治区","香港","澳门","台湾"];
 
                     //select
                     var theAddress = document.createElement("div");
@@ -195,6 +195,9 @@ function addTheBox(theCaption,theIndex,data) {
                     addressProvince.setAttribute("onChange","getCity()");
 
                     addressProvince.onChange = getCity();
+
+                    $(addressProvince).find("option")[4].selected = true;
+                    $("#select1").find("option")[1].selected = true;
 
                 }else{
                     var theBoxInput = document.createElement("div");
@@ -786,8 +789,11 @@ function showDetails(data) {
 
 function getCity(){
     var city = [
-        ["市"],
-        ["北京市","天津市","上海市","重庆市"],
+        ["重庆市"],
+        ["北京市"],
+        ["天津市"],
+        ["上海市"],
+        ["重庆市"],
         ["石家庄市","唐山市","秦皇岛市","邯郸市","邢台市","保定市","张家口市","承德市","沧州市","廊坊市","衡水市"],//河北省
         ["太原市","大同市","阳泉市","长治市","晋城市","朔州市","晋中市","运城市","忻州市","临汾市","吕梁市"],//山西省
         ["呼和浩特市","包头市","乌海市","赤峰市","通辽市","鄂尔多斯市","呼伦贝尔市","巴彦淖尔市","乌兰察布市","兴安盟","锡林郭勒市","阿拉善盟"],//内蒙古自治区

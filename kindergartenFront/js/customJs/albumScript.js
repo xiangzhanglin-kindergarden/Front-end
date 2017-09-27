@@ -124,6 +124,14 @@ $(window).ready(function () {
                         alert("请选择你要查看的班级！");
                     }else {
                         searchClass();
+                        var screnWidth = window.screen.width;
+                        if(screnWidth <= 800){
+
+                        }else {
+                            var addAlbums = $(".addAlbums>input");
+                            $(addAlbums[0]).show(400);
+                            $(addAlbums[1]).show(400);
+                        }
                         chooseSchool.show(400);
 
                         chooseSchool.click(function () {
@@ -138,9 +146,7 @@ $(window).ready(function () {
                             showData(imgData);
                             chooseSchool.hide(400);
 
-                            var addAlbums = $(".addAlbums>input");
-                            $(addAlbums[0]).show(400);
-                            $(addAlbums[1]).show(400);
+
                         });
                     }
                 });
