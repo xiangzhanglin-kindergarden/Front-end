@@ -369,7 +369,7 @@ $(function(){
     //获取封面
     var pdurl1 = $(".if-d-c-border img").attr("src");
     if (pdurl1 == "img/logo.png") {
-      reurl1 = "0";
+      reurl1 = "http://119.29.225.57:8080/photo/a/f/a84d4b34c00a4ec9b89e8b3e8bf99ea8.png";
     }else{
       reurl1 = pdurl1;
     }
