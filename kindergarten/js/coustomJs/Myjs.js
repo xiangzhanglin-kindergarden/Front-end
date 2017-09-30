@@ -7,8 +7,6 @@ $(function(){
 	console.log(username);
 	if (usertype == 0) {
 		$("#usertype").html("老师");
-	}else if (usertype == 1) {
-		$("#usertype").html("管理员");
 	}
   if (usertype == null||usertype == "") {
     window.location.href="login.html";
