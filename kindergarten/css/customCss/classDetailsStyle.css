@@ -197,8 +197,33 @@ i.teacher{
     border-radius: 5px;
     border: none;
 }
-
+.close{
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
 
 .buttonDel{
     background-color: #ed5565 !important;
+}
+.theFirstInput{
+    width: 145px !important;
+    margin-left: 5px;
+    padding-top: 3px;
+}
+.theContnet select {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa
 }

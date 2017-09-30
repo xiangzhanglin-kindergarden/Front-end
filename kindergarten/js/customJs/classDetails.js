@@ -71,10 +71,37 @@ $(document).ready(function () {
             var inputI = document.createElement("i");
             inputI.className = "teacher";
             inputSpan.value = rows[s+1];
-            spans[s].appendChild(inputSpan);
+
             if (s>0){
+                spans[s].appendChild(inputSpan);
                 spans[s].appendChild(inputI);
                 inputSpan.readOnly = true;
+            }else {
+                var selects = document.createElement("select");
+                var optionClass = ['大','中','小'];
+                for(var op = 0;op<optionClass.length;op++){
+                    var option = document.createElement("option");
+                    option.value = optionClass[op];
+                    option.innerHTML = optionClass[op];
+                    selects.appendChild(option);
+                }
+                console.log(spans[0]);
+                spans[0].appendChild(selects);
+                inputSpan.className = "theFirstInput";
+                spans[s].appendChild(inputSpan);
+                var className = rows[1].slice(1);
+                var classT = rows[1].slice(0,1);
+                var classIndex;
+                for(var c=0;c<optionClass.length;c++){
+                    if(optionClass[c] === classT){
+                        classIndex = c;
+                    }
+                }
+                if(classIndex !== undefined){
+                    $(selects).find("option")[classIndex].selected = true;
+                }
+                console.log(classIndex);
+                inputSpan.value = className;
             }
         }
         $("i.teacher")[1].style.left = "245px";
@@ -130,14 +157,38 @@ $(document).ready(function () {
                 teacherDiv.className = "teacherDiv";
                 body.appendChild(teacherDiv);
 
+                var closeSpan = document.createElement("span");
+                closeSpan.className = "close";
+                closeSpan.id = "closeBox";
+                closeSpan.style.right = "0.3em";
+                teacherDiv.appendChild(closeSpan);
+
+                $(closeSpan).click(function () {
+                    $(".teacherDiv").remove();
+                });
+
                 var pTitle = document.createElement("h2");
                 pTitle.className = "teacherSpan";
                 pTitle.innerHTML = "请选择教师";
                 teacherDiv.appendChild(pTitle);
 
+                var theUrl = "";
+                switch (index) {
+                    case "0":
+                        theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherBymoniter";//班主任http://119.29.225.57:8080/kindergarden/TeacherBymoniter
+                        break;
+                    case "1":
+                        theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherByCommontea";//老师
+                        break;
+                    case "2":
+                        theUrl = "http://"+IPADDRESS+"/kindergarden/TeacherByBaoyu";//保育员
+                        break;
+                    default:
+                }
+
                 $.ajax({
                     type: "get",
-                    url: "http://"+IPADDRESS+"/kindergarden/TeacherShowAll",
+                    url: theUrl,
                     // dataType: "JSON",
                     contentType:"application/x-www-form-urlencoded;charset=utf-8",
                     beforeSend: function (xhr) {
