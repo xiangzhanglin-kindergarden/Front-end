@@ -4,6 +4,7 @@
 
 
 var isChecked = false;
+var pageNum = 12;
 function addTheBox(theCaption,theIndex,data) {
     var box = $(".theBox");
     var theBox = box[0];
@@ -621,8 +622,13 @@ function addSubmit() {
                 xhr.withCredentials = true;
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             },
-            success: function () {
-                alert("添加成功！");
+            success: function (res) {
+                if(res == "成功"){
+                    alert("添加成功！");
+                }else {
+                    alert(res);
+                }
+
                 var box = $(".theBox");
                 box.hide(800);
                 window.location.reload();
@@ -714,8 +720,13 @@ function editSubmit(id) {
 
 //删除操作
 function delData(delIndex) {
+    var page = $('#table_list_2').getGridParam('page');
+    if(delIndex>pageNum){
+        delIndex = delIndex - pageNum*(page-1);
+    }
     var rowData = [];
     var rowTr = $("#table_list_2").find("tr")[delIndex];
+    console.log(rowTr);
     var rowTd = rowTr.getElementsByTagName("td");
     var delId = rowTd[rowTd.length-1].innerHTML;
     for (var d=0;d<rowTd.length-1;d++){

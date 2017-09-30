@@ -251,8 +251,12 @@ function addSubmit() {
                 xhr.withCredentials = true;
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             },
-            success: function () {
-                alert("添加成功！");
+            success: function (res) {
+                if(res == "ok"){
+                    alert("添加成功！");
+                }else {
+                    alert(res);
+                }
                 console.log(values);
                 var box = $(".box");
                 box.hide(800);
