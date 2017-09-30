@@ -14,7 +14,7 @@ $(document).ready(function () {
     if (usertype == 1){//园长
         console.log(manager);
         
-        $("#username").html("园长");
+        $("#username").html("管理员");
 
     }else {
         $("#usertype").html("老师");
