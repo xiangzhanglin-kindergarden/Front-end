@@ -48,6 +48,8 @@ $(document).ready(function(){
         lWed:null,
         lThu:null,
         lfri:null,
+        lsat:null,
+        lsun:null,
         workimportant:null,
         shuxin:null
       };
@@ -72,6 +74,8 @@ $(document).ready(function(){
       "lWed":null,
       "lThu":null,
       "lfri":null,
+      "lsat":null,
+      "lsun":null,
       "workimportant":null,
       "shuxin":null
     });
@@ -94,6 +98,8 @@ $(document).ready(function(){
       "lWed":null,
       "lThu":null,
       "lfri":null,
+      "lsat":null,
+      "lsun":null,
       "workimportant":null,
       "shuxin":null
     });
@@ -189,35 +195,75 @@ $(document).ready(function(){
       var threeDay = JSON.stringify(data.lWed);
       var fourDay = JSON.stringify(data.lThu);
       var fiveDay = JSON.stringify(data.lfri);
+      var satDay = JSON.stringify(data.lsat);
+      var sunDay = JSON.stringify(data.lsun);
       var classType = JSON.stringify(data.shuxin);
       var workSpace = JSON.stringify(data.workimportant);
+
 
       oneDay = oneDay.match(reg);
       twoDay = twoDay.match(reg);
       threeDay = threeDay.match(reg);
       fourDay = fourDay.match(reg);
       fiveDay = fiveDay.match(reg);
+      satDay = satDay.match(reg);
+      sunDay = sunDay.match(reg);
       classType = classType.match(reg);
       workSpace = workSpace.match(reg2);
+
 
       oneDay = delWord(oneDay);
       twoDay = delWord(twoDay);
       threeDay = delWord(threeDay);
       fourDay = delWord(fourDay);
       fiveDay = delWord(fiveDay);
+      satDay = delWord(satDay);
+      sunDay = delWord(sunDay);
       classType = delWord(classType);
       workSpace = delWord2(workSpace);
+
+      changeword(oneDay);
+      changeword(twoDay);
+      changeword(threeDay);
+      changeword(fourDay);
+      changeword(fiveDay);
+      changeword(satDay);
+      changeword(sunDay);
+      changeword(classType);
+
+      function changeword(obj){
+        var rewrite = "";
+      
+        for(var i = 0; i<obj.length; i++){
+          if (obj[i]!=null) {
+            obj[i]=obj[i].match(reg2);
+          }
+        }
+        for(var i = 0; i<obj.length-1; i++){
+          if (obj[i]==null) {
+            continue;
+          }else{
+            for(var j=0; j<obj[i].length; j++){
+              rewrite = rewrite+obj[i][j]+'</br>';
+              console.log(rewrite)
+            }
+            obj[i]=rewrite;
+          }
+          
+        }
+
+      }
+      
 
       var newWorkSpace = "";
       for(var i = 0; i<workSpace.length; i++){
         newWorkSpace = newWorkSpace+workSpace[i]+'</br>';
       }
 
-
       function delWord(obj){
         obj[0] = obj[0].replace(/"/g,"");
-        obj[3] = obj[3].replace(/"/g,"");
-        obj[6] = obj[6].replace(/"/g,"");
+        // obj[3] = obj[3].replace(/"/g,"");
+        obj[obj.length-1] = obj[obj.length-1].replace(/"/g,"");
         
         for(i=0;i<=6;i++){
           if (obj[i]==0) {

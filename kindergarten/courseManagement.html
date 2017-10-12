@@ -49,6 +49,8 @@
               <col style>
               <col style>
               <col style>
+              <col style>
+              <col style>
             </colgroup>
             <thead>
               <tr>
@@ -59,12 +61,17 @@
                 <th>周三<span></span></th>
                 <th>周四<span></span></th>
                 <th>周五<span></span></th>
+                <th>周六<span></span></th>
+                <th>周日<span></span></th>
               </tr>
             </thead>
+            <div>
             <tbody>
               <tr>
                 <td class="class-time CT-B class-end"></td>
                 <td class="class-time class-end2"></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -79,6 +86,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
                 <td class="class-time CT-B CT-T class-end"></td>
@@ -88,10 +97,14 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
                 <td class="class-time CT-T class-end"></td>
                 <td class="class-time class-end2"></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -106,10 +119,14 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
                 <td class="class-time CT-B CT-T class-end">下午</td>
                 <td class="class-time class-end2"></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -124,12 +141,15 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
                 <td class="class-time class-end no_use">周工作重</td>
                 <td class="workspace" colspan="6"></td>
               </tr>
             </tbody>
+            </div>
           </table>
         </div>
       </div>
@@ -158,11 +178,16 @@
         <span class="glyphicon glyphicon-remove-sign"></span>
       </div>
     </div>
+    <div class="ok-btn">
+      <button id="new-ok-btn" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 确定</button>
+    </div>
     <div class="new-box">
       <table class="table table-bordered new-table" id="new-table">
         <colgroup>
           <col style="width: 5.556%;">
           <col style="width: 11.113%;">
+          <col style>
+          <col style>
           <col style>
           <col style>
           <col style>
@@ -177,70 +202,92 @@
             <th>周三</th>
             <th>周四</th>
             <th>周五</th>
+            <th>周六</th>
+            <th>周日</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="class-time CT-B class-end"></td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
+            <!-- <td class="class-end"><input class='class-change-input' value=''></td> -->
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <!-- <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
             <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td><input class='class-change-input' value=''></td> -->
           </tr>
           <tr>
             <td class="class-time CT-B CT-T class-end">上午</td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr>
           <tr>
             <td class="class-time CT-T class-end"></td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr>
           <tr>
             <td class="class-time CT-T class-end"></td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr>
           <tr class="td-border-black">
             <td class="class-time CT-B class-end"></td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr><tr>
             <td class="class-time CT-B CT-T class-end">下午</td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr>
           <tr>
             <td class="class-time CT-T class-end"></td>
-            <td class="class-end"><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
-            <td><input class='class-change-input' value=''></td>
+            <td class="class-end"><textarea class="class-change-input" style="width: 94.44%;height: 30px;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
+            <td><textarea class="class-change-input" style="width: 94.44%;resize: none"></textarea></td>
           </tr>
           <tr>
             <td class="class-end">周工作重</td>
@@ -250,9 +297,7 @@
         </tbody>
       </table>
     </div>
-    <div class="ok-btn">
-      <button id="new-ok-btn" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="left"><i class="glyphicon glyphicon-pencil"></i> 确定</button>
-    </div>
+    
   </div>
 
   <!-- 新建课表 END -->

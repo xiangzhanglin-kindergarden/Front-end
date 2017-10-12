@@ -72,6 +72,8 @@ $(document).ready(function(){
 			"lWed":null,
 			"lThu":null,
 			"lfri":null,
+			"lsat":null,
+			"lsun":null
 			// "cid":userClass,
 		});
 		ajax(
@@ -84,68 +86,86 @@ $(document).ready(function(){
 
 
 
-	//点击新建课表
+	//点击 提交新建课表
 	$("#new-ok-btn").on("click",function(){
-		$("#new-table tr td input").each(function(){
+		$("#new-table tr td textarea").each(function(){
 			if ($(this).val()==null||$(this).val()=="") {
 				$(this).val(0);
 				$(this).css({"color":"rgba(0,0,0,0)"});
 			};
 		})
 		var lMon = String([
-			$(".new-table tr:eq(1) td:eq(2) input").val(),
-			$(".new-table tr:eq(2) td:eq(2) input").val(),
-			$(".new-table tr:eq(3) td:eq(2) input").val(),
-			$(".new-table tr:eq(4) td:eq(2) input").val(),
-			$(".new-table tr:eq(5) td:eq(2) input").val(),
-			$(".new-table tr:eq(6) td:eq(2) input").val(),
-			$(".new-table tr:eq(7) td:eq(2) input").val()
+			$(".new-table tr:eq(1) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(3) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(2) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(2) textarea").val()
 			// ""
 		])
 		var lTue = String([
-			$(".new-table tr:eq(1) td:eq(3) input").val(),
-			$(".new-table tr:eq(2) td:eq(3) input").val(),		
-			$(".new-table tr:eq(3) td:eq(3) input").val(),
-			$(".new-table tr:eq(4) td:eq(3) input").val(),
-			$(".new-table tr:eq(5) td:eq(3) input").val(),
-			$(".new-table tr:eq(6) td:eq(3) input").val(),
-			$(".new-table tr:eq(7) td:eq(3) input").val()
+			$(".new-table tr:eq(1) td:eq(3) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(3) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(3) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(3) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(3) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(3) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(3) textarea").val()
 		])
 		var lWed = String([
-			$(".new-table tr:eq(1) td:eq(4) input").val(),
-			$(".new-table tr:eq(2) td:eq(4) input").val(),		
-			$(".new-table tr:eq(3) td:eq(4) input").val(),
-			$(".new-table tr:eq(4) td:eq(4) input").val(),
-			$(".new-table tr:eq(5) td:eq(4) input").val(),
-			$(".new-table tr:eq(6) td:eq(4) input").val(),
-			$(".new-table tr:eq(7) td:eq(4) input").val()
+			$(".new-table tr:eq(1) td:eq(4) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(4) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(4) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(4) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(4) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(4) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(4) textarea").val()
 		])
 		var lThu = String([
-			$(".new-table tr:eq(1) td:eq(5) input").val(),
-			$(".new-table tr:eq(2) td:eq(5) input").val(),		
-			$(".new-table tr:eq(3) td:eq(5) input").val(),
-			$(".new-table tr:eq(4) td:eq(5) input").val(),
-			$(".new-table tr:eq(5) td:eq(5) input").val(),
-			$(".new-table tr:eq(6) td:eq(5) input").val(),
-			$(".new-table tr:eq(7) td:eq(5) input").val()
+			$(".new-table tr:eq(1) td:eq(5) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(5) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(5) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(5) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(5) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(5) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(5) textarea").val()
 		])
 		var lfri = String([
-			$(".new-table tr:eq(1) td:eq(6) input").val(),
-			$(".new-table tr:eq(2) td:eq(6) input").val(),		
-			$(".new-table tr:eq(3) td:eq(6) input").val(),
-			$(".new-table tr:eq(4) td:eq(6) input").val(),
-			$(".new-table tr:eq(5) td:eq(6) input").val(),
-			$(".new-table tr:eq(6) td:eq(6) input").val(),
-			$(".new-table tr:eq(7) td:eq(6) input").val()
+			$(".new-table tr:eq(1) td:eq(6) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(6) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(6) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(6) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(6) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(6) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(6) textarea").val()
+		])
+		var lsat = String([
+			$(".new-table tr:eq(1) td:eq(7) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(7) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(7) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(7) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(7) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(7) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(7) textarea").val()
+		])
+		var lsun = String([
+			$(".new-table tr:eq(1) td:eq(8) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(8) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(8) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(8) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(8) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(8) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(8) textarea").val()
 		])
 		var classshuxin = String([
-			$(".new-table tr:eq(1) td:eq(1) input").val(),
-			$(".new-table tr:eq(2) td:eq(1) input").val(),		
-			$(".new-table tr:eq(3) td:eq(1) input").val(),
-			$(".new-table tr:eq(4) td:eq(1) input").val(),
-			$(".new-table tr:eq(5) td:eq(1) input").val(),
-			$(".new-table tr:eq(6) td:eq(1) input").val(),
-			$(".new-table tr:eq(7) td:eq(1) input").val()
+			$(".new-table tr:eq(1) td:eq(1) textarea").val(),
+			$(".new-table tr:eq(2) td:eq(1) textarea").val(),		
+			$(".new-table tr:eq(3) td:eq(1) textarea").val(),
+			$(".new-table tr:eq(4) td:eq(1) textarea").val(),
+			$(".new-table tr:eq(5) td:eq(1) textarea").val(),
+			$(".new-table tr:eq(6) td:eq(1) textarea").val(),
+			$(".new-table tr:eq(7) td:eq(1) textarea").val()
 		])
 		var workspace = $(".writeworkspace").val();
 		console.log(workspace);
@@ -160,6 +180,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"lsat":lsat,
+				"lsun":lsun,
 				"workimportant":workspace,
 				"shuxin":classshuxin
 				// "cid":userClass
@@ -181,6 +203,8 @@ $(document).ready(function(){
 						"lWed":null,
 						"lThu":null,
 						"lfri":null,
+						"lsat":null,
+						"lsun":null,
 						"workimportant":null,
 						"shuxin":null
 						// "cid":userClass,
@@ -209,6 +233,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"lsat":lsat,
+				"lsun":lsun,
 				"workimportant":workspace,
 				"shuxin":classshuxin
 			});
@@ -229,6 +255,8 @@ $(document).ready(function(){
 						"lWed":null,
 						"lThu":null,
 						"lfri":null,
+						"lsat":null,
+						"lsun":null,
 						"workimportant":null,
 						"shuxin":null
 						// "cid":userClass,
@@ -270,6 +298,8 @@ $(document).ready(function(){
 				"lWed":null,
 				"lThu":null,
 				"lfri":null,
+				"lsat":null,
+				"lsun":null,
 				"workimportant":null,
 				"shuxin":null
 			});
@@ -289,6 +319,8 @@ $(document).ready(function(){
 				"lWed":null,
 				"lThu":null,
 				"lfri":null,
+				"lsat":null,
+				"lsun":null,
 				"workimportant":null,
 				"shuxin":null
 			});
@@ -320,7 +352,7 @@ $(document).ready(function(){
 			// console.log($(this).attr("class"));
 			// if ($(this).attr("class")!="class-time CT-B class-end"|| $(this).attr("class")!="class-time CT-B CT-T class-end" || $(this).attr("class")!="class-time CT-T class-end"){
 			if ($(this).attr("class")==undefined || $(this).attr("class")=="" || $(this).attr("class")=="class-time class-end2 class-end" || $(this).attr("class")=="class-time class-end2" || $(this).attr("class")=="class-end"){
-				$(this).html("<input class='class-change-input' value='"+$(this).html()+"'>")
+				$(this).html("<textarea class='class-change-input'>"+$(this).html().replace(/<br>/g,'\n')+"</textarea>")
 			}
 			if ($(this).attr("class")=="workspace class-end" || $(this).attr("class")=="workspace"){
 				$(this).html("<textarea class='class-change-input'>"+$(this).html().replace(/<br>/g,'\n')+"</textarea>")
@@ -340,58 +372,76 @@ $(document).ready(function(){
 			};
 		})
 		var lMon = String([
-			$(".class-table tr:eq(1) td:eq(2) input").val(),
-			$(".class-table tr:eq(2) td:eq(2) input").val(),
-			$(".class-table tr:eq(3) td:eq(2) input").val(),
-			$(".class-table tr:eq(4) td:eq(2) input").val(),
-			$(".class-table tr:eq(5) td:eq(2) input").val(),
-			$(".class-table tr:eq(6) td:eq(2) input").val(),
-			$(".class-table tr:eq(7) td:eq(2) input").val(),
+			$(".class-table tr:eq(1) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(3) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(2) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(2) textarea").val(),
 		])
 		var lTue = String([
-			$(".class-table tr:eq(1) td:eq(3) input").val(),
-			$(".class-table tr:eq(2) td:eq(3) input").val(),		
-			$(".class-table tr:eq(3) td:eq(3) input").val(),
-			$(".class-table tr:eq(4) td:eq(3) input").val(),
-			$(".class-table tr:eq(5) td:eq(3) input").val(),
-			$(".class-table tr:eq(6) td:eq(3) input").val(),
-			$(".class-table tr:eq(7) td:eq(3) input").val()
+			$(".class-table tr:eq(1) td:eq(3) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(3) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(3) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(3) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(3) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(3) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(3) textarea").val()
 		])
 		var lWed = String([
-			$(".class-table tr:eq(1) td:eq(4) input").val(),
-			$(".class-table tr:eq(2) td:eq(4) input").val(),		
-			$(".class-table tr:eq(3) td:eq(4) input").val(),
-			$(".class-table tr:eq(4) td:eq(4) input").val(),
-			$(".class-table tr:eq(5) td:eq(4) input").val(),
-			$(".class-table tr:eq(6) td:eq(4) input").val(),
-			$(".class-table tr:eq(7) td:eq(4) input").val()
+			$(".class-table tr:eq(1) td:eq(4) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(4) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(4) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(4) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(4) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(4) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(4) textarea").val()
 		])
 		var lThu = String([
-			$(".class-table tr:eq(1) td:eq(5) input").val(),
-			$(".class-table tr:eq(2) td:eq(5) input").val(),		
-			$(".class-table tr:eq(3) td:eq(5) input").val(),
-			$(".class-table tr:eq(4) td:eq(5) input").val(),
-			$(".class-table tr:eq(5) td:eq(5) input").val(),
-			$(".class-table tr:eq(6) td:eq(5) input").val(),
-			$(".class-table tr:eq(7) td:eq(5) input").val()
+			$(".class-table tr:eq(1) td:eq(5) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(5) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(5) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(5) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(5) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(5) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(5) textarea").val()
 		])
 		var lfri = String([
-			$(".class-table tr:eq(1) td:eq(6) input").val(),
-			$(".class-table tr:eq(2) td:eq(6) input").val(),		
-			$(".class-table tr:eq(3) td:eq(6) input").val(),
-			$(".class-table tr:eq(4) td:eq(6) input").val(),
-			$(".class-table tr:eq(5) td:eq(6) input").val(),
-			$(".class-table tr:eq(6) td:eq(6) input").val(),
-			$(".class-table tr:eq(7) td:eq(6) input").val()
+			$(".class-table tr:eq(1) td:eq(6) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(6) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(6) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(6) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(6) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(6) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(6) textarea").val()
+		])
+		var lsat = String([
+			$(".class-table tr:eq(1) td:eq(7) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(7) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(7) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(7) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(7) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(7) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(7) textarea").val()
+		])
+		var lsun = String([
+			$(".class-table tr:eq(1) td:eq(8) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(8) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(8) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(8) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(8) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(8) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(8) textarea").val()
 		])
 		var classshuxin = String([
-			$(".class-table tr:eq(1) td:eq(1) input").val(),
-			$(".class-table tr:eq(2) td:eq(1) input").val(),		
-			$(".class-table tr:eq(3) td:eq(1) input").val(),
-			$(".class-table tr:eq(4) td:eq(1) input").val(),
-			$(".class-table tr:eq(5) td:eq(1) input").val(),
-			$(".class-table tr:eq(6) td:eq(1) input").val(),
-			$(".class-table tr:eq(7) td:eq(1) input").val()
+			$(".class-table tr:eq(1) td:eq(1) textarea").val(),
+			$(".class-table tr:eq(2) td:eq(1) textarea").val(),		
+			$(".class-table tr:eq(3) td:eq(1) textarea").val(),
+			$(".class-table tr:eq(4) td:eq(1) textarea").val(),
+			$(".class-table tr:eq(5) td:eq(1) textarea").val(),
+			$(".class-table tr:eq(6) td:eq(1) textarea").val(),
+			$(".class-table tr:eq(7) td:eq(1) textarea").val()
 		])
 		var workspace = $(".workspace textarea").val();
 		console.log(workspace);
@@ -405,6 +455,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"lsat":lsat,
+				"lsun":lsun,
 				"workimportant":workspace,
 				"shuxin":classshuxin
 				// "cid":userClass
@@ -433,6 +485,8 @@ $(document).ready(function(){
 				"lWed":lWed,
 				"lThu":lThu,
 				"lfri":lfri,
+				"lsat":lsat,
+				"lsun":lsun,
 				"workimportant":workspace,
 				"shuxin":classshuxin
 			});
@@ -555,6 +609,22 @@ $(document).ready(function(){
 			$(".class-table tr:eq(6) td:eq(6)").html("")
 			$(".class-table tr:eq(7) td:eq(6)").html("")
 
+			$(".class-table tr:eq(1) td:eq(7)").html("")
+			$(".class-table tr:eq(2) td:eq(7)").html("")
+			$(".class-table tr:eq(3) td:eq(7)").html("")
+			$(".class-table tr:eq(4) td:eq(7)").html("")
+			$(".class-table tr:eq(5) td:eq(7)").html("")
+			$(".class-table tr:eq(6) td:eq(7)").html("")
+			$(".class-table tr:eq(7) td:eq(7)").html("")
+
+			$(".class-table tr:eq(1) td:eq(8)").html("")
+			$(".class-table tr:eq(2) td:eq(8)").html("")
+			$(".class-table tr:eq(3) td:eq(8)").html("")
+			$(".class-table tr:eq(4) td:eq(8)").html("")
+			$(".class-table tr:eq(5) td:eq(8)").html("")
+			$(".class-table tr:eq(6) td:eq(8)").html("")
+			$(".class-table tr:eq(7) td:eq(8)").html("")
+
 			$(".class-table tr:eq(1) td:eq(1)").html("")
 			$(".class-table tr:eq(2) td:eq(1)").html("")
 			$(".class-table tr:eq(3) td:eq(1)").html("")
@@ -576,27 +646,68 @@ $(document).ready(function(){
 			var threeDay = JSON.stringify(data.lWed);
 			var fourDay = JSON.stringify(data.lThu);
 			var fiveDay = JSON.stringify(data.lfri);
+			var satDay = JSON.stringify(data.lsat);
+			var sunDay = JSON.stringify(data.lsun);
 			var classType = JSON.stringify(data.shuxin);
 			var workSpace = JSON.stringify(data.workimportant);
+
 
 			oneDay = oneDay.match(reg);
 			twoDay = twoDay.match(reg);
 			threeDay = threeDay.match(reg);
 			fourDay = fourDay.match(reg);
 			fiveDay = fiveDay.match(reg);
+			satDay = satDay.match(reg);
+			sunDay = sunDay.match(reg);
 			classType = classType.match(reg);
 			workSpace = workSpace.match(reg2);
-			
 
+
+			
 
 			oneDay = delWord(oneDay);
 			twoDay = delWord(twoDay);
 			threeDay = delWord(threeDay);
 			fourDay = delWord(fourDay);
 			fiveDay = delWord(fiveDay);
+			satDay = delWord(satDay);
+			sunDay = delWord(sunDay);
 			classType = delWord(classType);
 			workSpace = delWord2(workSpace);
-			console.log(workSpace)
+			// console.log(workSpace)
+
+			changeword(oneDay);
+			changeword(twoDay);
+			changeword(threeDay);
+			changeword(fourDay);
+			changeword(fiveDay);
+			changeword(satDay);
+			changeword(sunDay);
+			changeword(classType);
+
+			function changeword(obj){
+				var rewrite = "";
+			
+				for(var i = 0; i<obj.length; i++){
+					if (obj[i]!=null) {
+						obj[i]=obj[i].match(reg2);
+					}
+				}
+				for(var i = 0; i<obj.length-1; i++){
+					if (obj[i]==null) {
+						continue;
+					}else{
+						for(var j=0; j<obj[i].length; j++){
+							rewrite = rewrite+obj[i][j]+'</br>';
+							console.log(rewrite)
+						}
+						obj[i]=rewrite;
+					}
+					
+				}
+
+			}
+			
 
 			var newWorkSpace = "";
 			for(var i = 0; i<workSpace.length; i++){
@@ -606,7 +717,7 @@ $(document).ready(function(){
 			function delWord(obj){
 				obj[0] = obj[0].replace(/"/g,"");
 				// obj[3] = obj[3].replace(/"/g,"");
-				obj[6] = obj[6].replace(/"/g,"");
+				obj[obj.length-1] = obj[obj.length-1].replace(/"/g,"");
 				
 				for(i=0;i<=6;i++){
 					if (obj[i]==0) {
@@ -660,6 +771,22 @@ $(document).ready(function(){
 			$(".class-table tr:eq(5) td:eq(6)").html(fiveDay[4]);
 			$(".class-table tr:eq(6) td:eq(6)").html(fiveDay[5]);
 			$(".class-table tr:eq(7) td:eq(6)").html(fiveDay[6]);
+
+			$(".class-table tr:eq(1) td:eq(7)").html(satDay[0]);
+			$(".class-table tr:eq(2) td:eq(7)").html(satDay[1]);
+			$(".class-table tr:eq(3) td:eq(7)").html(satDay[2]);
+			$(".class-table tr:eq(4) td:eq(7)").html(satDay[3]);
+			$(".class-table tr:eq(5) td:eq(7)").html(satDay[4]);
+			$(".class-table tr:eq(6) td:eq(7)").html(satDay[5]);
+			$(".class-table tr:eq(7) td:eq(7)").html(satDay[6]);
+
+			$(".class-table tr:eq(1) td:eq(8)").html(sunDay[0]);
+			$(".class-table tr:eq(2) td:eq(8)").html(sunDay[1]);
+			$(".class-table tr:eq(3) td:eq(8)").html(sunDay[2]);
+			$(".class-table tr:eq(4) td:eq(8)").html(sunDay[3]);
+			$(".class-table tr:eq(5) td:eq(8)").html(sunDay[4]);
+			$(".class-table tr:eq(6) td:eq(8)").html(sunDay[5]);
+			$(".class-table tr:eq(7) td:eq(8)").html(sunDay[6]);
 
 			$(".class-table tr:eq(1) td:eq(1)").html(classType[0]);
 			$(".class-table tr:eq(2) td:eq(1)").html(classType[1]);

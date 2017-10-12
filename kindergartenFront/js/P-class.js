@@ -112,7 +112,7 @@ $(function(){
 		// $(".class-table thead th:eq(0) span").html(d.getMonth()+1+"月");
 
 		for(var i=0; i<7; i++){
-			if (i<6) {
+			if (i<7) {
 				$(".classtable thead tr th:eq("+(i+2)+") span").html((d.getDate())+"日");
 			};
 			arr.push((d.getMonth()+1)+'月'+d.getDate()+'日 （'+getDayName(d.getDay())+'）');
