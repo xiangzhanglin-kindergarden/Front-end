@@ -4,7 +4,6 @@ var teacherData;
 var teacherClass;
 
 
-
 $(document).ready(function(){
 	$(function(){
 		// var username = sessionStorage.getItem("user");
@@ -702,6 +701,7 @@ $(document).ready(function(){
 							console.log(rewrite)
 						}
 						obj[i]=rewrite;
+						rewrite="";
 					}
 					
 				}

@@ -248,6 +248,7 @@ $(document).ready(function(){
               console.log(rewrite)
             }
             obj[i]=rewrite;
+            rewrite="";
           }
           
         }
@@ -318,6 +319,22 @@ $(document).ready(function(){
       $(".classtable table tr:eq(5) td:eq(6)").html(fiveDay[4]);
       $(".classtable table tr:eq(6) td:eq(6)").html(fiveDay[5]);
       $(".classtable table tr:eq(7) td:eq(6)").html(fiveDay[6]);
+
+      $(".classtable table tr:eq(1) td:eq(7)").html(satDay[0]);
+      $(".classtable table tr:eq(2) td:eq(7)").html(satDay[1]);
+      $(".classtable table tr:eq(3) td:eq(7)").html(satDay[2]);
+      $(".classtable table tr:eq(4) td:eq(7)").html(satDay[3]);
+      $(".classtable table tr:eq(5) td:eq(7)").html(satDay[4]);
+      $(".classtable table tr:eq(6) td:eq(7)").html(satDay[5]);
+      $(".classtable table tr:eq(7) td:eq(7)").html(satDay[6]);
+
+      $(".classtable table tr:eq(1) td:eq(8)").html(sunDay[0]);
+      $(".classtable table tr:eq(2) td:eq(8)").html(sunDay[1]);
+      $(".classtable table tr:eq(3) td:eq(8)").html(sunDay[2]);
+      $(".classtable table tr:eq(4) td:eq(8)").html(sunDay[3]);
+      $(".classtable table tr:eq(5) td:eq(8)").html(sunDay[4]);
+      $(".classtable table tr:eq(6) td:eq(8)").html(sunDay[5]);
+      $(".classtable table tr:eq(7) td:eq(8)").html(sunDay[6]);
 
       $(".classtable table tr:eq(1) td:eq(1)").html(classType[0]);
       $(".classtable table tr:eq(2) td:eq(1)").html(classType[1]);
