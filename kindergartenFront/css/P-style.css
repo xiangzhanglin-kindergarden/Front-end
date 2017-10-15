@@ -694,6 +694,17 @@ color: #000;
     line-height: 40px;
     padding-top:0;
   }
+  @media screen and (max-width: 700px){
+    .know-list-func a{
+      width: 45%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .know-list-func a{
+      width: 60px;
+    }
+  }
   @media screen and (max-width: 400px){
     .know-list-func a{
       font-size: 15px;
