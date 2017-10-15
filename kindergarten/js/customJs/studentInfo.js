@@ -766,6 +766,10 @@ function showDetails(data) {
         buttons[i].onclick = function () {
             var index = parseInt(this.getAttribute("data-buttonsIndex"));
 
+            var page = $('#table_list_2').getGridParam('page');
+            index = index + ((page-1)*pageNum);
+            console.log(index,page);
+
             overlay.style.display = "block";
             console.log(theContent);
             var rows = data[index];

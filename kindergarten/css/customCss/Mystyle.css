@@ -420,7 +420,7 @@ tbody > tr.td-border-black >td{
 	opacity: 0;
 }
 .removeTclass,
-.addNewClass,
+.addNewClass
 {
 	visibility: hidden; 
 }
