@@ -287,17 +287,22 @@ function searchClass() {
         },
         success: function (classdata) {
             $(".adding").remove();
-            var classData = JSON.parse(classdata);
-            console.log(classData);
-            $("#main").remove();
-            var main = document.createElement("div");
-            main.id = "main";
-            $(".ibox-content")[0].appendChild(main);
-            var classTitle = document.createElement("h3");
-            classTitle.className = "mainTitle";
-            classTitle.innerHTML = theClassName+"的相册";
-            main.appendChild(classTitle);
-            showData(classData);
+            if(classdata !== '显示失败'){
+                var classData = JSON.parse(classdata);
+                console.log(classData);
+                $("#main").remove();
+                var main = document.createElement("div");
+                main.id = "main";
+                $(".ibox-content")[0].appendChild(main);
+                var classTitle = document.createElement("h3");
+                classTitle.className = "mainTitle";
+                classTitle.innerHTML = theClassName+"的相册";
+                main.appendChild(classTitle);
+                showData(classData);
+            }else {
+                alert(classdata);
+            }
+
         },
         error: function (err) {
             console.log(err.status);
