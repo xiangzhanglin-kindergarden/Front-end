@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="增加滑动加载状态 判断有无是否加载完毕并反馈">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindergarten/css/customCss/theAlubms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/theAlbums.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindergarten/theAlbums.html" afterPath="" />
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="整理到front">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/css/customCss/theAlubms.css" afterPath="$PROJECT_DIR$/kindergartenFront/css/customCss/theAlubms.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/js/customJs/theAlbums.js" afterPath="$PROJECT_DIR$/kindergartenFront/js/customJs/theAlbums.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/theAlbums.html" afterPath="$PROJECT_DIR$/kindergartenFront/theAlbums.html" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -564,14 +558,7 @@
       <workItem from="1507881415470" duration="1302000" />
       <workItem from="1508075159401" duration="1224000" />
       <workItem from="1508242930921" duration="6028000" />
-      <workItem from="1508293834433" duration="10056000" />
-    </task>
-    <task id="LOCAL-00005" summary="5/25  更新了相册回复功能">
-      <created>1495692059514</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1495692059514</updated>
+      <workItem from="1508293834433" duration="10224000" />
     </task>
     <task id="LOCAL-00006" summary="5/27 整合">
       <created>1495865217924</created>
@@ -909,11 +896,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508309694398</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="整理到front">
+      <created>1508313490561</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1508313490561</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286165000" />
+    <option name="totallyTimeSpent" value="286333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -972,7 +966,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="最终版V2.0" />
     <MESSAGE value="最终版V2.0（添加班级升级功能）" />
     <MESSAGE value="V2.3 完善了搜索功能" />
     <MESSAGE value="V2.4 修复学生搜索得到数据后查看详情功能无法使用错误" />
@@ -997,7 +990,8 @@
     <MESSAGE value="增加相片滑动加载分页" />
     <MESSAGE value="优化滑动加载图片" />
     <MESSAGE value="增加滑动加载状态 判断有无是否加载完毕并反馈" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加滑动加载状态 判断有无是否加载完毕并反馈" />
+    <MESSAGE value="整理到front" />
+    <option name="LAST_COMMIT_MESSAGE" value="整理到front" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
