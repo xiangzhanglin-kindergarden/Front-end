@@ -4,7 +4,7 @@
 $(document).ready(function () {
 
     $(".fakeloader").fakeLoader({
-        timeToHide:10000,
+        timeToHide:5000,
         bgColor:"#1ab394",
         spinner:"spinner2",
         zIndex:9999
@@ -68,6 +68,8 @@ $(document).ready(function () {
                 totalPage = imgData.totalPage;
                 if(ajaxAddNum<=totalPage){
                     pageNum++;
+                }else {
+                    $(".imgloading").find("p").text("没有更多了！！！");
                 }
                 for (var i=0;i<imgList.length;i++){
                     var mainPhoto = $(".mainPhoto");
@@ -244,6 +246,12 @@ $(document).ready(function () {
                         photoAjax(pageNum);
                     }
                     booleanScroll = false;
+
+                    if(ajaxAddNum<=totalPage){
+                        $(".imgloading").find("p").text("图片加载中。。。");
+                    }else {
+                        $(".imgloading").find("p").text("没有更多了！！！");
+                    }
                 }
             }
         });
@@ -257,6 +265,7 @@ $(document).ready(function () {
         var postaction=function(){
             console.log("img load success");
             $(".fakeloader").hide();
+            $(".imgloading").find("p").text("下滑加载更多。。。");
             booleanScroll = true;
             scrollPhoto();
         }; //此处增加了一个postaction函数
