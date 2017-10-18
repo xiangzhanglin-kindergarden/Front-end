@@ -28,10 +28,6 @@ $(window).ready(function () {
     }else {
         var teacher = JSON.parse(teacherData);
         console.log(teacher);
-        if(usertype == 2){
-            teacher = teacher.Object;
-            console.log(teacher);
-        }
         url = "http://"+IPADDRESS+"/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
 
         var classAlbumsChoose = $(".classAlbumsChoose");
@@ -124,14 +120,6 @@ $(window).ready(function () {
                         alert("请选择你要查看的班级！");
                     }else {
                         searchClass();
-                        var screnWidth = window.screen.width;
-                        if(screnWidth <= 800){
-
-                        }else {
-                            var addAlbums = $(".addAlbums>input");
-                            $(addAlbums[0]).show(400);
-                            $(addAlbums[1]).show(400);
-                        }
                         chooseSchool.show(400);
 
                         chooseSchool.click(function () {
@@ -146,7 +134,9 @@ $(window).ready(function () {
                             showData(imgData);
                             chooseSchool.hide(400);
 
-
+                            var addAlbums = $(".addAlbums>input");
+                            $(addAlbums[0]).show(400);
+                            $(addAlbums[1]).show(400);
                         });
                     }
                 });
@@ -297,17 +287,22 @@ function searchClass() {
         },
         success: function (classdata) {
             $(".adding").remove();
-            var classData = JSON.parse(classdata);
-            console.log(classData);
-            $("#main").remove();
-            var main = document.createElement("div");
-            main.id = "main";
-            $(".ibox-content")[0].appendChild(main);
-            var classTitle = document.createElement("h3");
-            classTitle.className = "mainTitle";
-            classTitle.innerHTML = theClassName+"的相册";
-            main.appendChild(classTitle);
-            showData(classData);
+            if(classdata !== '显示失败'){
+                var classData = JSON.parse(classdata);
+                console.log(classData);
+                $("#main").remove();
+                var main = document.createElement("div");
+                main.id = "main";
+                $(".ibox-content")[0].appendChild(main);
+                var classTitle = document.createElement("h3");
+                classTitle.className = "mainTitle";
+                classTitle.innerHTML = theClassName+"的相册";
+                main.appendChild(classTitle);
+                showData(classData);
+            }else {
+                alert(classdata);
+            }
+
         },
         error: function (err) {
             console.log(err.status);

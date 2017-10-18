@@ -7,13 +7,14 @@
 
     <title>相册详情</title>
 
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="img/title.png">
     <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style2.css?v=4.1.0" rel="stylesheet">
 
     <link href="css/customCss/theAlubms.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fakeLoader.css">
 
 </head>
 
@@ -22,6 +23,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
+                <div class="fakeloader"></div>
                 <div class="ibox-title">
                     <div class="gray" style="display: none"></div><!--点击出现灰色阴影-->
                     <h5>相册详情</h5>
@@ -35,8 +37,8 @@
                     <div class="if-d-backbtn">
                         <a href="albums.html"><i class="fa fa-mail-reply"></i>返回</a>
                     </div>
-                    <!-- <input class="photoAdd" type="button" value="上传图片">
-                    <input class="photoManage" type="button" value="批量管理"> -->
+                    <input class="photoAdd" type="button" value="上传图片">
+                    <input class="photoManage" type="button" value="批量管理">
                     <input class="photoDel" style="display: none;width:60px;" type="button" value="删除">
                     <input class="photoCancle" style="display: none;width: 60px;" type="button" value="取消">
                 </div>
@@ -99,7 +101,9 @@
 
 
 <!-- 自定义js -->
-<script src="js/H-content.js?v=1.0.0"></script>
+<script src="js/content.js?v=1.0.0"></script>
+
+<script src="js/customJs/fakeLoader.min.js"></script>
 
 <script src="js/customJs/theAlbumsShowPhoto.js" type="text/javascript"></script>
 <script src="js/customJs/theAlbums.js" type="text/javascript"></script>
