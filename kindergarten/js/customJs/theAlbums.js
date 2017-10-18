@@ -3,6 +3,13 @@
  */
 $(document).ready(function () {
 
+    $(".fakeloader").fakeLoader({
+        timeToHide:10000,
+        bgColor:"#1ab394",
+        spinner:"spinner2",
+        zIndex:9999
+    });
+
     var booleanScroll = false;
     var ajaxAddNum = 1;
     var screnWidth = window.screen.width;
@@ -54,6 +61,7 @@ $(document).ready(function () {
 
                 $(".skip").hide();
                 gray.hide();
+                var imgSrcs = [];
 
                 var imgData = JSON.parse(theImgData);
                 var imgList = imgData.tlist;
@@ -66,6 +74,7 @@ $(document).ready(function () {
                     // var imgListAdress = JSON.parse(imgList[i].xcAdress);
                     // console.log(imgList[i].xcAdress);
                     var imgListAdress = imgList[i].xcAdress;
+                    imgSrcs[i] = imgList[i].xcAdress;
                     // var imgListAdreeUrl = imgListAdress.url;
                     var imgListAdreeUrl = imgListAdress;
                     var divImg = document.createElement("div");
@@ -78,6 +87,7 @@ $(document).ready(function () {
                 }
 
 
+                preloadimages(imgSrcs);
 
 
             },
@@ -221,25 +231,58 @@ $(document).ready(function () {
 
     //图片详情
     showPhoto();
+    function scrollPhoto() {
+        $(window).on('scroll',function () {
+            // booleanScroll = true;
 
-
-    $(window).on('scroll',function () {
-        $("img").load(function () {
-            booleanScroll = true;
-        });
-        if (checkScrollSlide()){
-            if(booleanScroll){
-
-                console.log(ajaxAddNum,pageNum);
-                if(ajaxAddNum == pageNum){
-                    photoAjax(pageNum);
+            console.log("scroll",checkScrollSlide(),booleanScroll);
+            if (checkScrollSlide()){
+                if(booleanScroll){
+                    console.log(ajaxAddNum,pageNum);
+                    if(ajaxAddNum == pageNum){
+                        console.log("-------------------------------------------------------------------ajaxphoto()");
+                        photoAjax(pageNum);
+                    }
+                    booleanScroll = false;
                 }
-                booleanScroll = false;
+            }
+        });
+    }
+
+
+
+
+    function preloadimages(arr){
+        var newimages=[], loadedimages=0;
+        var postaction=function(){
+            console.log("img load success");
+            $(".fakeloader").hide();
+            booleanScroll = true;
+            scrollPhoto();
+        }; //此处增加了一个postaction函数
+        var arrs=(typeof arr!="object")? [arr] : arr;
+        function imageloadpost(){
+            loadedimages++;
+            if (loadedimages==arrs.length){
+                postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
             }
         }
-    });
-
-
+        for (var i=0; i<arr.length; i++){
+            newimages[i]=new Image();
+            newimages[i].src=arr[i];
+            newimages[i].onload=function(){
+                imageloadpost();
+            };
+            newimages[i].onerror=function(){
+                imageloadpost();
+            }
+        }
+        return { //此处返回一个空白对象的done方法
+            done:function(f){
+                postaction=f || postaction
+            }
+        }
+    }
 
 
     function checkScrollSlide() {
