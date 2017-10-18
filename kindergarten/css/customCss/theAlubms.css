@@ -1,0 +1,425 @@
+.ibox{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/*返回*/
+.if-d-backbtn{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 150px;
+    /*min-width: 80px;*/
+    height: 40px;
+    border: 1px solid #EBE9E9;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 1px 1px #D3D3D3;
+    margin-left: -2.5%;
+    font-size: 18px;
+    text-align: right;
+    line-height: 40px;
+    color: #000;
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+
+    transition:margin-left,background-color 1s,1s;
+    -moz-transition:margin-left,background-color 1s,1s; /* Firefox 4 */
+    -webkit-transition:margin-left,background-color 1s,1s; /* Safari and Chrome */
+    -o-transition:margin-left,background-color 1s,1s; /* Opera */
+
+}
+.if-d-backbtn:hover{
+    margin-left: -0.1%;
+    background-color: rgb(51,112,183);
+}
+.if-d-backbtn a{
+    float: right;
+    width: 100%;
+    height: 100%;
+    padding-right: 14%;
+    transition: color 0.3s;
+    -moz-transition: color 0.3s; /* Firefox 4 */
+    -webkit-transition: color 0.3s; /* Safari and Chrome */
+    -o-transition: color 0.3s; /* Opera */
+}
+.if-d-backbtn:hover a{
+    color: #fff;
+}
+
+
+
+.addPhoto{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+.addPhoto input{
+    width: 80px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.photoAdd{
+    background-color: #1ab394;
+}
+.photoManage{
+    background-color: #f8ac59;
+}
+.photoDel{
+    background-color: #ed5565;
+}
+.photoCancle{
+    background-color: #f7a54a;
+}
+
+
+.titlePhoto p{
+    width: 80%;
+    text-indent: 28px;
+}
+.mainPhoto{
+    width: 100%;
+    height: auto;
+}
+.mainPhoto img{
+    width: auto;
+    height: 200px;
+    /*float: left;*/
+    cursor: pointer;
+}
+.mainPhoto .everyImg{
+    position: relative;
+    width: auto;
+    height: 200px;
+    display: inline-block;
+    margin: 20px 30px;
+}
+
+
+
+/*上传照片*/
+.uploadPhoto{
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    left: 185px;
+    z-index: 100;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+i.close{
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    right: 10px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close:before{
+    content: "\e088";
+}
+
+.gray{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #f3f3f4;
+    opacity: 0.7;
+}
+
+iframe{
+    border: none;
+}
+
+/*管理相册按钮*/
+i.manageImg{
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #eee;
+    /*border-radius: 4px;*/
+    background-color: white;
+    cursor: pointer;
+    z-index: 100;
+    /*background: url(../../img/checked.png);*/
+}
+
+
+
+
+
+
+/*相册详情*/
+.showPhoto{
+    display: none;
+    width: 60%;
+    background-color: black;
+    height: 96%;
+    min-height: 800px;
+    position: fixed;
+    top:2%;
+    left: 20%;
+    z-index: 120;
+}
+.showPhoto .content{
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    height: 90%;
+}
+.showPhoto .content .changePhoto{
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+.showPhoto .content .changePhoto img{
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    opacity: 0.3;
+}
+.showPhoto .content .changePhoto img:hover{
+    opacity: 0.8;
+}
+.showPhoto .content img{
+    width: 70%;
+    height: auto;
+    max-height: 90%;
+    margin-top: 5%;
+}
+.showPhoto .comment{
+    width: 28%;
+    height: 85%;
+    margin-top: 4%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 10px;
+}
+.showPhoto .close{
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings',serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.5;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.showPhoto .close:hover{
+    opacity: 0.9;
+}
+.close:before{
+    content: "\e088";
+}
+/*评论*/
+.showPhoto .comment h3{
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+.showPhoto .comment .thepLoading{
+    padding-left: 10px;
+}
+.showPhoto .comment .mainComment{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+.showPhoto .comment .mainComment .mainCommentContent{
+    width: auto;
+    height: auto;
+}
+.showPhoto .comment .mainComment .mainCommentContent span{
+    display: inline-block;
+    height: 30px;
+}
+.showPhoto .comment .mainComment .mainCommentContent span.people{
+    font-weight: 700;
+    cursor: pointer;
+}
+.showPhoto .comment .mainComment .mainCommentContent .sendMainCommentContent{
+    width: auto;
+    height: auto;
+    padding-left: 15px;
+}
+.showPhoto .comment .mainCommentInput{
+    width: 90%;
+    height: auto;
+    padding-left: 6%;
+ }
+.showPhoto .comment input.editComment{
+    width: 90%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput .buttonSure{
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+}
+.showPhoto .comment .mainCommentInput .buttonSure input{
+    float: right;
+    width: 60px;
+    height: 30px;
+    margin-right: 10%;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput{
+    margin-bottom: 10px;
+}
+.showPhoto .comment .mainCommentInput input.replyComment{
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentInput input.replyButton{
+    margin-left: 5%;
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: #5CAAE6;
+    color: white;
+    border-radius: 5px;
+}
+.showPhoto .comment .mainCommentContent:hover i.delComment{
+    opacity: 1;
+}
+
+i.delComment{
+    width: 14px;
+    height: 16px;
+    display: block;
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    float: right;
+    background: url(../../img/delIco.png);
+}
+
+
+
+
+/*手机端*/
+@media screen and (max-width: 800px){
+    .ibox-title{
+        height: 60px;
+    }
+    .ibox{
+        width: 100%;
+        height: auto;
+    }
+    .if-d-backbtn{
+        font-size: 15px;
+        height: 30px;
+        width: 80px;
+        line-height: 30px;
+        top: 57px;
+    }
+    .uploadPhoto{
+        width: 98%;
+        height: 570px;
+        left: 1%;
+        top: 70px;
+    }
+    .mainPhoto .everyImg{
+        width: 100%;
+        height: auto;
+        margin: 5% 0;
+    }
+    .mainPhoto .everyImg img{
+        width: 100%;
+        height: auto;
+    }
+    .showPhoto{
+        left: 1%;
+        width: 98%;
+        top:7%;
+        height: 80%;
+        min-height: 100px;
+        clear: both;
+        border-radius: 10px;
+        position: absolute;
+        overflow: auto;
+    }
+    .showPhoto .content a{
+        display: none !important;
+    }
+    .showPhoto .content{
+        margin-top: 5%;
+        width: 100%;
+        height: 30%;
+        position: relative;
+    }
+    .showPhoto .content img{
+        width: 98%;
+        margin: 5% 1% !important;
+        /*margin-top: 5% !important;*/
+    }
+    .showPhoto .comment{
+        width: 98%;
+        height: auto;
+        margin: 5% 0;
+        font-size: 10px;
+        clear: both;
+        position: relative;
+    }
+}
+
+
+
+
+.imgloading p{
+    margin: 0;
+    padding: 0;
+    margin-left: 30px;
+}
+
+
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
