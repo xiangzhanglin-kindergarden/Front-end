@@ -235,14 +235,6 @@ $(window).ready(function () {
                         alert("请选择你要查看的班级！");
                     }else {
                         searchClass();
-                        var screnWidth = window.screen.width;
-                        if(screnWidth <= 800){
-
-                        }else{
-                            var addVideos = $(".addVideos>input");
-                            $(addVideos[0]).show(400);
-                            $(addVideos[1]).show(400);
-                        }
                         chooseSchool.show(400);
 
                         chooseSchool.click(function () {
@@ -258,7 +250,9 @@ $(window).ready(function () {
                             showData(videoData);
                             chooseSchool.hide(400);
 
-
+                            var addVideos = $(".addVideos>input");
+                            $(addVideos[0]).show(400);
+                            $(addVideos[1]).show(400);
                         });
                     }
                 });
@@ -384,7 +378,8 @@ $(window).ready(function () {
         var usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
         var teacherData = sessionStorage.getItem("teacherData");
         // var teacher = JSON.parse(teacherData);
-        if(typeof(teacherData) ==='object'){
+        console.log(typeof(teacherData));
+        if(typeof(teacherData) !=='object'){
             var teacher = JSON.parse(teacherData);
         }else{
             var teacher = teacherData;

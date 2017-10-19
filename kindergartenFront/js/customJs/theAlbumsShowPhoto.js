@@ -5,7 +5,13 @@ function showPhoto() {
     var imgs = $(".mainPhoto").find(".everyImg").find("img");
     var gray = $(".gray");
     var show = $(".showPhoto");
+    console.log(imgs);
 
+    imgs.each(function () {
+        var now = this;
+        console.log("removeEvent");
+        $(now).unbind("click");
+    });
     imgs.each(function () {
         var nowImg = this;
         $(nowImg).click(function () {
