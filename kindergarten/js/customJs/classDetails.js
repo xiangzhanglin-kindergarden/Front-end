@@ -239,14 +239,16 @@ $(document).ready(function () {
 
     function submitChange() {
         var inputs = $(".content").find("span").find("input");
+        var select = $(".content").find("span").find("select");
+        var classNameS = select[0].value;
         var className = inputs[0].value;
-        var classNameT = className.substring(0,1),
-            classNameC = className.substring(1);
-        var cName = classNameT +","+ classNameC;
-        if(className === ""){
+        console.log(classNameS,className);
+
+        // var classNameT = className.substring(0,1),
+            // classNameC = className.substring(1);
+        var cName = classNameS +","+ className;
+        if(classNameS === ""){
             alert("班级名称不能为空");
-        }else if(classNameC === ""){
-            alert("班级名不能为空");
         }else if(inputs[1].value === ""){
             alert("请选择班主任");
         }else if(inputs[2].value ===""){

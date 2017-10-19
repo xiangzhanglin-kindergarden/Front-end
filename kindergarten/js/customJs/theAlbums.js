@@ -232,7 +232,7 @@ $(document).ready(function () {
 
 
     //图片详情
-    showPhoto();
+
     function scrollPhoto() {
         $(window).on('scroll',function () {
             // booleanScroll = true;
@@ -266,6 +266,8 @@ $(document).ready(function () {
             $(".imgloading").find("p").text("下滑加载更多。。。");
             booleanScroll = true;
             scrollPhoto();
+            showPhoto();
+
         }; //此处增加了一个postaction函数
         var arrs=(typeof arr!="object")? [arr] : arr;
         function imageloadpost(){
@@ -301,6 +303,7 @@ $(document).ready(function () {
 
          return boolean;
     }
+
 
 
 
