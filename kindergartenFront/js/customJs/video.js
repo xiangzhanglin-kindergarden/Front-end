@@ -54,6 +54,11 @@ $(window).ready(function () {
     }else {
         var teacher = JSON.parse(teacherData);
 
+        if(usertype == 2){
+            teacher = teacher.Object;
+            console.log(teacher);
+        }
+
         theData = "mcJson="+teacher.cId+"&pageNum="+pageNum;
         url = "http://"+IPADDRESS+"/kindergarden/MCShowClass";
 

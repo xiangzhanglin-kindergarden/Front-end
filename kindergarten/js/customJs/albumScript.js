@@ -27,6 +27,11 @@ $(window).ready(function () {
         loadClass();
     }else {
         var teacher = JSON.parse(teacherData);
+
+        if(usertype == 2){
+            teacher = teacher.Object;
+            console.log(teacher);
+        }
         console.log(teacher);
         url = "http://"+IPADDRESS+"/kindergarden/PCtShowteacher?pageNum="+pageNum + "&cid=" + teacher.cId;
 
