@@ -10,6 +10,8 @@ var nowWeek;
 var secondTeamFweek;
 var nowTeamFweek;
 
+var MOUTH = sessionStorage.getItem("mouth");
+var DAY = sessionStorage.getItem("day");
 
 
 /*++++++++++++++++++++++++++++++++++++++++++*/
@@ -24,6 +26,8 @@ $(function(){
 	if (nowTeamFweek>=secondTeamFweek) {
 		week = nowTeamFweek - secondTeamFweek+1;
 	};
+
+
 	$(".classtable table").attr("name",week)
 	$(".reremove").html("第"+week+"周")
 })
@@ -121,13 +125,7 @@ $(function(){
 		}
 		
 		$(".classtable thead tr th:eq(1) span").html(nowDayTime+1+"月");
-
-
-
-
 	}
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,9 +141,12 @@ function getClassWeek(){
 	d2.setMonth(0);
 	d2.setDate(1);
 
-	d3.setMonth(7);
-	d3.setDate(1);
+	d3.setMonth(parseInt(MOUTH)-1);
+	d3.setDate(parseInt(DAY));
+	console.log(d3);
 
+	// d3.setMonth(8);
+	// d3.setDate(4);
 
 	var yearFirstDay = d2.getDay();
 	console.log("本年第一天是周："+yearFirstDay);
@@ -154,7 +155,7 @@ function getClassWeek(){
 	};
 
 	var newteamDay = d3.getDay();
-	console.log("7月第一天是周："+newteamDay);
+	console.log("9月第一天是周："+newteamDay);
 	if (newteamDay==0) {
 		newteamDay=7;
 	};
@@ -168,8 +169,10 @@ function getClassWeek(){
 	s2a = Math.ceil((s3a+yearFirstDay)/7);
 	
 	nowWeek = s2a;
-	console.log("7月一日"+"是本年第"+s1a+"天，第"+s2a+"周");//周日做为下周的开始计算
+	console.log("9月一日"+"是本年第"+s1a+"天，第"+s2a+"周");//周日做为下周的开始计算
 	secondTeamFweek = s2a;
+	console.log(secondTeamFweek);
+	console.log(s2a);
 
 
 	// var weekday = yearFirstDay == 0?1:(7-yearFirstDay+1);

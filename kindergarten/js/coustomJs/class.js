@@ -10,9 +10,14 @@ var nowWeek;
 var secondTeamFweek;
 var nowTeamFweek;
 
+var MOUTH = sessionStorage.getItem("mouth");
+var DAY = sessionStorage.getItem("day");
 
+$(".startMouth").html(parseInt(MOUTH));
+$(".startDay").html(parseInt(DAY));
 /*++++++++++++++++++++++++++++++++++++++++++*/
 /* 课表按钮  START */
+
 
 
 //新增课表按钮
@@ -66,6 +71,58 @@ $(function(){
 		// }
 	})
 })
+
+
+// 点击 修改开学时间按钮 后   取消 / 修改 按钮
+$(function(){
+	//出现取消选择
+	$("#changeTime-class").click(function(){
+		$("#changeTime-class").animate({"opacity":0});
+		$("#changeTime-class").addClass("myHidden");
+		setTimeout(function(){
+			$("#change-class-yes2").css({"opacity":0});
+			$("#change-class-no2").css({"opacity":0});
+			$(".inputMouth").css({"opacity":0});
+			$(".inputDay").css({"opacity":0});
+
+			$("#change-class-yes2").removeClass("myHidden");
+			$("#change-class-no2").removeClass("myHidden");
+			$(".inputMouth").removeClass("myHidden");
+			$(".inputDay").removeClass("myHidden");
+
+			$(".startMouth").addClass("myHidden");
+			$(".startDay").addClass("myHidden");
+
+			$("#change-class-yes2").animate({"opacity":1});
+			$("#change-class-no2").animate({"opacity":1});
+			$(".inputMouth").animate({"opacity":1});
+			$(".inputDay").animate({"opacity":1});
+
+
+		},1);
+	})
+	//隐藏取消选择
+	$("#change-class-no2").click(function(){
+		$("#change-class-yes2").animate({"opacity":0});
+		$("#change-class-no2").animate({"opacity":0});
+
+		$("#change-class-yes2").addClass("myHidden");
+		$("#change-class-no2").addClass("myHidden");
+		setTimeout(function(){
+			$("#changeTime-class").removeClass("myHidden");
+			$("#changeTime-class").animate({"opacity":1});
+
+			$(".inputMouth").addClass("myHidden");
+			$(".inputDay").addClass("myHidden");
+
+			$(".startMouth").removeClass("myHidden");
+			$(".startDay").removeClass("myHidden");
+		},1);
+	})
+})
+
+
+
 
 
 // 点击 新建课表按钮 后   关闭按钮
@@ -167,7 +224,7 @@ $(function(){
 		week = nowTeamFweek - secondTeamFweek+1;
 	};
 
-	for(var i=1;i<=26;i++){
+	for(var i=1;i<=20;i++){
 		var newWeek = $("<option>"+i+"</option>");
 		if (i==week) {
 			var newWeek = $("<option selected>"+i+"</option>");
@@ -291,9 +348,8 @@ function getClassWeek(){
 	d2.setMonth(0);
 	d2.setDate(1);
 
-	d3.setMonth(7);
-	d3.setDate(1);
-
+	d3.setMonth(MOUTH-1);
+	d3.setDate(DAY);
 
 	var yearFirstDay = d2.getDay();
 	console.log("本年第一天是周："+yearFirstDay);
@@ -316,7 +372,7 @@ function getClassWeek(){
 	s2a = Math.ceil((s3a+yearFirstDay)/7);
 	
 	nowWeek = s2a;
-	console.log("7月一日"+"是本年第"+s1a+"天，第"+s2a+"周");//周日做为下周的开始计算
+	console.log("9月一日"+"是本年第"+s1a+"天，第"+s2a+"周");//周日做为下周的开始计算
 	secondTeamFweek = s2a;
 
 
@@ -356,8 +412,37 @@ $(function(){
 
 
 
-
-
+/**
+ * 修改开学时间
+ * @param  {[type]} ){                    $.ajax({        type: "post",                            url: "http:                          contentType:"application/x-www-form-urlencoded;charset [description]
+ * @param  {[type]} success: function      (classdata) {                  console.log(classdata);               }        [description]
+ * @param  {[type]} error:   function      (err)       {                  console.log(err.status);              }	});} [description]
+ * @return {[type]}          [description]
+ */
+$("#change-class-yes2").click(function(){
+	var kaixuetime = JSON.stringify({
+		"k_Id":123456,
+		"k_month":$(".inputMouth").val(),
+		"k_day":$(".inputDay").val()
+	});
+	
+  $.ajax({
+    type: "post",
+    url: "http://"+IPADDRESS+"kindergarden/KaixueUpdate",
+    data:"kaixuetime="+kaixuetime,
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend: function (xhr) {
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    },
+    success: function (classdata) {
+      window.location.reload();
+    },
+    error: function (err) {
+      console.log(err.status);
+    }
+	});
+})
 
 
 

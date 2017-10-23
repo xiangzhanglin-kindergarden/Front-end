@@ -68,8 +68,9 @@ function enterFront(){
 				console.log(data);
 				if (data.msg == "登录成功") {
 					set_sessionStorage(userName,userClass);
+					getStartTime();
 					// sessionStorage.setItem("teacherData",data);
-					window.location.href = "index.html";
+					// window.location.href = "index.html";
 				}else if (data.msg == "密码错误") {
 					alert(data.msg);
 				}else if (data.msg == "用户为空") {
@@ -81,7 +82,8 @@ function enterFront(){
           var theData = JSON.stringify(data);
           sessionStorage.setItem("teacherData",theData);
           console.log(theData);
-          window.location.href = "index.html";
+          getStartTime();
+          
 				}
 
 			},
@@ -107,6 +109,31 @@ function CheckEmpty(){
 	}else{
 		CHECK_EMPTY=true;
 	}
+}
+
+
+function getStartTime(){
+  $.ajax({
+    type: "post",
+    url: "http://"+IPADDRESS+"kindergarden/KaixueShow",
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend: function (xhr) {
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    },
+    success: function (classdata) {
+    	data = JSON.parse(classdata);
+    	console.log(data);
+    	sessionStorage.setItem("mouth",data.k_month);
+    	sessionStorage.setItem("day",data.k_day);
+    	console.log(sessionStorage.getItem("mouth"));
+    	console.log(sessionStorage.getItem("day"));
+    	window.location.href = "index.html";
+    },
+    error: function (err) {
+      console.log(err.status);
+    }
+	});
 }
 
 // sessionStorage

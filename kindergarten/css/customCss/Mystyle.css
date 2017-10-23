@@ -431,8 +431,14 @@ tbody > tr.td-border-black >td{
 	text-align: left;
 	padding-left: 7%!important;
 }
-
-
+span.startTime,
+span.inputStartTime{
+	font-size: 18px;
+}
+.inputMouth,
+.inputDay{
+	width: 30px;
+}
 
 
 
