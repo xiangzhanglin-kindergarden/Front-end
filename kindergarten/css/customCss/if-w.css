@@ -110,7 +110,11 @@
 .if-w-sub-btn{
 	top: 190px;
 }
-.if-w-sub-btn a{
+.if-w-sub-btn2{
+	top: 110px;
+}
+.if-w-sub-btn a,
+.if-w-sub-btn2 a{
 	color: #50B733;
 }
 .if-w-sub-btn:hover{

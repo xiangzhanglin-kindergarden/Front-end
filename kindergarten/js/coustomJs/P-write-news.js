@@ -381,6 +381,9 @@ $(function(){
     }else if(pdkind == "公告"){
       rekind = "公告";
       reurl1 = "0";
+    }else if(pdkind == "随笔"){
+      rekind = "教育随笔";
+      reurl1 = "0";
     }
 
     //获取附件
@@ -429,7 +432,7 @@ $(function(){
         console.log(data.success);
         if (data.success=="success") {
           alert("提交成功！");
-          window.location.href = "allNewsManagement.html";
+          window.location.href = "pageManagement.html";
         }else{
           alert("提交失败");
         }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>教育随笔详情页</title>
+
+  <link rel="shortcut icon" href="logo.ico"> 
+
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+  <!-- bootstrapfileinput -->
+  <link rel="stylesheet" href="plugins/bootstrap-fileinput/css/fileinput.css" />
+  <!-- dropzone -->
+  <link href="plugins/dropzone/basic.css" rel="stylesheet">
+  <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
+  <!-- wangeditor -->
+  <link href="plugins/wangEditor/css/wangEditor.min.css" rel="stylesheet" >
+
+
+
+
+
+  <link href="css/customCss/if-d.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg" name="新闻">
+  <div class="wrapper wrapper-content">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 animated fadeInRight if-d-box">
+        
+          <!--  审核状态栏部分  START  -->
+
+        <div class="mail-box-header col-sm-12">
+          <div class="if-d-page-status col-sm-10 col-sm-offset-1">
+            <input class="btn btn-primary" type="button" value="编辑文章" name="edit2">
+            <div class="if-d-p-s-e-btn">
+              <button class="btn btn-warning btn-circle btn-lg if-d-no"><i class="fa fa-times"></i></button>
+              <button class="btn btn-info btn-circle btn-lg if-d-yes"><i class="fa fa-check"></i></button>
+              <a class="btn btn-info btn-rounded if-d-resub" href="##">保存草稿</a>
+              <a class="btn btn-primary btn-rounded if-d-sub" href="##">提交文章</a>
+            </div>
+          </div>
+        </div>
+          <!--  审核状态栏部分  END  -->
+
+
+        <!--  具体的内容 START -->
+        <div class="mail-box">
+
+          <!-- 标题信息  START -->
+          <div class="if-d-title">
+            <div class="if-d-t-content">
+              <div class="if-d-t-c-box">
+                <p name="title"></p>
+                <div class="if-d-t-info">
+                  <span>发布人：</span>
+                  <span class="if-d-t-name"></span>
+                  <span class="if-d-t-time"></span>
+                </div>
+              </div>
+              
+              <div class="if-d-change-title">
+                标题：<input type="text">
+              </div>
+            </div>
+          </div>
+          <!-- 标题信息  END -->
+
+          <!-- 具体内容  START -->
+          <div class="if-d-content">
+            
+          </div>
+          <!-- 具体内容  END -->
+
+          <!-- 富文本编辑器  -->
+          <div class="if-d-write-box">
+            <div id="div1"></div>
+          </div>
+
+          <div class="mail-attachment">
+            <p>
+              <span><i class="fa fa-paperclip"></i></span>
+            </p>
+
+            <div class="attachment">
+
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <form id="my-awesome-dropzone" class="dropzone">
+                  <div class="dropzone-previews"></div>
+                  <button type="submit" class="btn btn-primary pull-right">提交</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="clearfix"></div> -->
+          
+
+        </div>
+        <!--  具体的内容 END -->
+
+      </div>
+    </div>
+
+
+    <!-- 返回按钮 -->
+    <div class="if-d-backbtn">
+      <a href="allNewsManagement.html">
+        <i class="fa fa-mail-reply"></i>
+        返回
+      </a>
+    </div>
+  </div>
+  
+
+
+
+
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+  <script src="js/self-option.js"></script>
+
+
+  <!--  富文本编辑器   -->
+  <script src="plugins/wangEditor/js/wangEditor.js"></script>
+
+  <!-- DROPZONE -->
+  <script src="plugins/dropzone/dropzone.js"></script>
+
+  <!-- bootstrapfileinput -->
+  <script src="plugins/bootstrap-fileinput/js/fileinput.js"></script>
+  <script src="plugins/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+
+
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+  <script src="js/coustomJs/Pagedetails.js?v=1.0.0"></script>
+
+</body>
+
+</html>
