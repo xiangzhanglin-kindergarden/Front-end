@@ -70,7 +70,9 @@ $(window).ready(function () {
         theTitle.html("班级活动");
 
         var schoolChoose = classVideoChoose.find("input.schoolChoose");
+        var addVideoInput = $(".schoolChoose");
         schoolChoose.click(function () {
+            addVideoInput.hide(100);
             classVideoChooseFun(this.value);
         });
 
@@ -121,6 +123,7 @@ $(window).ready(function () {
 
     function classVideoChooseFun(name) {
         var backClassVideo = $(".classVideoChoose").find("input.schoolChoose");
+        var schoolChoose =  $(".schoolChoose");
 
         var addVideoInput = $(".addVideos").find("input");
         if (name == "校园活动"){
@@ -158,6 +161,7 @@ $(window).ready(function () {
 
                     $(addVideoInput[0]).hide(400);
                     $(addVideoInput[1]).hide(400);
+                    schoolChoose.show(400);
 
                     showData(videoData);
 
@@ -178,8 +182,9 @@ $(window).ready(function () {
             main.appendChild(theTitle);
             backClassVideo[0].value = "校园活动";
 
-            $(addVideoInput[0]).show(400);
-            $(addVideoInput[1]).show(400);
+            // $(addVideoInput[0]).show(400);
+            // $(addVideoInput[1]).show(400);
+            schoolChoose.show(400);
             console.log(videoData);
             showData(videoData);
 

@@ -10,6 +10,8 @@ $(window).ready(function () {
     var main = $("#main");
     var imgData;
 
+    var screnWidth = window.screen.width;
+
     //页码
     var pageNum = 1;
 
@@ -43,7 +45,10 @@ $(window).ready(function () {
         theTitle.html("班级图鉴");
 
         var schoolChoose = classAlbumsChoose.find("input.schoolChoose");
+        var addAlbumsInput = $(".addAlbums").find("input");
         schoolChoose.click(function () {
+            $(addAlbumsInput[1]).hide(100);
+
             classAlbumsChooseFun(this.value);
         });
     }
@@ -179,6 +184,7 @@ $(window).ready(function () {
                     $(".adding").remove();
                     $("#main").remove();
 
+
                     backClassAlbums[0].value = "返回本班相册";
                     var imgData = JSON.parse(data);
 
@@ -190,7 +196,11 @@ $(window).ready(function () {
                     main.appendChild(theTitle);
 
                     $(addAlbumsInput[0]).hide(400);
-                    $(addAlbumsInput[1]).hide(400);
+
+                    $(addAlbumsInput[1]).show(400);
+
+
+
 
                     showData(imgData);
 
@@ -211,8 +221,10 @@ $(window).ready(function () {
             main.appendChild(theTitle);
             backClassAlbums[0].value = "校园图鉴";
 
-            $(addAlbumsInput[0]).show(400);
             $(addAlbumsInput[1]).show(400);
+
+            // $(addAlbumsInput[0]).show(400);
+
             showData(imgData);
         }
 
