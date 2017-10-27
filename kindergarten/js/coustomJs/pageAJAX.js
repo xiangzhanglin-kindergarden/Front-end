@@ -36,8 +36,14 @@ $(function(){
 /*    打开页面初始化AJAX     */
 
 	$(function(){
-		address = "kindergarden/ShowAllGrowth";
-		trans = "?pageNum="+1;
+    if (usertype==0) {
+      address = "kindergarden/SreachEducationTecher?issuer="+pushname;
+      trans = "&pageNum="+1;
+    }else{
+      address = "kindergarden/SreachEducationManger";
+      trans = "?pageNum="+1;
+    }
+		
 		findAJAX();
     markurl = "http://"+IPADDRESS+address+trans;
     
@@ -59,7 +65,8 @@ $(function(){
       },
       success:function(data){
         $(".know-lists").remove();
-        addList(data);
+        // addList(data);
+        console.log(data)
       },
       error:function(jqHXR, textStatus, errorThrown){
         console.log("错误:"+jqHXR.status);

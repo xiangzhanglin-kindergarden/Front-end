@@ -49,7 +49,7 @@ $(document).ready(function () {
         sessionStorage.removeItem("user");
         sessionStorage.removeItem("nub");
         sessionStorage.removeItem("teacherData");
-        window.location.href="login.html";
+        window.location.href="../kindergartenFront/logIn.html";
     })
 
 
