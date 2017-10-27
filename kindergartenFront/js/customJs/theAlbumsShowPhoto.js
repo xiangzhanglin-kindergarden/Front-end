@@ -18,7 +18,7 @@ function showPhoto() {
             var nowUrl = this.src;
 
             gray.show();
-            // $(".ibox").css("overflow","hidden");
+            // $(".wrapper").css("overflow","hidden");
             var oImg = document.createElement("img");
             oImg.src = nowUrl;
             oImg.className = "nowImg";
@@ -51,7 +51,7 @@ function showPhoto() {
                 $(".nowImg").remove();
                 $(".mainComment").find(".mainCommentContent").remove();
                 $(".mainCommentInput").remove();
-                // $("body").css("overflow","auto");
+                // $(".wrapper").css("overflow","auto");
             }
             
 
