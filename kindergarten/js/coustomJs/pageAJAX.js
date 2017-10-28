@@ -15,7 +15,8 @@ $(function(){
   if (usertype==0) {
     $(".k-i-person").remove();
   }else{
-    $(".know-newpage-btn").remove();
+    $(".know-newpage-btn .adds").remove();
+    // $(".news-nchange-btn").remove();
   }
    
 
@@ -50,6 +51,42 @@ $(function(){
   })
 
 
+
+/*  点击分类按钮  */
+$(function(){
+
+  /**
+   * 点击草稿按钮
+   */
+  $("#J_CG").click(function(){
+    address = "kindergarden/EductionSave?issuer="+pushname;
+    trans = "&pageNum="+1;
+    $(this).attr("disabled","true");
+    $("#J_FB").attr("disabled",false);
+    findAJAX();
+    markurl = "http://"+IPADDRESS+address+trans;
+  })
+
+  /**
+   * 点击已发布按钮
+   */
+  $("#J_FB").click(function(){
+    address = "kindergarden/SreachEducationTecher?issuer="+pushname;
+    trans = "&pageNum="+1;
+    $(this).attr("disabled","true");
+    $("#J_CG").attr("disabled",false);
+    findAJAX();
+    markurl = "http://"+IPADDRESS+address+trans;
+  })
+})
+
+
+
+
+
+
+
+
 /*   查询AJAX   */
 
   function findAJAX(){
@@ -65,7 +102,7 @@ $(function(){
       },
       success:function(data){
         $(".know-lists").remove();
-        // addList(data);
+        addList(data);
         console.log(data)
       },
       error:function(jqHXR, textStatus, errorThrown){
@@ -129,9 +166,8 @@ $(function(){
 
             var k_l_f = $("<div class='know-list-func'></div>");
 
-              var a2 = $("<a href='"+data[i].url2+"' target='_blank'></a>");
-                var input = $("<input class='n-l-f-btn-c btn btn-success btn-lg' type='button' value='详情'>");
-               
+              var a2 = $("<a href='##'</a>");
+                var input = $("<input class='n-l-f-btn-c btn btn-success btn-lg' type='button' onclick='toDetail(this)' value='详情'>");
                a2.append(input);
              k_l_f.append(a2);
 
@@ -155,8 +191,8 @@ $(function(){
     // 权限判断
       //0为老师，1为校长
       if (usertype==0) {
-        $(".know-list-func .n-l-f-btn-del").remove();
-        $(".know-list-func .n-l-f-btn-c").css({"width":"40%"});
+        // $(".know-list-func .n-l-f-btn-del").remove();
+        // $(".know-list-func .n-l-f-btn-c").css({"width":"40%"});
       };
   }
 
@@ -211,6 +247,129 @@ $(function(){
 
 /*    删除弹窗  END*/
 /*****************************************/
+
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   进入详情页  START*/
+
+  function toDetail(obj){
+    var pageID = $(obj).parent().parent().parent().parent().attr("name");
+    console.log(pageID);
+    sessionStorage.setItem("pageID",pageID);
+    console.log(sessionStorage.getItem("pageID"));
+    window.location.href="pageDetail.html";
+  }
+
+/*    进入详情页  END*/
+/*****************************************/
+
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+/*   输入搜索  START*/
+var k_s_flag = 0;
+
+  $(function(){
+    $(".know-search button").bind("click",function(){
+      var keyword = $(".k-i-keyword input").val();
+      var keytime = $(".k-i-time input").val();
+      if (usertype==0) {
+        keyname = "";
+      }else{
+        var keyname = $(".k-i-person input").val();
+      }
+      if (keyword==""&&keytime==""&&keyname=="") {
+        if (k_s_flag==0) {
+          alert("请输入要查询的内容！");
+        }else{
+          $.ajax({
+            type:"get",
+            url:"http://"+IPADDRESS+address+trans,
+            dataType:"JSON",
+            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+            beforeSend:function(xhr){
+              xhr.withCredentials = true;
+              xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+            },
+            success:function(data){
+              $(".know-lists").remove();
+              addList(data);
+              k_s_flag=0;
+            },
+            error:function(jqHXR, textStatus, errorThrown){
+              console.log("错误:"+jqHXR.status);
+              console.log("错误:"+textStatus);
+              console.log("错误:"+errorThrown);
+            }
+          })
+        }
+      }else{
+        $.ajax({
+          type:"get",
+          url:"http://"+IPADDRESS+"kindergarden/EducationStateSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+          dataType:"JSON",
+          contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+          beforeSend:function(xhr){
+            xhr.withCredentials = true;
+            xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+          },
+          success:function(data){
+            k_s_flag = 1;
+            
+            console.log(data);
+            if (data.length==0) {
+              $(".know-lists").remove();
+              page(1);
+            }else{
+              $(".know-lists").remove();
+              addList(data);
+            }
+          },
+          error:function(jqHXR, textStatus, errorThrown){
+            console.log("错误:"+jqHXR.status);
+            console.log("错误:"+textStatus);
+            console.log("错误:"+errorThrown);
+          }
+        })
+      }
+    })
+    $(".renews").bind("click",function(){
+      $.ajax({
+        type:"get",
+        url:"http://"+IPADDRESS+address+trans,
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          k_s_flag=0;
+          $(".k-i-keyword input").val("");
+          $(".k-i-time input").val("");
+          $(".k-i-person input").val("");
+          $(".know-lists").remove();
+          addList(data);
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+    })
+  })
+
+/*    输入搜索  END*/
+/*****************************************/
+
+
+
+
+
 
 
 

@@ -433,18 +433,8 @@ $(function(){
     },
     success:function(data){
       console.log(data);
-
-      //修改状态
-      if (data.state=="通过") {
-        $("#if-d-status option[value='pass']").attr("selected",true);
-        console.log(1);
-        $(".if-d-page-status input[name='edit']").remove();
-      }else if(data.state=="未通过"){
-        $("#if-d-status option[value='unpass']").attr("selected",true);
-        console.log(2);
-      }else if(data.state=="待审核"){
-        $("#if-d-status option[value='waiting']").attr("selected",true);
-        console.log(3);
+      if (data.issuer != pushname) {
+        $(".if-d-page-status").remove();
       }
 
       //修改标题

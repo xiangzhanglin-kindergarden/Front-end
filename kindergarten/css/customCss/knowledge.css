@@ -190,6 +190,21 @@ color: #000;
 		height: 90%;
 		margin-left: 1%;
 	}
+	.know-list-func{
+		float: left;
+		width: 19%;
+		height: 90%;
+		line-height: 77px;
+		text-align: center;
+	}
+	@media screen and (max-width: 1180px){
+		.know-list-content{
+			width: 70%;
+		}
+		.know-list-func{
+			width: 25%;
+		}
+	}
 	.know-list-content .k-l-c-photo{
 		float: left;
 		width: 130px;
@@ -213,13 +228,7 @@ color: #000;
 		text-overflow:ellipsis;
 		white-space: nowrap;
 	}
-	.know-list-func{
-		float: left;
-		width: 19%;
-		height: 90%;
-		line-height: 77px;
-		text-align: center;
-	}
+	
 	.know-list-func :first-child{
 		margin-right: 10px;
 	}
@@ -392,8 +401,12 @@ color: #000;
 	text-align: center;
 	opacity:0;
 }	
-
-
+.news-nchange-btn{
+		float: left;
+}
+.news-nchange-btn .btn-white{
+	background-color: #F2F1F1
+}
 
 
 

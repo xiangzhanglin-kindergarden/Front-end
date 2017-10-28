@@ -241,7 +241,7 @@ var k_s_flag = 0;
 	    }else{
 	      $.ajax({
 	        type:"get",
-	        url:"http://"+IPADDRESS+"/kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
+	        url:"http://"+IPADDRESS+"kindergarden/GrowthSreach?title="+keyword+"&time="+keytime+"&issuer="+keyname+"&pageNum="+1,
 	        dataType:"JSON",
 	        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 	        beforeSend:function(xhr){

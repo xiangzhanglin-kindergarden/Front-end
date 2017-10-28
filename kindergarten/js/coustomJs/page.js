@@ -18,7 +18,45 @@
 /*    选择日期  END*/
 /*****************************************/
 
+/*+++++++++++++++++++++++++++++++++++++++*/
 
+/*   分类按钮  START*/
+
+	$(function(){
+		$(".news-nchange-btn button").bind("click",function(){
+			if ($(this).hasClass("btn-info")) {
+
+			}else{
+				$(".news-nchange-btn button").addClass("btn-white");
+				$(".news-nchange-btn button").removeClass("btn-info");
+				$(this).removeClass("btn-white");
+				$(this).addClass("btn-info");
+
+				if ($(this).hasClass("n-btn-o")) {
+					$(".news-nchange-btn button").removeClass("btn-info");
+
+					$(".n-btn-o").addClass("btn-info");
+					$(".n-btn-o").removeClass("btn-white");
+					$(".n-s-kind").animate({"opacity":0},500,function(){
+						$(".n-s-kind").css({"display":"none"});
+					})
+					$("#n-s-all").animate({"opacity":0},500,function(){
+						$("#n-s-all").css({"display":"none"});
+					})
+				}else{
+					$(".n-s-kind").css({"display":"block"});
+					$(".n-s-kind").animate({"opacity":1});
+					$("#n-s-all").css({"display":"block"});
+					$("#n-s-all").animate({"opacity":1});
+				}
+			}
+		})
+	})
+
+
+
+/*    分类按钮  END*/
+/*****************************************/
 
 
 

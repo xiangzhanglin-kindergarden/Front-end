@@ -384,6 +384,7 @@ $(function(){
     }else if(pdkind == "随笔"){
       rekind = "教育随笔";
       reurl1 = "0";
+      restate = "随笔";
     }
 
     //获取附件
@@ -400,8 +401,6 @@ $(function(){
     }
     console.log(reurl2);
 
-
-
     inNewsAdd = {
       issuer:pushname,
       time:null,
@@ -414,6 +413,7 @@ $(function(){
       totalPage:null,
       cid:recId,
     }
+
     console.log(inNewsAdd);
     myjson = JSON.stringify(inNewsAdd);
 
