@@ -171,10 +171,12 @@ function addTeacher(theCaption,data,theIndex) {
 
                 theBoxSelect[1].id = "theSex";
                 var theSex = $("#theSex");
+                console.log(rowData);
                 if (rowData.tSex == "男"){
-                    theSex.find("option")[0].selected = true;
-                }else {
+                    console.log("nan");
                     theSex.find("option")[1].selected = true;
+                }else {
+                    theSex.find("option")[0].selected = true;
                 }
 
                 // theBoxSelect[2].id = "className";//班级信息
