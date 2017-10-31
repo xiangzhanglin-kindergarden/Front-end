@@ -16,6 +16,7 @@ $(function(){
     $(".k-i-person").remove();
   }else{
     $(".know-newpage-btn .adds").remove();
+    $("#J_CG").remove();
     // $(".news-nchange-btn").remove();
   }
    

@@ -94,9 +94,6 @@ $(function(){
 		//创建标题的修改
 		inputTitle();
 
-		//创建封面修改
-		changeCover();
-
 		//创建附件修改
 		changefile();
 	})
@@ -209,11 +206,6 @@ function delFJ(obj){
 
 			$(".if-d-t-c-box").css({"display":"none"});
 			$(".if-d-change-title").css({"display":"block"});
-		}
-
-	/* 开启封面修改 */
-		function changeCover(){
-			$(".if-d-cover-box").css({"display":"block"});
 		}
 
 	/* 创建附件修改 */
@@ -402,23 +394,6 @@ $(function(){
 })
 
 
-
-
-/* 还原封面 按钮 */
-	$(function(){
-		$(".if-d-recover").click(function(){
-			$(".if-d-cover img").attr('src',oldcover)
-			$(".if-d-cover span").html("原封面");
-			$(".if-d-recover").animate({"opacity":0},700,function(){
-				$(".if-d-recover").css({"display":"none"});
-			});
-		})
-	})
-
-
-
-
-
 /* 获取内容  */
 $(function(){
   $.ajax({
@@ -449,15 +424,6 @@ $(function(){
       //修改时间
       $(".if-d-t-time").html(data.time);
 
-      //修改封面
-      var photoUrl
-      if (data.url1=="0") {
-        photoUrl = "img/logo.png";
-      }else{
-        photoUrl = data.url1;
-      }
-        $(".if-d-c-border img").attr("src",photoUrl);
-      
       //修改内容
       $(".if-d-content").html(data.message);
 
@@ -569,42 +535,6 @@ function CG(data){
 }
 
 
-/* 上传审核状态AJAX */
-  $(function(){
-  	$(".if-d-page-status input[name='save']").click(function(){
-  		var status = $(".mail-box-header select option:selected").text();
-  		console.log(status);
-      // if (status=='通过') {
-      //   status = 1;
-      // }else if(status=='待审核'){
-      //   status = 2;
-      // }else if(status=='未通过'){
-      //   status = 3;
-      // }
-
-  		$.ajax({
-  			type:"post",
-  			url:"http://"+IPADDRESS+"/kindergarden/StateChange?idnews="+pageid+"&state="+status,
-  			dataType:"JSON",
-  			contentType:"application/x-www-form-urlencoded;charset=utf-8",
-
-  			beforeSend:function(xhr){
-  				xhr.withCredentials = true;
-  				xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
-  			},
-  			success:function(data){
-          alert("修改成功！");
-  				window.location.reload();
-  			},
-  			error:function(jqHXR){
-  				console.log("错误:"+jqHXR.status);
-  			}
-  		})
-  	})
-  })
-
-
-
 /*   上传AJAX   */
   $(function(){
     $(".if-d-resub").click(function(){
@@ -620,91 +550,76 @@ function CG(data){
       UpAJAX(pdstate);
     })
 
-  function UpAJAX(pdstate){
+    function UpAJAX(pdstate){
 
-    restate = pdstate;
+      restate = pdstate;
 
-    retitle = $(".if-d-change-title input").val(); //获取标题
+      retitle = $(".if-d-change-title input").val(); //获取标题
 
-    //获取富文本内容
-    var html = editor.$txt.html();
-    remessage = html;
-    // var text = editor.$txt.text();
-    // var formatText = editor.$txt.formatText();
-    // console.log("编辑器区域完整html代码:"+html);
-    // console.log("编辑器纯文本内容:"+text);
-    // console.log("格式化后的纯文本:"+formatText);
+      //获取富文本内容
+      var html = editor.$txt.html();
+      remessage = html;
+      // var text = editor.$txt.text();
+      // var formatText = editor.$txt.formatText();
+      // console.log("编辑器区域完整html代码:"+html);
+      // console.log("编辑器纯文本内容:"+text);
+      // console.log("格式化后的纯文本:"+formatText);
 
-    //获取封面
-    var pdurl1 = $(".if-d-c-border img").attr("src");
-    if (pdurl1 == "img/logo.png"||pdurl1 == "0") {
       reurl1 = "0";
-    }else{
-      reurl1 = pdurl1;
-    }
 
-    //获取新闻、公告类型
-    var pdkind = $("body").attr("name");
-    if (pdkind == "新闻") {
-      rekind = "新闻";
-    }else if(pdkind == "公告"){
-      rekind = "公告";
-      reurl1 = "0";
-    }
-
-    //获取附件
-    var url2leng = $(".attachment .file-box").length;
-    if (url2leng == 0) {
-      reurl2 = "0";
-    }else{
-      for (var i = 0; i < url2leng; i++) {
-        reurl2[i] = $(".attachment .file-box:eq("+i+") a").attr("href");
-        var fileName = $(".attachment .file-box:eq("+i+") .file-name").html();
-        reurl2[i] = reurl2[i]+":^:"+fileName;        
-      };
-      reurl2 = reurl2.join(",");
-    }
-
-
-    var myjson;
-    inNewsAdd = {
-      idnews:pageid,
-      title:retitle,
-      message:remessage,
-      url1:reurl1,
-      url2:reurl2,
-    }
-    console.log(inNewsAdd);
-    // inNewsAdd = JSON.stringify(inNewsAdd);
-
-    if (restate=="草稿") {
-      URLADD = "http://"+IPADDRESS+"/kindergarden/UpdateNews2";
-    }else{
-      URLADD = "http://"+IPADDRESS+"/kindergarden/UpdateNews";
-    }
-
-
-    $.ajax({
-      type:"post",
-      url:URLADD,
-      data:inNewsAdd,
-      dataType:"JSON",
-      contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-      beforeSend:function(xhr){
-        xhr.withCredentials = true;
-        xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
-      },
-      success:function(data){
-        console.log(data);
-        alert("修改成功！");
-        window.location.reload();
-      },
-      error:function(jqHXR){
-        console.log("错误:"+jqHXR.status);
+      //获取附件
+      var url2leng = $(".attachment .file-box").length;
+      if (url2leng == 0) {
+        reurl2 = "0";
+      }else{
+        for (var i = 0; i < url2leng; i++) {
+          reurl2[i] = $(".attachment .file-box:eq("+i+") a").attr("href");
+          var fileName = $(".attachment .file-box:eq("+i+") .file-name").html();
+          reurl2[i] = reurl2[i]+":^:"+fileName;        
+        };
+        reurl2 = reurl2.join(",");
       }
-  	})
-	}
-})
+
+
+      var myjson;
+      inNewsAdd = {
+        idnews:pageid,
+        title:retitle,
+        message:remessage,
+        url1:reurl1,
+        url2:reurl2,
+      }
+      console.log(inNewsAdd);
+      // inNewsAdd = JSON.stringify(inNewsAdd);
+
+      if (restate=="草稿") {
+        URLADD = "http://"+IPADDRESS+"/kindergarden/UpdateNews3";
+      }else{
+        URLADD = "http://"+IPADDRESS+"/kindergarden/UpdateNews4";
+      }
+
+
+      $.ajax({
+        type:"post",
+        url:URLADD,
+        data:inNewsAdd,
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          console.log(data);
+          alert("修改成功！");
+          window.location.reload();
+        },
+        error:function(jqHXR){
+          console.log("错误:"+jqHXR.status);
+        }
+    	})
+  	}
+  })
 
 
 

@@ -384,7 +384,7 @@ $(function(){
     }else if(pdkind == "随笔"){
       rekind = "教育随笔";
       reurl1 = "0";
-      restate = "随笔";
+      if (restate!="草稿") {restate = "随笔";}      
     }
 
     //获取附件
@@ -432,7 +432,12 @@ $(function(){
         console.log(data.success);
         if (data.success=="success") {
           alert("提交成功！");
-          window.location.href = "pageManagement.html";
+          if (rekind=="教育随笔") {
+            window.location.href = "pageManagement.html";
+          }else{
+            window.location.href = "allNewsManagement.html";
+          }
+          
         }else{
           alert("提交失败");
         }
