@@ -227,6 +227,7 @@
     height: 100px;
   }
 }
+
 @media screen and (min-height: 860px){
   .classtable table tbody tr{
     height: 95px;
@@ -235,6 +236,12 @@
 
 .classtable table{
   font-size: 20px;
+}
+@media screen and (max-width: 600px){
+  .table>tbody>tr>td{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 @media screen and (max-width: 380px){
   .classtable table{
@@ -466,6 +473,25 @@ color: #000;
 color: #000; 
 }
 
+#pg-write-nub{
+  float: right;
+  width: 63px;
+  margin-top: 1px;
+  margin-left: 10px;
+  background:rgba(255,255,255,0.3);
+}
+#pg-write-nub::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #000; 
+}
+#pg-write-nub:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #000; 
+} 
+#pg-write-nub::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #000; 
+} 
+#pg-write-nub:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #000; 
+}
 
 
 
@@ -586,7 +612,7 @@ color: #000;
 
 
 
-/*     资讯列表      */
+/*     成长知识      */
   .know-box{
     position: relative;
     padding: 0 1% 1% 1%;
@@ -717,7 +743,141 @@ color: #000;
 
 
 
-/*     资讯列表   END     */
+/*     成长知识   END     */
+
+
+/*     教育随笔      */
+  .page-box{
+    position: relative;
+    padding: 0 1% 1% 1%;
+    background-color: rgba(195,190,212,0.3);
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 360px){
+    .page-box{
+      padding: 0 2% 2% 2%;
+      margin-left: -10px;
+      margin-right: 10px;
+    }
+  }
+  .page-table{
+    padding-top:2%;
+  }
+  .page-lists{
+    float: left;
+    width: 100%;
+    border: 1px solid #F5FAC8;
+    margin-bottom: 10px;
+  }
+  .page-list-title{
+    height: 40px;
+    border-bottom: 1px solid #F5FAC8;
+    line-height: 40px;
+    font-size: 17px;
+    text-align: left;
+  }
+  .page-list-title :first-child{
+    margin-left: 1%;
+  }
+  .page-list-time{
+    float: right;
+    margin-right: 3.5%;
+  }
+  
+  .page-list-content-box{
+    width: 100%;
+    height: 100px;
+    padding-top: 1%;
+  }
+  .page-list-content{
+    float: left;
+    width: 75%;
+    height: 90%;
+    margin-left: 1%;
+  }
+  .page-list-content .pg-l-c-photo{
+    float: left;
+    width: 130px;
+    height: 70px;
+    border: 1px solid rgba(218,218,218,0);
+    margin-top: 0.3rem;
+    margin-right: 30px;
+    text-align: center;
+    line-height: 70px;
+  }
+  .pg-l-c-photo img{
+    max-width: 130px;
+    max-height: 70px;
+  }
+  .pg-l-c-w{
+    font-size: 17px;
+    height: 90%;
+    /*padding-top: 5px;*/
+    padding-bottom: 10px;
+    line-height: 70px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: 400px){
+    .page-list-content .pg-l-c-photo{
+      width: 100px;
+    }
+    .page-list-content .pg-l-c-photo{
+      margin-right: 5px;
+    }
+    .pg-l-c-w{
+      font-size: 15px;
+      text-align: center;
+    }
+    .pg-l-c-photo img{
+      max-width: 100px;
+      max-height: 70px;
+    }
+  }
+  
+  .page-list-func{
+    float: left;
+    width: 24%;
+    height: 90%;
+    line-height: 77px;
+    text-align: center;
+  }
+  .page-list-func :first-child{
+    margin-right: 10px;
+  }
+  .page-list-func a{
+    font-size: 15px;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    padding-top:0;
+  }
+  @media screen and (max-width: 700px){
+    .page-list-func a{
+      width: 45%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .page-list-func a{
+      width: 60px;
+    }
+  }
+  @media screen and (max-width: 400px){
+    .page-list-func a{
+      font-size: 15px;
+      width: 78px;
+      height: 40px;
+      line-height: 40px;
+      padding-top:0;
+    }
+  }
+
+
+
+/*     教育随笔   END     */
 
 
 

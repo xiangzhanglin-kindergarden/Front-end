@@ -223,6 +223,30 @@ textarea {
     color: #FFEB3B;
 }
 
+
+
+
+
+/* write */
+
+.bg-write,
+.bg-write nav:before {
+    /*background-color: #FFEB3B;*/
+    background-color: rgba(161,234,251,0.3);
+    color: #333;
+    
+    /*color: #66BFBF;*/
+}
+
+.bg-write *:not(i):not(nav):after,
+.bg-write *:not(i):not(nav):before,
+.bg-write .btn:hover,
+.bg-write .btn-inverse{
+    background-color: #A1EAFB;
+    border-color: #d6f3fa;
+    color: #333;
+}
+
 /* Subscribe */
 
 .bg-subscribe,

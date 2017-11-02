@@ -854,6 +854,7 @@ function CG(data){
       url2:reurl2,
     }
     console.log(inNewsAdd);
+    console.log(typeof inNewsAdd);
     // inNewsAdd = JSON.stringify(inNewsAdd);
 
     if (restate=="草稿") {

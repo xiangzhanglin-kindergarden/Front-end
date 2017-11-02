@@ -415,11 +415,15 @@ $(function(){
     }
 
     console.log(inNewsAdd);
+    // console.log(typeof inNewsAdd);
     myjson = JSON.stringify(inNewsAdd);
+    myjson = JSON.parse(myjson);
+    console.log(typeof myjson);
+    console.log(myjson);
 
     $.ajax({
       type:"post",
-      url:"http://"+IPADDRESS+"/kindergarden/Newsadd",
+      url:"http://"+IPADDRESS+"/kindergarden/Newsadd?",
       data:"NewsAdd="+myjson,
       dataType:"JSON",
       contentType:"application/x-www-form-urlencoded;charset=UTF-8",

@@ -55,6 +55,7 @@
       <div class="awd-site-bg bg-about"></div>
       <div class="awd-site-bg bg-contact"></div>
       <div class="awd-site-bg bg-services"></div>
+      <div class="awd-site-bg bg-write"></div>
     </div>
     <canvas id="awd-site-canvas"></canvas>
   </div>
@@ -79,9 +80,9 @@
           <li><a href="#" data-slide="home" class="active show-home-btn">首页</a></li>
           <li><a href="#" data-slide="subscribe" class="show-class-btn">学生课表</a></li>
           <li><a href="#" data-slide="about" class="show-news-btn">新闻/公告</a></li>
-          <li><a href="#" data-slide="write" class="show-write-btn">教育随笔</a></li>
+          <li><a href="#" data-slide="write" class="show-page-btn">教育随笔</a></li>
           <li><a href="#" data-slide="services" class="show-know-btn">校园知识</a></li>
-          <li><a href="#" data-slide="contact" class="show-albums-btn">生活点滴</a></li>
+          <li><a href="#" data-slide="contact" class="show-albums-btn">大型活动照片/视频</a></li>
         </ul>
         <!-- END 导航 -->
       </div>
@@ -393,16 +394,16 @@
                         <div class="slide-content class-slide-content">
                           <div class="row">
                             <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-6 animated" data-animation="fadeIn" data-animation-delay="60">
-                              <div class="know-box">
-                                <div class="know-table">
+                              <div class="page-box">
+                                <div class="page-table">
                                   <div class="row">
                                     <!-- 分页按钮 -->
                                     <div class="btn-group pull-right page-btn-box">
-                                      <button id="k-previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+                                      <button id="pg-previous-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
                                       </button>
-                                      <button id="k-next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+                                      <button id="pg-next-btn" class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
                                       </button>
-                                      <input id="k-write-nub" class="form-control input-sm" type="text" placeholder="页数">
+                                      <input id="pg-write-nub" class="form-control input-sm" type="text" placeholder="页数">
                                     </div>
                                     <!-- 分页按钮  END -->
                                   </div>
@@ -587,6 +588,7 @@
   <script src="js/P-class.js"></script>
   <script src="js/P-classAJAX.js"></script>
   <script src="js/P-knowAJAX.js"></script>
+  <script src="js/P-pageAJAX.js"></script>
   <script src="js/P-newsAJAX.js"></script>
 
   <!-- <script src="js/P-album.js"></script> -->
