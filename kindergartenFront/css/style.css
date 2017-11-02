@@ -242,11 +242,14 @@ textarea {
 .bg-write *:not(i):not(nav):before,
 .bg-write .btn:hover,
 .bg-write .btn-inverse{
-    background-color: #A1EAFB;
+    background-color: #A0CBF9;
     border-color: #d6f3fa;
     color: #333;
 }
-
+.bg-write *:not(i):not(nav):after,
+.bg-write *:not(i):not(nav):before{
+    background-color: #838ED9;
+}
 /* Subscribe */
 
 .bg-subscribe,
