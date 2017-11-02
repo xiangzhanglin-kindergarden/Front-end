@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="修复教师性别编辑错误">
+    <list default="true" id="241aeabb-15c6-4cce-85b3-3b326eeb7076" name="默认" comment="修改图鉴照片加载状态">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergarten/js/customJs/theAlbums.js" afterPath="$PROJECT_DIR$/kindergarten/js/customJs/theAlbums.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindergartenFront/js/customJs/theAlbums.js" afterPath="$PROJECT_DIR$/kindergartenFront/js/customJs/theAlbums.js" />
     </list>
     <ignored path="Front-end.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -584,14 +582,7 @@
       <workItem from="1509427955707" duration="4000" />
       <workItem from="1509452200171" duration="4000" />
       <workItem from="1509457695088" duration="26000" />
-      <workItem from="1509638538739" duration="2273000" />
-    </task>
-    <task id="LOCAL-00014" summary="修复了评论区的一些bug">
-      <created>1496454447848</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1496454447848</updated>
+      <workItem from="1509638538739" duration="2440000" />
     </task>
     <task id="LOCAL-00015" summary="新增评论删除功能">
       <created>1496467182173</created>
@@ -929,15 +920,21 @@
       <option name="project" value="LOCAL" />
       <updated>1509166499673</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="修改图鉴照片加载状态">
+      <created>1509640858250</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1509640858250</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306426000" />
+    <option name="totallyTimeSpent" value="306593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -992,7 +989,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajax success后增加判断" />
     <MESSAGE value="修改班级删除" />
     <MESSAGE value="创建相册的提示（名称描述不能为空）" />
     <MESSAGE value="修复了班级管理块的bug" />
@@ -1017,7 +1013,8 @@
     <MESSAGE value="修复phone端相册/视频的bug" />
     <MESSAGE value="修改查看照片滑动bug" />
     <MESSAGE value="修复教师性别编辑错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复教师性别编辑错误" />
+    <MESSAGE value="修改图鉴照片加载状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改图鉴照片加载状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
