@@ -87,6 +87,16 @@
 	margin-right: 0px;
 	margin-left: 5%;
 }
+@media screen and (max-width: 400px){
+	.removefloat{
+		display: inline-block;
+	}
+	.if-d-t-time{
+		float: left;
+		margin-left: 0;
+		margin-top: 5px;
+	}
+}
 .if-d-content{
 	padding-left: 10%;
 	padding-right: 10%;

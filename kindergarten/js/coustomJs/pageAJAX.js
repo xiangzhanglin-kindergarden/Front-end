@@ -151,10 +151,10 @@ $(function(){
           var k_l_c_b = $("<div class='know-list-content-box'></div>");
 
             var k_l_c = $("<div class='know-list-content'></div>");
-              var k_l_c_p = $("<div class='k-l-c-photo'></div>");
-                var img = $("<img src='"+photoUrl+"'>");
-               k_l_c_p.append(img);
-             k_l_c.append(k_l_c_p);
+             //  var k_l_c_p = $("<div class='k-l-c-photo'></div>");
+             //    var img = $("<img src='"+photoUrl+"'>");
+             //   k_l_c_p.append(img);
+             // k_l_c.append(k_l_c_p);
             
               var k_l_c_w = $("<div class='k-l-c-w k-l-c-w-notice'></div>");
 

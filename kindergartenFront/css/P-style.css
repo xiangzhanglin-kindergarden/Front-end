@@ -546,6 +546,20 @@ color: #000;
     max-width: 130px;
     max-height: 70px;
   }
+  .n-l-c-w{
+    text-align: left;
+    font-size: 17px;
+    font-weight: 700;
+    height: 97%;
+    padding-top:2%;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
   @media screen and (max-width: 400px){
     .news-list-content .n-l-c-photo{
       width: 100px;
@@ -556,20 +570,11 @@ color: #000;
       max-width: 100px;
       max-height: 70px;
     }
+    .n-l-c-w{
+      -webkit-line-clamp: 3;
+    }
   }
-  .n-l-c-w{
-    text-align: left;
-    font-size: 17px;
-    height: 100%;
-    padding-top:2%;
-    padding-bottom: 10px;
-    margin-left: 10px;
-    overflow : hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  
   .news-list-func{
     float: left;
     width: 22%;
@@ -770,7 +775,8 @@ color: #000;
     margin-bottom: 10px;
   }
   .page-list-title{
-    height: 40px;
+    display: inline-block;
+    width: 100%;
     border-bottom: 1px solid #F5FAC8;
     line-height: 40px;
     font-size: 17px;
@@ -868,13 +874,20 @@ color: #000;
   @media screen and (max-width: 400px){
     .page-list-func a{
       font-size: 15px;
-      width: 78px;
+      /*width: 78px;*/
       height: 40px;
       line-height: 40px;
       padding-top:0;
     }
   }
-
+  .page-list-kind{
+    float: left;
+    margin-left: 1%;
+  }
+  .page-list-kind2{
+    float: left;
+    margin-left: 3%;
+  }
 
 
 /*     教育随笔   END     */

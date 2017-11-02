@@ -417,9 +417,9 @@ $(function(){
     console.log(inNewsAdd);
     // console.log(typeof inNewsAdd);
     myjson = JSON.stringify(inNewsAdd);
-    myjson = JSON.parse(myjson);
-    console.log(typeof myjson);
-    console.log(myjson);
+    // myjson = JSON.parse(myjson);
+    // console.log(typeof myjson);
+    // console.log(myjson);
 
     $.ajax({
       type:"post",

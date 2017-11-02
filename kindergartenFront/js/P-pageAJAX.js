@@ -116,10 +116,12 @@ $(function(){
 
             var p_l_t = $("<div class='page-list-title'></div>");
               var p_l_t_s1 = $("<span class='page-list-kind'>"+data[i].kind+"</span>");
-              var p_l_t_s2 = $("<span class='page-list-time'>"+data[i].time+"</span>");
+              var p_l_t_s2 = $("<span class='page-list-kind2'>发布人："+data[i].issuer+"</span>");
+              var p_l_t_s3 = $("<span class='page-list-time'>"+data[i].time+"</span>");
 
              p_l_t.append(p_l_t_s1);
              p_l_t.append(p_l_t_s2);
+             p_l_t.append(p_l_t_s3);
            
            p_l.append(p_l_t);
 
@@ -254,7 +256,7 @@ $(function(){
   //下一页
   $(function(){
     $("#pg-next-btn").bind(
-      "clicpg",
+      "click",
       function(){
         // if (nextNub > max){
         //  $("#pg-next-btn").attr("disabled","disabled");
@@ -270,7 +272,7 @@ $(function(){
   //上一页
   $(function(){
     $("#pg-previous-btn").bind(
-      "clicpg",
+      "click",
       function(){
         // if (previousNub == 0){
         //  $("#pg-previous-btn").attr("disabled","disabled");
