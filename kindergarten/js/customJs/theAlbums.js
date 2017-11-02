@@ -88,8 +88,12 @@ $(document).ready(function () {
                     divImg.appendChild(img);
                 }
 
+                var imgs = {
+                    imgSrcs:imgSrcs,
+                    data:imgData
+                };
 
-                preloadimages(imgSrcs);
+                preloadimages(imgs);
 
 
             },
@@ -258,12 +262,24 @@ $(document).ready(function () {
     }
 
 
-    function preloadimages(arr){
+    function preloadimages(imgs){
+        var arr = imgs.imgSrcs;
+        var imgData = imgs.data;
+        if(imgData.totalRecord == 0){
+            $(".fakeloader").hide();
+            $(".imgloading").find("p").text("还没有照片，快上传一些照片吧！！！");
+        }
         var newimages=[], loadedimages=0;
+        console.log(imgs);
         var postaction=function(){
             console.log("img load success");
             $(".fakeloader").hide();
-            $(".imgloading").find("p").text("下滑加载更多。。。");
+            if(imgData.totalRecord < imgData.pageSize){
+                $(".imgloading").find("p").text("没有更多了！！！");
+            }else {
+                $(".imgloading").find("p").text("下滑加载更多。。。");
+            }
+
             booleanScroll = true;
             scrollPhoto();
             showPhoto();
