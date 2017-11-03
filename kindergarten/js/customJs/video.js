@@ -384,12 +384,14 @@ $(window).ready(function () {
         var teacherData = sessionStorage.getItem("teacherData");
         // var teacher = JSON.parse(teacherData);
         console.log(typeof(teacherData));
+        /*
         if(typeof(teacherData) !=='object'){
             var teacher = JSON.parse(teacherData);
         }else{
             var teacher = teacherData;
             //teacher = $.parseJSON(teacher);
-        }
+        }*/
+        
         console.log(teacher);
         
         // console.log(typeof(teacher));

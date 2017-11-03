@@ -247,7 +247,7 @@ color: #000;
 	-moz-background-size:100% 100%;
 }
 .class-table tbody td:not(.class-time){
-	border: 0;
+	/*border: 0;*/
 	color: #000;
 	background: rgba(245,245,245,0.3);
 }
