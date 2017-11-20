@@ -65,6 +65,7 @@ $(function(){
 	})
 
 	$(".if-d-no").bind("click",function(){
+    $(".talk-area").css({"display":"block"});
 		$(".if-d-p-s-e-btn").addClass("utd");
 		$(".if-d-page-status input[name='edit2']").addClass("utd2");
 		setTimeout(function(){
@@ -88,6 +89,7 @@ $(function(){
 	$(".if-d-page-status input[name='edit2']").bind("click",function(){
 
     $(".file-del").css({"display":"block"});
+    $(".talk-area").css({"display":"none"});
 		//创建富文本
 		createWrite();
 
