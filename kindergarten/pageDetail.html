@@ -24,6 +24,8 @@
   <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
   <!-- wangeditor -->
   <link href="plugins/wangEditor/css/wangEditor.min.css" rel="stylesheet" >
+  <!-- Sweet Alert -->
+  <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet">
 
 
 
@@ -112,38 +114,36 @@
           <div class="talk-area">
             <p class="talk-title">评论区</p>
             <div class="talk-box">
+              <div class="noTalkBox"><img src="img/noTalk.png" alt="无评论"></div>
               <div class="eachtalk-box">
                 <!-- 每一个评论 -->
-                <div class="talk-content-box clear">
+
+                <!-- <div class="talk-content-box clear">
                   <div class="talk-user">施瓦辛格家长：</div>
                   <div class="talk-content-box2">
                     <div class="talk-content">我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害我觉得非常厉害</div>
+                    <a class="talkreback3btn" href="###">删除</a>
                     <div class="talkreback-box">
-                      <div class="talkreback-content">
-                        <span class="talkreback-name">黄晓明家长</span>
-                        <span class="talkreback-rename">：</span>
-                        <span class="talkreback-content">我觉得也很不错我觉得也我觉得也很不错我我觉得也很不错我我觉得也很不错我很不错我觉得也很不错我我觉得也很不错我我觉得也很不错我觉得也很不错我觉得也很不错我觉得也很不错我觉得也很不错</span>
-                        <a class="talkreback2btn" href="###">回复</a>
-                      </div>
                       <div class="talkreback-content">
                         <span class="talkreback-name">黄大明家长</span>
                         <span class="talkreback-rename"> 回复 黄晓明家长：</span>
                         <span class="talkreback-content">我觉得还行</span>
+                        <a class="talkreback3btn" href="###">删除</a>
                         <a class="talkreback2btn" href="###">回复</a>
                       </div>
                     </div>
                     <div class="newtalkbtn"><input class="btn btn-white" type="button" value="我也来说一句" name="talkreback"></div>
-                    <!-- <div class="retalkareaBox">
+                    <div class="retalkareaBox">
                       <textarea name="retalk" id="retalkarea"></textarea>
                       <div class="pushTalkbox"><input class="btn btn-primary" type="button" value="发表评论" name="pushreTalk"><input class="btn btn-danger" type="button" value="×" name="closereTalk"></div>
-                    </div> -->
+                    </div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <p class="talk-title">写下自己的评论</p>
               <div id="write-talk">注意：一个用户只能评论一次（写内容时请删除这句话）</div>
             </div>
-            <div style="text-align: center;"><input class="btn btn-primary" type="button" value="发表评论" name="pushTalk"></div>
+            <div class="upTalkBox"><input class="btn btn-primary" id="JQ-upTalk" type="button" value="发表评论" name="pushTalk"></div>
           </div>
 
         </div>
@@ -181,11 +181,13 @@
   <!-- bootstrapfileinput -->
   <script src="plugins/bootstrap-fileinput/js/fileinput.js"></script>
   <script src="plugins/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
-
+  <!-- Sweet alert -->
+  <script src="plugins/sweetalert/sweetalert.min.js"></script>
 
 
   <!-- 自定义js -->
   <script src="js/content.js?v=1.0.0"></script>
+  <script src="js/self-option.js"></script>
   <script src="js/coustomJs/Pagedetails.js?v=1.0.0"></script>
   <script src="js/coustomJs/PageTalk.js?v=1.0.0"></script>
 

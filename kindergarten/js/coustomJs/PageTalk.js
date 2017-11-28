@@ -1,4 +1,126 @@
-createWrite2();  
+if(usertype==2){
+  createWrite2(); 
+}else{
+  $(".upTalkBox").remove();
+  $(".talk-box .talk-title").remove();
+  $(".talk-box #write-talk").remove();
+
+}
+
+
+$(function(){
+  getTalk(1);
+})
+
+/**
+ * 获取评论
+ * @param  {[type]} pageNum [评论页数]
+ * @return {[type]}         [description]
+ */
+function getTalk(pageNum){
+  $.ajax({
+    type:"get",
+    url:`http://${IPADDRESS}kindergarden/showallcomment?pageNum=${pageNum}&idnews=${pageid}`,
+    dataType:"JSON",
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend:function(xhr){
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+    },
+    success:function(data){
+      createTalk(data);
+    },
+    error:function(jqHXR, textStatus, errorThrown){
+      console.log("错误:"+jqHXR.status);
+      console.log("错误:"+textStatus);
+      console.log("错误:"+errorThrown);
+    }
+  })
+}
+
+/**
+ * 获取到内容后更新内容
+ */
+function createTalk(data){
+  console.log(data.length);
+  let index = 0;
+  if (data.length!=0) {
+    $(".noTalkBox").remove();
+    let talkBox = $(".eachtalk-box");
+    for(let i=0; i<data.length;i++){
+      let html = [];
+      html.push(`<div class="talk-content-box clear" data-talkID="${data[i].idcomment}">`);
+        html.push(`<div class="talk-user">${data[i].name}家长：</div>`);
+        html.push(`<div class="talk-content-box2">`);
+          html.push(`<div class="talk-content">${data[i].message}</div>`);
+          html.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+          html.push(`<div class="talkreback-box"></div>`);
+          html.push(`<div class="newtalkbtn"><input class="btn btn-white" type="button" value="我也来说一句" name="talkreback"></div>`);
+        html.push(`</div>`);
+      html.push(`</div>`); 
+      talkBox.append(html.join(""))
+      getReplyTalk(1,data[i].idcomment);
+      console.log(index++)
+    }
+  }else{
+    /*   等待添加没有评论时的效果   */
+  }
+}
+
+/**
+ * [获取回复评论]
+ * @param  {[type]} pageNum   [页数]
+ * @param  {[type]} idcomment [评论的ID]
+ */
+function getReplyTalk(pageNum,idcomment){
+  $.ajax({
+    type:"get",
+    url:`http://${IPADDRESS}kindergarden/showallreply?pageNum=${pageNum}&idcomment=${idcomment}`,
+    dataType:"JSON",
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend:function(xhr){
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+    },
+    success:function(data){
+      creategetReplyTalk(data,idcomment)
+    },
+    error:function(jqHXR, textStatus, errorThrown){
+      console.log("错误:"+jqHXR.status);
+      console.log("错误:"+textStatus);
+      console.log("错误:"+errorThrown);
+    }
+  })
+}
+/**
+ * 获取到回复评论的内容后更新回复内容
+ */
+function creategetReplyTalk(data,idcomment){
+  console.log(data,idcomment);
+    let talkBox = $(".eachtalk-box").find(`.talk-content-box[data-talkID=${idcomment}]`);
+  if (data.length!=0) {
+    for(let i=0; i<data.length;i++){
+      let retalkBox = talkBox.find(".talkreback-box");
+      let html = [];
+      html.push(`<div class="talkreback-content" data-retalkID='${data[i].idreply}'>`);
+        html.push(`<span class="talkreback-name">${data[i].a}</span>`);
+        html.push(`<span class="talkreback-rename">${data[i].b}：</span>`);
+        html.push(`<span class="talkreback-content">${data[i].message}</span>`);
+        html.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+        html.push(`<a class="talkreback2btn" href="###">回复</a>`);
+      html.push(`</div>`);
+
+      retalkBox.append(html.join(""))
+    }
+  }else{
+    talkBox.find(".talkreback-box").remove();
+    talkBox.find(".newtalkbtn").addClass("clear");
+    talkBox.find(".talkreback3btn").css({"margin-bottom":"5px"});
+  }
+}
+
+
+
 
 /*     创建富文本     */
 	var editor2
@@ -70,12 +192,14 @@ createWrite2();
 	}
 
 
-
-$("input[name='talkreback']").bind("click",function(){
+/**
+ * 点击回复按钮
+ */
+$("body").delegate("input[name='talkreback']","click",function() {
   let thisPOS = $(this).parents(".talk-content-box2");
   createReTakle(thisPOS);
 })
-$(".talkreback2btn").bind("click",function(){
+$("body").delegate(".talkreback2btn","click",function() {
   let thisPOS = $(this).parents(".talk-content-box2");
   let thisWord = $(this).parent().find(".talkreback-name").text();
   createReTakle(thisPOS,thisWord);
@@ -89,19 +213,17 @@ $(".talkreback2btn").bind("click",function(){
  * @return {[type]}      [无]
  */
 function createReTakle(obj,word){
-  console.log(obj);
-  console.log(word);
   $(".retalkareaBox").remove();
-  let rtareaBox = $("<div class='retalkareaBox'></div>");
+  const rtareaBox = $("<div class='retalkareaBox'></div>");
   let rtTextarea = "null";
   if (word!=undefined) {
     rtTextarea = $("<textarea name='retalk' id='retalkarea' placeholder=' 回复 "+word+"'></textarea>");
   }else{
     rtTextarea = $("<textarea name='retalk' id='retalkarea'></textarea>");
   }
-  let rtInput = $("<div class='pushTalkbox'></div>");
-  let rtInput1 = $("<input class='btn btn-primary' type='button' value='发表评论' name='pushreTalk''>");
-  let rtInput2 = $("<input class='btn btn-danger' type='button' value='×' name='closereTalk' onclick='remove()'>");
+  const rtInput = $("<div class='pushTalkbox'></div>");
+  const rtInput1 = $("<input class='btn btn-primary' type='button' value='发表评论' name='pushreTalk''>");
+  const rtInput2 = $("<input class='btn btn-danger' type='button' value='×' name='closereTalk'>");
   rtInput.append(rtInput1);
   rtInput.append(rtInput2);
 
@@ -110,23 +232,175 @@ function createReTakle(obj,word){
   obj.append(rtareaBox);
 }
 
-function remove(){
+$("body").delegate("input[name='closereTalk']","click",function() {
   $(".retalkareaBox").remove();
+})
+
+
+/************************************************************/
+/**************   上传新的评论   ***************************/
+/************************************************************/
+
+var upNewTalk = $("#JQ-upTalk");  //绑定发表评论按钮
+
+upNewTalk.bind("click",function(){
+  const name = "阿姆";
+  const message = editor2.$txt.html();
+  upTalkDate(name,message,pageid);
+})
+
+
+/**
+ * 上传新的评论
+ * @param  {[type]} name    [评论发布人]
+ * @param  {[type]} message [评论信息]
+ * @param  {[type]} pageid  [随笔ID]
+ */
+function upTalkDate(name,message,pageid){
+  $.ajax({
+    type:"get",
+    url:`http://${IPADDRESS}kindergarden/Comment?name=${name}&message=${message}&idnews=${pageid}`,
+    dataType:"JSON",
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend:function(xhr){
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+    },
+    success:function(data){
+      console.log(data);
+      if(data.false){
+        alert("一个用户只能评论一次，你已提交过了");
+      }else if(data.success){
+        alert("提交成功！");
+        window.location.reload();
+      }
+    },
+    error:function(jqHXR, textStatus, errorThrown){
+      console.log("错误:"+jqHXR.status);
+      console.log("错误:"+textStatus);
+      console.log("错误:"+errorThrown);
+    }
+  })
+}
+
+
+/************************************************************/
+/************** 上传回复     A 回复 B   ***********************/
+/************************************************************/
+
+$("body").delegate(".pushTalkbox input[name='pushreTalk']","click",function() {
+  let chatone;
+  if (usertype==1) {
+    chatone = "管理员";
+  }else if(usertype==0){
+    chatone = pushname+"老师";
+  }
+  let chattwo = $(".retalkareaBox textarea").attr("placeholder");
+  if (chattwo==undefined) {
+    chattwo = "";
+  }
+  let idcomment = $(".retalkareaBox").parent().parent().attr("data-talkID");
+  let message = $(".retalkareaBox textarea").val();
+  upRetalk(chatone,chattwo,idcomment,message);
+})
+
+
+
+/**
+ * 上传回复     A 回复 B
+ * @param  {[type]} chatone   [人A]
+ * @param  {[type]} chattwo   [人B]
+ * @param  {[type]} idcomment [评论ID]
+ * @param  {[type]} message   [回复内容]
+ */
+function upRetalk(chatone,chattwo,idcomment,message){
+  $.ajax({
+    type:"get",
+    url:`http://${IPADDRESS}kindergarden/Reply?chatone=${chatone}&chattwo=${chattwo}&idcomment=${idcomment}&message=${message}`,
+    dataType:"JSON",
+    contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+    beforeSend:function(xhr){
+      xhr.withCredentials = true;
+      xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+    },
+    success:function(data){
+      if (data.success) {
+        alert("添加成功！");
+        window.location.reload();
+      }
+    },
+    error:function(jqHXR, textStatus, errorThrown){
+      console.log("错误:"+jqHXR.status);
+      console.log("错误:"+textStatus);
+      console.log("错误:"+errorThrown);
+    }
+  })
 }
 
 
 
-  
+
+/************************************************************/
+/**************    删除评论      ***********************/
+/************************************************************/
 
 
-
-
-
-
-
-
-
-
+$("body").delegate(".talkreback3btn","click",function() {
+  let delThis = $(this);
+  swal({
+    title: "您确定要删除这条评论吗",
+    text: "删除后将无法恢复，请谨慎操作！",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "是的，我要删除！",
+    cancelButtonText: "让我再考虑一下…",
+    closeOnConfirm: false,
+    closeOnCancel: false
+  },
+  function (isConfirm) {
+    if (isConfirm) {
+      let dataValue = delThis.attr("data-delbtn");
+      let url = "";
+      if (dataValue=="Talk") {
+        let idcomment = delThis.parent().parent().attr("data-talkid");
+        url = `http://${IPADDRESS}kindergarden/deletecomment?idcomment=${idcomment}`
+      }else if (dataValue=="reTalk") {
+        let idreply = delThis.parent().attr("data-retalkid");
+        url = `http://${IPADDRESS}kindergarden/ReplyDelete?idreply=${idreply}`
+      }else{
+        console.log(`没获取到数据`);
+      }
+      swal("删除成功！", "您已经永久删除了这条信息。", "success");
+      console.log(url);
+      
+      $.ajax({
+        type:"get",
+        url:url,
+        dataType:"JSON",
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend:function(xhr){
+          xhr.withCredentials = true;
+          xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
+        },
+        success:function(data){
+          $(".sa-button-container .confirm").click(function(){
+            setTimeout(function(){
+              window.location.reload();
+            }, 150);
+          })
+        },
+        error:function(jqHXR, textStatus, errorThrown){
+          console.log("错误:"+jqHXR.status);
+          console.log("错误:"+textStatus);
+          console.log("错误:"+errorThrown);
+        }
+      })
+    }else {
+      swal("已取消", "您取消了删除操作！", "error");
+    }
+  });
+})
 
 
 

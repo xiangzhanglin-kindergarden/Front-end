@@ -17,7 +17,7 @@ $(document).ready(function () {
         $("#username").html("管理员");
 
     }else {
-        $("#usertype").html("老师");
+        // $("#usertype").html("老师");
         
         /*
          *
