@@ -130,3 +130,12 @@
 		width: 100%;
 	}
 }
+
+.talkPage{
+	text-align: center;
+}
+.retalkPage{
+	float: left;
+	margin-top: 10px;
+	margin-left: 1%;
+}

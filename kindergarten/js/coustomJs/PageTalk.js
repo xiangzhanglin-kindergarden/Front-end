@@ -28,7 +28,7 @@ function getTalk(pageNum){
       xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
     },
     success:function(data){
-      createTalk(data);
+      createTalk(data,pageNum);
     },
     error:function(jqHXR, textStatus, errorThrown){
       console.log("错误:"+jqHXR.status);
@@ -41,8 +41,8 @@ function getTalk(pageNum){
 /**
  * 获取到内容后更新内容
  */
-function createTalk(data){
-  console.log(data.length);
+function createTalk(data,pageNum){
+  console.log(data);
   let index = 0;
   if (data.length!=0) {
     $(".noTalkBox").remove();
@@ -60,11 +60,22 @@ function createTalk(data){
       html.push(`</div>`); 
       talkBox.append(html.join(""))
       getReplyTalk(1,data[i].idcomment);
-      console.log(index++)
     }
-  }else{
-    /*   等待添加没有评论时的效果   */
+    $("#talkPagination").pagination({
+       currentPage: pageNum,// 当前页数
+       totalPage: data[0].totalpage,// 总页数
+       isShow: true,// 是否显示首尾页
+       count: 7,// 显示个数
+       prevPageText: "上一页",// 上一页文本
+       nextPageText: "下一页",// 下一页文本
+       callback: function(current) {
+        $(".talk-content-box").remove();
+        $("#talkPagination").remove();
+        getTalk(current);
+       }
+    });
   }
+  
 }
 
 /**
@@ -83,7 +94,7 @@ function getReplyTalk(pageNum,idcomment){
       xhr.setRequestHeader("X-Requested-with","XMLHttpRequest");
     },
     success:function(data){
-      creategetReplyTalk(data,idcomment)
+      creategetReplyTalk(data,idcomment,pageNum)
     },
     error:function(jqHXR, textStatus, errorThrown){
       console.log("错误:"+jqHXR.status);
@@ -95,12 +106,12 @@ function getReplyTalk(pageNum,idcomment){
 /**
  * 获取到回复评论的内容后更新回复内容
  */
-function creategetReplyTalk(data,idcomment){
+function creategetReplyTalk(data,idcomment,pageNum){
   console.log(data,idcomment);
-    let talkBox = $(".eachtalk-box").find(`.talk-content-box[data-talkID=${idcomment}]`);
+  let talkBox = $(".eachtalk-box").find(`.talk-content-box[data-talkID=${idcomment}]`);
+  let retalkBox = talkBox.find(".talkreback-box");
   if (data.length!=0) {
-    for(let i=0; i<data.length;i++){
-      let retalkBox = talkBox.find(".talkreback-box");
+    for(let i=data.length-1; i>=0;i--){
       let html = [];
       html.push(`<div class="talkreback-content" data-retalkID='${data[i].idreply}'>`);
         html.push(`<span class="talkreback-name">${data[i].a}</span>`);
@@ -110,8 +121,24 @@ function creategetReplyTalk(data,idcomment){
         html.push(`<a class="talkreback2btn" href="###">回复</a>`);
       html.push(`</div>`);
 
-      retalkBox.append(html.join(""))
+      retalkBox.prepend(html.join(""))
     }
+    let reTalkPage = [];
+    reTalkPage.push(`<div id="retalkPagination" class="retalkPage"></div>`);
+    retalkBox.append(reTalkPage.join(""));
+    $("#retalkPagination").pagination({
+       currentPage: pageNum,// 当前页数
+       totalPage: data[0].totalpage,// 总页数
+       isShow: true,// 是否显示首尾页
+       count: 4,// 显示个数
+       prevPageText: "上一页",// 上一页文本
+       nextPageText: "下一页",// 下一页文本
+       callback: function(current) {
+        retalkBox.find(".talkreback-content").remove();
+        retalkBox.find("#retalkPagination").remove();
+        getReplyTalk(current,idcomment)
+       }
+    });
   }else{
     talkBox.find(".talkreback-box").remove();
     talkBox.find(".newtalkbtn").addClass("clear");
