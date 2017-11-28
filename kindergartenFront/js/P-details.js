@@ -267,10 +267,7 @@ function addTalkarea(){
       'strikethrough',
       'forecolor',
       'bgcolor',
-      '|',
       'fontsize',
-      '|',
-      'img',
    ];
     editor2.config.withCredentials = true;
 

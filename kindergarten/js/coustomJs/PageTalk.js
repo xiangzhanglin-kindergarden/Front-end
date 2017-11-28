@@ -161,10 +161,7 @@ function creategetReplyTalk(data,idcomment,pageNum){
       'strikethrough',
       'forecolor',
       'bgcolor',
-      '|',
       'fontsize',
-      '|',
-      'img',
    ];
    
 
