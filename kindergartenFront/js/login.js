@@ -24,11 +24,6 @@ function enterFront(){
 
 	var myjson;      //传递参数的内容
 	var url = "";    //物理地址
-	// var IP = "";     //IP地址
-
-
-	// IP = "172.20.2.164:8080/";
-	// IP = "localhost/";
 
 	if (userClass=="user-manager") {
 		userClass = 1;

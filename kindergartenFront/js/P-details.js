@@ -1,12 +1,7 @@
 
-var usertype    //用户类型，0为老师，1位校长
-var username    //用户名
-var pageid      //文章ID
-
-
-var oldcover    //存储原封面
-var newcover    //存储新封面
-
+var usertype;    //用户类型，0为老师，1位校长
+var userID;    //用户名
+var pageid;      //文章ID
 
 
 /*    NewsAdd      */
@@ -21,20 +16,23 @@ var reurl2 = new Array();       //附件
 
 oldcover = $(".if-d-cover img").attr('src');
 
-reissuer = username;
+reissuer = userID;
 reurl1 = oldcover;
 
 
 $(function(){
 	setTimeout("$('.if-d-cover-box').css({'display':'none'})",1)
 
-	username = sessionStorage.getItem("user");
+	userID = sessionStorage.getItem("user");
   usertype = sessionStorage.getItem("nub");  //0为老师，1为校长
-	pageid = sessionStorage.getItem("pageID");  //0为老师，1为校长
-	console.log(username);
+  pageid = sessionStorage.getItem("pageID");
+	
+	console.log(userID);
   console.log(usertype);
-	console.log(pageid);
-	// usertype = 0;
+  console.log(pageid);
+  
+  
+
 	if (usertype == 0) {
 		$(".if-d-page-status input[name='change']").remove();
 		$(".if-d-page-status input[name='save']").remove();
@@ -86,7 +84,8 @@ $(function(){
 
       //修改发布人
       $(".if-d-t-name").html(data.issuer);
-      if (data.issuer!=username) {
+      pushname = data.issuer;
+      if (data.issuer!=userID) {
         $(".if-d-page-status input[name='edit']").remove();
       };
 
@@ -112,6 +111,11 @@ $(function(){
         console.log(data.url2);
         showFJ(data);
       }
+      if (data.kind=="教育随笔") {
+        addTalkarea();
+      }
+
+
     },
     error:function(jqHXR){
       console.log("错误:"+jqHXR.status);
@@ -228,6 +232,50 @@ function suffixPD(obj){
 
 
 
+function addTalkarea(){
+
+  let html = [];
+  html.push(`<div class="talk-area">`);
+    html.push(`<p class="talk-title">评论区</p>`);
+    html.push(`<div class="talk-box clear">`);
+      html.push(`<div class="noTalkBox"><img src="img/noTalk.png" alt="无评论"></div>`);
+      html.push(`<div class="eachtalk-box"></div>`);
+      html.push(`<div id="talkPagination" class="talkPage"></div>`);
+      html.push(`<p class="talk-title">写下自己的评论</p>`);
+      html.push(`<div id="write-talk">注意：一个用户只能评论一次（写内容时请删除这句话）</div>`);
+    html.push(`</div>`);
+    html.push(`<div class="upTalkBox"><input class="btn btn-primary" id="JQ-upTalk" type="button" value="发表评论" name="pushTalk"></div>`);
+  html.push(`</div>`); 
+  $(".mail-box").append(html.join(""))
+  createWrite2();
+  getuserName();
+  getTalk(1);
+}
+
+
+
+/*     创建富文本     */
+  var editor2; //富文本编辑器
+
+  function createWrite2(){
+    editor2 = new wangEditor('write-talk');
+
+    editor2.config.menus = [
+      'bold',
+      'underline',
+      'italic',
+      'strikethrough',
+      'forecolor',
+      'bgcolor',
+      '|',
+      'fontsize',
+      '|',
+      'img',
+   ];
+    editor2.config.withCredentials = true;
+
+    editor2.create();
+  }
 
 
 

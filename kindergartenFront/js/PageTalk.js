@@ -1,16 +1,23 @@
-if(usertype==2){
-  createWrite2(); 
-}else{
-  $(".upTalkBox").remove();
-  $(".talk-box .talk-title").remove();
-  $(".talk-box #write-talk").remove();
+var username;   //登陆者名字
+var pushname;   //该条随笔的发布者名字
+var usertype;   //0老师 1管理员 2家长
 
+function getuserName(){
+  const teacherData = sessionStorage.getItem("teacherData");
+  usertype = sessionStorage.getItem("nub");  //0为老师，1为校长，2位家长
+  let data = JSON.parse(teacherData);
+  if (usertype==0) {
+    username = data.tName;
+  }else if (usertype==1){
+    username = "管理员";
+  }else if (usertype==2){
+    username = data.Object.sName;
+  }
+  console.log(username);
 }
 
 
-$(function(){
-  getTalk(1);
-})
+
 
 /**
  * 获取评论
@@ -50,10 +57,10 @@ function createTalk(data,pageNum){
     for(let i=0; i<data.length;i++){
       let html = [];
       html.push(`<div class="talk-content-box clear" data-talkID="${data[i].idcomment}">`);
-        html.push(`<div class="talk-user">${data[i].name}家长：</div>`);
+        html.push(`<div class="talk-user">${data[i].name}</div>`);
         html.push(`<div class="talk-content-box2">`);
           html.push(`<div class="talk-content">${data[i].message}</div>`);
-          html.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+          PDTalkdel(html,data[i]);
           html.push(`<div class="talkreback-box"></div>`);
           html.push(`<div class="newtalkbtn"><input class="btn btn-white" type="button" value="我也来说一句" name="talkreback"></div>`);
         html.push(`</div>`);
@@ -74,7 +81,27 @@ function createTalk(data,pageNum){
        }
     });
   }
-  
+}
+
+/**
+ * 评论判断添加删除功能
+ * @param {[type]} obj  [let html]
+ * @param {[type]} data [获取name]
+ */
+function PDTalkdel(obj,data){
+  if (usertype==1) {  //管理员
+    obj.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+  }else if (usertype==0) {  //老师
+    if (pushname == username) {
+      obj.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+    }else if(data.name == username+"老师"){
+      obj.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+    }
+  }else if(usertype==2){  //家长
+    if(data.name == username+"家长"){
+       obj.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
+     }
+  }
 }
 
 /**
@@ -116,7 +143,8 @@ function creategetReplyTalk(data,idcomment,pageNum){
         html.push(`<span class="talkreback-name">${data[i].a}</span>`);
         html.push(`<span class="talkreback-rename">${data[i].b}：</span>`);
         html.push(`<span class="talkreback-content">${data[i].message}</span>`);
-        html.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+        PDreTalkdel(html,data[i]);
+        // html.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
         html.push(`<a class="talkreback2btn" href="###">回复</a>`);
       html.push(`</div>`);
 
@@ -138,6 +166,7 @@ function creategetReplyTalk(data,idcomment,pageNum){
         getReplyTalk(current,idcomment)
        }
     });
+
   }else{
     talkBox.find(".talkreback-box").remove();
     talkBox.find(".newtalkbtn").addClass("clear");
@@ -145,77 +174,26 @@ function creategetReplyTalk(data,idcomment,pageNum){
   }
 }
 
+function PDreTalkdel(obj,data){
+  if (usertype==1) {  //管理员
+    obj.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+  }else if (usertype==0) {  //老师
+    if (pushname == username) {
+      obj.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+    }else if(data.a == username+"老师"){
+      obj.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+    }
+  }else if(usertype==2){  //家长
+    if(data.a == username+"家长"){
+       obj.push(`<a class="talkreback3btn" href="###" data-delbtn="reTalk">删除</a>`);
+     }
+  }
+}
 
 
 
-/*     创建富文本     */
-	var editor2
-	function createWrite2(){
-
-		editor2 = new wangEditor('write-talk');
-
-    editor2.config.menus = [
-      'bold',
-      'underline',
-      'italic',
-      'strikethrough',
-      'forecolor',
-      'bgcolor',
-      '|',
-      'fontsize',
-      '|',
-      'img',
-   ];
-   
-
-		// 图片上传路径
-		//editor2.config.uploadImgUrl = 'http://172.20.2.164:8080/retirement/uploadPic/fileUpLoad.action';
-		// editor2.config.uploadImgUrl = 'http://172.20.2.164:8080/kindergarden/Upload';
-		editor2.config.uploadImgUrl = 'http://'+IPADDRESS+'/kindergarden/imageUpload';
-
-		// 隐藏掉插入网络图片功能
-    editor2.config.hideLinkImg = true;
 
 
-	  //editor2.config.withcredentials = true;
-
-		editor2.config.uploadImgFns.onload = function (resultText, xhr) {
-
-			console.log(resultText);
-			
-			var obj = JSON.parse(resultText);
-
-			// var pa = /.*\{(.*)\}/;
-			// alert(resultText.match(pa)[1]);
-
-
-			// 上传图片时，已经将图片的名字存在
-			var originalName = editor2.uploadImgOriginalName || '';
-
-			// editor.command(null, 'insertHtml', '<img src="' +obj[0] + '" alt="' + originalName + '/>');
-			editor2.command(null, 'InsertImage', obj.url);
-		};
-
-  	editor2.config.uploadImgFns.ontimeout = function (xhr) {
-        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
-        alert('上传超时');
-    };
-
-    // 自定义error事件
-    editor2.config.uploadImgFns.onerror = function (xhr) {
-        // xhr 是 xmlHttpRequest 对象，IE8、9中不支持
-        alert('上传错误');
-    };
-		//editor.config.uploadHeaders = 'x-requested-with'
-
-		/*editor.config.uploadheaders = {
-			'Accept':'text/x-json',
-			'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'
-		}*/
-		editor2.config.withCredentials = true;
-
-		editor2.create();
-	}
 
 
 /**
@@ -267,11 +245,17 @@ $("body").delegate("input[name='closereTalk']","click",function() {
 /**************   上传新的评论   ***************************/
 /************************************************************/
 
-var upNewTalk = $("#JQ-upTalk");  //绑定发表评论按钮
-
-upNewTalk.bind("click",function(){
-  const name = "阿姆";
+$("body").delegate("#JQ-upTalk","click",function() {
+  let name;
+  if (usertype==1) {
+    name = "管理员";
+  }else if(usertype==0){
+    name = username+"老师";
+  }else if(usertype==2){
+    name = username+"家长";
+  }
   const message = editor2.$txt.html();
+  console.log(name,pageid);
   upTalkDate(name,message,pageid);
 })
 
@@ -319,7 +303,9 @@ $("body").delegate(".pushTalkbox input[name='pushreTalk']","click",function() {
   if (usertype==1) {
     chatone = "管理员";
   }else if(usertype==0){
-    chatone = pushname+"老师";
+    chatone = username+"老师";
+  }else if(usertype==2){
+    chatone = username+"家长";
   }
   let chattwo = $(".retalkareaBox textarea").attr("placeholder");
   if (chattwo==undefined) {

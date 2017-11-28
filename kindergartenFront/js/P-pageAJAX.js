@@ -146,7 +146,7 @@ $(function(){
 
               var p_l_f = $("<div class='page-list-func'></div>");
 
-                var a2 = $("<a href='#' class='hvr-sweep-to-right button' onclick='toDetail(this)'>详情</a>");
+                var a2 = $("<a href='#' class='hvr-sweep-to-right button' onclick='PtoDetail(this)'>详情</a>");
                p_l_f.append(a2);
              p_l_c_b.append(p_l_f);
 
@@ -164,11 +164,12 @@ $(function(){
 
 /*   进入详情页  START*/
 
-  function toDetail(obj){
+  function PtoDetail(obj){
     var pageID = $(obj).parent().parent().parent().attr("name");
     console.log(pageID);
     sessionStorage.setItem("pageID",pageID);
     console.log(sessionStorage.getItem("pageID"));
+    console.log(sessionStorage.getItem("teacherData"));
     window.open("newsDetail.html","_self");
   }
 
