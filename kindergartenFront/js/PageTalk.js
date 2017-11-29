@@ -57,7 +57,10 @@ function createTalk(data,pageNum){
     for(let i=0; i<data.length;i++){
       let html = [];
       html.push(`<div class="talk-content-box clear" data-talkID="${data[i].idcomment}">`);
-        html.push(`<div class="talk-user">${data[i].name}</div>`);
+        html.push(`<div class="talk-messagebox">`);
+          html.push(`<div class="talk-user">${data[i].name}：</div>`);
+          html.push(`<div class="talk-time">${data[i].time}</div>`);
+        html.push(`</div>`);
         html.push(`<div class="talk-content-box2">`);
           html.push(`<div class="talk-content">${data[i].message}</div>`);
           PDTalkdel(html,data[i]);

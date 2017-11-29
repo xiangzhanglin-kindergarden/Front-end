@@ -20,14 +20,22 @@
 .eachtalk-box{
 	margin-bottom: 70px;
 }
-.talk-user{
+.talk-messagebox{
 	display: inline-block;
 	width: 20%;
+}
+.talk-user{
 	padding-top: 20px;
+	padding-left: 10%;
 	vertical-align: top;
-	text-align: center;
+	text-align: left;
 	font-size: 20px;
-
+}
+.talk-time{
+	padding-top: 7px;
+	padding-left: 10%;
+	vertical-align: top;
+	text-align: left;
 }
 .talk-content{
 	padding: 20px 2% 0 2%;

@@ -50,7 +50,10 @@ function createTalk(data,pageNum){
     for(let i=0; i<data.length;i++){
       let html = [];
       html.push(`<div class="talk-content-box clear" data-talkID="${data[i].idcomment}">`);
-        html.push(`<div class="talk-user">${data[i].name}家长：</div>`);
+        html.push(`<div class="talk-messagebox">`);
+          html.push(`<div class="talk-user">${data[i].name}：</div>`);
+          html.push(`<div class="talk-time">${data[i].time}</div>`);
+        html.push(`</div>`);
         html.push(`<div class="talk-content-box2">`);
           html.push(`<div class="talk-content">${data[i].message}</div>`);
           html.push(`<a class="talkreback3btn" href="###" data-delbtn="Talk">删除</a>`);
@@ -106,7 +109,7 @@ function getReplyTalk(pageNum,idcomment){
  * 获取到回复评论的内容后更新回复内容
  */
 function creategetReplyTalk(data,idcomment,pageNum){
-  // console.log(data,idcomment);
+  console.log(data,idcomment);
   let talkBox = $(".eachtalk-box").find(`.talk-content-box[data-talkID=${idcomment}]`);
   let retalkBox = talkBox.find(".talkreback-box");
   if (data.length!=0) {
