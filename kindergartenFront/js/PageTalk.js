@@ -142,7 +142,7 @@ function creategetReplyTalk(data,idcomment,pageNum){
   if (data.length!=0) {
     for(let i=data.length-1; i>=0;i--){
       let html = [];
-      html.push(`<div class="talkreback-content" data-retalkID='${data[i].idreply}'>`);
+      html.push(`<div class="talkreback-content clear" data-retalkID='${data[i].idreply}'>`);
         html.push(`<span class="talkreback-name">${data[i].a}</span>`);
         html.push(`<span class="talkreback-rename">${data[i].b}：</span>`);
         html.push(`<span class="talkreback-content">${data[i].message}</span>`);
