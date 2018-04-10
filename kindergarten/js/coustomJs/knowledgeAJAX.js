@@ -330,6 +330,7 @@ var k_s_flag = 0;
       if (gurl2=="" || gurl2==null) {
         alert("请输入要分享的地址!");
       }else{
+        gurl2 = gurl2.replace(/&/g,"!-and-!")
         inNewsAdd = {
           issuer:pushname,
           title:gtitle,
