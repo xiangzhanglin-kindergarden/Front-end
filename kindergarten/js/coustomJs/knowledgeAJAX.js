@@ -69,6 +69,9 @@ $(function(){
 /*   把查询到的结果添加出来   */
   function addList(data){
     if (flag == 1) {
+      for(let i in data){
+        data[i].url2 = data[i].url2.replace(/!-and-!/g,"&")
+      }
       console.log(data);
       maxpage = data[0].totalPage;
       page(maxpage);

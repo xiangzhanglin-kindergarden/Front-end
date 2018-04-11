@@ -160,9 +160,7 @@ $(function(){
         
       });
       this.on("errormultiple", function (files, response) {});
-
     }
-
 	}
 })
 
